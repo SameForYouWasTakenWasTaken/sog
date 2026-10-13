@@ -1,8 +1,7 @@
 #include "VertexArray.hpp"
 
-#include "../../Error/Exceptions/graphics_error.hpp"
-#include "../Types/Enums.hpp"
-#include "Util.hpp"
+#include "../../../Error/Exceptions/graphics_error.hpp"
+#include "../../Types/Enums.hpp"
 #include "glad/gl.h"
 
 namespace sog::gfx

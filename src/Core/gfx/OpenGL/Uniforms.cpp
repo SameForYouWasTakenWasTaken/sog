@@ -52,4 +52,9 @@ void setInt(const ShaderProgram& program, Uniform uniform, int value)
     backend::sanityCheck(uniform);
     glProgramUniform1i(program.get(), uniform.location, value);
 }
+void setFloat(const ShaderProgram& program, Uniform uniform, float value)
+{
+    backend::sanityCheck(uniform);
+    glProgramUniform1f(program.get(), uniform.location, value);
+}
 } // namespace sog::gfx::uniform

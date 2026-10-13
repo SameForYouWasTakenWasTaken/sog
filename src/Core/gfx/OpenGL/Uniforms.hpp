@@ -1,5 +1,5 @@
 #pragma once
-#include "ShaderProgram.hpp"
+#include "Objects/ShaderProgram.hpp"
 #include "Types/Math.hpp"
 
 namespace sog::gfx::uniform
@@ -22,4 +22,22 @@ void setMat3(const ShaderProgram& program, Uniform uniform, math::Mat3 mat);
 void setMat4(const ShaderProgram& program, Uniform uniform, math::Mat4 mat);
 
 void setInt(const ShaderProgram& program, Uniform uniform, int value);
+void setFloat(const ShaderProgram& program, Uniform uniform, float value);
+
+template <typename... T> void runSafe(T&&... cb)
+{
+    (
+        [&]
+        {
+            try
+            {
+                std::forward<T>(cb)();
+            }
+            catch (const std::exception& e)
+            {
+                // Handle exception
+            }
+        }(),
+        ...);
+}
 } // namespace sog::gfx::uniform

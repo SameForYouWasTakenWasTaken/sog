@@ -1,7 +1,10 @@
 #pragma once
 #include <memory>
+#include <queue>
 #include <string>
 
+#include "ClearBuffer.hpp"
+#include "Event.hpp"
 #include "RenderState.hpp"
 #include "WindowContext.hpp"
 #include "gfx/Types/Colors.hpp"
@@ -19,9 +22,11 @@ class Window
     [[nodiscard]] bool shouldClose() const;
     void swapBuffers() const;
 
+    void beginFrame(ClearBuffer buffers, Color clearColor = {0, 0, 0, 255});
+    void endFrame() const;
     static void pollEvents();
-    static void clear(Color color);
-    static void clear();
+    static void clear(ClearBuffer buffers, Color color);
+    static void clear(ClearBuffer buffers);
     static void draw(const RenderState& state);
 
     [[nodiscard]] int getWidth() const { return m_Context.width; }
@@ -29,7 +34,11 @@ class Window
 
     [[nodiscard]] void* getNativeHandle() const;
 
+    bool pollEvent(Event& outEvent);
+    void pushEvent(const Event& event) { m_EventQueue.push(event); }
+
   private:
+    std::queue<Event> m_EventQueue;
     void initialize(const context::WindowContext& context);
 
     context::WindowContext m_Context;

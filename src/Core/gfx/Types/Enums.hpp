@@ -46,6 +46,8 @@ enum class shader_type : GLenum
 {
     VERTEX = GL_VERTEX_SHADER,
     FRAGMENT = GL_FRAGMENT_SHADER,
+    GEOMETRY = GL_GEOMETRY_SHADER,
+    COMPUTE = GL_COMPUTE_SHADER,
 };
 
 enum class texture_params : GLint

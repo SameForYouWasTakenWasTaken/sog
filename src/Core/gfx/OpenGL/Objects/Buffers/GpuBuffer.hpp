@@ -7,7 +7,13 @@
 
 namespace sog::gfx
 {
-template <typename T> class GpuBuffer
+
+enum class BindingMode
+{
+    Regular,
+    Indexed
+};
+template <typename T, GLenum Target, BindingMode BindMode> class GpuBuffer
 {
     static_assert(std::is_trivially_copyable_v<T>, "GPU data must be plain bytes");
 
@@ -45,12 +51,20 @@ template <typename T> class GpuBuffer
     }
     void clear() { count_ = 0; }
 
-    void bindSSBO(GLuint binding) const { buf_.bind(GL_SHADER_STORAGE_BUFFER, binding); }
-    void bindUBO(GLuint binding) const { buf_.bind(GL_UNIFORM_BUFFER, binding); }
+    void bind(GLuint binding) const
+        requires(BindMode == BindingMode::Indexed)
+    {
+        buf_.bindBinding(Target, binding);
+    }
+    void bind() const
+        requires(BindMode == BindingMode::Regular)
+    {
+        buf_.bindBuffer();
+    }
 
-    size_t size() const { return count_; }
-    size_t capacity() const { return capacity_; }
-    GLuint id() const { return buf_.id(); }
+    [[nodiscard]] size_t size() const { return count_; }
+    [[nodiscard]] size_t capacity() const { return capacity_; }
+    [[nodiscard]] GLuint id() const { return buf_.id(); }
 
   private:
     void grow(size_t newCap, bool keep)

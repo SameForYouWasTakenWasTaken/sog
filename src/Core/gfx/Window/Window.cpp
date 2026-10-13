@@ -4,10 +4,9 @@
 #include <complex>
 #include <cstdio>
 
-#include "../OpenGL/ShaderProgram.hpp"
-#include "../OpenGL/VertexArray.hpp"
+#include "../OpenGL/Objects/ShaderProgram.hpp"
+#include "../OpenGL/Objects/VertexArray.hpp"
 #include "Error/Exceptions/graphics_error.hpp"
-#include "Util.hpp"
 
 namespace sog::gfx::backend
 {
@@ -136,8 +135,15 @@ struct Window::ImplWindow
 
         self->m_Context.width = width;
         self->m_Context.height = height;
-
         glViewport(0, 0, width, height);
+
+        if (window && width > 0 && height > 0)
+        {
+            Event e{};
+            e.type = EventType::Resized;
+            e.size = {width, height};
+            self->pushEvent(e);
+        }
     }
 };
 Window::Window() : m_Window(std::make_unique<ImplWindow>(nullptr))
@@ -152,14 +158,20 @@ Window::~Window()
 Window::Window(const context::WindowContext& context) { initialize(context); }
 bool Window::shouldClose() const { return glfwWindowShouldClose(m_Window->glfwHandle); }
 void Window::swapBuffers() const { glfwSwapBuffers(m_Window->glfwHandle); }
+void Window::beginFrame(ClearBuffer buffers, Color clearColor) { clear(buffers, clearColor); }
+void Window::endFrame() const
+{
+    swapBuffers();
+    pollEvents();
+}
 void Window::pollEvents() { glfwPollEvents(); }
-void Window::clear(Color color)
+void Window::clear(ClearBuffer buffers, Color color)
 {
     auto normalizedColor = Color::fromRGBA(color.r, color.g, color.b, color.a);
     glClearColor(normalizedColor.r, normalizedColor.g, normalizedColor.b, normalizedColor.a);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(std::to_underlying(buffers));
 }
-void Window::clear() { clear(Color{0, 0, 0, 0}); }
+void Window::clear(ClearBuffer buffers) { clear(buffers, Color{0, 0, 0, 0}); }
 void Window::draw(const RenderState& state)
 {
     state.shaderProgram.use();
@@ -180,6 +192,15 @@ void Window::draw(const RenderState& state)
     glDrawArrays(GL_TRIANGLES, 0, static_cast<GLsizei>(state.vertexBuffer.size()));
 }
 void* Window::getNativeHandle() const { return m_Window->glfwHandle; }
+bool Window::pollEvent(Event& outEvent)
+{
+    if (m_EventQueue.empty())
+        return false;
+
+    outEvent = m_EventQueue.front();
+    m_EventQueue.pop();
+    return true;
+}
 void Window::initialize(const context::WindowContext& context)
 {
     if (!glfwInit())

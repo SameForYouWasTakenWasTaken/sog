@@ -42,14 +42,18 @@ class GLBuffer
         swap(next); // 'next' now holds the old buffer and frees it
     }
 
-    void bind(GLenum target, GLuint binding) const { glBindBufferBase(target, binding, id_); }
+    void bindBuffer() const { glBindBuffer(GL_ARRAY_BUFFER, id_); }
+    void bindBinding(GLenum target, GLuint binding) const
+    {
+        glBindBufferBase(target, binding, id_);
+    }
     void bindRange(GLenum target, GLuint binding, size_t off, size_t bytes) const
     {
         glBindBufferRange(target, binding, id_, off, bytes);
     }
 
-    GLuint id() const { return id_; }
-    size_t size() const { return size_; }
+    [[nodiscard]] GLuint id() const { return id_; }
+    [[nodiscard]] size_t size() const { return size_; }
 
   private:
     void create(size_t bytes, GLbitfield flags)

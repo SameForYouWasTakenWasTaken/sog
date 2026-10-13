@@ -4,7 +4,6 @@
 #include <string>
 
 #include "Error/Exceptions/graphics_error.hpp"
-#include "Util.hpp"
 #include "gfx/Types/Enums.hpp"
 #include "gfx/Types/GFXTypes.hpp"
 #include "gfx/Types/Handles.hpp"

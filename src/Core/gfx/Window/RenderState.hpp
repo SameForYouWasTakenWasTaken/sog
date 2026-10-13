@@ -1,9 +1,9 @@
 #pragma once
 #include <optional>
 
-#include "../OpenGL/ShaderProgram.hpp"
-#include "../OpenGL/VertexArray.hpp"
-#include "gfx/OpenGL/Texture2D.hpp"
+#include "../OpenGL/Objects/ShaderProgram.hpp"
+#include "../OpenGL/Objects/VertexArray.hpp"
+#include "gfx/OpenGL/Objects/Texture2D.hpp"
 
 namespace sog::gfx
 {

@@ -19,6 +19,9 @@ enum class graphics_error_code
 
     texture_load_failed,
     texture_not_bound,
+
+    frame_buffer_invalid,
+    frame_buffer_not_bound,
 };
 
 class graphics_error : public exception

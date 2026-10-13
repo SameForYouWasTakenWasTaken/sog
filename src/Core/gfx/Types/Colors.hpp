@@ -7,7 +7,7 @@ namespace sog::gfx
 struct Color
 {
     static constexpr float MAX_VALUE = 255.f;
-    float r, g, b, a = 0;
+    float r{}, g{}, b{}, a = 0;
 
     explicit constexpr operator math::Vec4() const { return glm::vec4{r, g, b, a}; }
 
