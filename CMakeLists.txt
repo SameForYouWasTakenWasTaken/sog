@@ -1,25 +1,25 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(sog
-    VERSION 0.1.0
-    DESCRIPTION "Small OpenGL Game"
-    LANGUAGES C CXX
+        VERSION 0.1.0
+        DESCRIPTION "Small OpenGL Game"
+        LANGUAGES C CXX
 )
 
 # ---------------------------------------------------------------------------
 # Language
 # ---------------------------------------------------------------------------
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Default to Debug for single-config generators when no build type was given.
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Build type" FORCE)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
-        Debug Release RelWithDebInfo MinSizeRel
+            Debug Release RelWithDebInfo MinSizeRel
     )
-endif()
+endif ()
 
 # ---------------------------------------------------------------------------
 # Output layout (runtime = executable and DLLs, so they stay side by side)

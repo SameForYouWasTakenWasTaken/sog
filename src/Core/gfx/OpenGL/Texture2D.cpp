@@ -51,15 +51,15 @@ void Texture2D::createFromFile(const std::filesystem::path& path, const TextureS
 
     glTextureSubImage2D(m_Handle.get(), 0, 0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, data);
 
-    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_S, util::to_underlying(settings.wrapS));
+    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_S, std::to_underlying(settings.wrapS));
 
-    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_T, util::to_underlying(settings.wrapT));
+    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_T, std::to_underlying(settings.wrapT));
 
     glTextureParameteri(m_Handle.get(), GL_TEXTURE_MIN_FILTER,
-                        util::to_underlying(settings.minFilter));
+                        std::to_underlying(settings.minFilter));
 
     glTextureParameteri(m_Handle.get(), GL_TEXTURE_MAG_FILTER,
-                        util::to_underlying(settings.magFilter));
+                        std::to_underlying(settings.magFilter));
 
     if (settings.generateMipmaps)
         glGenerateTextureMipmap(m_Handle.get());

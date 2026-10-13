@@ -38,7 +38,7 @@ bool VertexArray::isBound() const
 {
     GLint current{};
 
-    glGetIntegerv(util::to_underlying(vertex_query::BINDING), &current);
+    glGetIntegerv(std::to_underlying(vertex_query::BINDING), &current);
 
     return current != 0 && static_cast<GLuint>(current) == m_Handle.get();
 }
@@ -47,7 +47,7 @@ void VertexArray::setAttributes(std::span<const backend::VertexArrayAttributes> 
     for (const auto& attribute : attributes)
     {
         glVertexArrayAttribFormat(m_Handle.get(), attribute.index, attribute.size,
-                                  util::to_underlying(attribute.type), attribute.normalized,
+                                  std::to_underlying(attribute.type), attribute.normalized,
                                   attribute.offset);
 
         glVertexArrayAttribBinding(m_Handle.get(), attribute.index, attribute.binding);

@@ -1,7 +1,6 @@
 # Shared: base layer. Links nothing.
 add_library(Shared STATIC
         GlobalTypes.hpp
-        Util.hpp
         vendor/glad/gl.h
         vendor/glad/gl.c
         vendor/KHR/khrplatform.h
