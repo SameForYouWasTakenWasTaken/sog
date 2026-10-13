@@ -1,6 +1,6 @@
 #pragma once
+#include "OpenGL/Objects/VertexArrayAttributes.hpp"
 #include "Types/Math.hpp"
-#include "backend/VertexArrayAttributes.hpp"
 
 namespace sog::gfx
 {

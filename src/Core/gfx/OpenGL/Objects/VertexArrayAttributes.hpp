@@ -1,5 +1,5 @@
 #pragma once
-#include "../Types/GFXTypes.hpp"
+#include "../../Types/GFXTypes.hpp"
 
 namespace sog::gfx::backend
 {

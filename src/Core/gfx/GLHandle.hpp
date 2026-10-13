@@ -12,6 +12,7 @@ template <typename Tag> class GLHandle
 {
   public:
     using value_type = gl_handle;
+    using tag_type = Tag;
 
     GLHandle() = default;
     virtual ~GLHandle() = default;

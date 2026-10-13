@@ -1,5 +1,7 @@
 #pragma once
 #include "../GLHandle.hpp"
+#include "gfx/Indices.hpp"
+#include "gfx/Vertex.hpp"
 
 namespace sog::gfx
 {
@@ -30,8 +32,12 @@ struct RenderBufferTag
 };
 
 using VertexArrayHandle = GLHandle<VertexArrayTag>;
-using VertexBufferHandle = GLHandle<VertexBufferTag>;
-using ElementBufferHandle = GLHandle<ElementBufferTag>;
+using VertexBufferHandle = GLHandle<Vertex>;
+using ElementBufferHandle = GLHandle<Index>;
+
+template <typename T> using UniformBufferHandle = GLHandle<T>;
+template <typename T> using StorageBufferHandle = GLHandle<T>;
+
 using ShaderHandle = GLHandle<ShaderTag>;
 using TextureHandle = GLHandle<TextureTag>;
 using FrameBufferHandle = GLHandle<FrameBufferTag>;

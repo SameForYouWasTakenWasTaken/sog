@@ -1,6 +1,9 @@
 #pragma once
+#include <unordered_map>
+
 #include "../../Types/GFXTypes.hpp"
 #include "Shader.hpp"
+#include "gfx/OpenGL/Uniform.hpp"
 #include "glad/gl.h"
 
 namespace sog::gfx::backend
@@ -36,8 +39,13 @@ class ShaderProgram
     void use() const { glUseProgram(m_Handle); }
     [[nodiscard]] gl_handle get() const { return m_Handle; }
 
+    std::optional<Uniform> getLocation(const std::string& name);
+
   private:
     gl_handle m_Handle{0};
+
+    using uniformName = std::string;
+    std::unordered_map<uniformName, Uniform> m_CachedUniforms;
 };
 template <shader_type A, shader_type B>
 void ShaderProgram::Initialize(const Shader<A>& shaderA, const Shader<B>& shaderB)

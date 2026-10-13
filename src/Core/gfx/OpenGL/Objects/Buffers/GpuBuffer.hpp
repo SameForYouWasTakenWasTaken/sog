@@ -3,7 +3,7 @@
 #include <span>
 #include <type_traits>
 
-#include "gfx/backend/GLBuffer.hpp"
+#include "GLBuffer.hpp"
 
 namespace sog::gfx
 {
@@ -73,7 +73,7 @@ template <typename T, GLenum Target, BindingMode BindMode> class GpuBuffer
         capacity_ = newCap;
     }
 
-    backend::GLBuffer buf_;
+    backend::GLBuffer<T> buf_;
     size_t count_ = 0, capacity_ = 0;
 };
 } // namespace sog::gfx

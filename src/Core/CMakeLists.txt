@@ -3,13 +3,14 @@ add_library(Core STATIC
         Engine.cpp
         gfx/OpenGL/Objects/VertexArray.cpp
         gfx/Window/Window.cpp
-        gfx/OpenGL/Uniforms.cpp
+        Utility/Uniforms.cpp
         gfx/OpenGL/Objects/Texture2D.cpp
         gfx/Camera.cpp
         Input.cpp
         Utility/Time.cpp
         gfx/OpenGL/Objects/FrameBuffer.cpp
         gfx/OpenGL/RenderBuffer.cpp
+        gfx/OpenGL/Objects/ShaderProgram.cpp
 )
 
 target_include_directories(Core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

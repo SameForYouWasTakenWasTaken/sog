@@ -1,10 +1,10 @@
 #include "Application.hpp"
 
 #include "../../cmake-build-debug/_deps/glfw-src/include/GLFW/glfw3.h"
+#include "../Core/Utility/Uniforms.hpp"
 #include "../Core/gfx/OpenGL/Objects/Shader.hpp"
 #include "../Core/gfx/OpenGL/Objects/ShaderProgram.hpp"
 #include "../Core/gfx/OpenGL/Objects/VertexArray.hpp"
-#include "../Core/gfx/OpenGL/Uniforms.hpp"
 #include "Input.hpp"
 #include "Utility/Time.hpp"
 #include "gfx/Camera.hpp"
@@ -137,10 +137,10 @@ int Application::Run()
     gfx::ShaderProgram frameBufShaderProgram;
     frameBufShaderProgram.Initialize(frameBufVertShader, frameBufFragShader);
 
-    auto locFramebufTexture = gfx::uniform::getLocation(frameBufShaderProgram, "screenTexture");
-    auto locFramebufTime = gfx::uniform::getLocation(frameBufShaderProgram, "time");
-    auto locFramebufIntensity = gfx::uniform::getLocation(frameBufShaderProgram, "intensity");
-    gfx::uniform::setInt(frameBufShaderProgram, locFramebufTexture, 0);
+    auto locFramebufTexture = frameBufShaderProgram.getLocation("screenTexture");
+    auto locFramebufTime = frameBufShaderProgram.getLocation("time");
+    auto locFramebufIntensity = frameBufShaderProgram.getLocation("intensity");
+    gfx::uniform::setInt(frameBufShaderProgram, locFramebufTexture.value_or(gfx::Uniform{}), 0);
 
     assert(frameBuffer.isComplete());
     while (!window.shouldClose())
@@ -184,8 +184,16 @@ int Application::Run()
 
         // framebuffer
         gfx::uniform::runSafe(
-            [&] { gfx::uniform::setFloat(frameBufShaderProgram, locFramebufTime, currentFrame); },
-            [&] { gfx::uniform::setFloat(frameBufShaderProgram, locFramebufIntensity, 0.2f); });
+            [&]
+            {
+                gfx::uniform::setFloat(frameBufShaderProgram,
+                                       locFramebufTime.value_or(gfx::Uniform{}), currentFrame);
+            },
+            [&]
+            {
+                gfx::uniform::setFloat(frameBufShaderProgram,
+                                       locFramebufIntensity.value_or(gfx::Uniform{}), 0.2f);
+            });
         // apply post processing
         gfx::FrameBuffer::unbind();
         window.beginFrame(gfx::ClearBuffer::Color | gfx::ClearBuffer::Depth,

@@ -5,8 +5,8 @@
 #include "../../Types/GFXTypes.hpp"
 #include "../../Types/Handles.hpp"
 #include "../../Vertex.hpp"
-#include "../../backend/VertexArrayAttributes.hpp"
 #include "Buffers/Buffers.hpp"
+#include "VertexArrayAttributes.hpp"
 #include "glad/gl.h"
 
 namespace sog::gfx

@@ -15,11 +15,11 @@ struct Color
                                     std::uint8_t a) noexcept
     {
         constexpr float inv255 = 1.0f / 255.0f;
-        return {r * inv255, g * inv255, b * inv255, a * inv255};
+        return {static_cast<float>(r) * inv255, static_cast<float>(g) * inv255,
+                static_cast<float>(b) * inv255, static_cast<float>(a) * inv255};
     }
 
-    static constexpr Color toRGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b,
-                                  std::uint8_t a) noexcept
+    static constexpr Color toRGBA(float r, float g, float b, float a) noexcept
     {
         constexpr float max = 255.0f;
         return {std::round(r * max),
