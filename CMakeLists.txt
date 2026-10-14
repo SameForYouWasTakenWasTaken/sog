@@ -35,7 +35,5 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # ---------------------------------------------------------------------------
 include("${CMAKE_CURRENT_SOURCE_DIR}/dependencies.cmake")
 
-# ---------------------------------------------------------------------------
-# Application modules: Shared -> Core -> App
-# ---------------------------------------------------------------------------
 add_subdirectory(src)
+add_subdirectory(src/Examples)
