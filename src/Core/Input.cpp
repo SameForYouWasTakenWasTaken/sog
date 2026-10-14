@@ -1,3 +1,8 @@
+/**
+ * @file Input.cpp
+ * @brief Implements the sog::input API: GLFW-backed live queries, per-frame edge detection via a module-local state snapshot, cursor tracking and the camera controller.
+ */
+
 #include "Input.hpp"
 
 #include <GLFW/glfw3.h>
@@ -10,18 +15,36 @@ namespace sog::input
 {
 namespace
 {
+/**
+ * @brief Fetches the raw GLFWwindow* from an engine Window.
+ * @param w Engine window whose native handle is wanted.
+ * @return Underlying GLFWwindow pointer.
+ */
 GLFWwindow* native(const gfx::Window& w) { return static_cast<GLFWwindow*>(w.getNativeHandle()); }
 
+/**
+ * @brief Module-local snapshot of keyboard/mouse/cursor state for edge detection.
+ *
+ * Holds the current and previous frame's key and button states (so Pressed/
+ * Released can be computed by diffing), plus the last cursor position and the
+ * per-frame movement delta.
+ */
 struct State
 {
-    std::array<bool, GLFW_KEY_LAST + 1> keys{}, prevKeys{};
-    std::array<bool, GLFW_MOUSE_BUTTON_LAST + 1> buttons{}, prevButtons{};
-    glm::vec2 cursor{}, delta{};
-    bool hasCursor{false};
+    std::array<bool, GLFW_KEY_LAST + 1> keys{}, prevKeys{};       /**< Current then previous frame's key-down states. */
+    std::array<bool, GLFW_MOUSE_BUTTON_LAST + 1> buttons{}, prevButtons{}; /**< Current then previous frame's button-down states. */
+    glm::vec2 cursor{}, delta{}; /**< Last cursor position and movement since the prior update(). */
+    bool hasCursor{false};       /**< Whether a prior cursor position exists (gates the first delta). */
 };
 
-State g_State;
+State g_State; /**< Global input state shared by all queries in this translation unit. */
 
+/**
+ * @brief Bounds-checks a key/button code against a state array size.
+ * @param v Code to test.
+ * @param size Number of elements in the corresponding state array.
+ * @return true if v is within [0, size).
+ */
 bool inRange(int v, std::size_t size) { return v >= 0 && static_cast<std::size_t>(v) < size; }
 } // namespace
 

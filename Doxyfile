@@ -1,0 +1,94 @@
+# Doxyfile for the sog OpenGL engine
+# Tuned for the project layout: documents src/, skips the vendored headers.
+#
+# Generate HTML with:   doxygen Doxyfile
+# (Output lands in the OUTPUT_DIRECTORY below.)
+
+#---------------------------------------------------------------------------
+# Project identity
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "sog OpenGL Engine"
+PROJECT_NUMBER         =
+PROJECT_BRIEF          = "A C++20 OpenGL engine (windowing, rendering, GL object wrappers)"
+PROJECT_LOGO           =
+
+#---------------------------------------------------------------------------
+# Input / output
+#---------------------------------------------------------------------------
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+
+# Only the first-party sources. src/Shared/vendor (glad, KHR) is excluded so we
+# never generate docs for third-party code.
+INPUT                  = src
+INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.hpp \
+                         *.cpp \
+                         *.h
+RECURSIVE              = YES
+EXCLUDE                = src/Shared/vendor
+EXCLUDE_PATTERNS       =
+EXCLUDE_SYMBOLS        =
+
+# Where generated docs go (relative to OUTPUT_DIRECTORY).
+HTML_OUTPUT            = html
+GENERATE_HTML          = YES
+HTML_DYNAMIC_SECTIONS  = YES
+GENERATE_TREEVIEW      = YES
+
+GENERATE_LATEX         = NO
+GENERATE_XML           = NO
+XML_OUTPUT             = xml
+
+#---------------------------------------------------------------------------
+# Extraction behaviour
+#---------------------------------------------------------------------------
+# Everything is hand-documented, so only documented entities are needed; but we
+# still flag undocumented ones via warnings to catch gaps.
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Warn about anything undocumented so missing docs are easy to spot.
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_LOGFILE           = docs/doxygen-warnings.log
+
+#---------------------------------------------------------------------------
+# Formatting / presentation
+#---------------------------------------------------------------------------
+# First sentence of a Javadoc-style block becomes @brief automatically.
+JAVADOC_AUTOBRIEF      = YES
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+BUILTIN_STL_SUPPORT    = YES
+
+# C++20: let Doxygen understand requires-clauses, concepts, etc.
+OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_OUTPUT_FOR_C++ = YES
+CPP_CLI_SUPPORT        = NO
+SIP_SUPPORT            = NO
+
+# Source browsing makes the generated docs much more useful for navigation.
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+SOURCE_TOOLTIPS        = YES
+
+#---------------------------------------------------------------------------
+# Preprocessing
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+SEARCH_INCLUDES        = YES
+SKIP_FUNCTION_MACROS   = YES
+
+#---------------------------------------------------------------------------
+# Dot / graphs (optional; requires Graphviz `dot` on PATH to actually render)
+#---------------------------------------------------------------------------
+HAVE_DOT               = NO
+CLASS_DIAGRAMS         = YES

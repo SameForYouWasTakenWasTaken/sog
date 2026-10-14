@@ -1,3 +1,8 @@
+/**
+ * @file RenderBuffer.cpp
+ * @brief Implements RenderBuffer: renderbuffer creation, DSA storage allocation and release.
+ */
+
 #include "RenderBuffer.hpp"
 
 namespace sog::gfx

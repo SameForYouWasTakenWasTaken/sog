@@ -1,3 +1,8 @@
+/**
+ * @file Camera.cpp
+ * @brief Implements Camera: the frame-quaternion construction from world-up, basis-vector derivation, pose/projection mutators and the cached view/projection matrices.
+ */
+
 #include "Camera.hpp"
 
 #include <algorithm>
@@ -8,6 +13,12 @@ namespace sog::gfx
 namespace
 {
 // Rotation that maps +Y onto 'up'
+/**
+ * @brief Builds the frame quaternion rotating +Y onto the given up vector.
+ * @param up Target up direction (assumed normalized and non-zero).
+ * @return Quaternion: identity when up is already +Y, a 180-degree flip about X
+ * when up is -Y, otherwise a minimal rotation about the perpendicular axis.
+ */
 glm::quat frameFromUp(const math::Vec3& up)
 {
     const math::Vec3 y{0.f, 1.f, 0.f};

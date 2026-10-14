@@ -1,3 +1,8 @@
+/**
+ * @file FrameBuffer.cpp
+ * @brief Implements FrameBuffer: FBO creation, DSA-based texture/renderbuffer attachment, completeness check and release.
+ */
+
 #include "FrameBuffer.hpp"
 
 #include "Error/Exceptions/graphics_error.hpp"

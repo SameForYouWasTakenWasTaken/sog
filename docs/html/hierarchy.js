@@ -1,0 +1,45 @@
+var hierarchy =
+[
+    [ "sog::gfx::Event::[struct].__unnamed0__.size", "structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html", null ],
+    [ "sog::gfx::Event::[union].__unnamed0__", "unionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0____.html", null ],
+    [ "sog::Application", "classsog_1_1_application.html", null ],
+    [ "sog::gfx::Camera::Basis", "structsog_1_1gfx_1_1_camera_1_1_basis.html", null ],
+    [ "sog::gfx::BufferTag", "structsog_1_1gfx_1_1_buffer_tag.html", null ],
+    [ "sog::gfx::Camera", "classsog_1_1gfx_1_1_camera.html", null ],
+    [ "sog::gfx::Color", "structsog_1_1gfx_1_1_color.html", null ],
+    [ "sog::gfx::ElementBufferTag", "structsog_1_1gfx_1_1_element_buffer_tag.html", null ],
+    [ "sog::engine::Engine", "classsog_1_1engine_1_1_engine.html", null ],
+    [ "sog::gfx::Event", "structsog_1_1gfx_1_1_event.html", null ],
+    [ "std::exception", null, [
+      [ "sog::exception", "classsog_1_1exception.html", [
+        [ "sog::graphics_error", "classsog_1_1graphics__error.html", null ],
+        [ "sog::runtime_error", "classsog_1_1runtime__error.html", null ]
+      ] ]
+    ] ],
+    [ "sog::gfx::FrameBuffer", "classsog_1_1gfx_1_1_frame_buffer.html", null ],
+    [ "sog::gfx::FrameBufferTag", "structsog_1_1gfx_1_1_frame_buffer_tag.html", null ],
+    [ "sog::gfx::backend::GLBuffer&lt; T &gt;", "classsog_1_1gfx_1_1backend_1_1_g_l_buffer.html", null ],
+    [ "sog::gfx::GLHandle&lt; Tag &gt;", "classsog_1_1gfx_1_1_g_l_handle.html", null ],
+    [ "sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;", "classsog_1_1gfx_1_1_gpu_buffer.html", null ],
+    [ "sog::gfx::Window::ImplWindow", "structsog_1_1gfx_1_1_window_1_1_impl_window.html", null ],
+    [ "sog::gfx::RenderBuffer", "classsog_1_1gfx_1_1_render_buffer.html", null ],
+    [ "sog::gfx::RenderBufferTag", "structsog_1_1gfx_1_1_render_buffer_tag.html", null ],
+    [ "sog::gfx::RenderSettings", "structsog_1_1gfx_1_1_render_settings.html", null ],
+    [ "sog::gfx::RenderState", "structsog_1_1gfx_1_1_render_state.html", null ],
+    [ "sog::gfx::Shader&lt; shader_type &gt;", "classsog_1_1gfx_1_1_shader.html", null ],
+    [ "sog::gfx::ShaderProgram", "classsog_1_1gfx_1_1_shader_program.html", null ],
+    [ "sog::gfx::ShaderTag", "structsog_1_1gfx_1_1_shader_tag.html", null ],
+    [ "sog::gfx::Texture2D", "classsog_1_1gfx_1_1_texture2_d.html", null ],
+    [ "sog::gfx::TextureSettings", "structsog_1_1gfx_1_1_texture_settings.html", null ],
+    [ "sog::gfx::TextureTag", "structsog_1_1gfx_1_1_texture_tag.html", null ],
+    [ "sog::Time", "structsog_1_1_time.html", null ],
+    [ "sog::gfx::Uniform", "structsog_1_1gfx_1_1_uniform.html", null ],
+    [ "sog::gfx::Vertex", "structsog_1_1gfx_1_1_vertex.html", null ],
+    [ "sog::gfx::VertexArray", "classsog_1_1gfx_1_1_vertex_array.html", null ],
+    [ "sog::gfx::backend::VertexArrayAttributes", "structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html", null ],
+    [ "sog::gfx::VertexArrayTag", "structsog_1_1gfx_1_1_vertex_array_tag.html", null ],
+    [ "sog::gfx::VertexBufferTag", "structsog_1_1gfx_1_1_vertex_buffer_tag.html", null ],
+    [ "sog::application::Viewport", "structsog_1_1application_1_1_viewport.html", null ],
+    [ "sog::gfx::Window", "classsog_1_1gfx_1_1_window.html", null ],
+    [ "sog::context::WindowContext", "structsog_1_1context_1_1_window_context.html", null ]
+];

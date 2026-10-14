@@ -1,3 +1,8 @@
+/**
+ * @file VertexArray.cpp
+ * @brief Implements VertexArray: VAO creation, DSA-based buffer/attribute setup, bind state queries and release.
+ */
+
 #include "VertexArray.hpp"
 
 #include "../../../Error/Exceptions/graphics_error.hpp"

@@ -1,3 +1,8 @@
+/**
+ * @file Texture2D.cpp
+ * @brief Implements Texture2D: GL texture creation, stb_image file loading, raw upload with immutable storage and sampler settings, and release.
+ */
+
 #include "Texture2D.hpp"
 
 #include <algorithm>
@@ -39,12 +44,7 @@ void Texture2D::createFromFile(const std::filesystem::path& path, const TextureS
                              "Failed to load texture: " + pathString);
     }
 
-    const GLsizei levels =
-        settings.generateMipmaps
-            ? static_cast<GLsizei>(std::floor(std::log2(std::max(width, height))) + 1)
-            : 1;
-
-    createFromRaw(data, height, width, GL_RGBA8, GL_RGBA, GL_UNSIGNED_BYTE, settings);
+    createFromRaw(data, width, height, GL_RGBA8, GL_RGBA, GL_UNSIGNED_BYTE, settings);
 
     stbi_image_free(data);
 }

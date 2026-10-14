@@ -1,3 +1,8 @@
+/**
+ * @file ShaderProgram.cpp
+ * @brief Implements ShaderProgram::getLocation, the per-program cached lookup of uniform locations by name.
+ */
+
 #include "ShaderProgram.hpp"
 
 #include "../../../Utility/Uniforms.hpp"
@@ -19,6 +24,8 @@ std::optional<Uniform> ShaderProgram::getLocation(const std::string& name)
         return loc;
     }
 
+    // Not found: return nullopt and do NOT cache the miss, so a later-linked
+    // program state could still resolve it.
     return std::nullopt;
 }
 } // namespace sog::gfx

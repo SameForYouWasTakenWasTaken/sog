@@ -1,3 +1,8 @@
+/**
+ * @file Window.cpp
+ * @brief Implementation of gfx::Window: GLFW window/context creation, the frame lifecycle, the engine event queue and the static draw helper.
+ */
+
 #include "Window.hpp"
 
 #include <GLFW/glfw3.h>
@@ -11,6 +16,12 @@
 
 namespace sog::gfx::backend
 {
+/**
+ * @brief Translates an engine OpenGL profile into the corresponding GLFW constant.
+ * @param profile Engine profile (CORE or COMPATIBILITY).
+ * @return GLFW_OPENGL_CORE_PROFILE or GLFW_OPENGL_COMPAT_PROFILE.
+ * @throws std::invalid_argument If the profile has no GLFW mapping.
+ */
 int toGLFWProfile(context::WindowContext::OpenGLProfile profile)
 {
     switch (profile)
@@ -29,10 +40,24 @@ int toGLFWProfile(context::WindowContext::OpenGLProfile profile)
 namespace sog::gfx
 {
 
+/**
+ * @brief Private pimpl holding the native GLFWwindow and its resize callback.
+ *
+ * The resize callback (on_resize) is registered via
+ * glfwSetFramebufferSizeCallback; it recovers the owning Window from the GLFW
+ * user pointer, updates the stored dimensions, resizes the GL viewport and
+ * enqueues an EventType::Resized event (ignored while minimized, i.e. size 0).
+ */
 struct Window::ImplWindow
 {
-    GLFWwindow* glfwHandle = nullptr;
+    GLFWwindow* glfwHandle = nullptr; /**< Native GLFW window; null until initialize() succeeds. */
 
+    /**
+     * @brief GLFW framebuffer-size callback: updates size, viewport and queues a Resized event.
+     * @param window GLFWwindow whose size changed.
+     * @param width New framebuffer width in pixels.
+     * @param height New framebuffer height in pixels.
+     */
     static void on_resize(GLFWwindow* window, int width, int height)
     {
         auto* self = static_cast<Window*>(glfwGetWindowUserPointer(window));

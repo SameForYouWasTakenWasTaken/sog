@@ -1,4 +1,8 @@
-#pragma once
+/**
+ * @file Time.cpp
+ * @brief Implements sog::Time::getTime(), forwarding to GLFW's clock.
+ *
+ */
 #include "Time.hpp"
 
 #include "GLFW/glfw3.h"

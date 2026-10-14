@@ -1,6 +1,11 @@
+/**
+ * @file Application.cpp
+ * @brief Implements sog::Application::Run(), the demo main loop: builds a textured cube, renders it
+ * into an offscreen framebuffer, then applies a post-processing pass.
+ */
+
 #include "Application.hpp"
 
-#include "../../cmake-build-debug/_deps/glfw-src/include/GLFW/glfw3.h"
 #include "../Core/Utility/Uniforms.hpp"
 #include "../Core/gfx/OpenGL/Objects/Shader.hpp"
 #include "../Core/gfx/OpenGL/Objects/ShaderProgram.hpp"
@@ -16,7 +21,9 @@
 namespace sog
 {
 
+/// Default-constructs the Application; no setup is performed here.
 Application::Application() = default;
+
 int Application::Run()
 {
     gfx::Window window;

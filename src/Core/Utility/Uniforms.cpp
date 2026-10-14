@@ -1,9 +1,19 @@
+/**
+ * @file Uniforms.cpp
+ * @brief Implements the sog::gfx::uniform helpers: uniform lookup plus typed uploads via GL's direct-state-access glProgramUniform* entry points.
+ */
+
 #include "Uniforms.hpp"
 
 #include "glad/gl.h"
 
 namespace sog::gfx::uniform::backend
 {
+/**
+ * @brief Throws if the given uniform location is invalid (-1).
+ * @param uniform Location to validate.
+ * @throws sog::graphics_error With graphics_error_code::uniform_location_invalid when !valid().
+ */
 void sanityCheck(Uniform uniform)
 {
     if (!uniform.valid())
