@@ -85,7 +85,11 @@ Window::~Window()
     if (m_Window->glfwHandle)
         glfwDestroyWindow(m_Window->glfwHandle);
 }
-Window::Window(const context::WindowContext& context) { initialize(context); }
+Window::Window(const context::WindowContext& context)
+    : m_Window(std::make_unique<ImplWindow>(nullptr))
+{
+    initialize(context);
+}
 bool Window::shouldClose() const { return glfwWindowShouldClose(m_Window->glfwHandle); }
 void Window::swapBuffers() const { glfwSwapBuffers(m_Window->glfwHandle); }
 void Window::beginFrame(ClearBuffer buffers, Color clearColor) { clear(buffers, clearColor); }
@@ -156,6 +160,11 @@ void Window::initialize(const context::WindowContext& context)
 
     if (!gladLoadGL(glfwGetProcAddress))
     {
+        // Constructor is about to throw: clean up the already-created window so it is not leaked
+        // (~Window never runs for a failed construction).
+        glfwDestroyWindow(m_Window->glfwHandle);
+        m_Window->glfwHandle = nullptr;
+        glfwTerminate();
         throw graphics_error(graphics_error_code::window_creation_failed,
                              "Failed to create window! (glad did not initialize properly)");
     }

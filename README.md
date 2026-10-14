@@ -28,11 +28,11 @@ opengl/
 
 ## Targets
 
-| Target    | Kind                  | Links                        |
-|-----------|-----------------------|------------------------------|
-| SOG       | static (the library)  | glm::glm (public), glfw, stb |
-| Examples  | static (demo objects) | SOG                          |
-| Main      | executable (demo)     | Examples (+ copies assets/)  |
+| Target    | Kind                  | Links                              |
+|-----------|-----------------------|------------------------------------|
+| SOG       | static (the library)  | glm::glm, glfw (public), stb       |
+| Examples  | static (demo objects) | SOG                                |
+| Main      | executable (demo)     | Examples (+ copies assets/)        |
 
 The public include root is `src/sog/include`, so consumers write `#include <sog/sog.hpp>`
 and link against `SOG`.

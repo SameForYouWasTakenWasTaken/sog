@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['orthographic_0',['Orthographic',['../classsog_1_1gfx_1_1_camera.html#ac87386c018fa1ac9a1f1aca156e8f5f2a03424250432f2aa71de95579d2c0eaeb',1,'sog::gfx::Camera']]]
+  ['k_0',['K',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80aa5f3c6a11b03839d46af9fb43c97c188',1,'sog::input']]],
+  ['kp_5f0_1',['KP_0',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80affb2ce8868d49c78376bf7e76c88fd52',1,'sog::input']]],
+  ['kp_5f1_2',['KP_1',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80afdcbdc22f7e22388bf5905c290bcfe4b',1,'sog::input']]],
+  ['kp_5f2_3',['KP_2',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a2d0bfa737eccfce7842cd2230eed6712',1,'sog::input']]],
+  ['kp_5f3_4',['KP_3',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a766b4a88cba7645629bac70fd01d8275',1,'sog::input']]],
+  ['kp_5f4_5',['KP_4',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a9c56f942b051ba23447e108e16a8b23b',1,'sog::input']]],
+  ['kp_5f5_6',['KP_5',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80adc271d081ca9fcbefdc42998313398d8',1,'sog::input']]],
+  ['kp_5f6_7',['KP_6',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a2091809ab6bdbc0a1975bf61d6099748',1,'sog::input']]],
+  ['kp_5f7_8',['KP_7',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a71f42e8faf0fb7cb14174c8481461c00',1,'sog::input']]],
+  ['kp_5f8_9',['KP_8',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a62e75b78c155e8549c5c5edb434a7757',1,'sog::input']]],
+  ['kp_5f9_10',['KP_9',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a3d548437292c0cd1662fc30d420f2c27',1,'sog::input']]],
+  ['kp_5fadd_11',['KP_ADD',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a30808a0391df7790292aa5c13f6195e4',1,'sog::input']]],
+  ['kp_5fdecimal_12',['KP_DECIMAL',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a1a9c94725005bc4759507db8acc8da33',1,'sog::input']]],
+  ['kp_5fdivide_13',['KP_DIVIDE',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a7c333963ed187368820c5343b355e5bc',1,'sog::input']]],
+  ['kp_5fenter_14',['KP_ENTER',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80adea24610606fb34c587a8fe8ed8f8389',1,'sog::input']]],
+  ['kp_5fequal_15',['KP_EQUAL',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a2cfe3b4f9911c5899d79f171d6b9cc4a',1,'sog::input']]],
+  ['kp_5fmultiply_16',['KP_MULTIPLY',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a2140df7839a3713724b35168defcc975',1,'sog::input']]],
+  ['kp_5fsubtract_17',['KP_SUBTRACT',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a17de1e647789892e1fb512bf04db4866',1,'sog::input']]]
 ];

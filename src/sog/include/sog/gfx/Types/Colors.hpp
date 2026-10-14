@@ -5,8 +5,11 @@
  */
 
 #pragma once
+#include <array>
 #include <cmath>
 #include <cstdint>
+
+#include "../../Utility/Math.hpp"
 
 namespace sog::gfx
 {
@@ -15,10 +18,7 @@ namespace sog::gfx
  *
  * Matches the component range expected by OpenGL (e.g. glClearColor, glClear),
  * so a Color can be handed straight to the API. Use fromRGBA() to build a color
- * from conventional 8-bit values.
- *
- * @attention The members are assumed to be normalized floats in [0, 1]. See
- * toRGBA() for the (unexpected) behaviour of that helper before using it.
+ * from conventional 8-bit values, and toRGBA() to get 8-bit channels back out.
  */
 struct Color
 {
@@ -57,30 +57,26 @@ struct Color
     }
 
     /**
-     * @brief Scales 8-bit channels into whole-number 0-255 float values.
-     * @param r Red channel, 0-255.
-     * @param g Green channel, 0-255.
-     * @param b Blue channel, 0-255.
-     * @param a Alpha channel, 0-255.
-     * @return Color whose members hold the rounded, scaled channel values as floats.
+     * @brief Converts this color's normalized channels into conventional 8-bit values
+     * (the inverse of fromRGBA()).
+     * @return Array of four bytes {r, g, b, a}, each channel scaled by 255 and rounded to the
+     * nearest integer. Values outside [0, 1] are clamped first.
      *
-     * @attention Despite the name, this does not produce normalized 8-bit values
-     * usable with OpenGL: the parameters are 0-255 inputs, and the current
-     * implementation multiplies them by 255 again (0-255 becomes 0-65025). Treat
-     * this helper as unusable until it is fixed; use fromRGBA() to build a
-     * normalized [0, 1] Color instead.
+     * @code
+     * auto red = Color{1.0f, 0.0f, 0.0f, 1.0f}.toRGBA(); // red == 255, alpha == 255
+     * @endcode
      */
-    static constexpr Color toRGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b,
-                                  std::uint8_t a) noexcept
+    [[nodiscard]] constexpr std::array<std::uint8_t, 4> toRGBA() const noexcept
     {
-        constexpr float max = 255.0f;
-        return {std::round(r * max),
-
-                std::round(g * max),
-
-                std::round(b * max),
-
-                std::round(a * max)};
+        const auto toByte = [](float channel) -> std::uint8_t
+        {
+            if (channel <= 0.f)
+                return 0;
+            if (channel >= 1.f)
+                return static_cast<std::uint8_t>(MAX_VALUE);
+            return static_cast<std::uint8_t>(std::round(channel * MAX_VALUE));
+        };
+        return {toByte(r), toByte(g), toByte(b), toByte(a)};
     }
 };
 } // namespace sog::gfx

@@ -9,11 +9,6 @@
 #include <sog/gfx/OpenGL/Objects/TextureSettings.hpp>
 #include <sog/gfx/Types/Handles.hpp>
 
-// NOTE: STB_IMAGE_IMPLEMENTATION is defined here so the stb_image implementation
-// is compiled exactly once, in the translation unit that includes this header's
-// counterpart Texture2D.cpp. See stb_image.h's documentation for the pattern.
-#define STB_IMAGE_IMPLEMENTATION
-
 namespace sog::gfx
 {
 /**
@@ -29,12 +24,12 @@ namespace sog::gfx
  * (e.g. a render target), and bind() binds the texture to a sampler unit using
  * glBindTextureUnit (DSA).
  *
+ * The class is move-only: destruction (or release()) deletes the GL texture,
+ * and moving transfers ownership.
+ *
  * @attention Mipmap generation only happens when both generateMipmaps is set AND
  * pixel data was supplied; allocating storage alone (data == nullptr) leaves the
  * chain ungenerated and sampling may look wrong if a mip filter is selected.
- *
- * @attention The GL texture object is currently never deleted: Texture2D has no
- * destructor, so textures live until the GL context is destroyed.
  *
  * @see sog::TextureSettings
  */
@@ -43,6 +38,33 @@ class Texture2D
   public:
     /// Constructs an empty Texture2D with no GL object allocated.
     Texture2D() { create(); }
+
+    /// Destroys the owned GL texture (if any).
+    ~Texture2D() { release(); }
+
+    Texture2D(const Texture2D&) = delete;            /**< Copy construction is deleted. */
+    Texture2D& operator=(const Texture2D&) = delete; /**< Copy assignment is deleted. */
+
+    /**
+     * @brief Move-constructs from another Texture2D, taking over its GL texture.
+     * @param o Texture2D to move from; left without a GL texture.
+     */
+    Texture2D(Texture2D&& o) noexcept : m_Handle(std::move(o.m_Handle)) {}
+
+    /**
+     * @brief Move-assigns, releasing the current GL texture and taking the source's.
+     * @param o Texture2D to move from.
+     * @return Reference to this Texture2D.
+     */
+    Texture2D& operator=(Texture2D&& o) noexcept
+    {
+        if (this != &o)
+        {
+            release();
+            m_Handle = std::move(o.m_Handle);
+        }
+        return *this;
+    }
 
     /**
      * @brief Constructs a texture and loads it from an image file immediately.
@@ -138,6 +160,11 @@ class Texture2D
                          pixel_type::UnsignedByte,
                          {}};
     }
+
+    /**
+     * @brief Deletes the owned GL texture (if any) and resets the handle.
+     */
+    void release();
 
   private:
     TextureHandle m_Handle; /**< Typed handle to the owned GL texture. */

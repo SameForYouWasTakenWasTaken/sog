@@ -123,6 +123,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsog_1_1gf
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afb96960a74d81cb0bb7fd1432a199220" id="r_afb96960a74d81cb0bb7fd1432a199220"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> ()</td></tr>
 <tr class="memdesc:afb96960a74d81cb0bb7fd1432a199220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> with no GL object allocated.  <br /></td></tr>
+<tr class="memitem:a94bdb3e5fa5ff08836dbc8a3574b7d4e" id="r_a94bdb3e5fa5ff08836dbc8a3574b7d4e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a94bdb3e5fa5ff08836dbc8a3574b7d4e">~Texture2D</a> ()</td></tr>
+<tr class="memdesc:a94bdb3e5fa5ff08836dbc8a3574b7d4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the owned GL texture (if any).  <br /></td></tr>
+<tr class="memitem:aede54571376a242f597ec2261a8f7290" id="r_aede54571376a242f597ec2261a8f7290"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aede54571376a242f597ec2261a8f7290">Texture2D</a> (const Texture2D &amp;)=delete</td></tr>
+<tr class="memdesc:aede54571376a242f597ec2261a8f7290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy construction is deleted.  <br /></td></tr>
+<tr class="memitem:a342253a3042b75ab3f0cc862746867e7" id="r_a342253a3042b75ab3f0cc862746867e7"><td class="memItemLeft"><a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a342253a3042b75ab3f0cc862746867e7">operator=</a> (const <a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a342253a3042b75ab3f0cc862746867e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment is deleted.  <br /></td></tr>
+<tr class="memitem:a01925946dbd779adc735cd6ffe65bedb" id="r_a01925946dbd779adc735cd6ffe65bedb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a01925946dbd779adc735cd6ffe65bedb">Texture2D</a> (Texture2D &amp;&amp;o) noexcept</td></tr>
+<tr class="memdesc:a01925946dbd779adc735cd6ffe65bedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-constructs from another <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a>, taking over its GL texture.  <br /></td></tr>
+<tr class="memitem:a5c3fbaa7915461e92dc5e0fc619413c4" id="r_a5c3fbaa7915461e92dc5e0fc619413c4"><td class="memItemLeft"><a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5c3fbaa7915461e92dc5e0fc619413c4">operator=</a> (<a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp;&amp;o) noexcept</td></tr>
+<tr class="memdesc:a5c3fbaa7915461e92dc5e0fc619413c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-assigns, releasing the current GL texture and taking the source's.  <br /></td></tr>
 <tr class="memitem:a855bc1e657a00b7d5397458f4d35c57a" id="r_a855bc1e657a00b7d5397458f4d35c57a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a855bc1e657a00b7d5397458f4d35c57a">Texture2D</a> (const std::filesystem::path &amp;path, const <a class="el" href="structsog_1_1gfx_1_1_texture_settings.html">TextureSettings</a> &amp;settings)</td></tr>
 <tr class="memdesc:a855bc1e657a00b7d5397458f4d35c57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a texture and loads it from an image file immediately.  <br /></td></tr>
 <tr class="memitem:a9eccbd91106137263e6f1b7151341f51" id="r_a9eccbd91106137263e6f1b7151341f51"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9eccbd91106137263e6f1b7151341f51">Texture2D</a> (const void *data, int width, int height, texture_internal_format internalFormat, pixel_format format, pixel_type type, const <a class="el" href="structsog_1_1gfx_1_1_texture_settings.html">TextureSettings</a> &amp;settings)</td></tr>
@@ -137,6 +147,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a08bc021de6e6f5bb9dbdcb2d5ad7bc7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the texture from caller-supplied raw pixel data (or allocates storage only).  <br /></td></tr>
 <tr class="memitem:af910a95e73fa3d33cce4af284a61c4d9" id="r_af910a95e73fa3d33cce4af284a61c4d9"><td class="memItemLeft">const <a class="el" href="_handles_8hpp.html#a3d96bf276395a08d271889223a5bd86d">TextureHandle</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af910a95e73fa3d33cce4af284a61c4d9">getHandle</a> () const</td></tr>
 <tr class="memdesc:af910a95e73fa3d33cce4af284a61c4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the typed GL handle for this texture.  <br /></td></tr>
+<tr class="memitem:a5909c60a54780daf8dbf7a1682bd9401" id="r_a5909c60a54780daf8dbf7a1682bd9401"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5909c60a54780daf8dbf7a1682bd9401">release</a> ()</td></tr>
+<tr class="memdesc:a5909c60a54780daf8dbf7a1682bd9401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the owned GL texture (if any) and resets the handle.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -152,15 +164,14 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Owns a GL 2D texture and manages its creation, upload and binding. </p>
 <p><a class="el" href="#a478c4c3b6f572fe217ebd24e9cbc892f" title="Loads an image file and creates the texture from its contents.">createFromFile()</a> decodes an image with stb_image (flipping vertically to match GL's bottom-left origin), converting everything to RGBA8, then uploads it via <a class="el" href="#a08bc021de6e6f5bb9dbdcb2d5ad7bc7b" title="Creates the texture from caller-supplied raw pixel data (or allocates storage only).">createFromRaw()</a>. <a class="el" href="#a08bc021de6e6f5bb9dbdcb2d5ad7bc7b" title="Creates the texture from caller-supplied raw pixel data (or allocates storage only).">createFromRaw()</a> allocates immutable storage (DSA glTextureStorage2D), uploads the pixel data if provided, applies the wrap and filter settings from <a class="el" href="structsog_1_1gfx_1_1_texture_settings.html" title="Sampling configuration applied to a texture when its storage is created.">TextureSettings</a>, and generates mipmaps if requested.</p>
 <p><a class="el" href="#a2d45b7756b8f5c93f4f0a8f3884be399" title="Factory for an allocated-but-uninitialized RGBA8 texture of the given size.">empty()</a> is a convenience factory for an uninitialized texture of a given size (e.g. a render target), and <a class="el" href="#a459a6da2fb8ca821fc59b0ab94df3b0a" title="Binds this texture to a sampler unit (glBindTextureUnit).">bind()</a> binds the texture to a sampler unit using glBindTextureUnit (DSA).</p>
-<dl class="section attention"><dt>Attention</dt><dd>Mipmap generation only happens when both generateMipmaps is set AND pixel data was supplied; allocating storage alone (data == nullptr) leaves the chain ungenerated and sampling may look wrong if a mip filter is selected.</dd>
-<dd>
-The GL texture object is currently never deleted: <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> has no destructor, so textures live until the GL context is destroyed.</dd></dl>
+<p>The class is move-only: destruction (or <a class="el" href="#a5909c60a54780daf8dbf7a1682bd9401" title="Deletes the owned GL texture (if any) and resets the handle.">release()</a>) deletes the GL texture, and moving transfers ownership.</p>
+<dl class="section attention"><dt>Attention</dt><dd>Mipmap generation only happens when both generateMipmaps is set AND pixel data was supplied; allocating storage alone (data == nullptr) leaves the chain ungenerated and sampling may look wrong if a mip filter is selected.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd>sog::TextureSettings </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00041">41</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00036">36</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afb96960a74d81cb0bb7fd1432a199220" name="afb96960a74d81cb0bb7fd1432a199220"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb96960a74d81cb0bb7fd1432a199220">&#9670;&#160;</a></span>Texture2D() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb96960a74d81cb0bb7fd1432a199220">&#9670;&#160;</a></span>Texture2D() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,16 +195,113 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
 
 <p>Constructs an empty <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> with no GL object allocated. </p>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00045">45</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00040">40</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00019">create()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00023">create()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00131">empty()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00153">empty()</a>, <a class="el" href="#a342253a3042b75ab3f0cc862746867e7">operator=()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00059">operator=()</a>, <a class="el" href="#aede54571376a242f597ec2261a8f7290">Texture2D()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00052">Texture2D()</a>.</p>
+
+</div>
+</div>
+<a id="a94bdb3e5fa5ff08836dbc8a3574b7d4e" name="a94bdb3e5fa5ff08836dbc8a3574b7d4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94bdb3e5fa5ff08836dbc8a3574b7d4e">&#9670;&#160;</a></span>~Texture2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sog::gfx::Texture2D::~Texture2D </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the owned GL texture (if any). </p>
+
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00043">43</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00092">release()</a>.</p>
+
+</div>
+</div>
+<a id="aede54571376a242f597ec2261a8f7290" name="aede54571376a242f597ec2261a8f7290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede54571376a242f597ec2261a8f7290">&#9670;&#160;</a></span>Texture2D() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sog::gfx::Texture2D::Texture2D </td>
+          <td>(</td>
+          <td class="paramtype">const Texture2D &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy construction is deleted. </p>
+
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+
+</div>
+</div>
+<a id="a01925946dbd779adc735cd6ffe65bedb" name="a01925946dbd779adc735cd6ffe65bedb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01925946dbd779adc735cd6ffe65bedb">&#9670;&#160;</a></span>Texture2D() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sog::gfx::Texture2D::Texture2D </td>
+          <td>(</td>
+          <td class="paramtype">Texture2D &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>o</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move-constructs from another <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a>, taking over its GL texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> to move from; left without a GL texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00052">52</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
 
 </div>
 </div>
 <a id="a855bc1e657a00b7d5397458f4d35c57a" name="a855bc1e657a00b7d5397458f4d35c57a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a855bc1e657a00b7d5397458f4d35c57a">&#9670;&#160;</a></span>Texture2D() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a855bc1e657a00b7d5397458f4d35c57a">&#9670;&#160;</a></span>Texture2D() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,14 +342,14 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00053">53</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00075">75</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00019">create()</a>, and <a class="el" href="_texture2_d_8cpp_source.html#l00031">createFromFile()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00023">create()</a>, and <a class="el" href="_texture2_d_8cpp_source.html#l00035">createFromFile()</a>.</p>
 
 </div>
 </div>
 <a id="a9eccbd91106137263e6f1b7151341f51" name="a9eccbd91106137263e6f1b7151341f51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9eccbd91106137263e6f1b7151341f51">&#9670;&#160;</a></span>Texture2D() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eccbd91106137263e6f1b7151341f51">&#9670;&#160;</a></span>Texture2D() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,9 +420,9 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00071">71</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00093">93</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00019">create()</a>, and <a class="el" href="_texture2_d_8cpp_source.html#l00052">createFromRaw()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00023">create()</a>, and <a class="el" href="_texture2_d_8cpp_source.html#l00056">createFromRaw()</a>.</p>
 
 </div>
 </div>
@@ -348,11 +456,11 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00025">25</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00029">29</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00143">m_Handle</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00105">sog::gfx::Window::draw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00109">sog::gfx::Window::draw()</a>.</p>
 
 </div>
 </div>
@@ -373,11 +481,11 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
 
 <p>Creates the GL texture object (no-op if already created). </p>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00019">19</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00023">23</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00143">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00045">Texture2D()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00053">Texture2D()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00071">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00075">Texture2D()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00093">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -416,11 +524,11 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The image is flipped vertically on load so it matches OpenGL's bottom-left texture origin, and is always converted to RGBA8. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00031">31</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00035">35</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00052">createFromRaw()</a>, and <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00056">createFromRaw()</a>, and <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00053">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00075">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -488,11 +596,11 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00052">52</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00056">56</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture_settings_8hpp_source.html#l00027">sog::gfx::TextureSettings::generateMipmaps</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00143">m_Handle</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00025">sog::gfx::TextureSettings::magFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00024">sog::gfx::TextureSettings::minFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00021">sog::gfx::TextureSettings::wrapS</a>, and <a class="el" href="_texture_settings_8hpp_source.html#l00022">sog::gfx::TextureSettings::wrapT</a>.</p>
+<p class="reference">References <a class="el" href="_texture_settings_8hpp_source.html#l00027">sog::gfx::TextureSettings::generateMipmaps</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00025">sog::gfx::TextureSettings::magFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00024">sog::gfx::TextureSettings::minFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00021">sog::gfx::TextureSettings::wrapS</a>, and <a class="el" href="_texture_settings_8hpp_source.html#l00022">sog::gfx::TextureSettings::wrapT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00031">createFromFile()</a>, <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00071">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00035">createFromFile()</a>, <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00093">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -533,9 +641,9 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> with storage allocated and no pixel data uploaded (suitable as a render target). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00131">131</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00153">153</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00045">Texture2D()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
@@ -567,9 +675,101 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
 <p>Returns a reference to the typed GL handle for this texture. </p>
 <dl class="section return"><dt>Returns</dt><dd>Const reference to the internal <a class="el" href="_handles_8hpp.html#a3d96bf276395a08d271889223a5bd86d" title="Handle to a texture object (tagged with TextureTag).">TextureHandle</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00122">122</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00144">144</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00143">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>.</p>
+
+</div>
+</div>
+<a id="a342253a3042b75ab3f0cc862746867e7" name="a342253a3042b75ab3f0cc862746867e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a342253a3042b75ab3f0cc862746867e7">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp; sog::gfx::Texture2D::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy assignment is deleted. </p>
+
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+
+</div>
+</div>
+<a id="a5c3fbaa7915461e92dc5e0fc619413c4" name="a5c3fbaa7915461e92dc5e0fc619413c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c3fbaa7915461e92dc5e0fc619413c4">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp; sog::gfx::Texture2D::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>o</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move-assigns, releasing the current GL texture and taking the source's. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> to move from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00059">59</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00092">release()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+
+</div>
+</div>
+<a id="a5909c60a54780daf8dbf7a1682bd9401" name="a5909c60a54780daf8dbf7a1682bd9401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5909c60a54780daf8dbf7a1682bd9401">&#9670;&#160;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sog::gfx::Texture2D::release </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deletes the owned GL texture (if any) and resets the handle. </p>
+
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00092">92</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00059">operator=()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00043">~Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -596,9 +796,9 @@ The GL texture object is currently never deleted: <a class="el" href="classsog_1
 
 <p>Typed handle to the owned GL texture. </p>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00143">143</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00170">170</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00025">bind()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00019">create()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00052">createFromRaw()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00122">getHandle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00029">bind()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00023">create()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00056">createFromRaw()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00144">getHandle()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00059">operator=()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00092">release()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00052">Texture2D()</a>.</p>
 
 </div>
 </div>

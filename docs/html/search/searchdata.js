@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "[abcdefghiklmnopqrstuvwxy~",
+  0: "[abcdefghijklmnopqrstuvwxyz~",
   1: "[abcefgirstuvw",
   2: "s",
   3: "abcefghimorstuvw",
@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "abcdfghilmnoprstuvwxy",
   6: "abcdefgilmrstuvw",
   7: "abcdefgikopstv",
-  8: "bcdefgilmnopqrstuvw"
+  8: "abcdefghijklmnopqrstuvwxyz"
 };
 
 var indexSectionNames =

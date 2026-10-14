@@ -6,6 +6,7 @@ var searchData=
   ['_7erenderbuffer_3',['~RenderBuffer',['../classsog_1_1gfx_1_1_render_buffer.html#a5b066b8da4d2748c0f47a19b7ac20b57',1,'sog::gfx::RenderBuffer']]],
   ['_7eruntime_5ferror_4',['~runtime_error',['../classsog_1_1runtime__error.html#ad0b6ecfffe76957abe7cb771db65d2e8',1,'sog::runtime_error']]],
   ['_7eshader_5',['~Shader',['../classsog_1_1gfx_1_1_shader.html#a05acae62c0a901971294e7d4e1581c63',1,'sog::gfx::Shader']]],
-  ['_7evertexarray_6',['~VertexArray',['../classsog_1_1gfx_1_1_vertex_array.html#adf688af5e86471796c50fce5ca0e47d0',1,'sog::gfx::VertexArray']]],
-  ['_7ewindow_7',['~Window',['../classsog_1_1gfx_1_1_window.html#a8ad4c6f3e60ec90734c862f24d900164',1,'sog::gfx::Window']]]
+  ['_7etexture2d_6',['~Texture2D',['../classsog_1_1gfx_1_1_texture2_d.html#a94bdb3e5fa5ff08836dbc8a3574b7d4e',1,'sog::gfx::Texture2D']]],
+  ['_7evertexarray_7',['~VertexArray',['../classsog_1_1gfx_1_1_vertex_array.html#adf688af5e86471796c50fce5ca0e47d0',1,'sog::gfx::VertexArray']]],
+  ['_7ewindow_8',['~Window',['../classsog_1_1gfx_1_1_window.html#a8ad4c6f3e60ec90734c862f24d900164',1,'sog::gfx::Window']]]
 ];

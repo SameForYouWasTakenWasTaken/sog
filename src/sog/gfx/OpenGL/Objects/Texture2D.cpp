@@ -11,6 +11,10 @@
 #include <sog/gfx/OpenGL/Objects/Texture2D.hpp>
 
 #include "glad/gl.h"
+
+// The stb_image implementation is compiled exactly once, in this translation unit.
+// See stb_image.h's documentation for the pattern.
+#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 namespace sog::gfx
@@ -83,6 +87,14 @@ void Texture2D::createFromRaw(const void* data, int width, int height,
     if (settings.generateMipmaps && data != nullptr)
     {
         glGenerateTextureMipmap(m_Handle.get());
+    }
+}
+void Texture2D::release()
+{
+    if (m_Handle.valid())
+    {
+        glDeleteTextures(1, &m_Handle.raw());
+        m_Handle.raw() = 0;
     }
 }
 } // namespace sog::gfx

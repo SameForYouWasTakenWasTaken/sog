@@ -116,25 +116,182 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_input_8hpp.ht
 
 <p>Declares the sog::input keyboard/mouse query API, including per-frame edge detection, cursor tracking and a camera controller helper.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="_camera_8hpp_source.html">sog/gfx/Camera.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;GLFW/glfw3.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="_camera_8hpp_source.html">sog/gfx/Camera.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_window_8hpp_source.html">sog/gfx/Window/Window.hpp</a>&gt;</code><br />
 </div>
 <p><a href="_input_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:abb4ead18ebd49d06b3ee11cc47b0ef80" id="r_abb4ead18ebd49d06b3ee11cc47b0ef80"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">sog::input::Key</a> { <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a7fc56270e7a70fa81a5935b72eacbe29">A</a> = GLFW_KEY_A
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a9d5ed678fe57bcca610140957afab571">B</a> = GLFW_KEY_B
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a0d61f8370cad1d412f80b84d143e1257">C</a> = GLFW_KEY_C
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80af623e75af30e62bbd73d6df5b50bb7b5">D</a> = GLFW_KEY_D
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a3a3ea00cfc35332cedf6e5e9a32e94da">E</a> = GLFW_KEY_E
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a800618943025315f869e4e1f09471012">F</a> = GLFW_KEY_F
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80adfcf28d0734569a6a693bc8194de62bf">G</a> = GLFW_KEY_G
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ac1d9f50f86825a1a2302ec2449c17196">H</a> = GLFW_KEY_H
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80add7536794b63bf90eccfd37f9b147d7f">I</a> = GLFW_KEY_I
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aff44570aca8241914870afbc310cdb85">J</a> = GLFW_KEY_J
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aa5f3c6a11b03839d46af9fb43c97c188">K</a> = GLFW_KEY_K
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ad20caec3b48a1eef164cb4ca81ba2587">L</a> = GLFW_KEY_L
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a69691c7bdcc3ce6d5d8a1361f22d04ac">M</a> = GLFW_KEY_M
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> = GLFW_KEY_N
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80af186217753c37b9b9f958d906208506e">O</a> = GLFW_KEY_O
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a44c29edb103a2872f519ad0c9a0fdaaa">P</a> = GLFW_KEY_P
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80af09564c9ca56850d4cd6b3319e541aee">Q</a> = GLFW_KEY_Q
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae1e1d3d40573127e9ee0480caf1283d6">R</a> = GLFW_KEY_R
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a5dbc98dcc983a70728bd082d1a47546e">S</a> = GLFW_KEY_S
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> = GLFW_KEY_T
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a4c614360da93c0a041b22e537de151eb">U</a> = GLFW_KEY_U
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a5206560a306a2e085a437fd258eb57ce">V</a> = GLFW_KEY_V
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a61e9c06ea9a85a5088a499df6458d276">W</a> = GLFW_KEY_W
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a02129bb861061d1a052c592e2dc6b383">X</a> = GLFW_KEY_X
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a57cec4137b614c87cb4e24a3d003a3e0">Y</a> = GLFW_KEY_Y
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a21c2e59531c8710156d34a3c30ac81d5">Z</a> = GLFW_KEY_Z
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a0337623d4049d913b2cc509174a59ba1">NUM_0</a> = GLFW_KEY_0
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a1eeacfec5e7988f11671c829698fc8b4">NUM_1</a> = GLFW_KEY_1
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aaa0af80237c5fd531521116e14de59c6">NUM_2</a> = GLFW_KEY_2
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aa4e4e51ea57e692332c72d32428b3851">NUM_3</a> = GLFW_KEY_3
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a990299ddc3e16ad13c9fe49337cdb53c">NUM_4</a> = GLFW_KEY_4
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a02addb75153754910d8344f8bfa06501">NUM_5</a> = GLFW_KEY_5
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a3b0a1f52347b7d7dc426c49536e3edba">NUM_6</a> = GLFW_KEY_6
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80af45fde1eaac63c5a55cf87e584f5e6bb">NUM_7</a> = GLFW_KEY_7
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ade5947451686ebff12b3b3feb15043f4">NUM_8</a> = GLFW_KEY_8
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aad6039189d8fe566b7dfe30ea70f8b4d">NUM_9</a> = GLFW_KEY_9
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae1dffc8709f31a4987c8a88334107e89">F1</a> = GLFW_KEY_F1
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80afe5c3684dce76cdd9f7f42430868aa74">F2</a> = GLFW_KEY_F2
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a4b6bf4b531770872d4328ce69bef5627">F3</a> = GLFW_KEY_F3
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae7e0e72401a9f2718ed0f39f2861d702">F4</a> = GLFW_KEY_F4
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a37f438df6a6d5ba4c17ef8ca58562f00">F5</a> = GLFW_KEY_F5
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a1faf42f2823f184eb2c9f0dffe5d73f2">F6</a> = GLFW_KEY_F6
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a47489eb597b7db34caa24b1fc78fc839">F7</a> = GLFW_KEY_F7
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a4787509ad9f9d747a81a30e9dde3d4a7">F8</a> = GLFW_KEY_F8
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a892a245e287c163080b23db737d3c4c9">F9</a> = GLFW_KEY_F9
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ab213ce22ca6ad4eda8db82966b9b6e5a">F10</a> = GLFW_KEY_F10
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a643b0662422d1d0dffa3fca2e2bf28a8">F11</a> = GLFW_KEY_F11
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae902674982fc99aa343cdd94da7476c3">F12</a> = GLFW_KEY_F12
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a95dfde4807d4d6a9eec499203b3c24a0">F13</a> = GLFW_KEY_F13
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a2468649b6215c4cdd2aef5095b3f5932">F14</a> = GLFW_KEY_F14
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae53b55851b9ff4979f2c3ff434a4a138">F15</a> = GLFW_KEY_F15
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a56d8353718e6fdc78b8d69078a2cdb94">F16</a> = GLFW_KEY_F16
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80affa5882d1ddcf903bf0d0dbc30bfc604">F17</a> = GLFW_KEY_F17
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a810b30cdfc07fd7fff553a94b828ff78">F18</a> = GLFW_KEY_F18
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80acd7c2a221ef5d0a34acc0bcd679b2054">F19</a> = GLFW_KEY_F19
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80afc335adb3d69d3d8270769e1923ea4dc">F20</a> = GLFW_KEY_F20
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a77e9eee7c579eef5f3731ecf1053c02e">F21</a> = GLFW_KEY_F21
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a7fa06ead699fcbd63132370ffe13335a">F22</a> = GLFW_KEY_F22
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a889645d530078147e7dc69a9caadc31e">F23</a> = GLFW_KEY_F23
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aebd7820c520d05eca2d775c37d141273">F24</a> = GLFW_KEY_F24
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aabf9846f265ae3dea4bf9d740f5cb1aa">F25</a> = GLFW_KEY_F25
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a6351aefd1e5e1b62c76f8580116964be">ESC</a> = GLFW_KEY_ESCAPE
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80af684bf05fa3e81528c84d1d281d839f1">TAB</a> = GLFW_KEY_TAB
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a331b3100a485d8cacff1d3df8e9b0c13">ENTER</a> = GLFW_KEY_ENTER
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a6506ae39fdca9845e3a6de3865183e57">SPACE</a> = GLFW_KEY_SPACE
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a6f5d8e41084b4d3d47fa621c459eede1">BACKSPACE</a> = GLFW_KEY_BACKSPACE
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a61ee777e7f71dc466c3b2c685d8d313b">INSERT</a> = GLFW_KEY_INSERT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a32f68a60cef40faedbc6af20298c1a1e">DELETE</a> = GLFW_KEY_DELETE
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a21507b40c80068eda19865706fdc2403">RIGHT</a> = GLFW_KEY_RIGHT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a684d325a7303f52e64011467ff5c5758">LEFT</a> = GLFW_KEY_LEFT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ac4e0e4e3118472beeb2ae75827450f1f">DOWN</a> = GLFW_KEY_DOWN
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80afbaedde498cdead4f2780217646e9ba1">UP</a> = GLFW_KEY_UP
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae791d936f894ce58dd18bf603edcb9b4">PAGE_UP</a> = GLFW_KEY_PAGE_UP
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae9a23c5ce3d34b40123d65ca14b2e88f">PAGE_DOWN</a> = GLFW_KEY_PAGE_DOWN
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a710533dd879dd1202e5c73b27705bf02">HOME</a> = GLFW_KEY_HOME
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ab1a326c06d88bf042f73d70f50197905">END</a> = GLFW_KEY_END
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ae40af1d5cc55c55ae0bb25953f7a7ee2">CAPS_LOCK</a> = GLFW_KEY_CAPS_LOCK
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a324bf1f059b99e2882bc1d567080d8ed">SCROLL_LOCK</a> = GLFW_KEY_SCROLL_LOCK
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80acb0d0bf9279e78f982deba761110e434">NUM_LOCK</a> = GLFW_KEY_NUM_LOCK
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a853f8ded7a96b5a765704974e6a3ca96">PRINT_SCREEN</a> = GLFW_KEY_PRINT_SCREEN
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a291554596c183e837f0a6bec3767c891">PAUSE</a> = GLFW_KEY_PAUSE
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a9df35983f4024e31955de0f1e545e888">APOSTROPHE</a> = GLFW_KEY_APOSTROPHE
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a4d9b3e9fc12849d060371eb65154c751">COMMA</a> = GLFW_KEY_COMMA
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80affc0d9b54a1fe677c4c9e6b050e67c81">MINUS</a> = GLFW_KEY_MINUS
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ade58a28573783fe95304a260ccd90362">PERIOD</a> = GLFW_KEY_PERIOD
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a646da671ca01bb5d84dbb5fb2238dc8e">SLASH</a> = GLFW_KEY_SLASH
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80abaaceccc27b1d4e0968c999583f97de5">SEMICOLON</a> = GLFW_KEY_SEMICOLON
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a969f331a87d8c958473c32b4d0e61a44">EQUAL</a> = GLFW_KEY_EQUAL
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a0c2629e56daed25c9df918961d0cc03f">LEFT_BRACKET</a> = GLFW_KEY_LEFT_BRACKET
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80aecb4a6f3440c2ed0dff59f17375a27c0">BACKSLASH</a> = GLFW_KEY_BACKSLASH
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a91d8d0b84f26c3e30fb064ea4fc1090f">RIGHT_BRACKET</a> = GLFW_KEY_RIGHT_BRACKET
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a1547ad05c44be2cc614be32159bf666b">GRAVE_ACCENT</a> = GLFW_KEY_GRAVE_ACCENT
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ab6c7e6204e97690efd79d6f513ed5613">LEFT_SHIFT</a> = GLFW_KEY_LEFT_SHIFT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80affb9e89ff97d76c880529410df342f99">LEFT_CTRL</a> = GLFW_KEY_LEFT_CONTROL
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a3a92f3bbf26e4ea5ea7ce7db2f432c56">LEFT_ALT</a> = GLFW_KEY_LEFT_ALT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80afd816cf0346d4939b4cf3bed78dd7fde">LEFT_SUPER</a> = GLFW_KEY_LEFT_SUPER
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a63a707029860972efa1c44ac6016e098">RIGHT_SHIFT</a> = GLFW_KEY_RIGHT_SHIFT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80ad10ea8504186cd7d30b296fdba4f4bf6">RIGHT_CTRL</a> = GLFW_KEY_RIGHT_CONTROL
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a0123827c03dce5d07ebd43bd649a1073">RIGHT_ALT</a> = GLFW_KEY_RIGHT_ALT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a8825bb5d58b44b72465799553acb964d">RIGHT_SUPER</a> = GLFW_KEY_RIGHT_SUPER
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a3ed53fbeb1eab0443561b68ca0c0b5cf">MENU</a> = GLFW_KEY_MENU
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80affb2ce8868d49c78376bf7e76c88fd52">KP_0</a> = GLFW_KEY_KP_0
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80afdcbdc22f7e22388bf5905c290bcfe4b">KP_1</a> = GLFW_KEY_KP_1
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a2d0bfa737eccfce7842cd2230eed6712">KP_2</a> = GLFW_KEY_KP_2
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a766b4a88cba7645629bac70fd01d8275">KP_3</a> = GLFW_KEY_KP_3
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a9c56f942b051ba23447e108e16a8b23b">KP_4</a> = GLFW_KEY_KP_4
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80adc271d081ca9fcbefdc42998313398d8">KP_5</a> = GLFW_KEY_KP_5
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a2091809ab6bdbc0a1975bf61d6099748">KP_6</a> = GLFW_KEY_KP_6
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a71f42e8faf0fb7cb14174c8481461c00">KP_7</a> = GLFW_KEY_KP_7
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a62e75b78c155e8549c5c5edb434a7757">KP_8</a> = GLFW_KEY_KP_8
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a3d548437292c0cd1662fc30d420f2c27">KP_9</a> = GLFW_KEY_KP_9
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a1a9c94725005bc4759507db8acc8da33">KP_DECIMAL</a> = GLFW_KEY_KP_DECIMAL
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a7c333963ed187368820c5343b355e5bc">KP_DIVIDE</a> = GLFW_KEY_KP_DIVIDE
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a2140df7839a3713724b35168defcc975">KP_MULTIPLY</a> = GLFW_KEY_KP_MULTIPLY
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a17de1e647789892e1fb512bf04db4866">KP_SUBTRACT</a> = GLFW_KEY_KP_SUBTRACT
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a30808a0391df7790292aa5c13f6195e4">KP_ADD</a> = GLFW_KEY_KP_ADD
+, <br />
+&#160;&#160;<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80adea24610606fb34c587a8fe8ed8f8389">KP_ENTER</a> = GLFW_KEY_KP_ENTER
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a2cfe3b4f9911c5899d79f171d6b9cc4a">KP_EQUAL</a> = GLFW_KEY_KP_EQUAL
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80a1ab6dcd85380f2d3e882fbd2f6fda566">WORLD_1</a> = GLFW_KEY_WORLD_1
+, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80acb8104ace1979f9537c7f40de0622a22">WORLD_2</a> = GLFW_KEY_WORLD_2
+<br />
+ }</td></tr>
+<tr class="memdesc:abb4ead18ebd49d06b3ee11cc47b0ef80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named keyboard key codes, mirroring GLFW's GLFW_KEY_* constants.  <a href="#abb4ead18ebd49d06b3ee11cc47b0ef80">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3ca4ab37fe349f3a8a685082a5911a33" id="r_a3ca4ab37fe349f3a8a685082a5911a33"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33">sog::input::update</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window)</td></tr>
 <tr class="memdesc:a3ca4ab37fe349f3a8a685082a5911a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snapshots the current key/mouse/cursor state for edge-triggered queries.  <br /></td></tr>
-<tr class="memitem:a8f4113d6dc81b68ccc78fe1ffbb242c1" id="r_a8f4113d6dc81b68ccc78fe1ffbb242c1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8f4113d6dc81b68ccc78fe1ffbb242c1">sog::input::isKeyDown</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, int key)</td></tr>
-<tr class="memdesc:a8f4113d6dc81b68ccc78fe1ffbb242c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key is currently held (live query, no <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> needed).  <br /></td></tr>
+<tr class="memitem:ac13313c928268af939a4ba72ccfe9bbc" id="r_ac13313c928268af939a4ba72ccfe9bbc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac13313c928268af939a4ba72ccfe9bbc">sog::input::isKeyDown</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">Key</a> key)</td></tr>
+<tr class="memdesc:ac13313c928268af939a4ba72ccfe9bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key is currently held (live query, no <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> needed).  <br /></td></tr>
 <tr class="memitem:ae0ec6594d8fb625d88c8984bbbfe838d" id="r_ae0ec6594d8fb625d88c8984bbbfe838d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae0ec6594d8fb625d88c8984bbbfe838d">sog::input::isMouseButtonDown</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, int button)</td></tr>
 <tr class="memdesc:ae0ec6594d8fb625d88c8984bbbfe838d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button is currently held (live query, no <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> needed).  <br /></td></tr>
 <tr class="memitem:af9561160ab4cb4a0bfb827460ab5367c" id="r_af9561160ab4cb4a0bfb827460ab5367c"><td class="memItemLeft">glm::vec2&#160;</td><td class="memItemRight"><a class="el" href="#af9561160ab4cb4a0bfb827460ab5367c">sog::input::getCursorPosition</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window)</td></tr>
 <tr class="memdesc:af9561160ab4cb4a0bfb827460ab5367c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current cursor position in window coordinates.  <br /></td></tr>
-<tr class="memitem:a747c75be12cbe3cb16e1e34b309919b4" id="r_a747c75be12cbe3cb16e1e34b309919b4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a747c75be12cbe3cb16e1e34b309919b4">sog::input::isKeyPressed</a> (int key)</td></tr>
-<tr class="memdesc:a747c75be12cbe3cb16e1e34b309919b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went down this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
-<tr class="memitem:a8ca2b78c4b43400d19654ae0d71749a3" id="r_a8ca2b78c4b43400d19654ae0d71749a3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8ca2b78c4b43400d19654ae0d71749a3">sog::input::isKeyReleased</a> (int key)</td></tr>
-<tr class="memdesc:a8ca2b78c4b43400d19654ae0d71749a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went up this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
+<tr class="memitem:abcf85418a88cd89abf6f6e08903036d5" id="r_abcf85418a88cd89abf6f6e08903036d5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#abcf85418a88cd89abf6f6e08903036d5">sog::input::isKeyPressed</a> (<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">Key</a> key)</td></tr>
+<tr class="memdesc:abcf85418a88cd89abf6f6e08903036d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went down this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
+<tr class="memitem:a078babc1188b6999bbf7b0bdd33332df" id="r_a078babc1188b6999bbf7b0bdd33332df"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a078babc1188b6999bbf7b0bdd33332df">sog::input::isKeyReleased</a> (<a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">Key</a> key)</td></tr>
+<tr class="memdesc:a078babc1188b6999bbf7b0bdd33332df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went up this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
 <tr class="memitem:a7647a99d16e09d6a91138de4e4f2eb29" id="r_a7647a99d16e09d6a91138de4e4f2eb29"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7647a99d16e09d6a91138de4e4f2eb29">sog::input::isMouseButtonPressed</a> (int button)</td></tr>
 <tr class="memdesc:a7647a99d16e09d6a91138de4e4f2eb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button went down this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
 <tr class="memitem:acf5ccb6b7ee4b5c1f2a94c5b22aef2a7" id="r_acf5ccb6b7ee4b5c1f2a94c5b22aef2a7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">sog::input::isMouseButtonReleased</a> (int button)</td></tr>
@@ -151,7 +308,277 @@ Functions</h2></td></tr>
 <p>Split into two styles: immediate queries (isKeyDown, isMouseButtonDown, getCursorPosition) that read live GLFW state and need no update(), and edge-triggered queries (isKeyPressed/Released, getCursorDelta) that diff the snapshot taken by update() against the previous frame's. </p>
 
 <p class="definition">Definition in file <a class="el" href="_input_8hpp_source.html">Input.hpp</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="abb4ead18ebd49d06b3ee11cc47b0ef80" name="abb4ead18ebd49d06b3ee11cc47b0ef80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb4ead18ebd49d06b3ee11cc47b0ef80">&#9670;&#160;</a></span>Key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">sog::input::Key</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Named keyboard key codes, mirroring GLFW's GLFW_KEY_* constants. </p>
+<p>Each value is the raw GLFW key code for that key. Grouped as letters, numbers, F-keys, modifiers, punctuation, the numpad and the two international "world" keys. The keyboard queries (isKeyDown, isKeyPressed, isKeyReleased) take a Key directly. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a7fc56270e7a70fa81a5935b72eacbe29" name="abb4ead18ebd49d06b3ee11cc47b0ef80a7fc56270e7a70fa81a5935b72eacbe29"></a>A&#160;</td><td class="fielddoc"><p>A key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a9d5ed678fe57bcca610140957afab571" name="abb4ead18ebd49d06b3ee11cc47b0ef80a9d5ed678fe57bcca610140957afab571"></a>B&#160;</td><td class="fielddoc"><p>B key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a0d61f8370cad1d412f80b84d143e1257" name="abb4ead18ebd49d06b3ee11cc47b0ef80a0d61f8370cad1d412f80b84d143e1257"></a>C&#160;</td><td class="fielddoc"><p>C key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80af623e75af30e62bbd73d6df5b50bb7b5" name="abb4ead18ebd49d06b3ee11cc47b0ef80af623e75af30e62bbd73d6df5b50bb7b5"></a>D&#160;</td><td class="fielddoc"><p>D key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a3a3ea00cfc35332cedf6e5e9a32e94da" name="abb4ead18ebd49d06b3ee11cc47b0ef80a3a3ea00cfc35332cedf6e5e9a32e94da"></a>E&#160;</td><td class="fielddoc"><p>E key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a800618943025315f869e4e1f09471012" name="abb4ead18ebd49d06b3ee11cc47b0ef80a800618943025315f869e4e1f09471012"></a>F&#160;</td><td class="fielddoc"><p>F key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80adfcf28d0734569a6a693bc8194de62bf" name="abb4ead18ebd49d06b3ee11cc47b0ef80adfcf28d0734569a6a693bc8194de62bf"></a>G&#160;</td><td class="fielddoc"><p>G key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ac1d9f50f86825a1a2302ec2449c17196" name="abb4ead18ebd49d06b3ee11cc47b0ef80ac1d9f50f86825a1a2302ec2449c17196"></a>H&#160;</td><td class="fielddoc"><p>H key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80add7536794b63bf90eccfd37f9b147d7f" name="abb4ead18ebd49d06b3ee11cc47b0ef80add7536794b63bf90eccfd37f9b147d7f"></a>I&#160;</td><td class="fielddoc"><p>I key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aff44570aca8241914870afbc310cdb85" name="abb4ead18ebd49d06b3ee11cc47b0ef80aff44570aca8241914870afbc310cdb85"></a>J&#160;</td><td class="fielddoc"><p>J key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aa5f3c6a11b03839d46af9fb43c97c188" name="abb4ead18ebd49d06b3ee11cc47b0ef80aa5f3c6a11b03839d46af9fb43c97c188"></a>K&#160;</td><td class="fielddoc"><p>K key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ad20caec3b48a1eef164cb4ca81ba2587" name="abb4ead18ebd49d06b3ee11cc47b0ef80ad20caec3b48a1eef164cb4ca81ba2587"></a>L&#160;</td><td class="fielddoc"><p>L key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a69691c7bdcc3ce6d5d8a1361f22d04ac" name="abb4ead18ebd49d06b3ee11cc47b0ef80a69691c7bdcc3ce6d5d8a1361f22d04ac"></a>M&#160;</td><td class="fielddoc"><p>M key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a8d9c307cb7f3c4a32822a51922d1ceaa" name="abb4ead18ebd49d06b3ee11cc47b0ef80a8d9c307cb7f3c4a32822a51922d1ceaa"></a>N&#160;</td><td class="fielddoc"><p>N key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80af186217753c37b9b9f958d906208506e" name="abb4ead18ebd49d06b3ee11cc47b0ef80af186217753c37b9b9f958d906208506e"></a>O&#160;</td><td class="fielddoc"><p>O key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a44c29edb103a2872f519ad0c9a0fdaaa" name="abb4ead18ebd49d06b3ee11cc47b0ef80a44c29edb103a2872f519ad0c9a0fdaaa"></a>P&#160;</td><td class="fielddoc"><p>P key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80af09564c9ca56850d4cd6b3319e541aee" name="abb4ead18ebd49d06b3ee11cc47b0ef80af09564c9ca56850d4cd6b3319e541aee"></a>Q&#160;</td><td class="fielddoc"><p>Q key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae1e1d3d40573127e9ee0480caf1283d6" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae1e1d3d40573127e9ee0480caf1283d6"></a>R&#160;</td><td class="fielddoc"><p>R key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a5dbc98dcc983a70728bd082d1a47546e" name="abb4ead18ebd49d06b3ee11cc47b0ef80a5dbc98dcc983a70728bd082d1a47546e"></a>S&#160;</td><td class="fielddoc"><p>S key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ab9ece18c950afbfa6b0fdbfa4ff731d3" name="abb4ead18ebd49d06b3ee11cc47b0ef80ab9ece18c950afbfa6b0fdbfa4ff731d3"></a>T&#160;</td><td class="fielddoc"><p>T key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a4c614360da93c0a041b22e537de151eb" name="abb4ead18ebd49d06b3ee11cc47b0ef80a4c614360da93c0a041b22e537de151eb"></a>U&#160;</td><td class="fielddoc"><p>U key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a5206560a306a2e085a437fd258eb57ce" name="abb4ead18ebd49d06b3ee11cc47b0ef80a5206560a306a2e085a437fd258eb57ce"></a>V&#160;</td><td class="fielddoc"><p>V key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a61e9c06ea9a85a5088a499df6458d276" name="abb4ead18ebd49d06b3ee11cc47b0ef80a61e9c06ea9a85a5088a499df6458d276"></a>W&#160;</td><td class="fielddoc"><p>W key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a02129bb861061d1a052c592e2dc6b383" name="abb4ead18ebd49d06b3ee11cc47b0ef80a02129bb861061d1a052c592e2dc6b383"></a>X&#160;</td><td class="fielddoc"><p>X key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a57cec4137b614c87cb4e24a3d003a3e0" name="abb4ead18ebd49d06b3ee11cc47b0ef80a57cec4137b614c87cb4e24a3d003a3e0"></a>Y&#160;</td><td class="fielddoc"><p>Y key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a21c2e59531c8710156d34a3c30ac81d5" name="abb4ead18ebd49d06b3ee11cc47b0ef80a21c2e59531c8710156d34a3c30ac81d5"></a>Z&#160;</td><td class="fielddoc"><p>Z key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a0337623d4049d913b2cc509174a59ba1" name="abb4ead18ebd49d06b3ee11cc47b0ef80a0337623d4049d913b2cc509174a59ba1"></a>NUM_0&#160;</td><td class="fielddoc"><p>Main-row 0 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a1eeacfec5e7988f11671c829698fc8b4" name="abb4ead18ebd49d06b3ee11cc47b0ef80a1eeacfec5e7988f11671c829698fc8b4"></a>NUM_1&#160;</td><td class="fielddoc"><p>Main-row 1 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aaa0af80237c5fd531521116e14de59c6" name="abb4ead18ebd49d06b3ee11cc47b0ef80aaa0af80237c5fd531521116e14de59c6"></a>NUM_2&#160;</td><td class="fielddoc"><p>Main-row 2 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aa4e4e51ea57e692332c72d32428b3851" name="abb4ead18ebd49d06b3ee11cc47b0ef80aa4e4e51ea57e692332c72d32428b3851"></a>NUM_3&#160;</td><td class="fielddoc"><p>Main-row 3 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a990299ddc3e16ad13c9fe49337cdb53c" name="abb4ead18ebd49d06b3ee11cc47b0ef80a990299ddc3e16ad13c9fe49337cdb53c"></a>NUM_4&#160;</td><td class="fielddoc"><p>Main-row 4 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a02addb75153754910d8344f8bfa06501" name="abb4ead18ebd49d06b3ee11cc47b0ef80a02addb75153754910d8344f8bfa06501"></a>NUM_5&#160;</td><td class="fielddoc"><p>Main-row 5 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a3b0a1f52347b7d7dc426c49536e3edba" name="abb4ead18ebd49d06b3ee11cc47b0ef80a3b0a1f52347b7d7dc426c49536e3edba"></a>NUM_6&#160;</td><td class="fielddoc"><p>Main-row 6 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80af45fde1eaac63c5a55cf87e584f5e6bb" name="abb4ead18ebd49d06b3ee11cc47b0ef80af45fde1eaac63c5a55cf87e584f5e6bb"></a>NUM_7&#160;</td><td class="fielddoc"><p>Main-row 7 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ade5947451686ebff12b3b3feb15043f4" name="abb4ead18ebd49d06b3ee11cc47b0ef80ade5947451686ebff12b3b3feb15043f4"></a>NUM_8&#160;</td><td class="fielddoc"><p>Main-row 8 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aad6039189d8fe566b7dfe30ea70f8b4d" name="abb4ead18ebd49d06b3ee11cc47b0ef80aad6039189d8fe566b7dfe30ea70f8b4d"></a>NUM_9&#160;</td><td class="fielddoc"><p>Main-row 9 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae1dffc8709f31a4987c8a88334107e89" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae1dffc8709f31a4987c8a88334107e89"></a>F1&#160;</td><td class="fielddoc"><p>F1 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80afe5c3684dce76cdd9f7f42430868aa74" name="abb4ead18ebd49d06b3ee11cc47b0ef80afe5c3684dce76cdd9f7f42430868aa74"></a>F2&#160;</td><td class="fielddoc"><p>F2 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a4b6bf4b531770872d4328ce69bef5627" name="abb4ead18ebd49d06b3ee11cc47b0ef80a4b6bf4b531770872d4328ce69bef5627"></a>F3&#160;</td><td class="fielddoc"><p>F3 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae7e0e72401a9f2718ed0f39f2861d702" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae7e0e72401a9f2718ed0f39f2861d702"></a>F4&#160;</td><td class="fielddoc"><p>F4 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a37f438df6a6d5ba4c17ef8ca58562f00" name="abb4ead18ebd49d06b3ee11cc47b0ef80a37f438df6a6d5ba4c17ef8ca58562f00"></a>F5&#160;</td><td class="fielddoc"><p>F5 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a1faf42f2823f184eb2c9f0dffe5d73f2" name="abb4ead18ebd49d06b3ee11cc47b0ef80a1faf42f2823f184eb2c9f0dffe5d73f2"></a>F6&#160;</td><td class="fielddoc"><p>F6 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a47489eb597b7db34caa24b1fc78fc839" name="abb4ead18ebd49d06b3ee11cc47b0ef80a47489eb597b7db34caa24b1fc78fc839"></a>F7&#160;</td><td class="fielddoc"><p>F7 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a4787509ad9f9d747a81a30e9dde3d4a7" name="abb4ead18ebd49d06b3ee11cc47b0ef80a4787509ad9f9d747a81a30e9dde3d4a7"></a>F8&#160;</td><td class="fielddoc"><p>F8 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a892a245e287c163080b23db737d3c4c9" name="abb4ead18ebd49d06b3ee11cc47b0ef80a892a245e287c163080b23db737d3c4c9"></a>F9&#160;</td><td class="fielddoc"><p>F9 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ab213ce22ca6ad4eda8db82966b9b6e5a" name="abb4ead18ebd49d06b3ee11cc47b0ef80ab213ce22ca6ad4eda8db82966b9b6e5a"></a>F10&#160;</td><td class="fielddoc"><p>F10 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a643b0662422d1d0dffa3fca2e2bf28a8" name="abb4ead18ebd49d06b3ee11cc47b0ef80a643b0662422d1d0dffa3fca2e2bf28a8"></a>F11&#160;</td><td class="fielddoc"><p>F11 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae902674982fc99aa343cdd94da7476c3" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae902674982fc99aa343cdd94da7476c3"></a>F12&#160;</td><td class="fielddoc"><p>F12 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a95dfde4807d4d6a9eec499203b3c24a0" name="abb4ead18ebd49d06b3ee11cc47b0ef80a95dfde4807d4d6a9eec499203b3c24a0"></a>F13&#160;</td><td class="fielddoc"><p>F13 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a2468649b6215c4cdd2aef5095b3f5932" name="abb4ead18ebd49d06b3ee11cc47b0ef80a2468649b6215c4cdd2aef5095b3f5932"></a>F14&#160;</td><td class="fielddoc"><p>F14 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae53b55851b9ff4979f2c3ff434a4a138" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae53b55851b9ff4979f2c3ff434a4a138"></a>F15&#160;</td><td class="fielddoc"><p>F15 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a56d8353718e6fdc78b8d69078a2cdb94" name="abb4ead18ebd49d06b3ee11cc47b0ef80a56d8353718e6fdc78b8d69078a2cdb94"></a>F16&#160;</td><td class="fielddoc"><p>F16 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80affa5882d1ddcf903bf0d0dbc30bfc604" name="abb4ead18ebd49d06b3ee11cc47b0ef80affa5882d1ddcf903bf0d0dbc30bfc604"></a>F17&#160;</td><td class="fielddoc"><p>F17 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a810b30cdfc07fd7fff553a94b828ff78" name="abb4ead18ebd49d06b3ee11cc47b0ef80a810b30cdfc07fd7fff553a94b828ff78"></a>F18&#160;</td><td class="fielddoc"><p>F18 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80acd7c2a221ef5d0a34acc0bcd679b2054" name="abb4ead18ebd49d06b3ee11cc47b0ef80acd7c2a221ef5d0a34acc0bcd679b2054"></a>F19&#160;</td><td class="fielddoc"><p>F19 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80afc335adb3d69d3d8270769e1923ea4dc" name="abb4ead18ebd49d06b3ee11cc47b0ef80afc335adb3d69d3d8270769e1923ea4dc"></a>F20&#160;</td><td class="fielddoc"><p>F20 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a77e9eee7c579eef5f3731ecf1053c02e" name="abb4ead18ebd49d06b3ee11cc47b0ef80a77e9eee7c579eef5f3731ecf1053c02e"></a>F21&#160;</td><td class="fielddoc"><p>F21 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a7fa06ead699fcbd63132370ffe13335a" name="abb4ead18ebd49d06b3ee11cc47b0ef80a7fa06ead699fcbd63132370ffe13335a"></a>F22&#160;</td><td class="fielddoc"><p>F22 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a889645d530078147e7dc69a9caadc31e" name="abb4ead18ebd49d06b3ee11cc47b0ef80a889645d530078147e7dc69a9caadc31e"></a>F23&#160;</td><td class="fielddoc"><p>F23 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aebd7820c520d05eca2d775c37d141273" name="abb4ead18ebd49d06b3ee11cc47b0ef80aebd7820c520d05eca2d775c37d141273"></a>F24&#160;</td><td class="fielddoc"><p>F24 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aabf9846f265ae3dea4bf9d740f5cb1aa" name="abb4ead18ebd49d06b3ee11cc47b0ef80aabf9846f265ae3dea4bf9d740f5cb1aa"></a>F25&#160;</td><td class="fielddoc"><p>F25 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a6351aefd1e5e1b62c76f8580116964be" name="abb4ead18ebd49d06b3ee11cc47b0ef80a6351aefd1e5e1b62c76f8580116964be"></a>ESC&#160;</td><td class="fielddoc"><p>Escape key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80af684bf05fa3e81528c84d1d281d839f1" name="abb4ead18ebd49d06b3ee11cc47b0ef80af684bf05fa3e81528c84d1d281d839f1"></a>TAB&#160;</td><td class="fielddoc"><p>Tab key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a331b3100a485d8cacff1d3df8e9b0c13" name="abb4ead18ebd49d06b3ee11cc47b0ef80a331b3100a485d8cacff1d3df8e9b0c13"></a>ENTER&#160;</td><td class="fielddoc"><p>Enter key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a6506ae39fdca9845e3a6de3865183e57" name="abb4ead18ebd49d06b3ee11cc47b0ef80a6506ae39fdca9845e3a6de3865183e57"></a>SPACE&#160;</td><td class="fielddoc"><p>Space bar. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a6f5d8e41084b4d3d47fa621c459eede1" name="abb4ead18ebd49d06b3ee11cc47b0ef80a6f5d8e41084b4d3d47fa621c459eede1"></a>BACKSPACE&#160;</td><td class="fielddoc"><p>Backspace key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a61ee777e7f71dc466c3b2c685d8d313b" name="abb4ead18ebd49d06b3ee11cc47b0ef80a61ee777e7f71dc466c3b2c685d8d313b"></a>INSERT&#160;</td><td class="fielddoc"><p>Insert key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a32f68a60cef40faedbc6af20298c1a1e" name="abb4ead18ebd49d06b3ee11cc47b0ef80a32f68a60cef40faedbc6af20298c1a1e"></a>DELETE&#160;</td><td class="fielddoc"><p>Delete key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a21507b40c80068eda19865706fdc2403" name="abb4ead18ebd49d06b3ee11cc47b0ef80a21507b40c80068eda19865706fdc2403"></a>RIGHT&#160;</td><td class="fielddoc"><p>Right arrow key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a684d325a7303f52e64011467ff5c5758" name="abb4ead18ebd49d06b3ee11cc47b0ef80a684d325a7303f52e64011467ff5c5758"></a>LEFT&#160;</td><td class="fielddoc"><p>Left arrow key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ac4e0e4e3118472beeb2ae75827450f1f" name="abb4ead18ebd49d06b3ee11cc47b0ef80ac4e0e4e3118472beeb2ae75827450f1f"></a>DOWN&#160;</td><td class="fielddoc"><p>Down arrow key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80afbaedde498cdead4f2780217646e9ba1" name="abb4ead18ebd49d06b3ee11cc47b0ef80afbaedde498cdead4f2780217646e9ba1"></a>UP&#160;</td><td class="fielddoc"><p>Up arrow key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae791d936f894ce58dd18bf603edcb9b4" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae791d936f894ce58dd18bf603edcb9b4"></a>PAGE_UP&#160;</td><td class="fielddoc"><p>Page up key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae9a23c5ce3d34b40123d65ca14b2e88f" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae9a23c5ce3d34b40123d65ca14b2e88f"></a>PAGE_DOWN&#160;</td><td class="fielddoc"><p>Page down key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a710533dd879dd1202e5c73b27705bf02" name="abb4ead18ebd49d06b3ee11cc47b0ef80a710533dd879dd1202e5c73b27705bf02"></a>HOME&#160;</td><td class="fielddoc"><p>Home key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ab1a326c06d88bf042f73d70f50197905" name="abb4ead18ebd49d06b3ee11cc47b0ef80ab1a326c06d88bf042f73d70f50197905"></a>END&#160;</td><td class="fielddoc"><p>End key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ae40af1d5cc55c55ae0bb25953f7a7ee2" name="abb4ead18ebd49d06b3ee11cc47b0ef80ae40af1d5cc55c55ae0bb25953f7a7ee2"></a>CAPS_LOCK&#160;</td><td class="fielddoc"><p>Caps lock key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a324bf1f059b99e2882bc1d567080d8ed" name="abb4ead18ebd49d06b3ee11cc47b0ef80a324bf1f059b99e2882bc1d567080d8ed"></a>SCROLL_LOCK&#160;</td><td class="fielddoc"><p>Scroll lock key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80acb0d0bf9279e78f982deba761110e434" name="abb4ead18ebd49d06b3ee11cc47b0ef80acb0d0bf9279e78f982deba761110e434"></a>NUM_LOCK&#160;</td><td class="fielddoc"><p>Num lock key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a853f8ded7a96b5a765704974e6a3ca96" name="abb4ead18ebd49d06b3ee11cc47b0ef80a853f8ded7a96b5a765704974e6a3ca96"></a>PRINT_SCREEN&#160;</td><td class="fielddoc"><p>Print screen key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a291554596c183e837f0a6bec3767c891" name="abb4ead18ebd49d06b3ee11cc47b0ef80a291554596c183e837f0a6bec3767c891"></a>PAUSE&#160;</td><td class="fielddoc"><p>Pause key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a9df35983f4024e31955de0f1e545e888" name="abb4ead18ebd49d06b3ee11cc47b0ef80a9df35983f4024e31955de0f1e545e888"></a>APOSTROPHE&#160;</td><td class="fielddoc"><p>Apostrophe key ('). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a4d9b3e9fc12849d060371eb65154c751" name="abb4ead18ebd49d06b3ee11cc47b0ef80a4d9b3e9fc12849d060371eb65154c751"></a>COMMA&#160;</td><td class="fielddoc"><p>Comma key (,). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80affc0d9b54a1fe677c4c9e6b050e67c81" name="abb4ead18ebd49d06b3ee11cc47b0ef80affc0d9b54a1fe677c4c9e6b050e67c81"></a>MINUS&#160;</td><td class="fielddoc"><p>Minus key (-). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ade58a28573783fe95304a260ccd90362" name="abb4ead18ebd49d06b3ee11cc47b0ef80ade58a28573783fe95304a260ccd90362"></a>PERIOD&#160;</td><td class="fielddoc"><p>Period key (.). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a646da671ca01bb5d84dbb5fb2238dc8e" name="abb4ead18ebd49d06b3ee11cc47b0ef80a646da671ca01bb5d84dbb5fb2238dc8e"></a>SLASH&#160;</td><td class="fielddoc"><p>Slash key (/). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80abaaceccc27b1d4e0968c999583f97de5" name="abb4ead18ebd49d06b3ee11cc47b0ef80abaaceccc27b1d4e0968c999583f97de5"></a>SEMICOLON&#160;</td><td class="fielddoc"><p>Semicolon key (;). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a969f331a87d8c958473c32b4d0e61a44" name="abb4ead18ebd49d06b3ee11cc47b0ef80a969f331a87d8c958473c32b4d0e61a44"></a>EQUAL&#160;</td><td class="fielddoc"><p>Equal key (=). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a0c2629e56daed25c9df918961d0cc03f" name="abb4ead18ebd49d06b3ee11cc47b0ef80a0c2629e56daed25c9df918961d0cc03f"></a>LEFT_BRACKET&#160;</td><td class="fielddoc"><p>Left bracket key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80aecb4a6f3440c2ed0dff59f17375a27c0" name="abb4ead18ebd49d06b3ee11cc47b0ef80aecb4a6f3440c2ed0dff59f17375a27c0"></a>BACKSLASH&#160;</td><td class="fielddoc"><p>Backslash key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a91d8d0b84f26c3e30fb064ea4fc1090f" name="abb4ead18ebd49d06b3ee11cc47b0ef80a91d8d0b84f26c3e30fb064ea4fc1090f"></a>RIGHT_BRACKET&#160;</td><td class="fielddoc"><p>Right bracket key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a1547ad05c44be2cc614be32159bf666b" name="abb4ead18ebd49d06b3ee11cc47b0ef80a1547ad05c44be2cc614be32159bf666b"></a>GRAVE_ACCENT&#160;</td><td class="fielddoc"><p>Grave accent key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ab6c7e6204e97690efd79d6f513ed5613" name="abb4ead18ebd49d06b3ee11cc47b0ef80ab6c7e6204e97690efd79d6f513ed5613"></a>LEFT_SHIFT&#160;</td><td class="fielddoc"><p>Left shift key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80affb9e89ff97d76c880529410df342f99" name="abb4ead18ebd49d06b3ee11cc47b0ef80affb9e89ff97d76c880529410df342f99"></a>LEFT_CTRL&#160;</td><td class="fielddoc"><p>Left control key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a3a92f3bbf26e4ea5ea7ce7db2f432c56" name="abb4ead18ebd49d06b3ee11cc47b0ef80a3a92f3bbf26e4ea5ea7ce7db2f432c56"></a>LEFT_ALT&#160;</td><td class="fielddoc"><p>Left alt key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80afd816cf0346d4939b4cf3bed78dd7fde" name="abb4ead18ebd49d06b3ee11cc47b0ef80afd816cf0346d4939b4cf3bed78dd7fde"></a>LEFT_SUPER&#160;</td><td class="fielddoc"><p>Left "super" key (Windows/Command). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a63a707029860972efa1c44ac6016e098" name="abb4ead18ebd49d06b3ee11cc47b0ef80a63a707029860972efa1c44ac6016e098"></a>RIGHT_SHIFT&#160;</td><td class="fielddoc"><p>Right shift key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80ad10ea8504186cd7d30b296fdba4f4bf6" name="abb4ead18ebd49d06b3ee11cc47b0ef80ad10ea8504186cd7d30b296fdba4f4bf6"></a>RIGHT_CTRL&#160;</td><td class="fielddoc"><p>Right control key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a0123827c03dce5d07ebd43bd649a1073" name="abb4ead18ebd49d06b3ee11cc47b0ef80a0123827c03dce5d07ebd43bd649a1073"></a>RIGHT_ALT&#160;</td><td class="fielddoc"><p>Right alt key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a8825bb5d58b44b72465799553acb964d" name="abb4ead18ebd49d06b3ee11cc47b0ef80a8825bb5d58b44b72465799553acb964d"></a>RIGHT_SUPER&#160;</td><td class="fielddoc"><p>Right "super" key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a3ed53fbeb1eab0443561b68ca0c0b5cf" name="abb4ead18ebd49d06b3ee11cc47b0ef80a3ed53fbeb1eab0443561b68ca0c0b5cf"></a>MENU&#160;</td><td class="fielddoc"><p>Menu key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80affb2ce8868d49c78376bf7e76c88fd52" name="abb4ead18ebd49d06b3ee11cc47b0ef80affb2ce8868d49c78376bf7e76c88fd52"></a>KP_0&#160;</td><td class="fielddoc"><p>Numpad 0 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80afdcbdc22f7e22388bf5905c290bcfe4b" name="abb4ead18ebd49d06b3ee11cc47b0ef80afdcbdc22f7e22388bf5905c290bcfe4b"></a>KP_1&#160;</td><td class="fielddoc"><p>Numpad 1 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a2d0bfa737eccfce7842cd2230eed6712" name="abb4ead18ebd49d06b3ee11cc47b0ef80a2d0bfa737eccfce7842cd2230eed6712"></a>KP_2&#160;</td><td class="fielddoc"><p>Numpad 2 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a766b4a88cba7645629bac70fd01d8275" name="abb4ead18ebd49d06b3ee11cc47b0ef80a766b4a88cba7645629bac70fd01d8275"></a>KP_3&#160;</td><td class="fielddoc"><p>Numpad 3 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a9c56f942b051ba23447e108e16a8b23b" name="abb4ead18ebd49d06b3ee11cc47b0ef80a9c56f942b051ba23447e108e16a8b23b"></a>KP_4&#160;</td><td class="fielddoc"><p>Numpad 4 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80adc271d081ca9fcbefdc42998313398d8" name="abb4ead18ebd49d06b3ee11cc47b0ef80adc271d081ca9fcbefdc42998313398d8"></a>KP_5&#160;</td><td class="fielddoc"><p>Numpad 5 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a2091809ab6bdbc0a1975bf61d6099748" name="abb4ead18ebd49d06b3ee11cc47b0ef80a2091809ab6bdbc0a1975bf61d6099748"></a>KP_6&#160;</td><td class="fielddoc"><p>Numpad 6 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a71f42e8faf0fb7cb14174c8481461c00" name="abb4ead18ebd49d06b3ee11cc47b0ef80a71f42e8faf0fb7cb14174c8481461c00"></a>KP_7&#160;</td><td class="fielddoc"><p>Numpad 7 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a62e75b78c155e8549c5c5edb434a7757" name="abb4ead18ebd49d06b3ee11cc47b0ef80a62e75b78c155e8549c5c5edb434a7757"></a>KP_8&#160;</td><td class="fielddoc"><p>Numpad 8 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a3d548437292c0cd1662fc30d420f2c27" name="abb4ead18ebd49d06b3ee11cc47b0ef80a3d548437292c0cd1662fc30d420f2c27"></a>KP_9&#160;</td><td class="fielddoc"><p>Numpad 9 key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a1a9c94725005bc4759507db8acc8da33" name="abb4ead18ebd49d06b3ee11cc47b0ef80a1a9c94725005bc4759507db8acc8da33"></a>KP_DECIMAL&#160;</td><td class="fielddoc"><p>Numpad decimal key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a7c333963ed187368820c5343b355e5bc" name="abb4ead18ebd49d06b3ee11cc47b0ef80a7c333963ed187368820c5343b355e5bc"></a>KP_DIVIDE&#160;</td><td class="fielddoc"><p>Numpad divide key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a2140df7839a3713724b35168defcc975" name="abb4ead18ebd49d06b3ee11cc47b0ef80a2140df7839a3713724b35168defcc975"></a>KP_MULTIPLY&#160;</td><td class="fielddoc"><p>Numpad multiply key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a17de1e647789892e1fb512bf04db4866" name="abb4ead18ebd49d06b3ee11cc47b0ef80a17de1e647789892e1fb512bf04db4866"></a>KP_SUBTRACT&#160;</td><td class="fielddoc"><p>Numpad subtract key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a30808a0391df7790292aa5c13f6195e4" name="abb4ead18ebd49d06b3ee11cc47b0ef80a30808a0391df7790292aa5c13f6195e4"></a>KP_ADD&#160;</td><td class="fielddoc"><p>Numpad add key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80adea24610606fb34c587a8fe8ed8f8389" name="abb4ead18ebd49d06b3ee11cc47b0ef80adea24610606fb34c587a8fe8ed8f8389"></a>KP_ENTER&#160;</td><td class="fielddoc"><p>Numpad enter key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a2cfe3b4f9911c5899d79f171d6b9cc4a" name="abb4ead18ebd49d06b3ee11cc47b0ef80a2cfe3b4f9911c5899d79f171d6b9cc4a"></a>KP_EQUAL&#160;</td><td class="fielddoc"><p>Numpad equal key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80a1ab6dcd85380f2d3e882fbd2f6fda566" name="abb4ead18ebd49d06b3ee11cc47b0ef80a1ab6dcd85380f2d3e882fbd2f6fda566"></a>WORLD_1&#160;</td><td class="fielddoc"><p>International key 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb4ead18ebd49d06b3ee11cc47b0ef80acb8104ace1979f9537c7f40de0622a22" name="abb4ead18ebd49d06b3ee11cc47b0ef80acb8104ace1979f9537c7f40de0622a22"></a>WORLD_2&#160;</td><td class="fielddoc"><p>International key 2. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_input_8hpp_source.html#l00029">29</a> of file <a class="el" href="_input_8hpp_source.html">Input.hpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ae03d04602a30983995a0e28edfd1b1db" name="ae03d04602a30983995a0e28edfd1b1db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae03d04602a30983995a0e28edfd1b1db">&#9670;&#160;</a></span>getCursorDelta()</h2>
 
@@ -178,7 +605,7 @@ Functions</h2></td></tr>
 <p>Returns how far the cursor moved since the last update() (requires update()). </p>
 <dl class="section return"><dt>Returns</dt><dd>Change in cursor position over the last frame. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00262">262</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00116">116</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -214,12 +641,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Cursor position (x right, y down) in pixels, as floats. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00233">233</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00085">85</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a8f4113d6dc81b68ccc78fe1ffbb242c1" name="a8f4113d6dc81b68ccc78fe1ffbb242c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f4113d6dc81b68ccc78fe1ffbb242c1">&#9670;&#160;</a></span>isKeyDown()</h2>
+<a id="ac13313c928268af939a4ba72ccfe9bbc" name="ac13313c928268af939a4ba72ccfe9bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13313c928268af939a4ba72ccfe9bbc">&#9670;&#160;</a></span>isKeyDown()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,7 +662,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">Key</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -249,18 +676,18 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>Whose native input is queried. </td></tr>
-    <tr><td class="paramname">key</td><td>GLFW key code to test. </td></tr>
+    <tr><td class="paramname">key</td><td>Key to test. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the key is down right now. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00223">223</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00075">75</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a747c75be12cbe3cb16e1e34b309919b4" name="a747c75be12cbe3cb16e1e34b309919b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a747c75be12cbe3cb16e1e34b309919b4">&#9670;&#160;</a></span>isKeyPressed()</h2>
+<a id="abcf85418a88cd89abf6f6e08903036d5" name="abcf85418a88cd89abf6f6e08903036d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf85418a88cd89abf6f6e08903036d5">&#9670;&#160;</a></span>isKeyPressed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +698,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool sog::input::isKeyPressed </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">Key</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -285,18 +712,18 @@ Functions</h2></td></tr>
 <p>Reports whether a key went down this frame (requires update()). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>GLFW key code to test. </td></tr>
+    <tr><td class="paramname">key</td><td>Key to test. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the key is down now but was up at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00240">240</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00092">92</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a8ca2b78c4b43400d19654ae0d71749a3" name="a8ca2b78c4b43400d19654ae0d71749a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ca2b78c4b43400d19654ae0d71749a3">&#9670;&#160;</a></span>isKeyReleased()</h2>
+<a id="a078babc1188b6999bbf7b0bdd33332df" name="a078babc1188b6999bbf7b0bdd33332df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a078babc1188b6999bbf7b0bdd33332df">&#9670;&#160;</a></span>isKeyReleased()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +734,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool sog::input::isKeyReleased </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#abb4ead18ebd49d06b3ee11cc47b0ef80">Key</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -321,13 +748,13 @@ Functions</h2></td></tr>
 <p>Reports whether a key went up this frame (requires update()). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>GLFW key code to test. </td></tr>
+    <tr><td class="paramname">key</td><td>Key to test. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the key is up now but was down at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00245">245</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00098">98</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +795,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the button is down right now. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00228">228</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00080">80</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +831,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the button is down now but was up at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00250">250</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00104">104</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +867,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the button is up now but was down at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00256">256</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00110">110</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -473,7 +900,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Resets the stored cursor position so the mode switch does not produce a huge delta spike on the next update(). </p>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00264">264</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00118">118</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +928,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Call once per frame, immediately after Window::pollEvents(). Advances the previous-state buffers, polls every key and mouse button, and computes the cursor delta since the prior update (zero on the very first update, to avoid a spurious jump). </p>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00203">203</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00055">55</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -552,7 +979,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Movement is normalized so diagonal travel is not faster, and pitch is clamped to +/-89 degrees to avoid flipping. Call after update() if you also need edge-triggered queries the same frame; the movement/look reads use live state. </p>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00270">270</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00124">124</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00179">sog::gfx::Camera::getPitch()</a>, <a class="el" href="_camera_8hpp_source.html#l00173">sog::gfx::Camera::getYaw()</a>, <a class="el" href="_camera_8cpp_source.html#l00074">sog::gfx::Camera::moveLocal()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">sog::gfx::Camera::setRotation()</a>.</p>
 

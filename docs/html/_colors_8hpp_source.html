@@ -116,11 +116,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_colors_8hpp_s
 <a href="_colors_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>sog::gfx</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_math_8hpp.html">../../Utility/Math.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>sog::gfx</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_color.html">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsog_1_1gfx_1_1_color.html">Color</a></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
@@ -144,23 +147,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_colors_8hpp_s
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
 </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_color.html#ad7a3d0e723ffb7ebc53d0df7fab7816f">   73</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_struct" href="structsog_1_1gfx_1_1_color.html">Color</a> <a class="code hl_function" href="structsog_1_1gfx_1_1_color.html#ad7a3d0e723ffb7ebc53d0df7fab7816f">toRGBA</a>(std::uint8_t <a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a437d9125835194ab2ad749b562bc161a">r</a>, std::uint8_t <a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#aa5b19034989f3dc86930ca29eb56426f">g</a>, std::uint8_t <a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a7b38e28891f44d43e028b64f291157bf">b</a>,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                  std::uint8_t <a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a6665818db07d1a8d4befb241a863e278">a</a>) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keyword">constexpr</span> <span class="keywordtype">float</span> max = 255.0f;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> {std::round(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a437d9125835194ab2ad749b562bc161a">r</a> * max),</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                std::round(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#aa5b19034989f3dc86930ca29eb56426f">g</a> * max),</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                std::round(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a7b38e28891f44d43e028b64f291157bf">b</a> * max),</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                std::round(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a6665818db07d1a8d4befb241a863e278">a</a> * max)};</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_color.html#ac559653f04d2eee56f17e5a6e858710c">   69</a></span>    [[nodiscard]] <span class="keyword">constexpr</span> std::array&lt;std::uint8_t, 4&gt; <a class="code hl_function" href="structsog_1_1gfx_1_1_color.html#ac559653f04d2eee56f17e5a6e858710c">toRGBA</a>() const noexcept</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">const</span> <span class="keyword">auto</span> toByte = [](<span class="keywordtype">float</span> channel) -&gt; std::uint8_t</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">if</span> (channel &lt;= 0.f)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">if</span> (channel &gt;= 1.f)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a0f550a1585eb2fb94ac757d86dcf2cdd">MAX_VALUE</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(std::round(channel * <a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a0f550a1585eb2fb94ac757d86dcf2cdd">MAX_VALUE</a>));</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        };</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> {toByte(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a437d9125835194ab2ad749b562bc161a">r</a>), toByte(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#aa5b19034989f3dc86930ca29eb56426f">g</a>), toByte(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a7b38e28891f44d43e028b64f291157bf">b</a>), toByte(<a class="code hl_variable" href="structsog_1_1gfx_1_1_color.html#a6665818db07d1a8d4befb241a863e278">a</a>)};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
 </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>} <span class="comment">// namespace sog::gfx</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>} <span class="comment">// namespace sog::gfx</span></div>
+<div class="ttc" id="a_math_8hpp_html"><div class="ttname"><a href="_math_8hpp.html">Math.hpp</a></div><div class="ttdoc">Re-exports the GLM math types the engine uses under the sog::math namespace (Vec2/Vec3/Vec4,...</div></div>
 <div class="ttc" id="a_math_8hpp_html_ac024fa2e07ab04285111a55214f66146"><div class="ttname"><a href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">sog::math::Vec4</a></div><div class="ttdeci">glm::vec4 Vec4</div><div class="ttdoc">4-component single-precision vector (alias of glm::vec4).</div><div class="ttdef"><b>Definition</b> <a href="_math_8hpp_source.html#l00020">Math.hpp:20</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_color_html"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html">sog::gfx::Color</a></div><div class="ttdoc">RGBA color stored as normalized floats (0.0 - 1.0 per channel).</div><div class="ttdef"><b>Definition</b> <a href="#l00023">Colors.hpp:24</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_color_html_a0a7d0894c85999802260c782a5d0e370"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html#a0a7d0894c85999802260c782a5d0e370">sog::gfx::Color::fromRGBA</a></div><div class="ttdeci">static constexpr Color fromRGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a) noexcept</div><div class="ttdoc">Builds a normalized Color from conventional 8-bit-per-channel values.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Colors.hpp:51</a></div></div>
@@ -169,7 +173,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_colors_8hpp_s
 <div class="ttc" id="astructsog_1_1gfx_1_1_color_html_a6665818db07d1a8d4befb241a863e278"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html#a6665818db07d1a8d4befb241a863e278">sog::gfx::Color::a</a></div><div class="ttdeci">float a</div><div class="ttdoc">Alpha channel (0.0 - 1.0); defaults to 0.0 (fully transparent).</div><div class="ttdef"><b>Definition</b> <a href="#l00031">Colors.hpp:31</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_color_html_a7b38e28891f44d43e028b64f291157bf"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html#a7b38e28891f44d43e028b64f291157bf">sog::gfx::Color::b</a></div><div class="ttdeci">float b</div><div class="ttdoc">Blue channel (0.0 - 1.0); defaults to 0.0 (black).</div><div class="ttdef"><b>Definition</b> <a href="#l00030">Colors.hpp:30</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_color_html_aa5b19034989f3dc86930ca29eb56426f"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html#aa5b19034989f3dc86930ca29eb56426f">sog::gfx::Color::g</a></div><div class="ttdeci">float g</div><div class="ttdoc">Green channel (0.0 - 1.0); defaults to 0.0 (black).</div><div class="ttdef"><b>Definition</b> <a href="#l00029">Colors.hpp:29</a></div></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_color_html_ad7a3d0e723ffb7ebc53d0df7fab7816f"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html#ad7a3d0e723ffb7ebc53d0df7fab7816f">sog::gfx::Color::toRGBA</a></div><div class="ttdeci">static constexpr Color toRGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a) noexcept</div><div class="ttdoc">Scales 8-bit channels into whole-number 0-255 float values.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">Colors.hpp:73</a></div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_color_html_ac559653f04d2eee56f17e5a6e858710c"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html#ac559653f04d2eee56f17e5a6e858710c">sog::gfx::Color::toRGBA</a></div><div class="ttdeci">constexpr std::array&lt; std::uint8_t, 4 &gt; toRGBA() const noexcept</div><div class="ttdoc">Converts this color&#39;s normalized channels into conventional 8-bit values (the inverse of fromRGBA()).</div><div class="ttdef"><b>Definition</b> <a href="#l00069">Colors.hpp:69</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

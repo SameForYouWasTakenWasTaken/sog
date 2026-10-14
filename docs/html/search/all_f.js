@@ -1,14 +1,18 @@
 var searchData=
 [
-  ['perspective_0',['Perspective',['../classsog_1_1gfx_1_1_camera.html#ac87386c018fa1ac9a1f1aca156e8f5f2aa80420eef88d11f77532f1b9cb467fa3',1,'sog::gfx::Camera']]],
-  ['pixel_5fformat_1',['pixel_format',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044fa',1,'sog::gfx::enums']]],
-  ['pixel_5ftype_2',['pixel_type',['../_enums_8hpp.html#affc57cb0b078305ef6584a5ca8ecc133',1,'sog::gfx::enums']]],
-  ['points_3',['POINTS',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cba70b71cabeeaf8c2bf473c896d5442ddb',1,'sog::gfx::enums']]],
-  ['pollevent_4',['pollEvent',['../classsog_1_1gfx_1_1_window.html#a4e6b7089da6cda9daf2d51554918cadb',1,'sog::gfx::Window']]],
-  ['pollevents_5',['pollEvents',['../classsog_1_1gfx_1_1_window.html#a158711bd84d2ed3574d2c350e2aeafe1',1,'sog::gfx::Window']]],
-  ['position_6',['position',['../structsog_1_1gfx_1_1_vertex.html#a39b52c5d76c465b624326e2336ccc94f',1,'sog::gfx::Vertex']]],
-  ['positionindex_7',['PositionIndex',['../structsog_1_1gfx_1_1_vertex.html#a7ee8a32d385f1fde7af251255127f453',1,'sog::gfx::Vertex']]],
-  ['projectiontype_8',['ProjectionType',['../classsog_1_1gfx_1_1_camera.html#ac87386c018fa1ac9a1f1aca156e8f5f2',1,'sog::gfx::Camera']]],
-  ['push_9',['push',['../classsog_1_1gfx_1_1_gpu_buffer.html#a16bd3d6af394879a1b8c9015436c4f78',1,'sog::gfx::GpuBuffer']]],
-  ['pushevent_10',['pushEvent',['../classsog_1_1gfx_1_1_window.html#ab0c664c3ff0b4f70026b03cfd573fa58',1,'sog::gfx::Window']]]
+  ['o_0',['O',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80af186217753c37b9b9f958d906208506e',1,'sog::input']]],
+  ['offset_1',['offset',['../structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a572d99853223809a15bd140073d4fc39',1,'sog::gfx::backend::VertexArrayAttributes']]],
+  ['on_5fresize_2',['on_resize',['../structsog_1_1gfx_1_1_window_1_1_impl_window.html#a6b88faf06415f1c8737bfb7875c66d83',1,'sog::gfx::Window::ImplWindow']]],
+  ['opengl_5fprofile_3',['OpenGL_Profile',['../structsog_1_1context_1_1_window_context.html#a1caa0f4d0a5356af774e933aeff25a1f',1,'sog::context::WindowContext']]],
+  ['opengl_5fversion_5fmajor_4',['OpenGL_Version_Major',['../structsog_1_1context_1_1_window_context.html#a5e9d542318d749a2b86c63d0904ff140',1,'sog::context::WindowContext']]],
+  ['opengl_5fversion_5fminor_5',['OpenGL_Version_Minor',['../structsog_1_1context_1_1_window_context.html#a549488287bd9dccea9dee34274b3d203',1,'sog::context::WindowContext']]],
+  ['opengldebug_2ecpp_6',['OpenGLDebug.cpp',['../_open_g_l_debug_8cpp.html',1,'']]],
+  ['opengldebug_2ehpp_7',['OpenGLDebug.hpp',['../_open_g_l_debug_8hpp.html',1,'']]],
+  ['openglprofile_8',['OpenGLProfile',['../structsog_1_1context_1_1_window_context.html#a4c0c01ebeccc801c994fd44c90a94560',1,'sog::context::WindowContext']]],
+  ['operator_20bool_9',['operator bool',['../classsog_1_1gfx_1_1_g_l_handle.html#af0652fcacd1130045695fe9d69076ced',1,'sog::gfx::GLHandle::operator bool()'],['../classsog_1_1gfx_1_1_frame_buffer.html#af910d11a2656d08c5a5e6fc4bde1fdff',1,'sog::gfx::FrameBuffer::operator bool()'],['../classsog_1_1gfx_1_1_render_buffer.html#ac60f2a607e602ebcd3a2e8ffd0ce2963',1,'sog::gfx::RenderBuffer::operator bool()'],['../structsog_1_1gfx_1_1_uniform.html#ae4932b7b4f8508066fedc6c9d1fbe7d9',1,'sog::gfx::Uniform::operator bool() const noexcept']]],
+  ['operator_20location_10',['operator Location',['../structsog_1_1gfx_1_1_uniform.html#a40af61b48ed590e63ee578e955a67c0d',1,'sog::gfx::Uniform']]],
+  ['operator_20math_3a_3avec4_11',['Vec4',['../structsog_1_1gfx_1_1_color.html#a7d1182872be1655f8baf63972cbb6d9b',1,'sog::gfx::Color']]],
+  ['operator_3d_12',['operator=',['../classsog_1_1gfx_1_1_g_l_handle.html#a9e63587b5722d61290173319d20dd915',1,'sog::gfx::GLHandle::operator=(const GLHandle &amp;)=delete'],['../classsog_1_1gfx_1_1_g_l_handle.html#a88cd35e3aa84fb9c6e2efa6e5b9daf08',1,'sog::gfx::GLHandle::operator=(GLHandle &amp;&amp;other) noexcept'],['../classsog_1_1gfx_1_1backend_1_1_g_l_buffer.html#abdb7b9d10e5c133efd59515f6c8b6cd8',1,'sog::gfx::backend::GLBuffer::operator=(const GLBuffer &amp;)=delete'],['../classsog_1_1gfx_1_1backend_1_1_g_l_buffer.html#a6e3af22c25a71e7fe88f4fbb6635d5ae',1,'sog::gfx::backend::GLBuffer::operator=(GLBuffer &amp;&amp;o) noexcept'],['../classsog_1_1gfx_1_1_frame_buffer.html#a4bca318f53bf0bd2b3e06f0db0b26daa',1,'sog::gfx::FrameBuffer::operator=(const FrameBuffer &amp;)=delete'],['../classsog_1_1gfx_1_1_frame_buffer.html#a125f2a2d25a9982656b91caef94c744d',1,'sog::gfx::FrameBuffer::operator=(FrameBuffer &amp;&amp;o) noexcept'],['../classsog_1_1gfx_1_1_texture2_d.html#a342253a3042b75ab3f0cc862746867e7',1,'sog::gfx::Texture2D::operator=(const Texture2D &amp;)=delete'],['../classsog_1_1gfx_1_1_texture2_d.html#a5c3fbaa7915461e92dc5e0fc619413c4',1,'sog::gfx::Texture2D::operator=(Texture2D &amp;&amp;o) noexcept'],['../classsog_1_1gfx_1_1_vertex_array.html#aca1059839eded6b1b55cddf92decab0f',1,'sog::gfx::VertexArray::operator=()'],['../classsog_1_1gfx_1_1_render_buffer.html#ad60338c91a25f9a53b0561ce1c8d636e',1,'sog::gfx::RenderBuffer::operator=(const RenderBuffer &amp;)=delete'],['../classsog_1_1gfx_1_1_render_buffer.html#a3e5f6a4fcc1034356c597b71815be2e1',1,'sog::gfx::RenderBuffer::operator=(RenderBuffer &amp;&amp;o) noexcept']]],
+  ['operator_7c_13',['operator|',['../_clear_buffer_8hpp.html#a23fb794c0be33621b117e6fd31e26bc7',1,'sog::gfx']]],
+  ['orthographic_14',['Orthographic',['../classsog_1_1gfx_1_1_camera.html#ac87386c018fa1ac9a1f1aca156e8f5f2a03424250432f2aa71de95579d2c0eaeb',1,'sog::gfx::Camera']]]
 ];

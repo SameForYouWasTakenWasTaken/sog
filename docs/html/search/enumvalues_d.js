@@ -1,15 +1,20 @@
 var searchData=
 [
-  ['r8_0',['R8',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837acfff813d86d447fa2a9c858650ebbb90',1,'sog::gfx::enums']]],
-  ['red_1',['Red',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faaee38e4d5dd68c4e440825018d549cb47',1,'sog::gfx::enums']]],
-  ['regular_2',['Regular',['../_gpu_buffer_8hpp.html#a2c17e1f81520f92470e8aad974c6ce84ad2203cb1237cb6460cbad94564e39345',1,'sog::gfx']]],
-  ['repeat_3',['REPEAT',['../_enums_8hpp.html#a43bed2cff125f89e94baad11a16f6e3ea5be68175be14dfaa080165456c2e9555',1,'sog::gfx::enums']]],
-  ['resized_4',['Resized',['../_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477a22995988de764d7a8cb4165fbff371cb',1,'sog::gfx']]],
-  ['rg_5',['RG',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faabac953e88f6d79514b0b6fc42eb6f3b7',1,'sog::gfx::enums']]],
-  ['rgb_6',['RGB',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faa889574aebacda6bfd3e534e2b49b8028',1,'sog::gfx::enums']]],
-  ['rgb16f_7',['RGB16F',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837a25cd126670bd567a899c64c4e6e8ca7d',1,'sog::gfx::enums']]],
-  ['rgb8_8',['RGB8',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837a165c6379d01617e12de274a3952efa63',1,'sog::gfx::enums']]],
-  ['rgba_9',['RGBA',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faaea3495a278957dc58165e48a8945469f',1,'sog::gfx::enums']]],
-  ['rgba16f_10',['RGBA16F',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837aa29d843695056f9c171a9eb702d6910a',1,'sog::gfx::enums']]],
-  ['rgba8_11',['RGBA8',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837ab4b279046a02077466fa26cabb00c642',1,'sog::gfx::enums']]]
+  ['n_0',['N',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a8d9c307cb7f3c4a32822a51922d1ceaa',1,'sog::input']]],
+  ['nearest_1',['NEAREST',['../_enums_8hpp.html#ac80ba303a114317dd6d86a7eecc24d79aad135772d7cf93dd0ccf9d2474b34e6a',1,'NEARESTsog::gfx::enums'],['../_enums_8hpp.html#a36ea70ef54af5a77b3218ebdd06f61abaad135772d7cf93dd0ccf9d2474b34e6a',1,'NEARESTsog::gfx::enums'],['../_enums_8hpp.html#a8483193ab9eb605d27c2b78240ab396daad135772d7cf93dd0ccf9d2474b34e6a',1,'NEARESTsog::gfx::enums']]],
+  ['nearest_5flinear_2',['NEAREST_LINEAR',['../_enums_8hpp.html#a8483193ab9eb605d27c2b78240ab396da704f21e07e578564824a3102bbbccac2',1,'sog::gfx::enums']]],
+  ['nearest_5fmipmap_5flinear_3',['NEAREST_MIPMAP_LINEAR',['../_enums_8hpp.html#ac80ba303a114317dd6d86a7eecc24d79a65706de8e74692e0dcd9cd776d668bab',1,'sog::gfx::enums']]],
+  ['nearest_5fmipmap_5fnearest_4',['NEAREST_MIPMAP_NEAREST',['../_enums_8hpp.html#ac80ba303a114317dd6d86a7eecc24d79a1fbb2c20778f4e3e3ea0ec17ebd5dce3',1,'sog::gfx::enums']]],
+  ['none_5',['NONE',['../_enums_8hpp.html#acbf551e779956773438401982e9786ebab50339a10e1de285ac99d4c3990b8693',1,'sog::gfx::enums']]],
+  ['num_5f0_6',['NUM_0',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a0337623d4049d913b2cc509174a59ba1',1,'sog::input']]],
+  ['num_5f1_7',['NUM_1',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a1eeacfec5e7988f11671c829698fc8b4',1,'sog::input']]],
+  ['num_5f2_8',['NUM_2',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80aaa0af80237c5fd531521116e14de59c6',1,'sog::input']]],
+  ['num_5f3_9',['NUM_3',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80aa4e4e51ea57e692332c72d32428b3851',1,'sog::input']]],
+  ['num_5f4_10',['NUM_4',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a990299ddc3e16ad13c9fe49337cdb53c',1,'sog::input']]],
+  ['num_5f5_11',['NUM_5',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a02addb75153754910d8344f8bfa06501',1,'sog::input']]],
+  ['num_5f6_12',['NUM_6',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a3b0a1f52347b7d7dc426c49536e3edba',1,'sog::input']]],
+  ['num_5f7_13',['NUM_7',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80af45fde1eaac63c5a55cf87e584f5e6bb',1,'sog::input']]],
+  ['num_5f8_14',['NUM_8',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80ade5947451686ebff12b3b3feb15043f4',1,'sog::input']]],
+  ['num_5f9_15',['NUM_9',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80aad6039189d8fe566b7dfe30ea70f8b4d',1,'sog::input']]],
+  ['num_5flock_16',['NUM_LOCK',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80acb0d0bf9279e78f982deba761110e434',1,'sog::input']]]
 ];
