@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/gfx/OpenGL/Objects/Shader.hpp File Reference</title>
+<title>sog (Small OpenGL Graphics): src/sog/include/sog/gfx/OpenGL/Objects/Shader.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -118,25 +118,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_shader_8hpp.h
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;<a class="el" href="graphics__error_8hpp_source.html">sog/Error/Exceptions/graphics_error.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_enums_8hpp_source.html">sog/gfx/Types/Enums.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_g_f_x_types_8hpp_source.html">sog/gfx/Types/GFXTypes.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_handles_8hpp_source.html">sog/gfx/Types/Handles.hpp</a>&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="graphics__error_8hpp_source.html">Error/Exceptions/graphics_error.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_enums_8hpp_source.html">gfx/Types/Enums.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_g_f_x_types_8hpp_source.html">gfx/Types/GFXTypes.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_handles_8hpp_source.html">gfx/Types/Handles.hpp</a>&quot;</code><br />
 </div>
 <p><a href="_shader_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:sog_3A_3Agfx_3A_3AShader_3C_20shader_5Ftype_20_3E" id="r_sog_3A_3Agfx_3A_3AShader_3C_20shader_5Ftype_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html">sog::gfx::Shader&lt; shader_type &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single compiled GL shader stage, templated on its <a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae" title="Shader stage types (mirrors GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER,...">shader_type</a>.  <a href="classsog_1_1gfx_1_1_shader.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single compiled GL shader stage, templated on its shader_type.  <a href="classsog_1_1gfx_1_1_shader.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ad22bd8d0661d4a034ba4aeb7a59dd229" id="r_ad22bd8d0661d4a034ba4aeb7a59dd229"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad22bd8d0661d4a034ba4aeb7a59dd229">sog::gfx::VertexShader</a> = <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4aea0c3e47aef93a7f244f41ab309a33634b">shader_type::VERTEX</a>&gt;</td></tr>
-<tr class="memdesc:ad22bd8d0661d4a034ba4aeb7a59dd229"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> specialized for the vertex stage (<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4aea0c3e47aef93a7f244f41ab309a33634b" title="Vertex processing stage.">shader_type::VERTEX</a>).  <br /></td></tr>
-<tr class="memitem:a7c947c6f637c602fe5c0c3e16eb76231" id="r_a7c947c6f637c602fe5c0c3e16eb76231"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a7c947c6f637c602fe5c0c3e16eb76231">sog::gfx::FragmentShader</a> = <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4aea7345a249ed5c2f850d85dc1727c24716">shader_type::FRAGMENT</a>&gt;</td></tr>
-<tr class="memdesc:a7c947c6f637c602fe5c0c3e16eb76231"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> specialized for the fragment stage (<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4aea7345a249ed5c2f850d85dc1727c24716" title="Fragment (per-pixel) processing stage.">shader_type::FRAGMENT</a>).  <br /></td></tr>
+<tr class="memitem:ad22bd8d0661d4a034ba4aeb7a59dd229" id="r_ad22bd8d0661d4a034ba4aeb7a59dd229"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad22bd8d0661d4a034ba4aeb7a59dd229">sog::gfx::VertexShader</a> = <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt;<a class="el" href="_enums_8hpp.html#a9f2f1b58d0fbe47069bb6699e2597f41a0c3e47aef93a7f244f41ab309a33634b">shader_type::VERTEX</a>&gt;</td></tr>
+<tr class="memdesc:ad22bd8d0661d4a034ba4aeb7a59dd229"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> specialized for the vertex stage (<a class="el" href="_enums_8hpp.html#a9f2f1b58d0fbe47069bb6699e2597f41a0c3e47aef93a7f244f41ab309a33634b" title="Vertex processing stage.">shader_type::VERTEX</a>).  <br /></td></tr>
+<tr class="memitem:a7c947c6f637c602fe5c0c3e16eb76231" id="r_a7c947c6f637c602fe5c0c3e16eb76231"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a7c947c6f637c602fe5c0c3e16eb76231">sog::gfx::FragmentShader</a> = <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt;<a class="el" href="_enums_8hpp.html#a9f2f1b58d0fbe47069bb6699e2597f41a7345a249ed5c2f850d85dc1727c24716">shader_type::FRAGMENT</a>&gt;</td></tr>
+<tr class="memdesc:a7c947c6f637c602fe5c0c3e16eb76231"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> specialized for the fragment stage (<a class="el" href="_enums_8hpp.html#a9f2f1b58d0fbe47069bb6699e2597f41a7345a249ed5c2f850d85dc1727c24716" title="Fragment (per-pixel) processing stage.">shader_type::FRAGMENT</a>).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -162,7 +162,7 @@ Functions</h2></td></tr>
 
 <p>Shader specialized for the fragment stage (shader_type::FRAGMENT). </p>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00148">148</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00161">161</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -180,7 +180,7 @@ Functions</h2></td></tr>
 
 <p>Shader specialized for the vertex stage (shader_type::VERTEX). </p>
 
-<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00146">146</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00159">159</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_shader_8hpp_source.html#l00024">24</a> of file <a class="el" href="_shader_8hpp_source.html">Shader.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>.</p>
+<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>.</p>
 
 </div>
 </div>
@@ -246,7 +246,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>OpenGL</b></li><li class="navelem"><b>Objects</b></li><li class="navelem"><a href="_shader_8hpp.html">Shader.hpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>OpenGL</b></li><li class="navelem"><b>Objects</b></li><li class="navelem"><a href="_shader_8hpp.html">Shader.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

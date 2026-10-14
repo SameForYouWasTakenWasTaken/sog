@@ -25,8 +25,10 @@ struct Color
     static constexpr float MAX_VALUE =
         255.f; /**< Largest value of an 8-bit channel; scale factor for toRGBA(). */
 
-    float r{}, g{}, b{}, a = 0; /**< Color channels; r/g/b default to 0.0 (black), a defaults to 0.0
-                                   (fully transparent). */
+    float r{}; /**< Red channel (0.0 - 1.0); defaults to 0.0 (black). */
+    float g{}; /**< Green channel (0.0 - 1.0); defaults to 0.0 (black). */
+    float b{}; /**< Blue channel (0.0 - 1.0); defaults to 0.0 (black). */
+    float a = 0; /**< Alpha channel (0.0 - 1.0); defaults to 0.0 (fully transparent). */
 
     /**
      * @brief Converts this color to a 4-component vector for GL calls.
@@ -55,17 +57,18 @@ struct Color
     }
 
     /**
-     * @brief Scales float channels into the 0-255 range, rounding each to a whole number.
-     * @param r Red channel, expected in [0, 1].
-     * @param g Green channel, expected in [0, 1].
-     * @param b Blue channel, expected in [0, 1].
-     * @param a Alpha channel, expected in [0, 1].
-     * @return Color whose members hold the rounded 0-255 values as floats.
+     * @brief Scales 8-bit channels into whole-number 0-255 float values.
+     * @param r Red channel, 0-255.
+     * @param g Green channel, 0-255.
+     * @param b Blue channel, 0-255.
+     * @param a Alpha channel, 0-255.
+     * @return Color whose members hold the rounded, scaled channel values as floats.
      *
-     * @attention Despite the name, this does not produce 8-bit integers; it returns a
-     * Color whose float members are scaled to 0-255. The result is only suitable as
-     * an intermediate for further conversion (e.g. before writing bytes to disk),
-     * not for direct use with OpenGL calls that expect normalized [0, 1] colors.
+     * @attention Despite the name, this does not produce normalized 8-bit values
+     * usable with OpenGL: the parameters are 0-255 inputs, and the current
+     * implementation multiplies them by 255 again (0-255 becomes 0-65025). Treat
+     * this helper as unusable until it is fixed; use fromRGBA() to build a
+     * normalized [0, 1] Color instead.
      */
     static constexpr Color toRGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b,
                                   std::uint8_t a) noexcept

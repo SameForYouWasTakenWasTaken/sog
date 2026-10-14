@@ -27,11 +27,14 @@ namespace sog::gfx
  *
  * empty() is a convenience factory for an uninitialized texture of a given size
  * (e.g. a render target), and bind() binds the texture to a sampler unit using
- * glBindTextureUnit (DSA). The GL texture is deleted on destruction.
+ * glBindTextureUnit (DSA).
  *
  * @attention Mipmap generation only happens when both generateMipmaps is set AND
  * pixel data was supplied; allocating storage alone (data == nullptr) leaves the
  * chain ungenerated and sampling may look wrong if a mip filter is selected.
+ *
+ * @attention The GL texture object is currently never deleted: Texture2D has no
+ * destructor, so textures live until the GL context is destroyed.
  *
  * @see sog::TextureSettings
  */
@@ -40,11 +43,31 @@ class Texture2D
   public:
     /// Constructs an empty Texture2D with no GL object allocated.
     Texture2D() { create(); }
+
+    /**
+     * @brief Constructs a texture and loads it from an image file immediately.
+     * @param path Path to the image file (any stb_image-supported format).
+     * @param settings Sampling settings (wrap, filter, mipmap) to apply.
+     * @throws sog::graphics_error With graphics_error_code::texture_load_failed if decoding fails.
+     */
     Texture2D(const std::filesystem::path& path, const TextureSettings& settings)
     {
         create();
         createFromFile(path, settings);
     }
+
+    /**
+     * @brief Constructs a texture and uploads caller-supplied pixel data immediately.
+     * @param data Tightly packed pixel data, or nullptr to allocate storage without uploading.
+     * @param width Width in pixels (must be > 0).
+     * @param height Height in pixels (must be > 0).
+     * @param internalFormat GL internal format to allocate for the storage.
+     * @param format GL format of the supplied data.
+     * @param type GL data type of the supplied data.
+     * @param settings Sampling settings to apply.
+     * @throws sog::graphics_error With graphics_error_code::texture_load_failed if width or height
+     * is not positive.
+     */
     Texture2D(const void* data, int width, int height, texture_internal_format internalFormat,
               pixel_format format, pixel_type type, const TextureSettings& settings)
     {

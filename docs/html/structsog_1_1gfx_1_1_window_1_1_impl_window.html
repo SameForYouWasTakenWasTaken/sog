@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Window::ImplWindow Struct Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Window::ImplWindow Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -129,9 +129,9 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Private pimpl holding the native GLFWwindow and its resize callback. </p>
-<p>The resize callback (on_resize) is registered via glfwSetFramebufferSizeCallback; it recovers the owning <a class="el" href="classsog_1_1gfx_1_1_window.html" title="Owns a GLFW window and its OpenGL context, and drives the per-frame render loop.">Window</a> from the GLFW user pointer, updates the stored dimensions, resizes the GL viewport and enqueues an <a class="el" href="_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477a22995988de764d7a8cb4165fbff371cb" title="The window/framebuffer was resized; payload in Event::size.">EventType::Resized</a> event (ignored while minimized, i.e. size 0). </p>
+<p>The resize callback (on_resize) is registered via glfwSetFramebufferSizeCallback; it recovers the owning <a class="el" href="classsog_1_1gfx_1_1_window.html" title="Owns a GLFW window and its OpenGL context, and drives the per-frame render loop.">Window</a> from the GLFW user pointer, updates the stored dimensions, resizes the GL viewport and enqueues an EventType::Resized event (ignored while minimized, i.e. size 0). </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00051">51</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00049">49</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a6b88faf06415f1c8737bfb7875c66d83" name="a6b88faf06415f1c8737bfb7875c66d83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b88faf06415f1c8737bfb7875c66d83">&#9670;&#160;</a></span>on_resize()</h2>
@@ -175,11 +175,11 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00061">61</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00059">59</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_event_8hpp_source.html#l00033">sog::gfx::Event::type</a>, and <a class="el" href="_window_8cpp_source.html#l00081">sog::gfx::Window::Window()</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00159">sog::gfx::Window::m_Context</a>, <a class="el" href="_event_8hpp_source.html#l00033">sog::gfx::Event::type</a>, <a class="el" href="_window_context_8hpp_source.html#l00033">sog::context::WindowContext::width</a>, and <a class="el" href="_window_8cpp_source.html#l00079">sog::gfx::Window::Window()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00136">sog::gfx::Window::initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00135">sog::gfx::Window::initialize()</a>.</p>
 
 </div>
 </div>
@@ -198,12 +198,12 @@ Public Attributes</h2></td></tr>
 
 <p>Native GLFW window; null until <a class="el" href="classsog_1_1gfx_1_1_window.html#a700e577c0bdc25a42c2cc225664e697c" title="Sets up GLFW, the window, context and GLAD; throws on failure.">initialize()</a> succeeds. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00053">53</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00051">51</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Core/gfx/Window/<a class="el" href="_window_8cpp_source.html">Window.cpp</a></li>
+<li>src/sog/gfx/Window/<a class="el" href="_window_8cpp_source.html">Window.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

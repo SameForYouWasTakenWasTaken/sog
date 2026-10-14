@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/Input.cpp Source File</title>
+<title>sog (Small OpenGL Graphics): src/sog/Input.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,188 +114,332 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_input_8cpp_so
 </div><!--header-->
 <div class="contents">
 <a href="_input_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_input_8hpp.html">Input.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;GLFW/glfw3.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;glad/gl.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>sog::input</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>GLFWwindow* native(<span class="keyword">const</span> gfx::Window&amp; w) { <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(w.getNativeHandle()); }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">struct </span>State</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::array&lt;bool, GLFW_KEY_LAST + 1&gt; keys{}, prevKeys{};       </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::array&lt;bool, GLFW_MOUSE_BUTTON_LAST + 1&gt; buttons{}, prevButtons{}; </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    glm::vec2 cursor{}, delta{}; </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">bool</span> hasCursor{<span class="keyword">false</span>};       </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>State g_State; </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">bool</span> inRange(<span class="keywordtype">int</span> v, std::size_t size) { <span class="keywordflow">return</span> v &gt;= 0 &amp;&amp; <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(v) &lt; size; }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>} <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33">   51</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33">update</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    GLFWwindow* w = native(window);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    g_State.prevKeys = g_State.keys;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    g_State.prevButtons = g_State.buttons;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_input_8hpp.html">include/sog/Input.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;GLFW/glfw3.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;glad/gl.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>sog::input</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_input_8cpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80">   28</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_input_8cpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80">Key</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Letters</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    A = GLFW_KEY_A,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    B = GLFW_KEY_B,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    C = GLFW_KEY_C,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    D = GLFW_KEY_D,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    E = GLFW_KEY_E,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    F = GLFW_KEY_F,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    G = GLFW_KEY_G,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    H = GLFW_KEY_H,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    I = GLFW_KEY_I,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    J = GLFW_KEY_J,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    K = GLFW_KEY_K,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    L = GLFW_KEY_L,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    M = GLFW_KEY_M,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    N = GLFW_KEY_N,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    O = GLFW_KEY_O,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    P = GLFW_KEY_P,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Q = GLFW_KEY_Q,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    R = GLFW_KEY_R,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    S = GLFW_KEY_S,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    T = GLFW_KEY_T,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    U = GLFW_KEY_U,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    V = GLFW_KEY_V,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    W = GLFW_KEY_W,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    X = GLFW_KEY_X,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Y = GLFW_KEY_Y,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    Z = GLFW_KEY_Z,</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = GLFW_KEY_SPACE; k &lt;= GLFW_KEY_LAST; ++k) <span class="comment">// keys below SPACE are invalid</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        g_State.keys[k] = glfwGetKey(w, k) == GLFW_PRESS;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 0; b &lt;= GLFW_MOUSE_BUTTON_LAST; ++b)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        g_State.buttons[b] = glfwGetMouseButton(w, b) == GLFW_PRESS;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> glm::vec2 now = <a class="code hl_function" href="_input_8cpp.html#af9561160ab4cb4a0bfb827460ab5367c">getCursorPosition</a>(window);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// No delta on the first frame, otherwise the camera jumps</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    g_State.delta = g_State.hasCursor ? now - g_State.cursor : glm::vec2{0.f};</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    g_State.cursor = now;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    g_State.hasCursor = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
-</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">   71</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">int</span> key)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> glfwGetKey(native(window), key) == GLFW_PRESS;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
-</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="_input_8cpp.html#ae0ec6594d8fb625d88c8984bbbfe838d">   76</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8cpp.html#ae0ec6594d8fb625d88c8984bbbfe838d">isMouseButtonDown</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">int</span> button)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> glfwGetMouseButton(native(window), button) == GLFW_PRESS;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
-</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="_input_8cpp.html#af9561160ab4cb4a0bfb827460ab5367c">   81</a></span>glm::vec2 <a class="code hl_function" href="_input_8cpp.html#af9561160ab4cb4a0bfb827460ab5367c">getCursorPosition</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">double</span> x{}, y{};</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    glfwGetCursorPos(native(window), &amp;x, &amp;y);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(x), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(y)};</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
-</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="_input_8cpp.html#a747c75be12cbe3cb16e1e34b309919b4">   88</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8cpp.html#a747c75be12cbe3cb16e1e34b309919b4">isKeyPressed</a>(<span class="keywordtype">int</span> key)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> inRange(key, g_State.keys.size()) &amp;&amp; g_State.keys[key] &amp;&amp; !g_State.prevKeys[key];</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
-</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="_input_8cpp.html#a8ca2b78c4b43400d19654ae0d71749a3">   93</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8cpp.html#a8ca2b78c4b43400d19654ae0d71749a3">isKeyReleased</a>(<span class="keywordtype">int</span> key)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> inRange(key, g_State.keys.size()) &amp;&amp; !g_State.keys[key] &amp;&amp; g_State.prevKeys[key];</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
-</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="_input_8cpp.html#a7647a99d16e09d6a91138de4e4f2eb29">   98</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8cpp.html#a7647a99d16e09d6a91138de4e4f2eb29">isMouseButtonPressed</a>(<span class="keywordtype">int</span> button)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> inRange(button, g_State.buttons.size()) &amp;&amp; g_State.buttons[button] &amp;&amp;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>           !g_State.prevButtons[button];</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
-</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="_input_8cpp.html#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">  104</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8cpp.html#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">isMouseButtonReleased</a>(<span class="keywordtype">int</span> button)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> inRange(button, g_State.buttons.size()) &amp;&amp; !g_State.buttons[button] &amp;&amp;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>           g_State.prevButtons[button];</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
-</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="_input_8cpp.html#ae03d04602a30983995a0e28edfd1b1db">  110</a></span>glm::vec2 <a class="code hl_function" href="_input_8cpp.html#ae03d04602a30983995a0e28edfd1b1db">getCursorDelta</a>() { <span class="keywordflow">return</span> g_State.delta; }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="_input_8cpp.html#a8aa2e678b6cb6adb5f68d91d00a59eb2">  112</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_input_8cpp.html#a8aa2e678b6cb6adb5f68d91d00a59eb2">setCursorCaptured</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">bool</span> captured)</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>{</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    glfwSetInputMode(native(window), GLFW_CURSOR,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                     captured ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    g_State.hasCursor = <span class="keyword">false</span>; <span class="comment">// avoid a delta spike when the mode switches</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
-</div>
-<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="_input_8cpp.html#aa435aa10d2699c8fe7b1eb6d393028e0">  118</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_input_8cpp.html#aa435aa10d2699c8fe7b1eb6d393028e0">updateCamera</a>(<a class="code hl_class" href="classsog_1_1gfx_1_1_camera.html">gfx::Camera</a>&amp; camera, <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">float</span> dt, <span class="keywordtype">float</span> moveSpeed,</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                  <span class="keywordtype">float</span> turnSpeed)</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">// Look: arrow keys</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">float</span> yaw = 0.f, pitch = 0.f;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_LEFT))</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        yaw -= 1.f;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_RIGHT))</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        yaw += 1.f;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_UP))</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        pitch += 1.f;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_DOWN))</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        pitch -= 1.f;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// Numbers</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    NUM_0 = GLFW_KEY_0,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    NUM_1 = GLFW_KEY_1,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    NUM_2 = GLFW_KEY_2,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    NUM_3 = GLFW_KEY_3,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    NUM_4 = GLFW_KEY_4,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    NUM_5 = GLFW_KEY_5,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    NUM_6 = GLFW_KEY_6,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    NUM_7 = GLFW_KEY_7,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    NUM_8 = GLFW_KEY_8,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    NUM_9 = GLFW_KEY_9,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Function keys</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    F1 = GLFW_KEY_F1,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    F2 = GLFW_KEY_F2,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    F3 = GLFW_KEY_F3,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    F4 = GLFW_KEY_F4,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    F5 = GLFW_KEY_F5,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    F6 = GLFW_KEY_F6,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    F7 = GLFW_KEY_F7,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    F8 = GLFW_KEY_F8,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    F9 = GLFW_KEY_F9,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    F10 = GLFW_KEY_F10,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    F11 = GLFW_KEY_F11,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    F12 = GLFW_KEY_F12,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    F13 = GLFW_KEY_F13,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    F14 = GLFW_KEY_F14,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    F15 = GLFW_KEY_F15,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    F16 = GLFW_KEY_F16,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    F17 = GLFW_KEY_F17,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    F18 = GLFW_KEY_F18,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    F19 = GLFW_KEY_F19,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    F20 = GLFW_KEY_F20,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    F21 = GLFW_KEY_F21,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    F22 = GLFW_KEY_F22,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    F23 = GLFW_KEY_F23,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    F24 = GLFW_KEY_F24,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    F25 = GLFW_KEY_F25,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// Modifiers &amp; Controls</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    ESC = GLFW_KEY_ESCAPE,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    TAB = GLFW_KEY_TAB,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    ENTER = GLFW_KEY_ENTER,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    SPACE = GLFW_KEY_SPACE,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    BACKSPACE = GLFW_KEY_BACKSPACE,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    INSERT = GLFW_KEY_INSERT,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    DELETE = GLFW_KEY_DELETE,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    RIGHT = GLFW_KEY_RIGHT,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    LEFT = GLFW_KEY_LEFT,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    DOWN = GLFW_KEY_DOWN,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    UP = GLFW_KEY_UP,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    PAGE_UP = GLFW_KEY_PAGE_UP,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    PAGE_DOWN = GLFW_KEY_PAGE_DOWN,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    HOME = GLFW_KEY_HOME,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    END = GLFW_KEY_END,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    CAPS_LOCK = GLFW_KEY_CAPS_LOCK,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    SCROLL_LOCK = GLFW_KEY_SCROLL_LOCK,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    NUM_LOCK = GLFW_KEY_NUM_LOCK,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    PRINT_SCREEN = GLFW_KEY_PRINT_SCREEN,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    PAUSE = GLFW_KEY_PAUSE,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">// Special characters / Punctuation</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    APOSTROPHE = GLFW_KEY_APOSTROPHE,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    COMMA = GLFW_KEY_COMMA,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    MINUS = GLFW_KEY_MINUS,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    PERIOD = GLFW_KEY_PERIOD,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    SLASH = GLFW_KEY_SLASH,</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    SEMICOLON = GLFW_KEY_SEMICOLON,</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    EQUAL = GLFW_KEY_EQUAL,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    LEFT_BRACKET = GLFW_KEY_LEFT_BRACKET,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    BACKSLASH = GLFW_KEY_BACKSLASH,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    RIGHT_BRACKET = GLFW_KEY_RIGHT_BRACKET,</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    GRAVE_ACCENT = GLFW_KEY_GRAVE_ACCENT,</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">if</span> (yaw != 0.f || pitch != 0.f)</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keyword">const</span> <span class="keywordtype">float</span> newPitch = std::clamp(camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#adad8ad08b4ef8b0ca622d22b79cefe9e">getPitch</a>() + pitch * turnSpeed * dt, -89.f, 89.f);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#af0d4219f5092d24875919ac011d6ea99">setRotation</a>(camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#aa8aa8af438a47e6d7ded4cef77b27f89">getYaw</a>() + yaw * turnSpeed * dt, newPitch);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">// Move: WASD + Space/Shift, in camera space</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    glm::vec3 dir{0.f}; <span class="comment">// x = right, y = up, z = forward</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_W))</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        dir.z += 1.f;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_S))</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        dir.z -= 1.f;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_D))</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        dir.x += 1.f;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_A))</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        dir.x -= 1.f;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_SPACE))</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        dir.y += 1.f;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_LEFT_CONTROL))</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        dir.y -= 1.f;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">if</span> (glm::dot(dir, dir) &gt; 0.f)</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        dir = glm::normalize(dir) * moveSpeed * dt; <span class="comment">// same speed on diagonals</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#a9abf5664e08d1b9a1cb202cb1111d55f">moveLocal</a>(dir.x, dir.y, dir.z);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">// Modifiers (Left / Right variants)</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    LEFT_SHIFT = GLFW_KEY_LEFT_SHIFT,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    LEFT_CTRL = GLFW_KEY_LEFT_CONTROL,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    LEFT_ALT = GLFW_KEY_LEFT_ALT,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    LEFT_SUPER = GLFW_KEY_LEFT_SUPER,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    RIGHT_SHIFT = GLFW_KEY_RIGHT_SHIFT,</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    RIGHT_CTRL = GLFW_KEY_RIGHT_CONTROL,</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    RIGHT_ALT = GLFW_KEY_RIGHT_ALT,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    RIGHT_SUPER = GLFW_KEY_RIGHT_SUPER,</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    MENU = GLFW_KEY_MENU,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">// Numpad</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    KP_0 = GLFW_KEY_KP_0,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    KP_1 = GLFW_KEY_KP_1,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    KP_2 = GLFW_KEY_KP_2,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    KP_3 = GLFW_KEY_KP_3,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    KP_4 = GLFW_KEY_KP_4,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    KP_5 = GLFW_KEY_KP_5,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    KP_6 = GLFW_KEY_KP_6,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    KP_7 = GLFW_KEY_KP_7,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    KP_8 = GLFW_KEY_KP_8,</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    KP_9 = GLFW_KEY_KP_9,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    KP_DECIMAL = GLFW_KEY_KP_DECIMAL,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    KP_DIVIDE = GLFW_KEY_KP_DIVIDE,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    KP_MULTIPLY = GLFW_KEY_KP_MULTIPLY,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    KP_SUBTRACT = GLFW_KEY_KP_SUBTRACT,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    KP_ADD = GLFW_KEY_KP_ADD,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    KP_ENTER = GLFW_KEY_KP_ENTER,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    KP_EQUAL = GLFW_KEY_KP_EQUAL,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="comment">// General terms</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    WORLD_1 = GLFW_KEY_WORLD_1,</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    WORLD_2 = GLFW_KEY_WORLD_2</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>};</div>
 </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>} <span class="comment">// namespace sog::input</span></div>
-<div class="ttc" id="a_input_8cpp_html_a3ca4ab37fe349f3a8a685082a5911a33"><div class="ttname"><a href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33">sog::input::update</a></div><div class="ttdeci">void update(const gfx::Window &amp;window)</div><div class="ttdoc">Snapshots the current key/mouse/cursor state for edge-triggered queries.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Input.cpp:51</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_a747c75be12cbe3cb16e1e34b309919b4"><div class="ttname"><a href="_input_8cpp.html#a747c75be12cbe3cb16e1e34b309919b4">sog::input::isKeyPressed</a></div><div class="ttdeci">bool isKeyPressed(int key)</div><div class="ttdoc">Reports whether a key went down this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00088">Input.cpp:88</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_a7647a99d16e09d6a91138de4e4f2eb29"><div class="ttname"><a href="_input_8cpp.html#a7647a99d16e09d6a91138de4e4f2eb29">sog::input::isMouseButtonPressed</a></div><div class="ttdeci">bool isMouseButtonPressed(int button)</div><div class="ttdoc">Reports whether a mouse button went down this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00098">Input.cpp:98</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_a8aa2e678b6cb6adb5f68d91d00a59eb2"><div class="ttname"><a href="_input_8cpp.html#a8aa2e678b6cb6adb5f68d91d00a59eb2">sog::input::setCursorCaptured</a></div><div class="ttdeci">void setCursorCaptured(const gfx::Window &amp;window, bool captured)</div><div class="ttdoc">Captures (or releases) the cursor for FPS-style mouse look.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">Input.cpp:112</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_a8ca2b78c4b43400d19654ae0d71749a3"><div class="ttname"><a href="_input_8cpp.html#a8ca2b78c4b43400d19654ae0d71749a3">sog::input::isKeyReleased</a></div><div class="ttdeci">bool isKeyReleased(int key)</div><div class="ttdoc">Reports whether a key went up this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00093">Input.cpp:93</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_a8f4113d6dc81b68ccc78fe1ffbb242c1"><div class="ttname"><a href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">sog::input::isKeyDown</a></div><div class="ttdeci">bool isKeyDown(const gfx::Window &amp;window, int key)</div><div class="ttdoc">Reports whether a key is currently held (live query, no update() needed).</div><div class="ttdef"><b>Definition</b> <a href="#l00071">Input.cpp:71</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_aa435aa10d2699c8fe7b1eb6d393028e0"><div class="ttname"><a href="_input_8cpp.html#aa435aa10d2699c8fe7b1eb6d393028e0">sog::input::updateCamera</a></div><div class="ttdeci">void updateCamera(gfx::Camera &amp;camera, const gfx::Window &amp;window, float dt, float moveSpeed, float turnSpeed)</div><div class="ttdoc">Drives a Camera from the keyboard: WASD to move, Space/Ctrl for up/down, arrows to look.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">Input.cpp:118</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_acf5ccb6b7ee4b5c1f2a94c5b22aef2a7"><div class="ttname"><a href="_input_8cpp.html#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">sog::input::isMouseButtonReleased</a></div><div class="ttdeci">bool isMouseButtonReleased(int button)</div><div class="ttdoc">Reports whether a mouse button went up this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00104">Input.cpp:104</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_ae03d04602a30983995a0e28edfd1b1db"><div class="ttname"><a href="_input_8cpp.html#ae03d04602a30983995a0e28edfd1b1db">sog::input::getCursorDelta</a></div><div class="ttdeci">glm::vec2 getCursorDelta()</div><div class="ttdoc">Returns how far the cursor moved since the last update() (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00110">Input.cpp:110</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_ae0ec6594d8fb625d88c8984bbbfe838d"><div class="ttname"><a href="_input_8cpp.html#ae0ec6594d8fb625d88c8984bbbfe838d">sog::input::isMouseButtonDown</a></div><div class="ttdeci">bool isMouseButtonDown(const gfx::Window &amp;window, int button)</div><div class="ttdoc">Reports whether a mouse button is currently held (live query, no update() needed).</div><div class="ttdef"><b>Definition</b> <a href="#l00076">Input.cpp:76</a></div></div>
-<div class="ttc" id="a_input_8cpp_html_af9561160ab4cb4a0bfb827460ab5367c"><div class="ttname"><a href="_input_8cpp.html#af9561160ab4cb4a0bfb827460ab5367c">sog::input::getCursorPosition</a></div><div class="ttdeci">glm::vec2 getCursorPosition(const gfx::Window &amp;window)</div><div class="ttdoc">Returns the current cursor position in window coordinates.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">Input.cpp:81</a></div></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="keyword">namespace</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>GLFWwindow* native(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; w) { <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>GLFWwindow*<span class="keyword">&gt;</span>(w.<a class="code hl_function" href="classsog_1_1gfx_1_1_window.html#aca6a399fdf9b2983f190379f9cf1b262">getNativeHandle</a>()); }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keyword">struct </span>State</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>{</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    std::array&lt;bool, GLFW_KEY_LAST + 1&gt; keys{},</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        prevKeys{}; </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    std::array&lt;bool, GLFW_MOUSE_BUTTON_LAST + 1&gt; buttons{},</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        prevButtons{};           </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    glm::vec2 cursor{}, delta{}; </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">bool</span> hasCursor{<span class="keyword">false</span>}; </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>};</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>State g_State; </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="keywordtype">bool</span> inRange(<span class="keywordtype">int</span> v, std::size_t size) { <span class="keywordflow">return</span> v &gt;= 0 &amp;&amp; <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(v) &lt; size; }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="_input_8hpp.html#a3ca4ab37fe349f3a8a685082a5911a33">  203</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_input_8hpp.html#a3ca4ab37fe349f3a8a685082a5911a33">update</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>{</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    GLFWwindow* w = native(window);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    g_State.prevKeys = g_State.keys;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    g_State.prevButtons = g_State.buttons;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = GLFW_KEY_SPACE; k &lt;= GLFW_KEY_LAST; ++k) <span class="comment">// keys below SPACE are invalid</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        g_State.keys[k] = glfwGetKey(w, k) == GLFW_PRESS;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 0; b &lt;= GLFW_MOUSE_BUTTON_LAST; ++b)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        g_State.buttons[b] = glfwGetMouseButton(w, b) == GLFW_PRESS;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keyword">const</span> glm::vec2 now = <a class="code hl_function" href="_input_8hpp.html#af9561160ab4cb4a0bfb827460ab5367c">getCursorPosition</a>(window);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="comment">// No delta on the first frame, otherwise the camera jumps</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    g_State.delta = g_State.hasCursor ? now - g_State.cursor : glm::vec2{0.f};</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    g_State.cursor = now;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    g_State.hasCursor = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>}</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">  223</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">int</span> key)</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>{</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">return</span> glfwGetKey(native(window), key) == GLFW_PRESS;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}</div>
+</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="_input_8hpp.html#ae0ec6594d8fb625d88c8984bbbfe838d">  228</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8hpp.html#ae0ec6594d8fb625d88c8984bbbfe838d">isMouseButtonDown</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">int</span> button)</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>{</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">return</span> glfwGetMouseButton(native(window), button) == GLFW_PRESS;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
+</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="foldopen" id="foldopen00233" data-start="{" data-end="}">
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="_input_8hpp.html#af9561160ab4cb4a0bfb827460ab5367c">  233</a></span>glm::vec2 <a class="code hl_function" href="_input_8hpp.html#af9561160ab4cb4a0bfb827460ab5367c">getCursorPosition</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window)</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>{</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">double</span> x{}, y{};</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    glfwGetCursorPos(native(window), &amp;x, &amp;y);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(x), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(y)};</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>}</div>
+</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="foldopen" id="foldopen00240" data-start="{" data-end="}">
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="_input_8hpp.html#a747c75be12cbe3cb16e1e34b309919b4">  240</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8hpp.html#a747c75be12cbe3cb16e1e34b309919b4">isKeyPressed</a>(<span class="keywordtype">int</span> key)</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>{</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordflow">return</span> inRange(key, g_State.keys.size()) &amp;&amp; g_State.keys[key] &amp;&amp; !g_State.prevKeys[key];</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>}</div>
+</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="_input_8hpp.html#a8ca2b78c4b43400d19654ae0d71749a3">  245</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8hpp.html#a8ca2b78c4b43400d19654ae0d71749a3">isKeyReleased</a>(<span class="keywordtype">int</span> key)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>{</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">return</span> inRange(key, g_State.keys.size()) &amp;&amp; !g_State.keys[key] &amp;&amp; g_State.prevKeys[key];</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>}</div>
+</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="foldopen" id="foldopen00250" data-start="{" data-end="}">
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="_input_8hpp.html#a7647a99d16e09d6a91138de4e4f2eb29">  250</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8hpp.html#a7647a99d16e09d6a91138de4e4f2eb29">isMouseButtonPressed</a>(<span class="keywordtype">int</span> button)</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>{</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">return</span> inRange(button, g_State.buttons.size()) &amp;&amp; g_State.buttons[button] &amp;&amp;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>           !g_State.prevButtons[button];</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>}</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="_input_8hpp.html#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">  256</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_input_8hpp.html#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">isMouseButtonReleased</a>(<span class="keywordtype">int</span> button)</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>{</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">return</span> inRange(button, g_State.buttons.size()) &amp;&amp; !g_State.buttons[button] &amp;&amp;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>           g_State.prevButtons[button];</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
+</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="_input_8hpp.html#ae03d04602a30983995a0e28edfd1b1db">  262</a></span>glm::vec2 <a class="code hl_function" href="_input_8hpp.html#ae03d04602a30983995a0e28edfd1b1db">getCursorDelta</a>() { <span class="keywordflow">return</span> g_State.delta; }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="_input_8hpp.html#a8aa2e678b6cb6adb5f68d91d00a59eb2">  264</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_input_8hpp.html#a8aa2e678b6cb6adb5f68d91d00a59eb2">setCursorCaptured</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">bool</span> captured)</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>{</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    glfwSetInputMode(native(window), GLFW_CURSOR,</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                     captured ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    g_State.hasCursor = <span class="keyword">false</span>; <span class="comment">// avoid a delta spike when the mode switches</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00270" data-start="{" data-end="}">
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="_input_8hpp.html#aa435aa10d2699c8fe7b1eb6d393028e0">  270</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_input_8hpp.html#aa435aa10d2699c8fe7b1eb6d393028e0">updateCamera</a>(<a class="code hl_class" href="classsog_1_1gfx_1_1_camera.html">gfx::Camera</a>&amp; camera, <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a>&amp; window, <span class="keywordtype">float</span> dt, <span class="keywordtype">float</span> moveSpeed,</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                  <span class="keywordtype">float</span> turnSpeed)</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>{</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="comment">// Look: arrow keys</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordtype">float</span> yaw = 0.f, pitch = 0.f;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_LEFT))</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        yaw -= 1.f;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_RIGHT))</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        yaw += 1.f;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_UP))</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        pitch += 1.f;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_DOWN))</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        pitch -= 1.f;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keywordflow">if</span> (yaw != 0.f || pitch != 0.f)</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <span class="keyword">const</span> <span class="keywordtype">float</span> newPitch = std::clamp(camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#adad8ad08b4ef8b0ca622d22b79cefe9e">getPitch</a>() + pitch * turnSpeed * dt, -89.f, 89.f);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#af0d4219f5092d24875919ac011d6ea99">setRotation</a>(camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#aa8aa8af438a47e6d7ded4cef77b27f89">getYaw</a>() + yaw * turnSpeed * dt, newPitch);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="comment">// Move: WASD + Space/Shift, in camera space</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    glm::vec3 dir{0.f}; <span class="comment">// x = right, y = up, z = forward</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_W))</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        dir.z += 1.f;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_S))</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        dir.z -= 1.f;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_D))</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        dir.x += 1.f;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_A))</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        dir.x -= 1.f;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_SPACE))</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        dir.y += 1.f;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">isKeyDown</a>(window, GLFW_KEY_LEFT_CONTROL))</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        dir.y -= 1.f;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">if</span> (glm::dot(dir, dir) &gt; 0.f)</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        dir = glm::normalize(dir) * moveSpeed * dt; <span class="comment">// same speed on diagonals</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        camera.<a class="code hl_function" href="classsog_1_1gfx_1_1_camera.html#a9abf5664e08d1b9a1cb202cb1111d55f">moveLocal</a>(dir.x, dir.y, dir.z);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>}</div>
+</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>} <span class="comment">// namespace sog::input</span></div>
+<div class="ttc" id="a_input_8cpp_html_abb4ead18ebd49d06b3ee11cc47b0ef80"><div class="ttname"><a href="_input_8cpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80">sog::input::Key</a></div><div class="ttdeci">Key</div><div class="ttdoc">Named keyboard key codes, mirroring GLFW&#39;s GLFW_KEY_* constants.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">Input.cpp:29</a></div></div>
 <div class="ttc" id="a_input_8hpp_html"><div class="ttname"><a href="_input_8hpp.html">Input.hpp</a></div><div class="ttdoc">Declares the sog::input keyboard/mouse query API, including per-frame edge detection,...</div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html">sog::gfx::Camera</a></div><div class="ttdoc">A movable, rotatable camera producing view and projection matrices.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8hpp_source.html#l00037">Camera.hpp:38</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_a3ca4ab37fe349f3a8a685082a5911a33"><div class="ttname"><a href="_input_8hpp.html#a3ca4ab37fe349f3a8a685082a5911a33">sog::input::update</a></div><div class="ttdeci">void update(const gfx::Window &amp;window)</div><div class="ttdoc">Snapshots the current key/mouse/cursor state for edge-triggered queries.</div><div class="ttdef"><b>Definition</b> <a href="#l00203">Input.cpp:203</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_a747c75be12cbe3cb16e1e34b309919b4"><div class="ttname"><a href="_input_8hpp.html#a747c75be12cbe3cb16e1e34b309919b4">sog::input::isKeyPressed</a></div><div class="ttdeci">bool isKeyPressed(int key)</div><div class="ttdoc">Reports whether a key went down this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00240">Input.cpp:240</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_a7647a99d16e09d6a91138de4e4f2eb29"><div class="ttname"><a href="_input_8hpp.html#a7647a99d16e09d6a91138de4e4f2eb29">sog::input::isMouseButtonPressed</a></div><div class="ttdeci">bool isMouseButtonPressed(int button)</div><div class="ttdoc">Reports whether a mouse button went down this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00250">Input.cpp:250</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_a8aa2e678b6cb6adb5f68d91d00a59eb2"><div class="ttname"><a href="_input_8hpp.html#a8aa2e678b6cb6adb5f68d91d00a59eb2">sog::input::setCursorCaptured</a></div><div class="ttdeci">void setCursorCaptured(const gfx::Window &amp;window, bool captured)</div><div class="ttdoc">Captures (or releases) the cursor for FPS-style mouse look.</div><div class="ttdef"><b>Definition</b> <a href="#l00264">Input.cpp:264</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_a8ca2b78c4b43400d19654ae0d71749a3"><div class="ttname"><a href="_input_8hpp.html#a8ca2b78c4b43400d19654ae0d71749a3">sog::input::isKeyReleased</a></div><div class="ttdeci">bool isKeyReleased(int key)</div><div class="ttdoc">Reports whether a key went up this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00245">Input.cpp:245</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_a8f4113d6dc81b68ccc78fe1ffbb242c1"><div class="ttname"><a href="_input_8hpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">sog::input::isKeyDown</a></div><div class="ttdeci">bool isKeyDown(const gfx::Window &amp;window, int key)</div><div class="ttdoc">Reports whether a key is currently held (live query, no update() needed).</div><div class="ttdef"><b>Definition</b> <a href="#l00223">Input.cpp:223</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_aa435aa10d2699c8fe7b1eb6d393028e0"><div class="ttname"><a href="_input_8hpp.html#aa435aa10d2699c8fe7b1eb6d393028e0">sog::input::updateCamera</a></div><div class="ttdeci">void updateCamera(gfx::Camera &amp;camera, const gfx::Window &amp;window, float dt, float moveSpeed=5.0f, float turnSpeed=90.0f)</div><div class="ttdoc">Drives a Camera from the keyboard: WASD to move, Space/Ctrl for up/down, arrows to look.</div><div class="ttdef"><b>Definition</b> <a href="#l00270">Input.cpp:270</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_acf5ccb6b7ee4b5c1f2a94c5b22aef2a7"><div class="ttname"><a href="_input_8hpp.html#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">sog::input::isMouseButtonReleased</a></div><div class="ttdeci">bool isMouseButtonReleased(int button)</div><div class="ttdoc">Reports whether a mouse button went up this frame (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00256">Input.cpp:256</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_ae03d04602a30983995a0e28edfd1b1db"><div class="ttname"><a href="_input_8hpp.html#ae03d04602a30983995a0e28edfd1b1db">sog::input::getCursorDelta</a></div><div class="ttdeci">glm::vec2 getCursorDelta()</div><div class="ttdoc">Returns how far the cursor moved since the last update() (requires update()).</div><div class="ttdef"><b>Definition</b> <a href="#l00262">Input.cpp:262</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_ae0ec6594d8fb625d88c8984bbbfe838d"><div class="ttname"><a href="_input_8hpp.html#ae0ec6594d8fb625d88c8984bbbfe838d">sog::input::isMouseButtonDown</a></div><div class="ttdeci">bool isMouseButtonDown(const gfx::Window &amp;window, int button)</div><div class="ttdoc">Reports whether a mouse button is currently held (live query, no update() needed).</div><div class="ttdef"><b>Definition</b> <a href="#l00228">Input.cpp:228</a></div></div>
+<div class="ttc" id="a_input_8hpp_html_af9561160ab4cb4a0bfb827460ab5367c"><div class="ttname"><a href="_input_8hpp.html#af9561160ab4cb4a0bfb827460ab5367c">sog::input::getCursorPosition</a></div><div class="ttdeci">glm::vec2 getCursorPosition(const gfx::Window &amp;window)</div><div class="ttdoc">Returns the current cursor position in window coordinates.</div><div class="ttdef"><b>Definition</b> <a href="#l00233">Input.cpp:233</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html">sog::gfx::Camera</a></div><div class="ttdoc">A movable, rotatable camera producing view and projection matrices.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8hpp_source.html#l00038">Camera.hpp:39</a></div></div>
 <div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html_a9abf5664e08d1b9a1cb202cb1111d55f"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html#a9abf5664e08d1b9a1cb202cb1111d55f">sog::gfx::Camera::moveLocal</a></div><div class="ttdeci">void moveLocal(float right, float up, float forward)</div><div class="ttdoc">Translates the camera along its own axes.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8cpp_source.html#l00074">Camera.cpp:74</a></div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html_aa8aa8af438a47e6d7ded4cef77b27f89"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html#aa8aa8af438a47e6d7ded4cef77b27f89">sog::gfx::Camera::getYaw</a></div><div class="ttdeci">float getYaw() const</div><div class="ttdoc">Returns the current yaw angle in degrees.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8hpp_source.html#l00172">Camera.hpp:172</a></div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html_adad8ad08b4ef8b0ca622d22b79cefe9e"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html#adad8ad08b4ef8b0ca622d22b79cefe9e">sog::gfx::Camera::getPitch</a></div><div class="ttdeci">float getPitch() const</div><div class="ttdoc">Returns the current pitch angle in degrees.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8hpp_source.html#l00178">Camera.hpp:178</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html_aa8aa8af438a47e6d7ded4cef77b27f89"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html#aa8aa8af438a47e6d7ded4cef77b27f89">sog::gfx::Camera::getYaw</a></div><div class="ttdeci">float getYaw() const</div><div class="ttdoc">Returns the current yaw angle in degrees.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8hpp_source.html#l00173">Camera.hpp:173</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html_adad8ad08b4ef8b0ca622d22b79cefe9e"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html#adad8ad08b4ef8b0ca622d22b79cefe9e">sog::gfx::Camera::getPitch</a></div><div class="ttdeci">float getPitch() const</div><div class="ttdoc">Returns the current pitch angle in degrees.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8hpp_source.html#l00179">Camera.hpp:179</a></div></div>
 <div class="ttc" id="aclasssog_1_1gfx_1_1_camera_html_af0d4219f5092d24875919ac011d6ea99"><div class="ttname"><a href="classsog_1_1gfx_1_1_camera.html#af0d4219f5092d24875919ac011d6ea99">sog::gfx::Camera::setRotation</a></div><div class="ttdeci">void setRotation(float yawDeg, float pitchDeg, float rollDeg=0.f)</div><div class="ttdoc">Sets the orientation from absolute yaw/pitch/roll angles.</div><div class="ttdef"><b>Definition</b> <a href="_camera_8cpp_source.html#l00080">Camera.cpp:80</a></div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_window_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_window.html">sog::gfx::Window</a></div><div class="ttdoc">Owns a GLFW window and its OpenGL context, and drives the per-frame render loop.</div><div class="ttdef"><b>Definition</b> <a href="_window_8hpp_source.html#l00047">Window.hpp:48</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_window_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_window.html">sog::gfx::Window</a></div><div class="ttdoc">Owns a GLFW window and its OpenGL context, and drives the per-frame render loop.</div><div class="ttdef"><b>Definition</b> <a href="_window_8hpp_source.html#l00046">Window.hpp:47</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_window_html_aca6a399fdf9b2983f190379f9cf1b262"><div class="ttname"><a href="classsog_1_1gfx_1_1_window.html#aca6a399fdf9b2983f190379f9cf1b262">sog::gfx::Window::getNativeHandle</a></div><div class="ttdeci">void * getNativeHandle() const</div><div class="ttdoc">Returns the underlying native handle for interop.</div><div class="ttdef"><b>Definition</b> <a href="_window_8cpp_source.html#l00125">Window.cpp:125</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><a href="_input_8cpp.html">Input.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><a href="_input_8cpp.html">Input.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

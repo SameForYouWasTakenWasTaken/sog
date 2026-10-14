@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/Utility/Uniforms.hpp Source File</title>
+<title>sog (Small OpenGL Graphics): src/sog/include/sog/Utility/Uniforms.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,68 +114,70 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_uniforms_8hpp
 </div><!--header-->
 <div class="contents">
 <a href="_uniforms_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_shader_program_8hpp.html">../gfx/OpenGL/Objects/ShaderProgram.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_uniform_8hpp.html">../gfx/OpenGL/Uniform.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_math_8hpp.html">Types/Math.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="_shader_program_8hpp.html">sog/gfx/OpenGL/Objects/ShaderProgram.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="_uniform_8hpp.html">sog/gfx/OpenGL/Uniform.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>sog::gfx::uniform</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>[[nodiscard]] Uniform <a class="code hl_function" href="_uniforms_8cpp.html#abf4002334bc1ad0befa769b00a45e438">getLocation</a>(<span class="keyword">const</span> ShaderProgram&amp; program, <span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8cpp.html#ac5315974891ada703e1abf937cbea522">setVec4</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Vec4 vec);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8cpp.html#a14e119f27aab8d533704786cd9edbebb">setVec3</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Vec3 vec);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8cpp.html#ac71faf6f9b7649438ff1b97dfaa68e1e">setVec2</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Vec2 vec);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8cpp.html#ac288840ac27de02f0611a04c6cdf56b0">setMat3</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Mat3 mat);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8cpp.html#a576488fd2fd71d6d99f7bd4faac57b5d">setMat4</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Mat4 mat);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8cpp.html#a211466e49a9169fd3f4420f83c1de741">setInt</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8cpp.html#a8f6d51276ac1afca40caada37608884a">setFloat</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, <span class="keywordtype">float</span> value);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="_uniforms_8hpp.html#ab0b1deadc29db1f901fd0439dddd47e7">  101</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... T&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#ab0b1deadc29db1f901fd0439dddd47e7">runSafe</a>(T&amp;&amp;... cb)</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>{</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    (</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        [&amp;]</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                std::forward&lt;T&gt;(cb)();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="comment">// Handle exception</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }(),</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        ...);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_math_8hpp.html">Math.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>sog::gfx::uniform</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>[[nodiscard]] <a class="code hl_typedef" href="sog_8hpp.html#a9778437b0e653b2cb9e8c76e0469e4d7">Uniform</a> <a class="code hl_function" href="_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438">getLocation</a>(<span class="keyword">const</span> ShaderProgram&amp; program, <span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#ac5315974891ada703e1abf937cbea522">setVec4</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Vec4 vec);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#a14e119f27aab8d533704786cd9edbebb">setVec3</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Vec3 vec);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#ac71faf6f9b7649438ff1b97dfaa68e1e">setVec2</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Vec2 vec);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#ac288840ac27de02f0611a04c6cdf56b0">setMat3</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Mat3 mat);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#a576488fd2fd71d6d99f7bd4faac57b5d">setMat4</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, math::Mat4 mat);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#a211466e49a9169fd3f4420f83c1de741">setInt</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#a8f6d51276ac1afca40caada37608884a">setFloat</a>(<span class="keyword">const</span> ShaderProgram&amp; program, Uniform uniform, <span class="keywordtype">float</span> value);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="_uniforms_8hpp.html#ab0b1deadc29db1f901fd0439dddd47e7">  103</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... T&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="_uniforms_8hpp.html#ab0b1deadc29db1f901fd0439dddd47e7">runSafe</a>(T&amp;&amp;... cb)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    (</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        [&amp;]</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                std::forward&lt;T&gt;(cb)();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="comment">// Handle exception</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }(),</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        ...);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
 </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>} <span class="comment">// namespace sog::gfx::uniform</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>} <span class="comment">// namespace sog::gfx::uniform</span></div>
 <div class="ttc" id="a_math_8hpp_html"><div class="ttname"><a href="_math_8hpp.html">Math.hpp</a></div><div class="ttdoc">Re-exports the GLM math types the engine uses under the sog::math namespace (Vec2/Vec3/Vec4,...</div></div>
 <div class="ttc" id="a_shader_program_8hpp_html"><div class="ttname"><a href="_shader_program_8hpp.html">ShaderProgram.hpp</a></div><div class="ttdoc">Defines ShaderProgram, a linked GL program that attaches shader stages, binds for drawing and caches ...</div></div>
 <div class="ttc" id="a_uniform_8hpp_html"><div class="ttname"><a href="_uniform_8hpp.html">Uniform.hpp</a></div><div class="ttdoc">Defines Uniform, a small value type wrapping a shader uniform&#39;s GLint location with validity checks.</div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_a14e119f27aab8d533704786cd9edbebb"><div class="ttname"><a href="_uniforms_8cpp.html#a14e119f27aab8d533704786cd9edbebb">sog::gfx::uniform::setVec3</a></div><div class="ttdeci">void setVec3(const ShaderProgram &amp;program, Uniform uniform, math::Vec3 vec)</div><div class="ttdoc">Uploads a 3-component float vector to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00038">Uniforms.cpp:38</a></div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_a211466e49a9169fd3f4420f83c1de741"><div class="ttname"><a href="_uniforms_8cpp.html#a211466e49a9169fd3f4420f83c1de741">sog::gfx::uniform::setInt</a></div><div class="ttdeci">void setInt(const ShaderProgram &amp;program, Uniform uniform, int value)</div><div class="ttdoc">Uploads an integer to a uniform (commonly sampler bindings).</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00060">Uniforms.cpp:60</a></div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_a576488fd2fd71d6d99f7bd4faac57b5d"><div class="ttname"><a href="_uniforms_8cpp.html#a576488fd2fd71d6d99f7bd4faac57b5d">sog::gfx::uniform::setMat4</a></div><div class="ttdeci">void setMat4(const ShaderProgram &amp;program, Uniform uniform, math::Mat4 mat)</div><div class="ttdoc">Uploads a 4x4 matrix to a uniform (column-major, no transpose).</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00055">Uniforms.cpp:55</a></div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_a8f6d51276ac1afca40caada37608884a"><div class="ttname"><a href="_uniforms_8cpp.html#a8f6d51276ac1afca40caada37608884a">sog::gfx::uniform::setFloat</a></div><div class="ttdeci">void setFloat(const ShaderProgram &amp;program, Uniform uniform, float value)</div><div class="ttdoc">Uploads a single float to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00065">Uniforms.cpp:65</a></div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_abf4002334bc1ad0befa769b00a45e438"><div class="ttname"><a href="_uniforms_8cpp.html#abf4002334bc1ad0befa769b00a45e438">sog::gfx::uniform::getLocation</a></div><div class="ttdeci">Uniform getLocation(const ShaderProgram &amp;program, const std::string &amp;name)</div><div class="ttdoc">Looks up a uniform&#39;s location by name within a linked program.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00027">Uniforms.cpp:27</a></div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_ac288840ac27de02f0611a04c6cdf56b0"><div class="ttname"><a href="_uniforms_8cpp.html#ac288840ac27de02f0611a04c6cdf56b0">sog::gfx::uniform::setMat3</a></div><div class="ttdeci">void setMat3(const ShaderProgram &amp;program, Uniform uniform, math::Mat3 mat)</div><div class="ttdoc">Uploads a 3x3 matrix to a uniform (column-major, no transpose).</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00050">Uniforms.cpp:50</a></div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_ac5315974891ada703e1abf937cbea522"><div class="ttname"><a href="_uniforms_8cpp.html#ac5315974891ada703e1abf937cbea522">sog::gfx::uniform::setVec4</a></div><div class="ttdeci">void setVec4(const ShaderProgram &amp;program, Uniform uniform, math::Vec4 vec)</div><div class="ttdoc">Uploads a 4-component float vector to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00032">Uniforms.cpp:32</a></div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_ac71faf6f9b7649438ff1b97dfaa68e1e"><div class="ttname"><a href="_uniforms_8cpp.html#ac71faf6f9b7649438ff1b97dfaa68e1e">sog::gfx::uniform::setVec2</a></div><div class="ttdeci">void setVec2(const ShaderProgram &amp;program, Uniform uniform, math::Vec2 vec)</div><div class="ttdoc">Uploads a 2-component float vector to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00044">Uniforms.cpp:44</a></div></div>
-<div class="ttc" id="a_uniforms_8hpp_html_ab0b1deadc29db1f901fd0439dddd47e7"><div class="ttname"><a href="_uniforms_8hpp.html#ab0b1deadc29db1f901fd0439dddd47e7">sog::gfx::uniform::runSafe</a></div><div class="ttdeci">void runSafe(T &amp;&amp;... cb)</div><div class="ttdoc">Runs a list of callables, ignoring any exception each one throws.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">Uniforms.hpp:101</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_a14e119f27aab8d533704786cd9edbebb"><div class="ttname"><a href="_uniforms_8hpp.html#a14e119f27aab8d533704786cd9edbebb">sog::gfx::uniform::setVec3</a></div><div class="ttdeci">void setVec3(const ShaderProgram &amp;program, Uniform uniform, math::Vec3 vec)</div><div class="ttdoc">Uploads a 3-component float vector to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00039">Uniforms.cpp:39</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_a211466e49a9169fd3f4420f83c1de741"><div class="ttname"><a href="_uniforms_8hpp.html#a211466e49a9169fd3f4420f83c1de741">sog::gfx::uniform::setInt</a></div><div class="ttdeci">void setInt(const ShaderProgram &amp;program, Uniform uniform, int value)</div><div class="ttdoc">Uploads an integer to a uniform (commonly sampler bindings).</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00061">Uniforms.cpp:61</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_a576488fd2fd71d6d99f7bd4faac57b5d"><div class="ttname"><a href="_uniforms_8hpp.html#a576488fd2fd71d6d99f7bd4faac57b5d">sog::gfx::uniform::setMat4</a></div><div class="ttdeci">void setMat4(const ShaderProgram &amp;program, Uniform uniform, math::Mat4 mat)</div><div class="ttdoc">Uploads a 4x4 matrix to a uniform (column-major, no transpose).</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00056">Uniforms.cpp:56</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_a8f6d51276ac1afca40caada37608884a"><div class="ttname"><a href="_uniforms_8hpp.html#a8f6d51276ac1afca40caada37608884a">sog::gfx::uniform::setFloat</a></div><div class="ttdeci">void setFloat(const ShaderProgram &amp;program, Uniform uniform, float value)</div><div class="ttdoc">Uploads a single float to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00066">Uniforms.cpp:66</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_ab0b1deadc29db1f901fd0439dddd47e7"><div class="ttname"><a href="_uniforms_8hpp.html#ab0b1deadc29db1f901fd0439dddd47e7">sog::gfx::uniform::runSafe</a></div><div class="ttdeci">void runSafe(T &amp;&amp;... cb)</div><div class="ttdoc">Runs a list of callables, ignoring any exception each one throws.</div><div class="ttdef"><b>Definition</b> <a href="#l00103">Uniforms.hpp:103</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_abf4002334bc1ad0befa769b00a45e438"><div class="ttname"><a href="_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438">sog::gfx::uniform::getLocation</a></div><div class="ttdeci">Uniform getLocation(const ShaderProgram &amp;program, const std::string &amp;name)</div><div class="ttdoc">Looks up a uniform&#39;s location by name within a linked program.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00028">Uniforms.cpp:28</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_ac288840ac27de02f0611a04c6cdf56b0"><div class="ttname"><a href="_uniforms_8hpp.html#ac288840ac27de02f0611a04c6cdf56b0">sog::gfx::uniform::setMat3</a></div><div class="ttdeci">void setMat3(const ShaderProgram &amp;program, Uniform uniform, math::Mat3 mat)</div><div class="ttdoc">Uploads a 3x3 matrix to a uniform (column-major, no transpose).</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00051">Uniforms.cpp:51</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_ac5315974891ada703e1abf937cbea522"><div class="ttname"><a href="_uniforms_8hpp.html#ac5315974891ada703e1abf937cbea522">sog::gfx::uniform::setVec4</a></div><div class="ttdeci">void setVec4(const ShaderProgram &amp;program, Uniform uniform, math::Vec4 vec)</div><div class="ttdoc">Uploads a 4-component float vector to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00033">Uniforms.cpp:33</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_ac71faf6f9b7649438ff1b97dfaa68e1e"><div class="ttname"><a href="_uniforms_8hpp.html#ac71faf6f9b7649438ff1b97dfaa68e1e">sog::gfx::uniform::setVec2</a></div><div class="ttdeci">void setVec2(const ShaderProgram &amp;program, Uniform uniform, math::Vec2 vec)</div><div class="ttdoc">Uploads a 2-component float vector to a uniform.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00045">Uniforms.cpp:45</a></div></div>
+<div class="ttc" id="asog_8hpp_html_a9778437b0e653b2cb9e8c76e0469e4d7"><div class="ttname"><a href="sog_8hpp.html#a9778437b0e653b2cb9e8c76e0469e4d7">sog::Uniform</a></div><div class="ttdeci">gfx::Uniform Uniform</div><div class="ttdoc">Location wrapper for a shader uniform; alias of gfx::Uniform.</div><div class="ttdef"><b>Definition</b> <a href="sog_8hpp_source.html#l00062">sog.hpp:62</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>Utility</b></li><li class="navelem"><a href="_uniforms_8hpp.html">Uniforms.hpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>Utility</b></li><li class="navelem"><a href="_uniforms_8hpp.html">Uniforms.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

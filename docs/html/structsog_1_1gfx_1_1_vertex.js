@@ -1,5 +1,6 @@
 var structsog_1_1gfx_1_1_vertex =
 [
+    [ "Vertex", "structsog_1_1gfx_1_1_vertex.html#a8ea0d9079f37f52088ac030db578a3ab", null ],
     [ "attributes", "structsog_1_1gfx_1_1_vertex.html#a58d27ec6093331e5a4b0b5abe2a14b18", null ],
     [ "stride", "structsog_1_1gfx_1_1_vertex.html#aa9f5c65e2683323636569e99223beacc", null ],
     [ "color", "structsog_1_1gfx_1_1_vertex.html#a90e6aca55ddf3ad28cfc72ff9b39e02f", null ],

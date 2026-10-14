@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['elementbufferhandle_0',['ElementBufferHandle',['../_handles_8hpp.html#a4ea03478490602aadb6d2e8b8daa0196',1,'sog::gfx']]]
+  ['debugcallback_0',['DebugCallback',['../_open_g_l_debug_8hpp.html#a33097531fc2c9f4db51d5dd09db3f89b',1,'sog::debug']]]
 ];

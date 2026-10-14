@@ -1,53 +1,82 @@
-# sog — Small OpenGL Game
+# sog — Small OpenGL Graphics
 
-Cross-platform OpenGL **4.6 Core Profile** project skeleton built with CMake and C++20.
-Targets Windows, Linux and macOS, with Windows as the primary platform.
+A small C++23 static library for OpenGL 4.6 Core Profile rendering: windowing, input,
+cameras, type-safe GL object wrappers (buffers, shaders, textures, framebuffers, vertex arrays)
+and uniform helpers. Direct State Access style throughout (GL 4.5+ entry points), with RAII
+wrappers and exceptions (`sog::graphics_error`) instead of raw GL error checks.
+
+Windows is the primary platform.
 
 ## Layout
 
 ```
 opengl/
-├── CMakeLists.txt            # project setup: C++20, output layout, deps, modules
+├── CMakeLists.txt            # project setup: C++23, output layout, deps, modules
 ├── dependencies.cmake        # setup_dependency() + stb, glm, glfw
+├── Doxyfile                  # Doxygen configuration (output: docs/)
 ├── README.md
+├── docs/                     # generated documentation (html/ + doxygen-warnings.log)
 └── src/
-    ├── CMakeLists.txt        # Shared → Core → App
-    ├── Shared/               # base layer, links nothing
-    │   ├── CMakeLists.txt    # static library "Shared"
-    │   ├── Types.hpp / Types.cpp
-    │   └── vendor/           # generated glad header(s) go here
-    ├── Core/                 # engine layer
-    │   ├── CMakeLists.txt    # static library "Core"
-    │   └── Engine.hpp / Engine.cpp
-    └── App/                  # executable
-        ├── CMakeLists.txt    # executable target "App", output name "sog"
-        └── Application.hpp / Application.cpp
+    ├── CMakeLists.txt        # static library target "SOG"
+    ├── sog/
+    │   ├── include/sog/      # public headers (umbrella header: sog/sog.hpp, Error/, Utility/, gfx/)
+    │   ├── gfx/              # windowing, camera, OpenGL object implementations
+    │   ├── Utility/          # time, uniform upload helpers
+    │   └── vendor/           # vendored glad + KHR (excluded from the docs)
+    └── examples/             # demo application (static lib + "Main" executable)
 ```
 
-## Modules
+## Targets
 
-| Target | Kind     | Links                        |
-|--------|----------|------------------------------|
-| Shared | static   | —                            |
-| Core   | static   | Shared, glm::glm, stb        |
-| App    | executable (`sog`) | Core, Shared, glfw |
+| Target    | Kind                  | Links                        |
+|-----------|-----------------------|------------------------------|
+| SOG       | static (the library)  | glm::glm (public), glfw, stb |
+| Examples  | static (demo objects) | SOG                          |
+| Main      | executable (demo)     | Examples (+ copies assets/)  |
+
+The public include root is `src/sog/include`, so consumers write `#include <sog/sog.hpp>`
+and link against `SOG`.
+
+## Using the library
+
+```cpp
+#include <sog/sog.hpp>
+
+int main()
+{
+    sog::Window window; // OpenGL 4.6 core, 800x600
+
+    while (!window.shouldClose())
+    {
+        window.beginFrame(sog::ClearBuffer::Color | sog::ClearBuffer::Depth, {0, 0, 0, 255});
+        // ... issue draw calls, e.g. sog::Window::draw(state)
+        window.endFrame();
+    }
+}
+```
+
+See `src/examples/` for a complete scene: a textured cube rendered into an offscreen
+framebuffer with a post-processing pass.
 
 ## Dependencies
 
-All resolved by `setup_dependency()` in `dependencies.cmake`: a system-installed
-package is tried first (`find_package`), otherwise the sources are downloaded
-with `FetchContent` at configure time.
+All resolved by `setup_dependency()` in `dependencies.cmake`: a system-installed package is
+tried first (`find_package`), otherwise the sources are downloaded with `FetchContent` at
+configure time.
 
-| Library                              | Version | Purpose                     |
-|--------------------------------------|---------|-----------------------------|
-| [stb](https://github.com/nothings/stb) | master  | single-header utilities (image loading, …) |
-| [glm](https://github.com/g-truc/glm)   | master  | math                        |
-| [glfw](https://github.com/glfw/glfw)   | 3.4     | window, input, GL context   |
+| Library                              | Version | Purpose                        |
+|--------------------------------------|---------|--------------------------------|
+| [stb](https://github.com/nothings/stb) | master  | image loading (stb_image)      |
+| [glm](https://github.com/g-truc/glm)   | master  | math                           |
+| [glfw](https://github.com/glfw/glfw)   | 3.5.1   | window, input, GL context      |
+
+[glad](https://gen.glad.sh/) (OpenGL 4.6, Core Profile) is vendored under
+`src/sog/vendor/` — no generation step needed.
 
 ## Requirements
 
 - CMake **3.20+**
-- C++20 compiler: MSVC 19.29+ (VS 2019/2022), GCC 11+, Clang 14+, AppleClang 13+
+- C++23 compiler: MSVC 19.30+ (VS 2022), GCC 12+, Clang 16+
 - Git (dependencies are cloned during configure)
 - GPU/driver with OpenGL 4.6 support
 
@@ -60,17 +89,22 @@ cmake --build build --config Debug
 
 `--config` only matters for multi-config generators (Visual Studio, Xcode).
 
-The executable lands in `build/bin` (`build/bin/<Config>` with Visual Studio or
-Xcode). The first configure downloads glfw, glm and stb into `build/_deps/`.
+Static libraries land in `build/lib`, executables in `build/bin` (`build/bin/<Config>` with
+Visual Studio or Xcode). The first configure downloads glfw, glm and stb into `build/_deps/`.
 
-### glad
+## Documentation
 
-Generate a loader at [gen.glad.sh](https://gen.glad.sh/) (OpenGL 4.6, Core
-Profile) and drop the generated files into `src/Shared/vendor/` — that
-directory is on Shared's public include path, so every module can include them.
+The API documentation is generated with [Doxygen](https://www.doxygen.nl/):
+
+```sh
+doxygen Doxyfile
+```
+
+Output goes to `docs/html/index.html`; undocumented or malformed comments are reported in
+`docs/doxygen-warnings.log` (kept empty).
 
 ## IDE
 
-`CMAKE_EXPORT_COMPILE_COMMANDS` is enabled, producing
-`build/compile_commands.json` for clangd-based tooling. CLion: open the project
-root and it will pick up `CMakeLists.txt` automatically.
+`CMAKE_EXPORT_COMPILE_COMMANDS` is enabled, producing `build/compile_commands.json` for
+clangd-based tooling. CLion: open the project root and it will pick up `CMakeLists.txt`
+automatically.

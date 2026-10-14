@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/gfx/Window/Event.hpp Source File</title>
+<title>sog (Small OpenGL Graphics): src/sog/include/sog/gfx/Window/Event.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -138,9 +138,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_event_8hpp_so
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html">   36</a></span>        <span class="keyword">struct</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordtype">int</span> <a class="code hl_variable" href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#a0d2652859f4d53ef9c1340cd0bb039fe">width</a>;  </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordtype">int</span> <a class="code hl_variable" href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#a953dffd2cfa99eecfe21ae4eb1eafea8">height</a>; </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        } <a class="code hl_variable" href="unionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0____.html#a12a53667d23298dbb4694bfe292d0792">size</a>;         </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordtype">int</span> <a class="code hl_variable" href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#afbec54fd49b0fb64e9bf717b7ccd5b7a">width</a>;  </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordtype">int</span> <a class="code hl_variable" href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#ae8f8ae6fb7ea1e4a777b601b947dddd6">height</a>; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        } <a class="code hl_variable" href="unionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0____.html#a92bdd58ff4bef45259f6435ee662dc77">size</a>;         </div>
 </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    };</div>
 </div>
@@ -151,18 +151,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_event_8hpp_so
 <div class="ttc" id="a_event_8hpp_html_a4ad88309310bc326f6ffecc0ceffa477"><div class="ttname"><a href="_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477">sog::gfx::EventType</a></div><div class="ttdeci">EventType</div><div class="ttdoc">Discriminator telling which payload an Event carries.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">Event.hpp:15</a></div></div>
 <div class="ttc" id="a_event_8hpp_html_a4ad88309310bc326f6ffecc0ceffa477a03f4a47830f97377a35321051685071e"><div class="ttname"><a href="_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477a03f4a47830f97377a35321051685071e">sog::gfx::EventType::Closed</a></div><div class="ttdeci">@ Closed</div><div class="ttdoc">The window was requested to close (e.g.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">Event.hpp:16</a></div></div>
 <div class="ttc" id="a_event_8hpp_html_a4ad88309310bc326f6ffecc0ceffa477a22995988de764d7a8cb4165fbff371cb"><div class="ttname"><a href="_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477a22995988de764d7a8cb4165fbff371cb">sog::gfx::EventType::Resized</a></div><div class="ttdeci">@ Resized</div><div class="ttdoc">The window/framebuffer was resized; payload in Event::size.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">Event.hpp:17</a></div></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size_html_a0d2652859f4d53ef9c1340cd0bb039fe"><div class="ttname"><a href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#a0d2652859f4d53ef9c1340cd0bb039fe">sog::gfx::Event::[union].__unnamed0__::[struct].__unnamed0__.size::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">New width in pixels (EventType::Resized).</div></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size_html_a953dffd2cfa99eecfe21ae4eb1eafea8"><div class="ttname"><a href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#a953dffd2cfa99eecfe21ae4eb1eafea8">sog::gfx::Event::[union].__unnamed0__::[struct].__unnamed0__.size::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">New height in pixels (EventType::Resized).</div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size_html_ae8f8ae6fb7ea1e4a777b601b947dddd6"><div class="ttname"><a href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#ae8f8ae6fb7ea1e4a777b601b947dddd6">sog::gfx::Event::[union].__unnamed0__::[struct].__unnamed0__.size::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">New height in pixels (EventType::Resized).</div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size_html_afbec54fd49b0fb64e9bf717b7ccd5b7a"><div class="ttname"><a href="structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html#afbec54fd49b0fb64e9bf717b7ccd5b7a">sog::gfx::Event::[union].__unnamed0__::[struct].__unnamed0__.size::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">New width in pixels (EventType::Resized).</div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_event_html"><div class="ttname"><a href="structsog_1_1gfx_1_1_event.html">sog::gfx::Event</a></div><div class="ttdoc">A window event: a type tag plus a union payload describing the event.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">Event.hpp:32</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_event_html_a285f30496dd8aec7b4a066dffce5cb18"><div class="ttname"><a href="structsog_1_1gfx_1_1_event.html#a285f30496dd8aec7b4a066dffce5cb18">sog::gfx::Event::type</a></div><div class="ttdeci">EventType type</div><div class="ttdoc">Which event this is; determines the valid union member.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">Event.hpp:33</a></div></div>
-<div class="ttc" id="aunionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0_____html_a12a53667d23298dbb4694bfe292d0792"><div class="ttname"><a href="unionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0____.html#a12a53667d23298dbb4694bfe292d0792">sog::gfx::Event::[union].__unnamed0__::size</a></div><div class="ttdeci">struct sog::gfx::Event::@205200121320042071177315121142156036100022344064::@361154042121102355242337072274266161131242323117 size</div><div class="ttdoc">Payload for EventType::Resized events.</div></div>
+<div class="ttc" id="aunionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0_____html_a92bdd58ff4bef45259f6435ee662dc77"><div class="ttname"><a href="unionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0____.html#a92bdd58ff4bef45259f6435ee662dc77">sog::gfx::Event::[union].__unnamed0__::size</a></div><div class="ttdeci">struct sog::gfx::Event::@161236167126070024020371207016122165342023067006::@314050050065015027261351337336147204071151342254 size</div><div class="ttdoc">Payload for EventType::Resized events.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>Window</b></li><li class="navelem"><a href="_event_8hpp.html">Event.hpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>Window</b></li><li class="navelem"><a href="_event_8hpp.html">Event.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

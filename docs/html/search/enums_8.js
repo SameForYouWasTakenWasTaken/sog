@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['shader_5ftype_0',['shader_type',['../_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae',1,'sog::gfx']]]
+  ['key_0',['Key',['../_input_8cpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80',1,'sog::input']]]
 ];

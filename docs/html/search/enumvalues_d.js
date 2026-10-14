@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['shader_5fcompilation_5ffailed_0',['shader_compilation_failed',['../graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baff78a70d445b805f595f74afdda0850f',1,'sog']]],
-  ['shader_5ffile_5fopen_5ffailed_1',['shader_file_open_failed',['../graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba626afa7f597fe6b22fefc65634295440',1,'sog']]],
-  ['shader_5flink_5ffailed_2',['shader_link_failed',['../graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba8cdeb6c21973fea500336050370e9d33',1,'sog']]],
-  ['static_5fcopy_3',['STATIC_COPY',['../_enums_8hpp.html#a63d6dea47ff56ef3ed95217a8b550f91a150f2044a549b43d2dee980cc887fc7b',1,'sog::gfx']]],
-  ['static_5fdraw_4',['STATIC_DRAW',['../_enums_8hpp.html#a63d6dea47ff56ef3ed95217a8b550f91a0c5234f5830e196c1079d1fdcf3f9aba',1,'sog::gfx']]],
-  ['static_5fread_5',['STATIC_READ',['../_enums_8hpp.html#a63d6dea47ff56ef3ed95217a8b550f91a9cb802cb164e929c4c1ef02d397b9c23',1,'sog::gfx']]],
-  ['stencil_6',['Stencil',['../_frame_buffer_8hpp.html#a365e1801e97cbd0f1dda52308f55b1e2ad821e7ccd4d4c25a491ba1a9ea248895',1,'Stencilsog::gfx'],['../_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4ad821e7ccd4d4c25a491ba1a9ea248895',1,'Stencilsog::gfx']]],
-  ['stream_5fcopy_7',['STREAM_COPY',['../_enums_8hpp.html#a63d6dea47ff56ef3ed95217a8b550f91a99a4720a5c05c55db5447d23141412eb',1,'sog::gfx']]],
-  ['stream_5fdraw_8',['STREAM_DRAW',['../_enums_8hpp.html#a63d6dea47ff56ef3ed95217a8b550f91a4b631f47edaf0aaac92dfe66e19d65cf',1,'sog::gfx']]],
-  ['stream_5fread_9',['STREAM_READ',['../_enums_8hpp.html#a63d6dea47ff56ef3ed95217a8b550f91aee7b9d8b4c95804a698625ae5688195e',1,'sog::gfx']]]
+  ['r8_0',['R8',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837acfff813d86d447fa2a9c858650ebbb90',1,'sog::gfx::enums']]],
+  ['red_1',['Red',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faaee38e4d5dd68c4e440825018d549cb47',1,'sog::gfx::enums']]],
+  ['regular_2',['Regular',['../_gpu_buffer_8hpp.html#a2c17e1f81520f92470e8aad974c6ce84ad2203cb1237cb6460cbad94564e39345',1,'sog::gfx']]],
+  ['repeat_3',['REPEAT',['../_enums_8hpp.html#a43bed2cff125f89e94baad11a16f6e3ea5be68175be14dfaa080165456c2e9555',1,'sog::gfx::enums']]],
+  ['resized_4',['Resized',['../_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477a22995988de764d7a8cb4165fbff371cb',1,'sog::gfx']]],
+  ['rg_5',['RG',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faabac953e88f6d79514b0b6fc42eb6f3b7',1,'sog::gfx::enums']]],
+  ['rgb_6',['RGB',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faa889574aebacda6bfd3e534e2b49b8028',1,'sog::gfx::enums']]],
+  ['rgb16f_7',['RGB16F',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837a25cd126670bd567a899c64c4e6e8ca7d',1,'sog::gfx::enums']]],
+  ['rgb8_8',['RGB8',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837a165c6379d01617e12de274a3952efa63',1,'sog::gfx::enums']]],
+  ['rgba_9',['RGBA',['../_enums_8hpp.html#a5aeb0fedecac1c5775ff9eee5b7044faaea3495a278957dc58165e48a8945469f',1,'sog::gfx::enums']]],
+  ['rgba16f_10',['RGBA16F',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837aa29d843695056f9c171a9eb702d6910a',1,'sog::gfx::enums']]],
+  ['rgba8_11',['RGBA8',['../_enums_8hpp.html#ad8ecb177a420a954561a8faf041c2837ab4b279046a02077466fa26cabb00c642',1,'sog::gfx::enums']]]
 ];

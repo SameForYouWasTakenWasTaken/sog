@@ -2,13 +2,12 @@ var hierarchy =
 [
     [ "sog::gfx::Event::[struct].__unnamed0__.size", "structsog_1_1gfx_1_1_event_1_1_0fstruct_0e_8____unnamed0_____8size.html", null ],
     [ "sog::gfx::Event::[union].__unnamed0__", "unionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0____.html", null ],
-    [ "sog::Application", "classsog_1_1_application.html", null ],
+    [ "Application", "class_application.html", null ],
     [ "sog::gfx::Camera::Basis", "structsog_1_1gfx_1_1_camera_1_1_basis.html", null ],
     [ "sog::gfx::BufferTag", "structsog_1_1gfx_1_1_buffer_tag.html", null ],
     [ "sog::gfx::Camera", "classsog_1_1gfx_1_1_camera.html", null ],
     [ "sog::gfx::Color", "structsog_1_1gfx_1_1_color.html", null ],
     [ "sog::gfx::ElementBufferTag", "structsog_1_1gfx_1_1_element_buffer_tag.html", null ],
-    [ "sog::engine::Engine", "classsog_1_1engine_1_1_engine.html", null ],
     [ "sog::gfx::Event", "structsog_1_1gfx_1_1_event.html", null ],
     [ "std::exception", null, [
       [ "sog::exception", "classsog_1_1exception.html", [
@@ -28,6 +27,7 @@ var hierarchy =
     [ "sog::gfx::RenderState", "structsog_1_1gfx_1_1_render_state.html", null ],
     [ "sog::gfx::Shader&lt; shader_type &gt;", "classsog_1_1gfx_1_1_shader.html", null ],
     [ "sog::gfx::ShaderProgram", "classsog_1_1gfx_1_1_shader_program.html", null ],
+    [ "sog::gfx::ShaderProgramTag", "structsog_1_1gfx_1_1_shader_program_tag.html", null ],
     [ "sog::gfx::ShaderTag", "structsog_1_1gfx_1_1_shader_tag.html", null ],
     [ "sog::gfx::Texture2D", "classsog_1_1gfx_1_1_texture2_d.html", null ],
     [ "sog::gfx::TextureSettings", "structsog_1_1gfx_1_1_texture_settings.html", null ],

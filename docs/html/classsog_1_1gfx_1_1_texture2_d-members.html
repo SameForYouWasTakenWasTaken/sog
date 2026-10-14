@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: Member List</title>
+<title>sog (Small OpenGL Graphics): Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -118,12 +118,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsog_1_1gf
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a459a6da2fb8ca821fc59b0ab94df3b0a">bind</a>(int binding) const</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a585d07f80cadb880969d67ec1df0f9ff">create</a>()</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#adc1bf63f6aad432e473d72d7af05ef38">createFromFile</a>(const std::filesystem::path &amp;path, const TextureSettings &amp;settings)</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#ad055438a45826c92b9ca9f532611ad9e">createFromRaw</a>(const void *data, int width, int height, GLenum internalFormat, GLenum format, GLenum type, const TextureSettings &amp;settings)</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a478c4c3b6f572fe217ebd24e9cbc892f">createFromFile</a>(const std::filesystem::path &amp;path, const TextureSettings &amp;settings) const</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a08bc021de6e6f5bb9dbdcb2d5ad7bc7b">createFromRaw</a>(const void *data, int width, int height, texture_internal_format internalFormat, pixel_format format, pixel_type type, const TextureSettings &amp;settings) const</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a2d45b7756b8f5c93f4f0a8f3884be399">empty</a>(int width, int height)</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#af910a95e73fa3d33cce4af284a61c4d9">getHandle</a>() const</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a7a7bd0b820f1b5252bc94b460f8e70b2">m_Handle</a></td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#aa96919759eacb4607a58bc933e02d46e">Texture2D</a>()=default</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#afb96960a74d81cb0bb7fd1432a199220">Texture2D</a>()</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a855bc1e657a00b7d5397458f4d35c57a">Texture2D</a>(const std::filesystem::path &amp;path, const TextureSettings &amp;settings)</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html#a9eccbd91106137263e6f1b7151341f51">Texture2D</a>(const void *data, int width, int height, texture_internal_format internalFormat, pixel_format format, pixel_type type, const TextureSettings &amp;settings)</td><td class="entry"><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

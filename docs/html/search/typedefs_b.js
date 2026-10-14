@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['tag_5ftype_0',['tag_type',['../classsog_1_1gfx_1_1_g_l_handle.html#a61c72b4f59fec67a8b8da9863af38e7a',1,'sog::gfx::GLHandle']]],
-  ['texturehandle_1',['TextureHandle',['../_handles_8hpp.html#a3d96bf276395a08d271889223a5bd86d',1,'sog::gfx']]]
+  ['shader_0',['Shader',['../sog_8hpp.html#a197431248218d49952f7fe6d36982edf',1,'sog']]],
+  ['shaderhandle_1',['ShaderHandle',['../_handles_8hpp.html#a03fc54e3f789af692d9eb82f240aff53',1,'sog::gfx']]],
+  ['shaderprogram_2',['ShaderProgram',['../sog_8hpp.html#a8c257c37be2a2eff75eaf885e31a075f',1,'sog']]],
+  ['shaderprogramhandle_3',['ShaderProgramHandle',['../_handles_8hpp.html#a9b1962595beaf87772bb17aa8acd770f',1,'sog::gfx']]],
+  ['storagebuffer_4',['StorageBuffer',['../_buffers_8hpp.html#a252c97e96452dd4942b6b1f93df18e5b',1,'sog::gfx::StorageBuffer'],['../sog_8hpp.html#aea0082a3559481a2029ead63b227e287',1,'sog::StorageBuffer']]],
+  ['storagebufferhandle_5',['StorageBufferHandle',['../_handles_8hpp.html#aa4975556688277d3c225ad072766d617',1,'sog::gfx']]]
 ];

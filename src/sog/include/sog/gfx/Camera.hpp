@@ -214,8 +214,9 @@ class Camera
      */
     struct Basis
     {
-        math::Vec3 forward, right,
-            up; /**< Camera basis vectors (unit length, mutually perpendicular). */
+        math::Vec3 forward; /**< Unit vector pointing along the view direction. */
+        math::Vec3 right;   /**< Unit vector pointing to the camera's right. */
+        math::Vec3 up;      /**< Unit vector pointing up, perpendicular to forward and right. */
     };
 
     /**
@@ -231,19 +232,25 @@ class Camera
         1.f, 0.f, 0.f,
         0.f}; /**< Rotation mapping +Y onto m_WorldUp; lets yaw/pitch be defined in a Y-up space. */
     math::Vec3 m_Position{0.f, 0.f, 3.f}; /**< World-space position (starts 3 units down +Z). */
-    float m_Yaw{-90.f}, m_Pitch{0.f},
-        m_Roll{0.f}; /**< Orientation angles in degrees (yaw -90 looks along -Z). */
+    float m_Yaw{-90.f};  /**< Yaw about the up axis in degrees (-90 looks along -Z). */
+    float m_Pitch{0.f};  /**< Elevation above the horizontal plane in degrees. */
+    float m_Roll{0.f};   /**< Roll about the forward axis in degrees. */
 
     // Projection
     ProjectionType m_Type{ProjectionType::Perspective}; /**< Active projection kind. */
-    float m_Fov{60.f}, m_Aspect{16.f / 9.f}, m_Near{0.1f},
-        m_Far{100.f}; /**< Perspective parameters (FOV in degrees). */
-    float m_Left{-1.f}, m_Right{1.f}, m_Bottom{-1.f},
-        m_Top{1.f}; /**< Orthographic frustum bounds. */
+    float m_Fov{60.f};   /**< Perspective vertical field of view in degrees. */
+    float m_Aspect{16.f / 9.f}; /**< Perspective width/height aspect ratio. */
+    float m_Near{0.1f};  /**< Near clip-plane distance (both projection kinds). */
+    float m_Far{100.f};  /**< Far clip-plane distance (both projection kinds). */
+    float m_Left{-1.f};  /**< Orthographic left clip-plane boundary. */
+    float m_Right{1.f};  /**< Orthographic right clip-plane boundary. */
+    float m_Bottom{-1.f}; /**< Orthographic bottom clip-plane boundary. */
+    float m_Top{1.f};    /**< Orthographic top clip-plane boundary. */
 
     // Cached matrices
-    mutable math::Mat4 m_View{1.f}, m_Projection{1.f}; /**< Lazily rebuilt cached matrices. */
-    mutable bool m_ViewDirty{true},
-        m_ProjDirty{true}; /**< Dirty flags forcing a matrix rebuild on next query. */
+    mutable math::Mat4 m_View{1.f};        /**< Cached view matrix, rebuilt while dirty. */
+    mutable math::Mat4 m_Projection{1.f};  /**< Cached projection matrix, rebuilt while dirty. */
+    mutable bool m_ViewDirty{true};        /**< Marks the view matrix stale after a pose change. */
+    mutable bool m_ProjDirty{true}; /**< Marks the projection matrix stale after a change. */
 };
 } // namespace sog::gfx

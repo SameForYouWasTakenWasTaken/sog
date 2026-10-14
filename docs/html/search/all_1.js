@@ -1,7 +1,7 @@
 var searchData=
 [
   ['a_0',['a',['../structsog_1_1gfx_1_1_color.html#a6665818db07d1a8d4befb241a863e278',1,'sog::gfx::Color']]],
-  ['application_1',['Application',['../classsog_1_1_application.html',1,'sog::Application'],['../classsog_1_1_application.html#ad3dd51f064f23fd8c4159db15b0372b1',1,'sog::Application::Application()']]],
+  ['application_1',['Application',['../class_application.html',1,'Application'],['../class_application.html#afa8cc05ce6b6092be5ecdfdae44e05f8',1,'Application::Application()']]],
   ['application_2ecpp_2',['Application.cpp',['../_application_8cpp.html',1,'']]],
   ['application_2ehpp_3',['Application.hpp',['../_application_8hpp.html',1,'']]],
   ['attachrenderbuffer_4',['attachRenderbuffer',['../classsog_1_1gfx_1_1_frame_buffer.html#af5cd537546b81ebcec486c552bba6975',1,'sog::gfx::FrameBuffer']]],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Window Class Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Window Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -158,7 +158,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a01c17982772ef56734b876e5b3787feb" id="r_a01c17982772ef56734b876e5b3787feb"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a01c17982772ef56734b876e5b3787feb">clear</a> (<a class="el" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">ClearBuffer</a> buffers, <a class="el" href="structsog_1_1gfx_1_1_color.html">Color</a> color)</td></tr>
 <tr class="memdesc:a01c17982772ef56734b876e5b3787feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the given buffers using the given color.  <br /></td></tr>
 <tr class="memitem:a3e61d9a2907c6cce6922caa6cd87e557" id="r_a3e61d9a2907c6cce6922caa6cd87e557"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3e61d9a2907c6cce6922caa6cd87e557">clear</a> (<a class="el" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">ClearBuffer</a> buffers)</td></tr>
-<tr class="memdesc:a3e61d9a2907c6cce6922caa6cd87e557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the given buffers with an opaque black color.  <br /></td></tr>
+<tr class="memdesc:a3e61d9a2907c6cce6922caa6cd87e557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the given buffers with a black color (0, 0, 0, 0).  <br /></td></tr>
 <tr class="memitem:ad07690ae2f55c48de5ea68e7b6ced1f9" id="r_ad07690ae2f55c48de5ea68e7b6ced1f9"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad07690ae2f55c48de5ea68e7b6ced1f9">draw</a> (const <a class="el" href="structsog_1_1gfx_1_1_render_state.html">RenderState</a> &amp;state)</td></tr>
 <tr class="memdesc:ad07690ae2f55c48de5ea68e7b6ced1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the state and issues the draw call (indexed or non-indexed).  <br /></td></tr>
 </table><table class="memberdecls">
@@ -181,18 +181,16 @@ Private Attributes</h2></td></tr>
 <p>Construction initializes GLFW (throwing <a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">sog::graphics_error</a> on failure), creates the window with the requested <a class="el" href="structsog_1_1context_1_1_window_context.html" title="Creation parameters for a Window: OpenGL version and profile, dimensions and title.">context::WindowContext</a>, makes the context current and loads GL entry points via glad. Destruction destroys the GLFW window.</p>
 <p>Typical frame loop: </p><div class="fragment"><div class="line"><span class="keywordflow">while</span> (!window.shouldClose())</div>
 <div class="line">{</div>
-<div class="line">    window.beginFrame(<a class="code hl_enumvalue" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4acb5feb1b7314637725a2e73bdc9f7295">ClearBuffer::Color</a> | <a class="code hl_enumvalue" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4a675056ad1441b6375b2c5abd48c27ef1">ClearBuffer::Depth</a>, {0, 0, 0, 255});</div>
+<div class="line">    window.beginFrame(ClearBuffer::Color | ClearBuffer::Depth, {0, 0, 0, 255});</div>
 <div class="line">    <a class="code hl_function" href="#ad07690ae2f55c48de5ea68e7b6ced1f9">Window::draw</a>(state);</div>
 <div class="line">    window.endFrame();</div>
 <div class="line">}</div>
-<div class="ttc" id="a_clear_buffer_8hpp_html_a8f5b5f0b5b577c9bc23f526291e8f6f4a675056ad1441b6375b2c5abd48c27ef1"><div class="ttname"><a href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4a675056ad1441b6375b2c5abd48c27ef1">sog::gfx::ClearBuffer::Depth</a></div><div class="ttdeci">@ Depth</div><div class="ttdoc">Clear the depth buffer.</div><div class="ttdef"><b>Definition</b> <a href="_clear_buffer_8hpp_source.html#l00021">ClearBuffer.hpp:21</a></div></div>
-<div class="ttc" id="a_clear_buffer_8hpp_html_a8f5b5f0b5b577c9bc23f526291e8f6f4acb5feb1b7314637725a2e73bdc9f7295"><div class="ttname"><a href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4acb5feb1b7314637725a2e73bdc9f7295">sog::gfx::ClearBuffer::Color</a></div><div class="ttdeci">@ Color</div><div class="ttdoc">Clear the color buffer.</div><div class="ttdef"><b>Definition</b> <a href="_clear_buffer_8hpp_source.html#l00020">ClearBuffer.hpp:20</a></div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_window_html_ad07690ae2f55c48de5ea68e7b6ced1f9"><div class="ttname"><a href="#ad07690ae2f55c48de5ea68e7b6ced1f9">sog::gfx::Window::draw</a></div><div class="ttdeci">static void draw(const RenderState &amp;state)</div><div class="ttdoc">Binds the state and issues the draw call (indexed or non-indexed).</div><div class="ttdef"><b>Definition</b> <a href="_window_8cpp_source.html#l00107">Window.cpp:107</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_window_html_ad07690ae2f55c48de5ea68e7b6ced1f9"><div class="ttname"><a href="#ad07690ae2f55c48de5ea68e7b6ced1f9">sog::gfx::Window::draw</a></div><div class="ttdeci">static void draw(const RenderState &amp;state)</div><div class="ttdoc">Binds the state and issues the draw call (indexed or non-indexed).</div><div class="ttdef"><b>Definition</b> <a href="_window_8cpp_source.html#l00105">Window.cpp:105</a></div></div>
 </div><!-- fragment --><p><a class="el" href="#acbb7ac61a0b339a1eab32c2647b0e06c" title="Starts a frame by clearing the given buffers with the given color.">beginFrame()</a> clears the requested buffers with the given color; <a class="el" href="#a8a62387fd93d24cccf9d567f9f6c678e" title="Ends a frame: swaps buffers, then polls native OS events.">endFrame()</a> swaps the buffers and polls native events. The engine's own <a class="el" href="structsog_1_1gfx_1_1_event.html" title="A window event: a type tag plus a union payload describing the event.">Event</a> queue is fed by callbacks (e.g. resize) and drained with <a class="el" href="#a4e6b7089da6cda9daf2d51554918cadb" title="Pops the next queued engine event, if any.">pollEvent()</a>.</p>
 <dl class="section attention"><dt>Attention</dt><dd><a class="el" href="#acbb7ac61a0b339a1eab32c2647b0e06c" title="Starts a frame by clearing the given buffers with the given color.">beginFrame()</a>'s clear color is interpreted as 8-bit-per-channel (0-255) floats, matching the {0, 0, 0, 255} default — a normalized [0, 1] <a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> would be divided by 255 again by the internal fromRGBA() conversion.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structsog_1_1context_1_1_window_context.html" title="Creation parameters for a Window: OpenGL version and profile, dimensions and title.">sog::context::WindowContext</a>, <a class="el" href="structsog_1_1gfx_1_1_render_state.html" title="Everything Window::draw() needs to render one batch.">sog::gfx::RenderState</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00047">47</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00046">46</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8bb0c47e6b800d8c8548d77c428c03fd" name="a8bb0c47e6b800d8c8548d77c428c03fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8bb0c47e6b800d8c8548d77c428c03fd">&#9670;&#160;</a></span>Window() <span class="overload">[1/2]</span></h2>
@@ -217,11 +215,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00081">81</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00079">79</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00136">initialize()</a>, and <a class="el" href="_window_8hpp_source.html#l00158">m_Window</a>.</p>
+<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00135">initialize()</a>, and <a class="el" href="_window_8hpp_source.html#l00164">m_Window</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00061">sog::gfx::Window::ImplWindow::on_resize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00059">sog::gfx::Window::ImplWindow::on_resize()</a>.</p>
 
 </div>
 </div>
@@ -242,9 +240,9 @@ Private Attributes</h2></td></tr>
 
 <p>Destroys the GLFW window and releases its resources. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00085">85</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00083">83</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00158">m_Window</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00164">m_Window</a>.</p>
 
 </div>
 </div>
@@ -277,9 +275,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00090">90</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00088">88</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00136">initialize()</a>.</p>
+<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00135">initialize()</a>.</p>
 
 </div>
 </div>
@@ -313,11 +311,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section attention"><dt>Attention</dt><dd>). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00093">93</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00091">91</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00100">clear()</a>.</p>
+<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00098">clear()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -344,17 +342,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Clears the given buffers with an opaque black color. </p>
+<p>Clears the given buffers with a black color (0, 0, 0, 0). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buffers</td><td>Which buffer(s) to clear; combine with operator|. </td></tr>
+    <tr><td class="paramname">buffers</td><td>Which buffer(s) to clear; combine with operator|.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Unlike <a class="el" href="#acbb7ac61a0b339a1eab32c2647b0e06c" title="Starts a frame by clearing the given buffers with the given color.">beginFrame()</a>'s default color ({0, 0, 0, 255}, opaque black), the alpha channel here is cleared to 0. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00106">106</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00104">104</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00100">clear()</a>.</p>
+<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00098">clear()</a>.</p>
 
 </div>
 </div>
@@ -395,11 +394,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section attention"><dt>Attention</dt><dd>). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00100">100</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00098">98</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00028">sog::gfx::Color::a</a>, and <a class="el" href="_colors_8hpp_source.html#l00049">sog::gfx::Color::fromRGBA()</a>.</p>
+<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00031">sog::gfx::Color::a</a>, <a class="el" href="_colors_8hpp_source.html#l00030">sog::gfx::Color::b</a>, <a class="el" href="_colors_8hpp_source.html#l00051">sog::gfx::Color::fromRGBA()</a>, <a class="el" href="_colors_8hpp_source.html#l00029">sog::gfx::Color::g</a>, and <a class="el" href="_colors_8hpp_source.html#l00028">sog::gfx::Color::r</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00093">beginFrame()</a>, <a class="el" href="_window_8cpp_source.html#l00106">clear()</a>, and <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00091">beginFrame()</a>, <a class="el" href="_window_8cpp_source.html#l00104">clear()</a>, and <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -435,11 +434,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Uses glDrawElements when the vertex array has an index buffer, otherwise glDrawArrays over the vertex buffer's element count. The texture is bound to unit 0 only when state.texture2D is non-null. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00107">107</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00105">105</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00026">sog::gfx::Texture2D::bind()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00024">sog::gfx::VertexArray::bind()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00124">sog::gfx::VertexArray::indexCount()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00118">sog::gfx::VertexArray::indexed()</a>, <a class="el" href="_render_state_8hpp_source.html#l00035">sog::gfx::RenderState::shaderProgram</a>, <a class="el" href="_gpu_buffer_8hpp_source.html#l00136">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::size()</a>, <a class="el" href="_render_state_8hpp_source.html#l00033">sog::gfx::RenderState::texture2D</a>, <a class="el" href="_shader_program_8hpp_source.html#l00079">sog::gfx::ShaderProgram::use()</a>, <a class="el" href="_render_state_8hpp_source.html#l00032">sog::gfx::RenderState::vertexArray</a>, and <a class="el" href="_render_state_8hpp_source.html#l00031">sog::gfx::RenderState::vertexBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00025">sog::gfx::Texture2D::bind()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00025">sog::gfx::VertexArray::bind()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00123">sog::gfx::VertexArray::indexCount()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00117">sog::gfx::VertexArray::indexed()</a>, <a class="el" href="_render_state_8hpp_source.html#l00039">sog::gfx::RenderState::shaderProgram</a>, <a class="el" href="_gpu_buffer_8hpp_source.html#l00137">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::size()</a>, <a class="el" href="_render_state_8hpp_source.html#l00035">sog::gfx::RenderState::texture2D</a>, <a class="el" href="_shader_program_8hpp_source.html#l00099">sog::gfx::ShaderProgram::use()</a>, <a class="el" href="_render_state_8hpp_source.html#l00033">sog::gfx::RenderState::vertexArray</a>, and <a class="el" href="_render_state_8hpp_source.html#l00031">sog::gfx::RenderState::vertexBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -460,11 +459,11 @@ Private Attributes</h2></td></tr>
 
 <p>Ends a frame: swaps buffers, then polls native OS events. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00094">94</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00092">92</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00099">pollEvents()</a>, and <a class="el" href="_window_8cpp_source.html#l00092">swapBuffers()</a>.</p>
+<p class="reference">References <a class="el" href="_window_8cpp_source.html#l00097">pollEvents()</a>, and <a class="el" href="_window_8cpp_source.html#l00090">swapBuffers()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -494,11 +493,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the current window height in pixels. </p>
 <dl class="section return"><dt>Returns</dt><dd>Height stored in the window context (updated on resize). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00129">129</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00131">131</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_context_8hpp_source.html#l00034">sog::context::WindowContext::height</a>, and <a class="el" href="_window_8hpp_source.html#l00154">m_Context</a>.</p>
+<p class="reference">References <a class="el" href="_window_context_8hpp_source.html#l00034">sog::context::WindowContext::height</a>, and <a class="el" href="_window_8hpp_source.html#l00159">m_Context</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -528,9 +527,9 @@ Private Attributes</h2></td></tr>
 <p>Returns the underlying native handle for interop. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the GLFWwindow (opaque to callers). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00126">126</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00125">125</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00158">m_Window</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00164">m_Window</a>.</p>
 
 </div>
 </div>
@@ -560,11 +559,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the current window width in pixels. </p>
 <dl class="section return"><dt>Returns</dt><dd>Width stored in the window context (updated on resize). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00123">123</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00125">125</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00154">m_Context</a>, and <a class="el" href="_window_context_8hpp_source.html#l00033">sog::context::WindowContext::width</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00159">m_Context</a>, and <a class="el" href="_window_context_8hpp_source.html#l00033">sog::context::WindowContext::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -593,11 +592,11 @@ Private Attributes</h2></td></tr>
 
 <p>Sets up GLFW, the window, context and GLAD; throws on failure. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00136">136</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00135">135</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>, <a class="el" href="_window_8hpp_source.html#l00158">m_Window</a>, and <a class="el" href="_window_8cpp_source.html#l00061">sog::gfx::Window::ImplWindow::on_resize()</a>.</p>
+<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>, <a class="el" href="_window_8hpp_source.html#l00164">m_Window</a>, and <a class="el" href="_window_8cpp_source.html#l00059">sog::gfx::Window::ImplWindow::on_resize()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00081">Window()</a>, and <a class="el" href="_window_8cpp_source.html#l00090">Window()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00079">Window()</a>, and <a class="el" href="_window_8cpp_source.html#l00088">Window()</a>.</p>
 
 </div>
 </div>
@@ -625,11 +624,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if an event was popped, false if the queue was empty. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00127">127</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00126">126</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00151">m_EventQueue</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00154">m_EventQueue</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -658,9 +657,9 @@ Private Attributes</h2></td></tr>
 
 <p>Polls native (GLFW) events, dispatching registered callbacks such as resize. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00099">99</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00097">97</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00094">endFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00092">endFrame()</a>.</p>
 
 </div>
 </div>
@@ -695,9 +694,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00148">148</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00150">150</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00151">m_EventQueue</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00154">m_EventQueue</a>.</p>
 
 </div>
 </div>
@@ -727,11 +726,11 @@ Private Attributes</h2></td></tr>
 <p>Reports whether the OS has requested the window to close. </p>
 <dl class="section return"><dt>Returns</dt><dd>true once the user asks to close the window. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00091">91</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00089">89</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00158">m_Window</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00164">m_Window</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -752,11 +751,11 @@ Private Attributes</h2></td></tr>
 
 <p>Swaps the front and back buffers (presents the rendered frame). </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00092">92</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00090">90</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00158">m_Window</a>.</p>
+<p class="reference">References <a class="el" href="_window_8hpp_source.html#l00164">m_Window</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00094">endFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00092">endFrame()</a>.</p>
 
 </div>
 </div>
@@ -783,9 +782,9 @@ Private Attributes</h2></td></tr>
 
 <p>The context settings this window was created with (tracks current size). </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00154">154</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00159">159</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8hpp_source.html#l00129">getHeight()</a>, and <a class="el" href="_window_8hpp_source.html#l00123">getWidth()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8hpp_source.html#l00131">getHeight()</a>, <a class="el" href="_window_8hpp_source.html#l00125">getWidth()</a>, and <a class="el" href="_window_8cpp_source.html#l00059">sog::gfx::Window::ImplWindow::on_resize()</a>.</p>
 
 </div>
 </div>
@@ -811,9 +810,9 @@ Private Attributes</h2></td></tr>
 
 <p>Engine-level events waiting to be consumed by <a class="el" href="#a4e6b7089da6cda9daf2d51554918cadb" title="Pops the next queued engine event, if any.">pollEvent()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00151">151</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00154">154</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00127">pollEvent()</a>, and <a class="el" href="_window_8hpp_source.html#l00148">pushEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00126">pollEvent()</a>, and <a class="el" href="_window_8hpp_source.html#l00150">pushEvent()</a>.</p>
 
 </div>
 </div>
@@ -840,15 +839,15 @@ Private Attributes</h2></td></tr>
 <p>Forward-declared private implementation holding the GLFWwindow*. </p>
 <p>Shared ownership of the pimpl (GLFWwindow wrapper). </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00158">158</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00164">164</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00126">getNativeHandle()</a>, <a class="el" href="_window_8cpp_source.html#l00136">initialize()</a>, <a class="el" href="_window_8cpp_source.html#l00091">shouldClose()</a>, <a class="el" href="_window_8cpp_source.html#l00092">swapBuffers()</a>, <a class="el" href="_window_8cpp_source.html#l00081">Window()</a>, and <a class="el" href="_window_8cpp_source.html#l00085">~Window()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00125">getNativeHandle()</a>, <a class="el" href="_window_8cpp_source.html#l00135">initialize()</a>, <a class="el" href="_window_8cpp_source.html#l00089">shouldClose()</a>, <a class="el" href="_window_8cpp_source.html#l00090">swapBuffers()</a>, <a class="el" href="_window_8cpp_source.html#l00079">Window()</a>, and <a class="el" href="_window_8cpp_source.html#l00083">~Window()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/Core/gfx/Window/<a class="el" href="_window_8hpp_source.html">Window.hpp</a></li>
-<li>src/Core/gfx/Window/<a class="el" href="_window_8cpp_source.html">Window.cpp</a></li>
+<li>src/sog/include/sog/gfx/Window/<a class="el" href="_window_8hpp_source.html">Window.hpp</a></li>
+<li>src/sog/gfx/Window/<a class="el" href="_window_8cpp_source.html">Window.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

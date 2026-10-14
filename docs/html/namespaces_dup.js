@@ -1,0 +1,48 @@
+var namespaces_dup =
+[
+    [ "sog", null, [
+      [ "enums", "namespacesog_1_1enums.html", null ],
+      [ "uniform", "namespacesog_1_1uniform.html", null ],
+      [ "exception", "classsog_1_1exception.html", "classsog_1_1exception" ],
+      [ "graphics_error", "classsog_1_1graphics__error.html", "classsog_1_1graphics__error" ],
+      [ "runtime_error", "classsog_1_1runtime__error.html", "classsog_1_1runtime__error" ],
+      [ "Time", "structsog_1_1_time.html", "structsog_1_1_time" ],
+      [ "Camera", "sog_8hpp.html#aae252232b51b7ccd4d2546e6d7417323", null ],
+      [ "ClearBuffer", "sog_8hpp.html#a8e644fd0bbc3c543294e571a6664e40d", null ],
+      [ "Color", "sog_8hpp.html#a62751d6ca69a8482e80135d11e5639fd", null ],
+      [ "Event", "sog_8hpp.html#aba30eb392b283c97f6a2e8fbe28efd42", null ],
+      [ "EventType", "sog_8hpp.html#a8cdb1efb2c1772419a42cc8c526c3ff9", null ],
+      [ "FragmentShader", "sog_8hpp.html#a5635f8e583b6d685ba4c8c936c9d94e3", null ],
+      [ "FrameBuffer", "sog_8hpp.html#a49caf7e123afcb770cae67573b2074d1", null ],
+      [ "Index", "sog_8hpp.html#abdd5dc2837fe155c116d4bfb397bbd76", null ],
+      [ "IndexBuffer", "sog_8hpp.html#a581d27cbee92b888175c87356db80c50", null ],
+      [ "RenderBuffer", "sog_8hpp.html#a47a2212c7ab6b8bf8586a8b2c763c06d", null ],
+      [ "Shader", "sog_8hpp.html#a197431248218d49952f7fe6d36982edf", null ],
+      [ "ShaderProgram", "sog_8hpp.html#a8c257c37be2a2eff75eaf885e31a075f", null ],
+      [ "StorageBuffer", "sog_8hpp.html#aea0082a3559481a2029ead63b227e287", null ],
+      [ "Texture2D", "sog_8hpp.html#a6567eea990859c8f575d06bc82205611", null ],
+      [ "Uniform", "sog_8hpp.html#a9778437b0e653b2cb9e8c76e0469e4d7", null ],
+      [ "UniformBuffer", "sog_8hpp.html#abd1fc8a677ec8f6b7712b1192f29ad59", null ],
+      [ "Vertex", "sog_8hpp.html#a5c085de811cae662f2a2f5e177e69849", null ],
+      [ "VertexArray", "sog_8hpp.html#ac5c63382e43eab221e1e9b36644f6dab", null ],
+      [ "VertexBuffer", "sog_8hpp.html#a9b3d3fc4a37afecc9e623d0a52e3eb52", null ],
+      [ "VertexShader", "sog_8hpp.html#a5defd92210e7e418f20496b2af9fa0b2", null ],
+      [ "Window", "sog_8hpp.html#a378827eb068315c5e4cf9917b1e19c35", null ],
+      [ "graphics_error_code", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428b", [
+        [ "window_creation_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba6d708b7c4e2e27804c082697969200d0", null ],
+        [ "invalid_operation", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baf1203e404fb6b2467cd1884faa2c71c2", null ],
+        [ "shader_compilation_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baff78a70d445b805f595f74afdda0850f", null ],
+        [ "shader_link_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba8cdeb6c21973fea500336050370e9d33", null ],
+        [ "buffer_creation_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba598343b3fb1e80b04ac85fd2f228111d", null ],
+        [ "vertex_array_creation_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba609c8d08f33009f2f41e5845624456ed", null ],
+        [ "vertex_array_not_bound", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba771307b829c9170b6251b13d0c9445ee", null ],
+        [ "buffer_not_bound", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428badd5e47a83bd09e8ec561f1aa24a92717", null ],
+        [ "uniform_location_invalid", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baba94c7d849fdc4119aff92845312a506", null ],
+        [ "shader_file_open_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba626afa7f597fe6b22fefc65634295440", null ],
+        [ "texture_load_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba2209bba2e4e7ae42a53c6229eb8590f4", null ],
+        [ "texture_not_bound", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba2fe23f5043ae087781aac569336e18c5", null ],
+        [ "frame_buffer_invalid", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baed7130b249ffd466550ad1e7397acb9d", null ],
+        [ "frame_buffer_not_bound", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba3fd327f5a62f55772a98bbb2945f284d", null ]
+      ] ]
+    ] ]
+];

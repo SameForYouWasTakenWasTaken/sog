@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Event Struct Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Event Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -127,12 +127,12 @@ Classes</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a285f30496dd8aec7b4a066dffce5cb18" id="r_a285f30496dd8aec7b4a066dffce5cb18"><td class="memItemLeft"><a class="el" href="_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477">EventType</a>&#160;</td><td class="memItemRight"><a class="el" href="#a285f30496dd8aec7b4a066dffce5cb18">type</a></td></tr>
 <tr class="memdesc:a285f30496dd8aec7b4a066dffce5cb18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which event this is; determines the valid union member.  <br /></td></tr>
-<tr class="memitem:"><td class="memItemLeft"><a id="a423e57dc1eee7ea66cc5cf579d772d22" name="a423e57dc1eee7ea66cc5cf579d772d22"></a>
+<tr class="memitem:"><td class="memItemLeft"><a id="ab5378744476ddacc02349283486e4c69" name="ab5378744476ddacc02349283486e4c69"></a>
 <a class="el" href="unionsog_1_1gfx_1_1_event_1_1_0funion_0e_8____unnamed0____.html">union </a>&#160;</td><td class="memItemRight"></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A window event: a type tag plus a union payload describing the event. </p>
-<p>Read type first, then inspect the matching union member (currently only size, valid for <a class="el" href="_event_8hpp.html#a4ad88309310bc326f6ffecc0ceffa477a22995988de764d7a8cb4165fbff371cb" title="The window/framebuffer was resized; payload in Event::size.">EventType::Resized</a>).</p>
+<p>Read type first, then inspect the matching union member (currently only size, valid for EventType::Resized).</p>
 <dl class="section note"><dt>Note</dt><dd>The payload is a union so an <a class="el" href="structsog_1_1gfx_1_1_event.html" title="A window event: a type tag plus a union payload describing the event.">Event</a> stays small regardless of how many event kinds are added later. The nested anonymous struct inside the union is a widely supported compiler extension (MSVC, GCC, Clang) rather than strict standard C++, but it behaves as an ordinary struct member here. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00031">31</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
@@ -153,12 +153,12 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00033">33</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00061">sog::gfx::Window::ImplWindow::on_resize()</a>, and <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00059">sog::gfx::Window::ImplWindow::on_resize()</a>, and <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Core/gfx/Window/<a class="el" href="_event_8hpp_source.html">Event.hpp</a></li>
+<li>src/sog/include/sog/gfx/Window/<a class="el" href="_event_8hpp_source.html">Event.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

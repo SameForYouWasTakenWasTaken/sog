@@ -1,6 +1,7 @@
 /**
  * @file OpenGLDebug.cpp
- * @brief Implements the sog::debug OpenGL debug-output bridge: GL-enum-to-string translation and the glDebugMessageCallback installer.
+ * @brief Implements the sog::debug OpenGL debug-output bridge: GL-enum-to-string translation and
+ * the glDebugMessageCallback installer.
  */
 
 #include "OpenGLDebug.hpp"
@@ -10,7 +11,8 @@ namespace sog::debug
 /**
  * @brief Converts a GL debug source enum into a readable string.
  * @param source GL_DEBUG_SOURCE_* constant.
- * @return Static string such as "API", "WINDOW_SYSTEM", "SHADER_COMPILER", "THIRD_PARTY", "APPLICATION", "OTHER", or "UNKNOWN".
+ * @return Static string such as "API", "WINDOW_SYSTEM", "SHADER_COMPILER", "THIRD_PARTY",
+ * "APPLICATION", "OTHER", or "UNKNOWN".
  */
 const char* debugSourceToString(GLenum source)
 {
@@ -36,7 +38,8 @@ const char* debugSourceToString(GLenum source)
 /**
  * @brief Converts a GL debug type enum into a readable string.
  * @param type GL_DEBUG_TYPE_* constant.
- * @return Static string such as "ERROR", "DEPRECATED_BEHAVIOR", "PERFORMANCE", "MARKER", or "UNKNOWN".
+ * @return Static string such as "ERROR", "DEPRECATED_BEHAVIOR", "PERFORMANCE", "MARKER", or
+ * "UNKNOWN".
  */
 const char* debugTypeToString(GLenum type)
 {
@@ -91,14 +94,17 @@ const char* debugSeverityToString(GLenum severity)
 static DebugCallback s_UserCallback = nullptr;
 
 /**
- * @brief Internal bridge installed with glDebugMessageCallback; translates enums and forwards to the user callback.
+ * @brief Internal bridge installed with glDebugMessageCallback; translates enums and forwards to
+ * the user callback.
+ *
+ * The GL length argument is unused (the message is NUL-terminated), as is
+ * userParam: the bridge reads the module-level s_UserCallback instead.
+ *
  * @param source GL debug source enum.
  * @param type GL debug type enum.
  * @param id GL debug message id.
  * @param severity GL debug severity enum.
- * @param length Message length (unused; message is NUL-terminated).
  * @param message The debug message text.
- * @param userParam Unused (the callback uses the module-level s_UserCallback).
  */
 void GLAD_API_PTR internalOpenGlBridge(GLenum source, GLenum type, GLuint id, GLenum severity,
                                        GLsizei /*length*/, const GLchar* message,
@@ -115,7 +121,6 @@ void GLAD_API_PTR internalOpenGlBridge(GLenum source, GLenum type, GLuint id, GL
 // 2. This is the clean function your user calls
 /**
  * @brief Stores the user callback and enables OpenGL debug output.
- * @param callback Handler to receive translated debug messages (moved into a module-level slot).
  *
  * Installs internalOpenGlBridge as the GL debug callback, then enables
  * GL_DEBUG_OUTPUT and GL_DEBUG_OUTPUT_SYNCHRONOUS.

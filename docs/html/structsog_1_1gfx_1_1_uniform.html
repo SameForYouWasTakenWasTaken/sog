@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Uniform Struct Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Uniform Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -141,7 +141,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="#a19ccaa11069f3d25f3ad0ede0bfe7fde" title="Underlying GL location type (GLint).">Location</a> of a uniform within a linked shader program. </p>
 <p>Wraps the GLint returned by glGetUniformLocation. A location of -1 means the uniform does not exist in the program (or is unused/optimized out); <a class="el" href="#ab665f6561626d121ecc798ee38fe3faa" title="Reports whether this location names an existing uniform.">valid()</a>, operator bool and the explicit conversion to <a class="el" href="#a19ccaa11069f3d25f3ad0ede0bfe7fde" title="Underlying GL location type (GLint).">Location</a> let callers check before setting values.</p>
-<dl class="section see"><dt>See also</dt><dd>sog::ShaderProgram::getLocation, sog::uniform::getLocation </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665" title="Returns a uniform&#39;s location, caching successful lookups by name.">sog::ShaderProgram::getLocation</a>, <a class="el" href="_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438" title="Looks up a uniform&#39;s location by name within a linked program.">sog::uniform::getLocation</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_uniform_8hpp_source.html#l00020">20</a> of file <a class="el" href="_uniform_8hpp_source.html">Uniform.hpp</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
@@ -283,7 +283,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Core/gfx/OpenGL/<a class="el" href="_uniform_8hpp_source.html">Uniform.hpp</a></li>
+<li>src/sog/include/sog/gfx/OpenGL/<a class="el" href="_uniform_8hpp_source.html">Uniform.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

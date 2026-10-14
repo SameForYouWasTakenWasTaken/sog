@@ -24,7 +24,10 @@
 */
 var NAVTREE =
 [
-  [ "sog OpenGL Engine", "index.html", [
+  [ "sog (Small OpenGL Graphics)", "index.html", [
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -50,8 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_application_8cpp.html",
-"classsog_1_1gfx_1_1_render_buffer.html#a14b5e730ac0c6214426343ec51a7a485",
-"structsog_1_1gfx_1_1_vertex.html#aa9f5c65e2683323636569e99223beacc"
+"classsog_1_1gfx_1_1_frame_buffer.html#a60729d4f56748ab5cb8fbac05c4da6bf",
+"graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baff78a70d445b805f595f74afdda0850f"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -64,7 +64,19 @@ template <shader_type> class Shader
   public:
     /// Constructs an empty shader with no GL object yet.
     Shader() = default;
+
+    /**
+     * @brief Constructs the shader and compiles it from an in-memory source string.
+     * @param source GLSL source text for this stage.
+     * @throws sog::graphics_error If compilation fails (info log included in the message).
+     */
     explicit Shader(std::string_view source) { createFromSource(source); }
+
+    /**
+     * @brief Constructs the shader, reading and compiling the given GLSL source file.
+     * @param path Path to the GLSL source file.
+     * @throws sog::graphics_error If the file cannot be opened or compilation fails.
+     */
     explicit Shader(const std::filesystem::path& path) { createFromFile(path); }
 
     /// Deletes the owned GL shader object.
@@ -101,7 +113,6 @@ template <shader_type> class Shader
 
 /**
  * @brief Compiles the shader from source, creating the GL object on first use.
- * @param source GLSL source text for this stage.
  * @throws sog::graphics_error If compilation fails.
  */
 template <shader_type TShaderType>
@@ -118,9 +129,8 @@ void Shader<TShaderType>::createFromSource(std::string_view source)
 
 /**
  * @brief Reads the file into memory and compiles it via createFromSource().
- * @param path Path to the GLSL source file.
- * @throws sog::graphics_error With graphics_error_code::shader_file_open_failed if the file cannot
- * be opened.
+ * @throws sog::graphics_error With graphics_error_code::shader_file_open_failed if the file
+ * cannot be opened.
  */
 template <shader_type E0> void Shader<E0>::createFromFile(const std::filesystem::path& path)
 {

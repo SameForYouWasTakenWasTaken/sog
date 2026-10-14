@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Camera Class Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Camera Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -189,32 +189,42 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a30e46681a93b13fbb216b3e6330c38c8" id="r_a30e46681a93b13fbb216b3e6330c38c8"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a30e46681a93b13fbb216b3e6330c38c8">m_WorldUp</a></td></tr>
 <tr class="memdesc:a30e46681a93b13fbb216b3e6330c38c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference up direction supplied at construction (normalized).  <br /></td></tr>
-<tr class="memitem:af3e03fe7f5a41282b7c636461b0e0e87" id="r_af3e03fe7f5a41282b7c636461b0e0e87"><td class="memItemLeft">glm::quat&#160;</td><td class="memItemRight"><a class="el" href="#af3e03fe7f5a41282b7c636461b0e0e87">m_Frame</a> {1.f, 0.f, 0.f, 0.f}</td></tr>
+<tr class="memitem:af3e03fe7f5a41282b7c636461b0e0e87" id="r_af3e03fe7f5a41282b7c636461b0e0e87"><td class="memItemLeft">glm::quat&#160;</td><td class="memItemRight"><a class="el" href="#af3e03fe7f5a41282b7c636461b0e0e87">m_Frame</a></td></tr>
 <tr class="memdesc:af3e03fe7f5a41282b7c636461b0e0e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation mapping +Y onto m_WorldUp; lets yaw/pitch be defined in a Y-up space.  <br /></td></tr>
 <tr class="memitem:a9c404ff1ea85c39e780fd916d13d3f44" id="r_a9c404ff1ea85c39e780fd916d13d3f44"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9c404ff1ea85c39e780fd916d13d3f44">m_Position</a> {0.f, 0.f, 3.f}</td></tr>
 <tr class="memdesc:a9c404ff1ea85c39e780fd916d13d3f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">World-space position (starts 3 units down +Z).  <br /></td></tr>
 <tr class="memitem:ae4f8f33dead6c56ee1a71477edddc780" id="r_ae4f8f33dead6c56ee1a71477edddc780"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ae4f8f33dead6c56ee1a71477edddc780">m_Yaw</a> {-90.f}</td></tr>
+<tr class="memdesc:ae4f8f33dead6c56ee1a71477edddc780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yaw about the up axis in degrees (-90 looks along -Z).  <br /></td></tr>
 <tr class="memitem:a44c4338ac9b94d650711fb8c2a4b6943" id="r_a44c4338ac9b94d650711fb8c2a4b6943"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a44c4338ac9b94d650711fb8c2a4b6943">m_Pitch</a> {0.f}</td></tr>
+<tr class="memdesc:a44c4338ac9b94d650711fb8c2a4b6943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elevation above the horizontal plane in degrees.  <br /></td></tr>
 <tr class="memitem:ac03d5199ad1b85799e09703b4808239b" id="r_ac03d5199ad1b85799e09703b4808239b"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ac03d5199ad1b85799e09703b4808239b">m_Roll</a> {0.f}</td></tr>
-<tr class="memdesc:ac03d5199ad1b85799e09703b4808239b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orientation angles in degrees (yaw -90 looks along -Z).  <br /></td></tr>
+<tr class="memdesc:ac03d5199ad1b85799e09703b4808239b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Roll about the forward axis in degrees.  <br /></td></tr>
 <tr class="memitem:a178feb3388ab2608e72fae276dc1a26d" id="r_a178feb3388ab2608e72fae276dc1a26d"><td class="memItemLeft"><a class="el" href="#ac87386c018fa1ac9a1f1aca156e8f5f2">ProjectionType</a>&#160;</td><td class="memItemRight"><a class="el" href="#a178feb3388ab2608e72fae276dc1a26d">m_Type</a> {<a class="el" href="#ac87386c018fa1ac9a1f1aca156e8f5f2aa80420eef88d11f77532f1b9cb467fa3">ProjectionType::Perspective</a>}</td></tr>
 <tr class="memdesc:a178feb3388ab2608e72fae276dc1a26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active projection kind.  <br /></td></tr>
 <tr class="memitem:a6838c65ca16d3b2978252891c3414b7e" id="r_a6838c65ca16d3b2978252891c3414b7e"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6838c65ca16d3b2978252891c3414b7e">m_Fov</a> {60.f}</td></tr>
+<tr class="memdesc:a6838c65ca16d3b2978252891c3414b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perspective vertical field of view in degrees.  <br /></td></tr>
 <tr class="memitem:a8de5e376431512a1aaabe2842cfa1574" id="r_a8de5e376431512a1aaabe2842cfa1574"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a8de5e376431512a1aaabe2842cfa1574">m_Aspect</a> {16.f / 9.f}</td></tr>
+<tr class="memdesc:a8de5e376431512a1aaabe2842cfa1574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perspective width/height aspect ratio.  <br /></td></tr>
 <tr class="memitem:a2f728dc3160465f4c76e95ed6a454ac9" id="r_a2f728dc3160465f4c76e95ed6a454ac9"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a2f728dc3160465f4c76e95ed6a454ac9">m_Near</a> {0.1f}</td></tr>
+<tr class="memdesc:a2f728dc3160465f4c76e95ed6a454ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Near clip-plane distance (both projection kinds).  <br /></td></tr>
 <tr class="memitem:a935024c6fcbaee7120eec56c1a357994" id="r_a935024c6fcbaee7120eec56c1a357994"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a935024c6fcbaee7120eec56c1a357994">m_Far</a> {100.f}</td></tr>
-<tr class="memdesc:a935024c6fcbaee7120eec56c1a357994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perspective parameters (FOV in degrees).  <br /></td></tr>
+<tr class="memdesc:a935024c6fcbaee7120eec56c1a357994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Far clip-plane distance (both projection kinds).  <br /></td></tr>
 <tr class="memitem:ac8358c0b537f040dab293e4ebf44686e" id="r_ac8358c0b537f040dab293e4ebf44686e"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ac8358c0b537f040dab293e4ebf44686e">m_Left</a> {-1.f}</td></tr>
+<tr class="memdesc:ac8358c0b537f040dab293e4ebf44686e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orthographic left clip-plane boundary.  <br /></td></tr>
 <tr class="memitem:abdc44a943806f8a8aef783260cc63193" id="r_abdc44a943806f8a8aef783260cc63193"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#abdc44a943806f8a8aef783260cc63193">m_Right</a> {1.f}</td></tr>
+<tr class="memdesc:abdc44a943806f8a8aef783260cc63193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orthographic right clip-plane boundary.  <br /></td></tr>
 <tr class="memitem:ab47b22fc9e05c1452555ddec654d29fa" id="r_ab47b22fc9e05c1452555ddec654d29fa"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ab47b22fc9e05c1452555ddec654d29fa">m_Bottom</a> {-1.f}</td></tr>
+<tr class="memdesc:ab47b22fc9e05c1452555ddec654d29fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orthographic bottom clip-plane boundary.  <br /></td></tr>
 <tr class="memitem:a6ef2371c4bc70f40a71cd35397bfe220" id="r_a6ef2371c4bc70f40a71cd35397bfe220"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6ef2371c4bc70f40a71cd35397bfe220">m_Top</a> {1.f}</td></tr>
-<tr class="memdesc:a6ef2371c4bc70f40a71cd35397bfe220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orthographic frustum bounds.  <br /></td></tr>
+<tr class="memdesc:a6ef2371c4bc70f40a71cd35397bfe220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orthographic top clip-plane boundary.  <br /></td></tr>
 <tr class="memitem:af806595ddb1b6f17909891e15b2412b6" id="r_af806595ddb1b6f17909891e15b2412b6"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a>&#160;</td><td class="memItemRight"><a class="el" href="#af806595ddb1b6f17909891e15b2412b6">m_View</a> {1.f}</td></tr>
+<tr class="memdesc:af806595ddb1b6f17909891e15b2412b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached view matrix, rebuilt while dirty.  <br /></td></tr>
 <tr class="memitem:a454d85b1b27772c3d475cdfa67312ea2" id="r_a454d85b1b27772c3d475cdfa67312ea2"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a>&#160;</td><td class="memItemRight"><a class="el" href="#a454d85b1b27772c3d475cdfa67312ea2">m_Projection</a> {1.f}</td></tr>
-<tr class="memdesc:a454d85b1b27772c3d475cdfa67312ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily rebuilt cached matrices.  <br /></td></tr>
+<tr class="memdesc:a454d85b1b27772c3d475cdfa67312ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached projection matrix, rebuilt while dirty.  <br /></td></tr>
 <tr class="memitem:a75f008eb48188532fbffb250cb4b5874" id="r_a75f008eb48188532fbffb250cb4b5874"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a75f008eb48188532fbffb250cb4b5874">m_ViewDirty</a> {true}</td></tr>
+<tr class="memdesc:a75f008eb48188532fbffb250cb4b5874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the view matrix stale after a pose change.  <br /></td></tr>
 <tr class="memitem:af0e54c541156d86865be6dab5827661d" id="r_af0e54c541156d86865be6dab5827661d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af0e54c541156d86865be6dab5827661d">m_ProjDirty</a> {true}</td></tr>
-<tr class="memdesc:af0e54c541156d86865be6dab5827661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirty flags forcing a matrix rebuild on next query.  <br /></td></tr>
+<tr class="memdesc:af0e54c541156d86865be6dab5827661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the projection matrix stale after a change.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A movable, rotatable camera producing view and projection matrices. </p>
@@ -224,7 +234,7 @@ Private Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Angles are in degrees. yaw == -90 and pitch == 0 (the defaults) make the camera look along -Z in the default frame.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb" title="4x4 single-precision column-major matrix, the engine&#39;s standard transform matrix (alias of glm::mat4)...">sog::math::Mat4</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00037">37</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00038">38</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="ac87386c018fa1ac9a1f1aca156e8f5f2" name="ac87386c018fa1ac9a1f1aca156e8f5f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac87386c018fa1ac9a1f1aca156e8f5f2">&#9670;&#160;</a></span>ProjectionType</h2>
@@ -254,7 +264,7 @@ Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00043">43</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00044">44</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 </div>
 </div>
@@ -292,7 +302,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00034">34</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00228">m_Frame</a>, and <a class="el" href="_camera_8hpp_source.html#l00227">m_WorldUp</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00231">m_Frame</a>, and <a class="el" href="_camera_8hpp_source.html#l00230">m_WorldUp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +335,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00039">39</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00228">m_Frame</a>, and <a class="el" href="_camera_8hpp_source.html#l00230">m_Roll</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00231">m_Frame</a>, <a class="el" href="_camera_8hpp_source.html#l00236">m_Pitch</a>, <a class="el" href="_camera_8hpp_source.html#l00237">m_Roll</a>, and <a class="el" href="_camera_8hpp_source.html#l00235">m_Yaw</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00058">getForward()</a>, <a class="el" href="_camera_8cpp_source.html#l00059">getRight()</a>, <a class="el" href="_camera_8cpp_source.html#l00060">getUp()</a>, <a class="el" href="_camera_8cpp_source.html#l00141">getView()</a>, and <a class="el" href="_camera_8cpp_source.html#l00074">moveLocal()</a>.</p>
 
@@ -359,7 +369,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00058">58</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, and <a class="el" href="_camera_8hpp_source.html#l00217">sog::gfx::Camera::Basis::forward</a>.</p>
 
 </div>
 </div>
@@ -389,9 +399,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the current pitch angle in degrees. </p>
 <dl class="section return"><dt>Returns</dt><dd>Elevation above the horizontal plane. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00178">178</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00179">179</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_input_8cpp_source.html#l00118">sog::input::updateCamera()</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00236">m_Pitch</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_input_8cpp_source.html#l00270">sog::input::updateCamera()</a>.</p>
 
 </div>
 </div>
@@ -421,9 +433,9 @@ Private Attributes</h2></td></tr>
 <p>Returns the camera's world-space position. </p>
 <dl class="section return"><dt>Returns</dt><dd>Current position vector. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00148">148</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00149">149</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00229">m_Position</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00234">m_Position</a>.</p>
 
 </div>
 </div>
@@ -455,9 +467,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00152">152</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00234">m_Far</a>, <a class="el" href="_camera_8hpp_source.html#l00239">m_ProjDirty</a>, <a class="el" href="_camera_8hpp_source.html#l00238">m_Projection</a>, <a class="el" href="_camera_8hpp_source.html#l00235">m_Top</a>, <a class="el" href="_camera_8hpp_source.html#l00233">m_Type</a>, and <a class="el" href="_camera_8hpp_source.html#l00045">Perspective</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00242">m_Aspect</a>, <a class="el" href="_camera_8hpp_source.html#l00247">m_Bottom</a>, <a class="el" href="_camera_8hpp_source.html#l00244">m_Far</a>, <a class="el" href="_camera_8hpp_source.html#l00241">m_Fov</a>, <a class="el" href="_camera_8hpp_source.html#l00245">m_Left</a>, <a class="el" href="_camera_8hpp_source.html#l00243">m_Near</a>, <a class="el" href="_camera_8hpp_source.html#l00254">m_ProjDirty</a>, <a class="el" href="_camera_8hpp_source.html#l00252">m_Projection</a>, <a class="el" href="_camera_8hpp_source.html#l00246">m_Right</a>, <a class="el" href="_camera_8hpp_source.html#l00248">m_Top</a>, <a class="el" href="_camera_8hpp_source.html#l00240">m_Type</a>, and <a class="el" href="_camera_8hpp_source.html#l00046">Perspective</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_camera_8hpp_source.html#l00208">getViewProjection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_camera_8hpp_source.html#l00209">getViewProjection()</a>.</p>
 
 </div>
 </div>
@@ -487,9 +499,9 @@ Private Attributes</h2></td></tr>
 <p>Returns which projection type is currently active. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="#ac87386c018fa1ac9a1f1aca156e8f5f2aa80420eef88d11f77532f1b9cb467fa3" title="Perspective (foreshortening) projection via glm::perspective.">ProjectionType::Perspective</a> or <a class="el" href="#ac87386c018fa1ac9a1f1aca156e8f5f2a03424250432f2aa71de95579d2c0eaeb" title="Orthographic (parallel) projection via glm::ortho.">ProjectionType::Orthographic</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00190">190</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00191">191</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00233">m_Type</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00240">m_Type</a>.</p>
 
 </div>
 </div>
@@ -521,7 +533,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00059">59</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, and <a class="el" href="_camera_8hpp_source.html#l00218">sog::gfx::Camera::Basis::right</a>.</p>
 
 </div>
 </div>
@@ -551,9 +563,9 @@ Private Attributes</h2></td></tr>
 <p>Returns the current roll angle in degrees. </p>
 <dl class="section return"><dt>Returns</dt><dd>Roll about the forward axis. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00184">184</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00185">185</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00230">m_Roll</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00237">m_Roll</a>.</p>
 
 </div>
 </div>
@@ -585,7 +597,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00060">60</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, and <a class="el" href="_camera_8hpp_source.html#l00216">sog::gfx::Camera::Basis::up</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, and <a class="el" href="_camera_8hpp_source.html#l00219">sog::gfx::Camera::Basis::up</a>.</p>
 
 </div>
 </div>
@@ -617,9 +629,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00141">141</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8hpp_source.html#l00229">m_Position</a>, and <a class="el" href="_camera_8hpp_source.html#l00216">sog::gfx::Camera::Basis::up</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8hpp_source.html#l00217">sog::gfx::Camera::Basis::forward</a>, <a class="el" href="_camera_8hpp_source.html#l00234">m_Position</a>, <a class="el" href="_camera_8hpp_source.html#l00251">m_View</a>, <a class="el" href="_camera_8hpp_source.html#l00253">m_ViewDirty</a>, and <a class="el" href="_camera_8hpp_source.html#l00219">sog::gfx::Camera::Basis::up</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_camera_8hpp_source.html#l00208">getViewProjection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_camera_8hpp_source.html#l00209">getViewProjection()</a>.</p>
 
 </div>
 </div>
@@ -649,11 +661,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the combined projection-times-view matrix for shaders. </p>
 <dl class="section return"><dt>Returns</dt><dd>Projection * View (transforms world space to clip space). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00208">208</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00209">209</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, and <a class="el" href="_camera_8cpp_source.html#l00141">getView()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -683,9 +695,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the current yaw angle in degrees. </p>
 <dl class="section return"><dt>Returns</dt><dd>Yaw about the up axis. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00172">172</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00173">173</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_input_8cpp_source.html#l00118">sog::input::updateCamera()</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00235">m_Yaw</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_input_8cpp_source.html#l00270">sog::input::updateCamera()</a>.</p>
 
 </div>
 </div>
@@ -719,7 +733,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00093">93</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00228">m_Frame</a>, <a class="el" href="_camera_8hpp_source.html#l00229">m_Position</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00231">m_Frame</a>, <a class="el" href="_camera_8hpp_source.html#l00234">m_Position</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
 
 </div>
 </div>
@@ -748,7 +762,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00068">68</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00229">m_Position</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00234">m_Position</a>, and <a class="el" href="_camera_8hpp_source.html#l00253">m_ViewDirty</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00074">moveLocal()</a>.</p>
 
@@ -790,9 +804,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00074">74</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8cpp_source.html#l00068">move()</a>, and <a class="el" href="_camera_8hpp_source.html#l00216">sog::gfx::Camera::Basis::up</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8hpp_source.html#l00217">sog::gfx::Camera::Basis::forward</a>, <a class="el" href="_camera_8cpp_source.html#l00068">move()</a>, <a class="el" href="_camera_8hpp_source.html#l00218">sog::gfx::Camera::Basis::right</a>, and <a class="el" href="_camera_8hpp_source.html#l00219">sog::gfx::Camera::Basis::up</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_input_8cpp_source.html#l00118">sog::input::updateCamera()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_input_8cpp_source.html#l00270">sog::input::updateCamera()</a>.</p>
 
 </div>
 </div>
@@ -832,7 +846,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00088">88</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00230">m_Roll</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00236">m_Pitch</a>, <a class="el" href="_camera_8hpp_source.html#l00237">m_Roll</a>, <a class="el" href="_camera_8hpp_source.html#l00235">m_Yaw</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
 
 </div>
 </div>
@@ -861,7 +875,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00123">123</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00239">m_ProjDirty</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00242">m_Aspect</a>, and <a class="el" href="_camera_8hpp_source.html#l00254">m_ProjDirty</a>.</p>
 
 </div>
 </div>
@@ -895,7 +909,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00133">133</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00234">m_Far</a>, and <a class="el" href="_camera_8hpp_source.html#l00239">m_ProjDirty</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00244">m_Far</a>, <a class="el" href="_camera_8hpp_source.html#l00243">m_Near</a>, and <a class="el" href="_camera_8hpp_source.html#l00254">m_ProjDirty</a>.</p>
 
 </div>
 </div>
@@ -924,7 +938,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00128">128</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00239">m_ProjDirty</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00241">m_Fov</a>, and <a class="el" href="_camera_8hpp_source.html#l00254">m_ProjDirty</a>.</p>
 
 </div>
 </div>
@@ -982,7 +996,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00111">111</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00234">m_Far</a>, <a class="el" href="_camera_8hpp_source.html#l00239">m_ProjDirty</a>, <a class="el" href="_camera_8hpp_source.html#l00235">m_Top</a>, <a class="el" href="_camera_8hpp_source.html#l00233">m_Type</a>, and <a class="el" href="_camera_8hpp_source.html#l00046">Orthographic</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00247">m_Bottom</a>, <a class="el" href="_camera_8hpp_source.html#l00244">m_Far</a>, <a class="el" href="_camera_8hpp_source.html#l00245">m_Left</a>, <a class="el" href="_camera_8hpp_source.html#l00243">m_Near</a>, <a class="el" href="_camera_8hpp_source.html#l00254">m_ProjDirty</a>, <a class="el" href="_camera_8hpp_source.html#l00246">m_Right</a>, <a class="el" href="_camera_8hpp_source.html#l00248">m_Top</a>, <a class="el" href="_camera_8hpp_source.html#l00240">m_Type</a>, and <a class="el" href="_camera_8hpp_source.html#l00047">Orthographic</a>.</p>
 
 </div>
 </div>
@@ -1028,7 +1042,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00101">101</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00234">m_Far</a>, <a class="el" href="_camera_8hpp_source.html#l00239">m_ProjDirty</a>, <a class="el" href="_camera_8hpp_source.html#l00233">m_Type</a>, and <a class="el" href="_camera_8hpp_source.html#l00045">Perspective</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00242">m_Aspect</a>, <a class="el" href="_camera_8hpp_source.html#l00244">m_Far</a>, <a class="el" href="_camera_8hpp_source.html#l00241">m_Fov</a>, <a class="el" href="_camera_8hpp_source.html#l00243">m_Near</a>, <a class="el" href="_camera_8hpp_source.html#l00254">m_ProjDirty</a>, <a class="el" href="_camera_8hpp_source.html#l00240">m_Type</a>, and <a class="el" href="_camera_8hpp_source.html#l00046">Perspective</a>.</p>
 
 </div>
 </div>
@@ -1057,7 +1071,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00063">63</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00229">m_Position</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00234">m_Position</a>, and <a class="el" href="_camera_8hpp_source.html#l00253">m_ViewDirty</a>.</p>
 
 </div>
 </div>
@@ -1097,9 +1111,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8cpp_source.html#l00080">80</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00230">m_Roll</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00236">m_Pitch</a>, <a class="el" href="_camera_8hpp_source.html#l00237">m_Roll</a>, <a class="el" href="_camera_8hpp_source.html#l00253">m_ViewDirty</a>, and <a class="el" href="_camera_8hpp_source.html#l00235">m_Yaw</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00093">lookAt()</a>, <a class="el" href="_camera_8cpp_source.html#l00088">rotateBy()</a>, and <a class="el" href="_input_8cpp_source.html#l00118">sog::input::updateCamera()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00093">lookAt()</a>, <a class="el" href="_camera_8cpp_source.html#l00088">rotateBy()</a>, and <a class="el" href="_input_8cpp_source.html#l00270">sog::input::updateCamera()</a>.</p>
 
 </div>
 </div>
@@ -1124,7 +1138,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00234">234</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Perspective width/height aspect ratio. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00242">242</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, <a class="el" href="_camera_8cpp_source.html#l00123">setAspect()</a>, and <a class="el" href="_camera_8cpp_source.html#l00101">setPerspective()</a>.</p>
 
 </div>
 </div>
@@ -1148,7 +1166,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00235">235</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Orthographic bottom clip-plane boundary. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00247">247</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, and <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>.</p>
 
 </div>
 </div>
@@ -1172,9 +1194,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Perspective parameters (FOV in degrees). </p>
+<p>Far clip-plane distance (both projection kinds). </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00234">234</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00244">244</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, <a class="el" href="_camera_8cpp_source.html#l00133">setClipPlanes()</a>, <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>, and <a class="el" href="_camera_8cpp_source.html#l00101">setPerspective()</a>.</p>
 
@@ -1200,7 +1222,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00234">234</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Perspective vertical field of view in degrees. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00241">241</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, <a class="el" href="_camera_8cpp_source.html#l00128">setFov()</a>, and <a class="el" href="_camera_8cpp_source.html#l00101">setPerspective()</a>.</p>
 
 </div>
 </div>
@@ -1214,7 +1240,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">glm::quat sog::gfx::Camera::m_Frame {1.f, 0.f, 0.f, 0.f}</td>
+          <td class="memname">glm::quat sog::gfx::Camera::m_Frame</td>
         </tr>
       </table>
   </td>
@@ -1223,10 +1249,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">        1.f, 0.f, 0.f,</div>
+<div class="line">        0.f}</div>
+</div><!-- fragment -->
 <p>Rotation mapping +Y onto m_WorldUp; lets yaw/pitch be defined in a Y-up space. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00228">228</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00231">231</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8cpp_source.html#l00034">Camera()</a>, and <a class="el" href="_camera_8cpp_source.html#l00093">lookAt()</a>.</p>
 
@@ -1252,7 +1281,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00235">235</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Orthographic left clip-plane boundary. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00245">245</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, and <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>.</p>
 
 </div>
 </div>
@@ -1276,7 +1309,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00234">234</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Near clip-plane distance (both projection kinds). </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00243">243</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, <a class="el" href="_camera_8cpp_source.html#l00133">setClipPlanes()</a>, <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>, and <a class="el" href="_camera_8cpp_source.html#l00101">setPerspective()</a>.</p>
 
 </div>
 </div>
@@ -1300,7 +1337,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00230">230</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Elevation above the horizontal plane in degrees. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00236">236</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8hpp_source.html#l00179">getPitch()</a>, <a class="el" href="_camera_8cpp_source.html#l00088">rotateBy()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
 
 </div>
 </div>
@@ -1326,9 +1367,9 @@ Private Attributes</h2></td></tr>
 
 <p>World-space position (starts 3 units down +Z). </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00229">229</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00234">234</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_camera_8hpp_source.html#l00148">getPosition()</a>, <a class="el" href="_camera_8cpp_source.html#l00141">getView()</a>, <a class="el" href="_camera_8cpp_source.html#l00093">lookAt()</a>, <a class="el" href="_camera_8cpp_source.html#l00068">move()</a>, and <a class="el" href="_camera_8cpp_source.html#l00063">setPosition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_camera_8hpp_source.html#l00149">getPosition()</a>, <a class="el" href="_camera_8cpp_source.html#l00141">getView()</a>, <a class="el" href="_camera_8cpp_source.html#l00093">lookAt()</a>, <a class="el" href="_camera_8cpp_source.html#l00068">move()</a>, and <a class="el" href="_camera_8cpp_source.html#l00063">setPosition()</a>.</p>
 
 </div>
 </div>
@@ -1347,14 +1388,14 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Dirty flags forcing a matrix rebuild on next query. </p>
+<p>Marks the projection matrix stale after a change. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00239">239</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00254">254</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, <a class="el" href="_camera_8cpp_source.html#l00123">setAspect()</a>, <a class="el" href="_camera_8cpp_source.html#l00133">setClipPlanes()</a>, <a class="el" href="_camera_8cpp_source.html#l00128">setFov()</a>, <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>, and <a class="el" href="_camera_8cpp_source.html#l00101">setPerspective()</a>.</p>
 
@@ -1375,14 +1416,14 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Lazily rebuilt cached matrices. </p>
+<p>Cached projection matrix, rebuilt while dirty. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00238">238</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00252">252</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>.</p>
 
@@ -1408,7 +1449,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00235">235</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Orthographic right clip-plane boundary. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00246">246</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, and <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>.</p>
 
 </div>
 </div>
@@ -1432,11 +1477,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Orientation angles in degrees (yaw -90 looks along -Z). </p>
+<p>Roll about the forward axis in degrees. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00230">230</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00237">237</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8hpp_source.html#l00184">getRoll()</a>, <a class="el" href="_camera_8cpp_source.html#l00088">rotateBy()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8hpp_source.html#l00185">getRoll()</a>, <a class="el" href="_camera_8cpp_source.html#l00088">rotateBy()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
 
 </div>
 </div>
@@ -1460,9 +1505,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Orthographic frustum bounds. </p>
+<p>Orthographic top clip-plane boundary. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00235">235</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00248">248</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, and <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>.</p>
 
@@ -1490,9 +1535,9 @@ Private Attributes</h2></td></tr>
 
 <p>Active projection kind. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00233">233</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00240">240</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, <a class="el" href="_camera_8hpp_source.html#l00190">getProjectionType()</a>, <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>, and <a class="el" href="_camera_8cpp_source.html#l00101">setPerspective()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, <a class="el" href="_camera_8hpp_source.html#l00191">getProjectionType()</a>, <a class="el" href="_camera_8cpp_source.html#l00111">setOrthographic()</a>, and <a class="el" href="_camera_8cpp_source.html#l00101">setPerspective()</a>.</p>
 
 </div>
 </div>
@@ -1516,7 +1561,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00238">238</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Cached view matrix, rebuilt while dirty. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00251">251</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00141">getView()</a>.</p>
 
 </div>
 </div>
@@ -1540,7 +1589,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00239">239</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Marks the view matrix stale after a pose change. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00253">253</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00141">getView()</a>, <a class="el" href="_camera_8cpp_source.html#l00068">move()</a>, <a class="el" href="_camera_8cpp_source.html#l00063">setPosition()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
 
 </div>
 </div>
@@ -1566,7 +1619,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reference up direction supplied at construction (normalized). </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00227">227</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00230">230</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00034">Camera()</a>.</p>
 
@@ -1592,13 +1645,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00230">230</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Yaw about the up axis in degrees (-90 looks along -Z). </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00235">235</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00039">basis()</a>, <a class="el" href="_camera_8hpp_source.html#l00173">getYaw()</a>, <a class="el" href="_camera_8cpp_source.html#l00088">rotateBy()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">setRotation()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/Core/gfx/<a class="el" href="_camera_8hpp_source.html">Camera.hpp</a></li>
-<li>src/Core/gfx/<a class="el" href="_camera_8cpp_source.html">Camera.cpp</a></li>
+<li>src/sog/include/sog/gfx/<a class="el" href="_camera_8hpp_source.html">Camera.hpp</a></li>
+<li>src/sog/gfx/<a class="el" href="_camera_8cpp_source.html">Camera.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

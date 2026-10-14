@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::ShaderProgram Class Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::ShaderProgram Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -123,7 +123,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classsog_1_1gf
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a00a13db0c35821d3a7266a2f735e7204" id="r_a00a13db0c35821d3a7266a2f735e7204"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a00a13db0c35821d3a7266a2f735e7204">ShaderProgram</a> ()</td></tr>
 <tr class="memdesc:a00a13db0c35821d3a7266a2f735e7204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the GL program object (glCreateProgram).  <br /></td></tr>
-<tr class="memitem:aadeb308e159e8c5ab0f5f11fcae78de6" id="r_aadeb308e159e8c5ab0f5f11fcae78de6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae">shader_type</a> A, <a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae">shader_type</a> B&gt; </td></tr>
+<tr class="memitem:a556c951d8fbe1bf6e113b597e956be0c" id="r_a556c951d8fbe1bf6e113b597e956be0c"><td class="memTemplParams" colspan="2">template&lt;shader_type A, shader_type B&gt; </td></tr>
+<tr class="memitem:a556c951d8fbe1bf6e113b597e956be0c template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a556c951d8fbe1bf6e113b597e956be0c">ShaderProgram</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt; A &gt; &amp;shaderA, const <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt; B &gt; &amp;shaderB)</td></tr>
+<tr class="memdesc:a556c951d8fbe1bf6e113b597e956be0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the program, attaches the two given shaders and links immediately.  <br /></td></tr>
+<tr class="memitem:aba6d17553523e95c952ed6ec6541f00f" id="r_aba6d17553523e95c952ed6ec6541f00f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aba6d17553523e95c952ed6ec6541f00f">create</a> ()</td></tr>
+<tr class="memdesc:aba6d17553523e95c952ed6ec6541f00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the GL program object (glCreateProgram) if it does not exist yet.  <br /></td></tr>
+<tr class="memitem:aadeb308e159e8c5ab0f5f11fcae78de6" id="r_aadeb308e159e8c5ab0f5f11fcae78de6"><td class="memTemplParams" colspan="2">template&lt;shader_type A, shader_type B&gt; </td></tr>
 <tr class="memitem:aadeb308e159e8c5ab0f5f11fcae78de6 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aadeb308e159e8c5ab0f5f11fcae78de6">Initialize</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt; A &gt; &amp;shaderA, const <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt; B &gt; &amp;shaderB)</td></tr>
 <tr class="memdesc:aadeb308e159e8c5ab0f5f11fcae78de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches two compiled shaders and links the program.  <br /></td></tr>
 <tr class="memitem:aedf5800aa66f91e6c0b56a4d4f8d6f3b" id="r_aedf5800aa66f91e6c0b56a4d4f8d6f3b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aedf5800aa66f91e6c0b56a4d4f8d6f3b">use</a> () const</td></tr>
@@ -131,7 +136,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af244ff5e771514274114fceca817d151" id="r_af244ff5e771514274114fceca817d151"><td class="memItemLeft"><a class="el" href="_g_f_x_types_8hpp.html#a27fb65866922ea3b78e30cffa284aaca">gl_handle</a>&#160;</td><td class="memItemRight"><a class="el" href="#af244ff5e771514274114fceca817d151">get</a> () const</td></tr>
 <tr class="memdesc:af244ff5e771514274114fceca817d151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the raw GL program name.  <br /></td></tr>
 <tr class="memitem:a4a81cf9549a043e1be7d846f87065665" id="r_a4a81cf9549a043e1be7d846f87065665"><td class="memItemLeft">std::optional&lt; <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4a81cf9549a043e1be7d846f87065665">getLocation</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a4a81cf9549a043e1be7d846f87065665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a uniform's location, caching lookups by name.  <br /></td></tr>
+<tr class="memdesc:a4a81cf9549a043e1be7d846f87065665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a uniform's location, caching successful lookups by name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-types" class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -140,19 +145,19 @@ Private Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a4dece213ec593554a8f9db74eabd9009" id="r_a4dece213ec593554a8f9db74eabd9009"><td class="memItemLeft"><a class="el" href="_g_f_x_types_8hpp.html#a27fb65866922ea3b78e30cffa284aaca">gl_handle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4dece213ec593554a8f9db74eabd9009">m_Handle</a> {0}</td></tr>
-<tr class="memdesc:a4dece213ec593554a8f9db74eabd9009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw GL program name.  <br /></td></tr>
+<tr class="memitem:ab137ad462289e990bf7a04074a2ecf47" id="r_ab137ad462289e990bf7a04074a2ecf47"><td class="memItemLeft"><a class="el" href="_handles_8hpp.html#a9b1962595beaf87772bb17aa8acd770f">ShaderProgramHandle</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab137ad462289e990bf7a04074a2ecf47">m_Handle</a> {}</td></tr>
+<tr class="memdesc:ab137ad462289e990bf7a04074a2ecf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw GL program name.  <br /></td></tr>
 <tr class="memitem:a7e88221f058bd05bb690bf1b3481feb2" id="r_a7e88221f058bd05bb690bf1b3481feb2"><td class="memItemLeft">std::unordered_map&lt; <a class="el" href="#a9532a59ec753cec978510c204228e503">uniformName</a>, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a7e88221f058bd05bb690bf1b3481feb2">m_CachedUniforms</a></td></tr>
 <tr class="memdesc:a7e88221f058bd05bb690bf1b3481feb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">name -&gt; <a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a> cache to skip repeated glGetUniformLocation calls.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A linked OpenGL shader program owning two shader stages. </p>
 <p>The constructor creates the GL program object. <a class="el" href="#aadeb308e159e8c5ab0f5f11fcae78de6" title="Attaches two compiled shaders and links the program.">Initialize()</a> attaches two compiled shaders (of any two distinct stage types), links the program and validates the link, throwing <a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">sog::graphics_error</a> with the driver's info log on failure. <a class="el" href="#aedf5800aa66f91e6c0b56a4d4f8d6f3b" title="Makes this program current for subsequent draw calls (glUseProgram).">use()</a> makes the program current for drawing.</p>
-<p><a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a> locations are looked up through <a class="el" href="#a4a81cf9549a043e1be7d846f87065665" title="Returns a uniform&#39;s location, caching lookups by name.">getLocation()</a>, which caches results by name so repeated per-frame uniform updates avoid redundant glGetUniformLocation calls.</p>
+<p><a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a> locations are looked up through <a class="el" href="#a4a81cf9549a043e1be7d846f87065665" title="Returns a uniform&#39;s location, caching successful lookups by name.">getLocation()</a>, which caches results by name so repeated per-frame uniform updates avoid redundant glGetUniformLocation calls.</p>
 <dl class="section attention"><dt>Attention</dt><dd>The program is created eagerly in the constructor but is only usable after <a class="el" href="#aadeb308e159e8c5ab0f5f11fcae78de6" title="Attaches two compiled shaders and links the program.">Initialize()</a> links it. The attached shader objects remain owned by the caller.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>sog::Shader, sog::Uniform </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="sog_8hpp.html#a197431248218d49952f7fe6d36982edf" title="Shader stage of a given shader_type; alias of gfx::Shader.">sog::Shader</a>, <a class="el" href="sog_8hpp.html#a9778437b0e653b2cb9e8c76e0469e4d7" title="Location wrapper for a shader uniform; alias of gfx::Uniform.">sog::Uniform</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00060">60</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00061">61</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a9532a59ec753cec978510c204228e503" name="a9532a59ec753cec978510c204228e503"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9532a59ec753cec978510c204228e503">&#9670;&#160;</a></span>uniformName</h2>
@@ -176,13 +181,13 @@ Private Attributes</h2></td></tr>
 
 <p>Convenience alias for uniform cache keys. </p>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00098">98</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00120">120</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a00a13db0c35821d3a7266a2f735e7204" name="a00a13db0c35821d3a7266a2f735e7204"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a13db0c35821d3a7266a2f735e7204">&#9670;&#160;</a></span>ShaderProgram()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a13db0c35821d3a7266a2f735e7204">&#9670;&#160;</a></span>ShaderProgram() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,13 +211,95 @@ Private Attributes</h2></td></tr>
 
 <p>Creates the GL program object (glCreateProgram). </p>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00065">65</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00066">66</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00095">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8cpp_source.html#l00013">create()</a>.</p>
+
+</div>
+</div>
+<a id="a556c951d8fbe1bf6e113b597e956be0c" name="a556c951d8fbe1bf6e113b597e956be0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556c951d8fbe1bf6e113b597e956be0c">&#9670;&#160;</a></span>ShaderProgram() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;shader_type A, shader_type B&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sog::gfx::ShaderProgram::ShaderProgram </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt; A &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>shaderA</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classsog_1_1gfx_1_1_shader.html">Shader</a>&lt; B &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>shaderB</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates the program, attaches the two given shaders and links immediately. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">A</td><td><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> stage of the first shader. </td></tr>
+    <tr><td class="paramname">B</td><td><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> stage of the second shader. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shaderA</td><td>First compiled shader stage to attach. </td></tr>
+    <tr><td class="paramname">shaderB</td><td>Second compiled shader stage to attach. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">sog::graphics_error</a></td><td>With <a class="el" href="graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba8cdeb6c21973fea500336050370e9d33" title="A shader program failed to link.">graphics_error_code::shader_link_failed</a> if linking fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00077">77</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_shader_program_8cpp_source.html#l00013">create()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00130">Initialize()</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aba6d17553523e95c952ed6ec6541f00f" name="aba6d17553523e95c952ed6ec6541f00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba6d17553523e95c952ed6ec6541f00f">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sog::gfx::ShaderProgram::create </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the GL program object (glCreateProgram) if it does not exist yet. </p>
+
+<p class="definition">Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00013">13</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00117">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_shader_program_8hpp_source.html#l00066">ShaderProgram()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00077">ShaderProgram()</a>.</p>
+
+</div>
+</div>
 <a id="af244ff5e771514274114fceca817d151" name="af244ff5e771514274114fceca817d151"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af244ff5e771514274114fceca817d151">&#9670;&#160;</a></span>get()</h2>
 
@@ -239,11 +326,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the raw GL program name. </p>
 <dl class="section return"><dt>Returns</dt><dd>GLuint handle of the program object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00085">85</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00105">105</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00095">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00117">m_Handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_uniforms_8cpp_source.html#l00027">sog::gfx::uniform::getLocation()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00065">sog::gfx::uniform::setFloat()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00060">sog::gfx::uniform::setInt()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00050">sog::gfx::uniform::setMat3()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00055">sog::gfx::uniform::setMat4()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00044">sog::gfx::uniform::setVec2()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00038">sog::gfx::uniform::setVec3()</a>, and <a class="el" href="_uniforms_8cpp_source.html#l00032">sog::gfx::uniform::setVec4()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_uniforms_8cpp_source.html#l00028">sog::gfx::uniform::getLocation()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00066">sog::gfx::uniform::setFloat()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00061">sog::gfx::uniform::setInt()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00051">sog::gfx::uniform::setMat3()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00056">sog::gfx::uniform::setMat4()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00045">sog::gfx::uniform::setVec2()</a>, <a class="el" href="_uniforms_8cpp_source.html#l00039">sog::gfx::uniform::setVec3()</a>, and <a class="el" href="_uniforms_8cpp_source.html#l00033">sog::gfx::uniform::setVec4()</a>.</p>
 
 </div>
 </div>
@@ -262,20 +349,20 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a uniform's location, caching lookups by name. </p>
+<p>Returns a uniform's location, caching successful lookups by name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The uniform's name as declared in the shader. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The cached or freshly looked-up <a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a>; invalid (-1) if not found. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional holding the cached or freshly looked-up <a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a>; std::nullopt if the linked program has no such uniform (misses are not cached, so a later link can still resolve them). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00013">13</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00018">18</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00099">m_CachedUniforms</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00122">m_CachedUniforms</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -285,7 +372,7 @@ Private Attributes</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae">shader_type</a> A, <a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae">shader_type</a> B&gt; </div>
+template&lt;shader_type A, shader_type B&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void sog::gfx::ShaderProgram::Initialize </td>
@@ -304,36 +391,24 @@ template&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4
 <p>Attaches both shader handles to the program, links it, and validates the result.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">shaderA</td><td>First shader stage (any <a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae" title="Shader stage types (mirrors GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER,...">shader_type</a>). </td></tr>
-    <tr><td class="paramname">shaderB</td><td>Second shader stage (any <a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4ae" title="Shader stage types (mirrors GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER,...">shader_type</a>). </td></tr>
+    <tr><td class="paramname">shaderA</td><td>First shader stage (any shader_type). </td></tr>
+    <tr><td class="paramname">shaderB</td><td>Second shader stage (any shader_type). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">sog::graphics_error</a></td><td>With <a class="el" href="graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba8cdeb6c21973fea500336050370e9d33" title="A shader program failed to link.">graphics_error_code::shader_link_failed</a> if linking fails.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">shaderA</td><td>First stage to attach. </td></tr>
-    <tr><td class="paramname">shaderB</td><td>Second stage to attach. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
     <tr><td class="paramname"><a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">sog::graphics_error</a></td><td>If linking fails, carrying the driver info log. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00109">109</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00130">130</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_8hpp_source.html#l00089">sog::gfx::Shader&lt; shader_type &gt;::get()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00095">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="_shader_8hpp_source.html#l00103">sog::gfx::Shader&lt; shader_type &gt;::get()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00117">m_Handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00077">ShaderProgram()</a>.</p>
 
 </div>
 </div>
@@ -362,11 +437,11 @@ template&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4
 
 <p>Makes this program current for subsequent draw calls (glUseProgram). </p>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00079">79</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00099">99</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00095">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00117">m_Handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00107">sog::gfx::Window::draw()</a>, and <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00105">sog::gfx::Window::draw()</a>, and <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -393,14 +468,14 @@ template&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4
 
 <p>name -&gt; <a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a> cache to skip repeated glGetUniformLocation calls. </p>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00099">99</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00122">122</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_shader_program_8cpp_source.html#l00013">getLocation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_shader_program_8cpp_source.html#l00018">getLocation()</a>.</p>
 
 </div>
 </div>
-<a id="a4dece213ec593554a8f9db74eabd9009" name="a4dece213ec593554a8f9db74eabd9009"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dece213ec593554a8f9db74eabd9009">&#9670;&#160;</a></span>m_Handle</h2>
+<a id="ab137ad462289e990bf7a04074a2ecf47" name="ab137ad462289e990bf7a04074a2ecf47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab137ad462289e990bf7a04074a2ecf47">&#9670;&#160;</a></span>m_Handle</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -409,7 +484,7 @@ template&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_g_f_x_types_8hpp.html#a27fb65866922ea3b78e30cffa284aaca">gl_handle</a> sog::gfx::ShaderProgram::m_Handle {0}</td>
+          <td class="memname"><a class="el" href="_handles_8hpp.html#a9b1962595beaf87772bb17aa8acd770f">ShaderProgramHandle</a> sog::gfx::ShaderProgram::m_Handle {}</td>
         </tr>
       </table>
   </td>
@@ -421,15 +496,15 @@ template&lt;<a class="el" href="_enums_8hpp.html#ad3dc4b9935a04899ad5defb69900f4
 
 <p>Raw GL program name. </p>
 
-<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00095">95</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shader_program_8hpp_source.html#l00117">117</a> of file <a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_shader_program_8hpp_source.html#l00085">get()</a>, <a class="el" href="_shader_program_8hpp_source.html#l00109">Initialize()</a>, <a class="el" href="_shader_program_8hpp_source.html#l00065">ShaderProgram()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00079">use()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_shader_program_8cpp_source.html#l00013">create()</a>, <a class="el" href="_shader_program_8hpp_source.html#l00105">get()</a>, <a class="el" href="_shader_program_8hpp_source.html#l00130">Initialize()</a>, and <a class="el" href="_shader_program_8hpp_source.html#l00099">use()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/Core/gfx/OpenGL/Objects/<a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a></li>
-<li>src/Core/gfx/OpenGL/Objects/<a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a></li>
+<li>src/sog/include/sog/gfx/OpenGL/Objects/<a class="el" href="_shader_program_8hpp_source.html">ShaderProgram.hpp</a></li>
+<li>src/sog/gfx/OpenGL/Objects/<a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

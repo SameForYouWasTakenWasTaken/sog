@@ -65,6 +65,14 @@ class ShaderProgram
     /// Creates the GL program object (glCreateProgram).
     ShaderProgram() { create(); }
 
+    /**
+     * @brief Creates the program, attaches the two given shaders and links immediately.
+     * @tparam A Shader stage of the first shader.
+     * @tparam B Shader stage of the second shader.
+     * @param shaderA First compiled shader stage to attach.
+     * @param shaderB Second compiled shader stage to attach.
+     * @throws sog::graphics_error With graphics_error_code::shader_link_failed if linking fails.
+     */
     template <shader_type A, shader_type B>
     explicit ShaderProgram(const Shader<A>& shaderA, const Shader<B>& shaderB)
     {
@@ -72,6 +80,9 @@ class ShaderProgram
         Initialize(shaderA, shaderB);
     }
 
+    /**
+     * @brief Creates the GL program object (glCreateProgram) if it does not exist yet.
+     */
     void create();
     /**
      * @brief Attaches two compiled shaders and links the program.
@@ -94,9 +105,11 @@ class ShaderProgram
     [[nodiscard]] gl_handle get() const { return m_Handle.get(); }
 
     /**
-     * @brief Returns a uniform's location, caching lookups by name.
+     * @brief Returns a uniform's location, caching successful lookups by name.
      * @param name The uniform's name as declared in the shader.
-     * @return The cached or freshly looked-up Uniform; invalid (-1) if not found.
+     * @return std::optional holding the cached or freshly looked-up Uniform; std::nullopt if the
+     * linked program has no such uniform (misses are not cached, so a later link can still resolve
+     * them).
      */
     std::optional<Uniform> getLocation(const std::string& name);
 
@@ -111,8 +124,6 @@ class ShaderProgram
 
 /**
  * @brief Attaches both shader handles to the program, links it, and validates the result.
- * @param shaderA First stage to attach.
- * @param shaderB Second stage to attach.
  * @throws sog::graphics_error If linking fails, carrying the driver info log.
  */
 template <shader_type A, shader_type B>

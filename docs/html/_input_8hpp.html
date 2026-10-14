@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/Input.hpp File Reference</title>
+<title>sog (Small OpenGL Graphics): src/sog/include/sog/Input.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -116,35 +116,35 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_input_8hpp.ht
 
 <p>Declares the sog::input keyboard/mouse query API, including per-frame edge detection, cursor tracking and a camera controller helper.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_camera_8hpp_source.html">gfx/Camera.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_window_8hpp_source.html">gfx/Window/Window.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="_camera_8hpp_source.html">sog/gfx/Camera.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_window_8hpp_source.html">sog/gfx/Window/Window.hpp</a>&gt;</code><br />
 </div>
 <p><a href="_input_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3ca4ab37fe349f3a8a685082a5911a33" id="r_a3ca4ab37fe349f3a8a685082a5911a33"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33">sog::input::update</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window)</td></tr>
+<tr class="memitem:a3ca4ab37fe349f3a8a685082a5911a33" id="r_a3ca4ab37fe349f3a8a685082a5911a33"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33">sog::input::update</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window)</td></tr>
 <tr class="memdesc:a3ca4ab37fe349f3a8a685082a5911a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snapshots the current key/mouse/cursor state for edge-triggered queries.  <br /></td></tr>
-<tr class="memitem:a8f4113d6dc81b68ccc78fe1ffbb242c1" id="r_a8f4113d6dc81b68ccc78fe1ffbb242c1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#a8f4113d6dc81b68ccc78fe1ffbb242c1">sog::input::isKeyDown</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, int key)</td></tr>
-<tr class="memdesc:a8f4113d6dc81b68ccc78fe1ffbb242c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key is currently held (live query, no <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> needed).  <br /></td></tr>
-<tr class="memitem:ae0ec6594d8fb625d88c8984bbbfe838d" id="r_ae0ec6594d8fb625d88c8984bbbfe838d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#ae0ec6594d8fb625d88c8984bbbfe838d">sog::input::isMouseButtonDown</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, int button)</td></tr>
-<tr class="memdesc:ae0ec6594d8fb625d88c8984bbbfe838d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button is currently held (live query, no <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> needed).  <br /></td></tr>
-<tr class="memitem:af9561160ab4cb4a0bfb827460ab5367c" id="r_af9561160ab4cb4a0bfb827460ab5367c"><td class="memItemLeft">glm::vec2&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#af9561160ab4cb4a0bfb827460ab5367c">sog::input::getCursorPosition</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window)</td></tr>
+<tr class="memitem:a8f4113d6dc81b68ccc78fe1ffbb242c1" id="r_a8f4113d6dc81b68ccc78fe1ffbb242c1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8f4113d6dc81b68ccc78fe1ffbb242c1">sog::input::isKeyDown</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, int key)</td></tr>
+<tr class="memdesc:a8f4113d6dc81b68ccc78fe1ffbb242c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key is currently held (live query, no <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> needed).  <br /></td></tr>
+<tr class="memitem:ae0ec6594d8fb625d88c8984bbbfe838d" id="r_ae0ec6594d8fb625d88c8984bbbfe838d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae0ec6594d8fb625d88c8984bbbfe838d">sog::input::isMouseButtonDown</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, int button)</td></tr>
+<tr class="memdesc:ae0ec6594d8fb625d88c8984bbbfe838d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button is currently held (live query, no <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> needed).  <br /></td></tr>
+<tr class="memitem:af9561160ab4cb4a0bfb827460ab5367c" id="r_af9561160ab4cb4a0bfb827460ab5367c"><td class="memItemLeft">glm::vec2&#160;</td><td class="memItemRight"><a class="el" href="#af9561160ab4cb4a0bfb827460ab5367c">sog::input::getCursorPosition</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window)</td></tr>
 <tr class="memdesc:af9561160ab4cb4a0bfb827460ab5367c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current cursor position in window coordinates.  <br /></td></tr>
-<tr class="memitem:a747c75be12cbe3cb16e1e34b309919b4" id="r_a747c75be12cbe3cb16e1e34b309919b4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#a747c75be12cbe3cb16e1e34b309919b4">sog::input::isKeyPressed</a> (int key)</td></tr>
-<tr class="memdesc:a747c75be12cbe3cb16e1e34b309919b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went down this frame (requires <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
-<tr class="memitem:a8ca2b78c4b43400d19654ae0d71749a3" id="r_a8ca2b78c4b43400d19654ae0d71749a3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#a8ca2b78c4b43400d19654ae0d71749a3">sog::input::isKeyReleased</a> (int key)</td></tr>
-<tr class="memdesc:a8ca2b78c4b43400d19654ae0d71749a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went up this frame (requires <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
-<tr class="memitem:a7647a99d16e09d6a91138de4e4f2eb29" id="r_a7647a99d16e09d6a91138de4e4f2eb29"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#a7647a99d16e09d6a91138de4e4f2eb29">sog::input::isMouseButtonPressed</a> (int button)</td></tr>
-<tr class="memdesc:a7647a99d16e09d6a91138de4e4f2eb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button went down this frame (requires <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
-<tr class="memitem:acf5ccb6b7ee4b5c1f2a94c5b22aef2a7" id="r_acf5ccb6b7ee4b5c1f2a94c5b22aef2a7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">sog::input::isMouseButtonReleased</a> (int button)</td></tr>
-<tr class="memdesc:acf5ccb6b7ee4b5c1f2a94c5b22aef2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button went up this frame (requires <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
-<tr class="memitem:ae03d04602a30983995a0e28edfd1b1db" id="r_ae03d04602a30983995a0e28edfd1b1db"><td class="memItemLeft">glm::vec2&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#ae03d04602a30983995a0e28edfd1b1db">sog::input::getCursorDelta</a> ()</td></tr>
-<tr class="memdesc:ae03d04602a30983995a0e28edfd1b1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns how far the cursor moved since the last <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> (requires <a class="el" href="_input_8cpp.html#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
-<tr class="memitem:a8aa2e678b6cb6adb5f68d91d00a59eb2" id="r_a8aa2e678b6cb6adb5f68d91d00a59eb2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#a8aa2e678b6cb6adb5f68d91d00a59eb2">sog::input::setCursorCaptured</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, bool captured)</td></tr>
+<tr class="memitem:a747c75be12cbe3cb16e1e34b309919b4" id="r_a747c75be12cbe3cb16e1e34b309919b4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a747c75be12cbe3cb16e1e34b309919b4">sog::input::isKeyPressed</a> (int key)</td></tr>
+<tr class="memdesc:a747c75be12cbe3cb16e1e34b309919b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went down this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
+<tr class="memitem:a8ca2b78c4b43400d19654ae0d71749a3" id="r_a8ca2b78c4b43400d19654ae0d71749a3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8ca2b78c4b43400d19654ae0d71749a3">sog::input::isKeyReleased</a> (int key)</td></tr>
+<tr class="memdesc:a8ca2b78c4b43400d19654ae0d71749a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a key went up this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
+<tr class="memitem:a7647a99d16e09d6a91138de4e4f2eb29" id="r_a7647a99d16e09d6a91138de4e4f2eb29"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7647a99d16e09d6a91138de4e4f2eb29">sog::input::isMouseButtonPressed</a> (int button)</td></tr>
+<tr class="memdesc:a7647a99d16e09d6a91138de4e4f2eb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button went down this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
+<tr class="memitem:acf5ccb6b7ee4b5c1f2a94c5b22aef2a7" id="r_acf5ccb6b7ee4b5c1f2a94c5b22aef2a7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acf5ccb6b7ee4b5c1f2a94c5b22aef2a7">sog::input::isMouseButtonReleased</a> (int button)</td></tr>
+<tr class="memdesc:acf5ccb6b7ee4b5c1f2a94c5b22aef2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether a mouse button went up this frame (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
+<tr class="memitem:ae03d04602a30983995a0e28edfd1b1db" id="r_ae03d04602a30983995a0e28edfd1b1db"><td class="memItemLeft">glm::vec2&#160;</td><td class="memItemRight"><a class="el" href="#ae03d04602a30983995a0e28edfd1b1db">sog::input::getCursorDelta</a> ()</td></tr>
+<tr class="memdesc:ae03d04602a30983995a0e28edfd1b1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns how far the cursor moved since the last <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a> (requires <a class="el" href="#a3ca4ab37fe349f3a8a685082a5911a33" title="Snapshots the current key/mouse/cursor state for edge-triggered queries.">update()</a>).  <br /></td></tr>
+<tr class="memitem:a8aa2e678b6cb6adb5f68d91d00a59eb2" id="r_a8aa2e678b6cb6adb5f68d91d00a59eb2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8aa2e678b6cb6adb5f68d91d00a59eb2">sog::input::setCursorCaptured</a> (const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, bool captured)</td></tr>
 <tr class="memdesc:a8aa2e678b6cb6adb5f68d91d00a59eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures (or releases) the cursor for FPS-style mouse look.  <br /></td></tr>
-<tr class="memitem:aa435aa10d2699c8fe7b1eb6d393028e0" id="r_aa435aa10d2699c8fe7b1eb6d393028e0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_input_8cpp.html#aa435aa10d2699c8fe7b1eb6d393028e0">sog::input::updateCamera</a> (<a class="el" href="classsog_1_1gfx_1_1_camera.html">gfx::Camera</a> &amp;camera, const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, float dt, float moveSpeed=5.0f, float turnSpeed=90.0f)</td></tr>
-<tr class="memdesc:aa435aa10d2699c8fe7b1eb6d393028e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives a Camera from the keyboard: WASD to move, Space/Ctrl for up/down, arrows to look.  <br /></td></tr>
+<tr class="memitem:aa435aa10d2699c8fe7b1eb6d393028e0" id="r_aa435aa10d2699c8fe7b1eb6d393028e0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa435aa10d2699c8fe7b1eb6d393028e0">sog::input::updateCamera</a> (<a class="el" href="classsog_1_1gfx_1_1_camera.html">gfx::Camera</a> &amp;camera, const <a class="el" href="classsog_1_1gfx_1_1_window.html">gfx::Window</a> &amp;window, float dt, float moveSpeed=5.0f, float turnSpeed=90.0f)</td></tr>
+<tr class="memdesc:aa435aa10d2699c8fe7b1eb6d393028e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives a <a class="el" href="sog_8hpp.html#aae252232b51b7ccd4d2546e6d7417323" title="Fly-style camera producing view/projection matrices; alias of gfx::Camera.">Camera</a> from the keyboard: WASD to move, Space/Ctrl for up/down, arrows to look.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Declares the sog::input keyboard/mouse query API, including per-frame edge detection, cursor tracking and a camera controller helper. </p>
@@ -178,7 +178,7 @@ Functions</h2></td></tr>
 <p>Returns how far the cursor moved since the last update() (requires update()). </p>
 <dl class="section return"><dt>Returns</dt><dd>Change in cursor position over the last frame. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00110">110</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00262">262</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -214,7 +214,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Cursor position (x right, y down) in pixels, as floats. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00081">81</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00233">233</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the key is down right now. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00071">71</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00223">223</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -291,7 +291,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the key is down now but was up at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00088">88</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00240">240</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -327,7 +327,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the key is up now but was down at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00093">93</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00245">245</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +368,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the button is down right now. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00076">76</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00228">228</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +404,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the button is down now but was up at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00098">98</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00250">250</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +440,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the button is up now but was down at the previous update(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00104">104</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00256">256</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -473,7 +473,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Resets the stored cursor position so the mode switch does not produce a huge delta spike on the next update(). </p>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00112">112</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00264">264</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +501,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Call once per frame, immediately after Window::pollEvents(). Advances the previous-state buffers, polls every key and mouse button, and computes the cursor delta since the prior update (zero on the very first update, to avoid a spurious jump). </p>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00051">51</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00203">203</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
 </div>
 </div>
@@ -552,9 +552,9 @@ Functions</h2></td></tr>
 </dl>
 <p>Movement is normalized so diagonal travel is not faster, and pitch is clamped to +/-89 degrees to avoid flipping. Call after update() if you also need edge-triggered queries the same frame; the movement/look reads use live state. </p>
 
-<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00118">118</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_input_8cpp_source.html#l00270">270</a> of file <a class="el" href="_input_8cpp_source.html">Input.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00178">sog::gfx::Camera::getPitch()</a>, <a class="el" href="_camera_8hpp_source.html#l00172">sog::gfx::Camera::getYaw()</a>, <a class="el" href="_camera_8cpp_source.html#l00074">sog::gfx::Camera::moveLocal()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">sog::gfx::Camera::setRotation()</a>.</p>
+<p class="reference">References <a class="el" href="_camera_8hpp_source.html#l00179">sog::gfx::Camera::getPitch()</a>, <a class="el" href="_camera_8hpp_source.html#l00173">sog::gfx::Camera::getYaw()</a>, <a class="el" href="_camera_8cpp_source.html#l00074">sog::gfx::Camera::moveLocal()</a>, and <a class="el" href="_camera_8cpp_source.html#l00080">sog::gfx::Camera::setRotation()</a>.</p>
 
 </div>
 </div>
@@ -571,7 +571,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><a href="_input_8hpp.html">Input.hpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><a href="_input_8hpp.html">Input.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/gfx/OpenGL/Objects/ShaderProgram.cpp Source File</title>
+<title>sog (Small OpenGL Graphics): src/sog/gfx/OpenGL/Objects/ShaderProgram.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,47 +114,57 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_shader_progra
 </div><!--header-->
 <div class="contents">
 <a href="_shader_program_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_shader_program_8hpp.html">ShaderProgram.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_uniforms_8hpp.html">../../../Utility/Uniforms.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="_uniforms_8hpp.html">sog/Utility/Uniforms.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="_shader_program_8hpp.html">sog/gfx/OpenGL/Objects/ShaderProgram.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span>sog::gfx</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665">   13</a></span>std::optional&lt;Uniform&gt; <a class="code hl_function" href="classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665">ShaderProgram::getLocation</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classsog_1_1gfx_1_1_shader_program.html#aba6d17553523e95c952ed6ec6541f00f">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classsog_1_1gfx_1_1_shader_program.html#aba6d17553523e95c952ed6ec6541f00f">ShaderProgram::create</a>()</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// find cached</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">m_CachedUniforms</a>.contains(name))</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">m_CachedUniforms</a>[name];</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">auto</span> loc = <a class="code hl_function" href="_uniforms_8cpp.html#abf4002334bc1ad0befa769b00a45e438">uniform::getLocation</a>(*<span class="keyword">this</span>, name);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// set cache</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (loc.valid())</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">m_CachedUniforms</a>[name] = loc;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> loc;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Not found: return nullopt and do NOT cache the miss, so a later-linked</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// program state could still resolve it.</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#ab137ad462289e990bf7a04074a2ecf47">m_Handle</a>.<a class="code hl_function" href="classsog_1_1gfx_1_1_g_l_handle.html#a12f02c7e06ebaeabcd8ba0670695abb8">valid</a>())</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#ab137ad462289e990bf7a04074a2ecf47">m_Handle</a>.<a class="code hl_function" href="classsog_1_1gfx_1_1_g_l_handle.html#ad19fb8dedd15d4c3a3e190f374f7cc61">raw</a>() = glCreateProgram();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>} <span class="comment">// namespace sog::gfx</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665">   18</a></span>std::optional&lt;Uniform&gt; <a class="code hl_function" href="classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665">ShaderProgram::getLocation</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// find cached</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">m_CachedUniforms</a>.contains(name))</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">m_CachedUniforms</a>[name];</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">auto</span> loc = <a class="code hl_function" href="_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438">uniform::getLocation</a>(*<span class="keyword">this</span>, name);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// set cache</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (loc.valid())</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_variable" href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">m_CachedUniforms</a>[name] = loc;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> loc;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// Not found: return nullopt and do NOT cache the miss, so a later-linked</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// program state could still resolve it.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>} <span class="comment">// namespace sog::gfx</span></div>
 <div class="ttc" id="a_shader_program_8hpp_html"><div class="ttname"><a href="_shader_program_8hpp.html">ShaderProgram.hpp</a></div><div class="ttdoc">Defines ShaderProgram, a linked GL program that attaches shader stages, binds for drawing and caches ...</div></div>
-<div class="ttc" id="a_uniforms_8cpp_html_abf4002334bc1ad0befa769b00a45e438"><div class="ttname"><a href="_uniforms_8cpp.html#abf4002334bc1ad0befa769b00a45e438">sog::gfx::uniform::getLocation</a></div><div class="ttdeci">Uniform getLocation(const ShaderProgram &amp;program, const std::string &amp;name)</div><div class="ttdoc">Looks up a uniform&#39;s location by name within a linked program.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00027">Uniforms.cpp:27</a></div></div>
 <div class="ttc" id="a_uniforms_8hpp_html"><div class="ttname"><a href="_uniforms_8hpp.html">Uniforms.hpp</a></div><div class="ttdoc">Declares the sog::gfx::uniform free-function API for looking up and uploading typed values to shader ...</div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html_a4a81cf9549a043e1be7d846f87065665"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665">sog::gfx::ShaderProgram::getLocation</a></div><div class="ttdeci">std::optional&lt; Uniform &gt; getLocation(const std::string &amp;name)</div><div class="ttdoc">Returns a uniform&#39;s location, caching lookups by name.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ShaderProgram.cpp:13</a></div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html_a7e88221f058bd05bb690bf1b3481feb2"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">sog::gfx::ShaderProgram::m_CachedUniforms</a></div><div class="ttdeci">std::unordered_map&lt; uniformName, Uniform &gt; m_CachedUniforms</div><div class="ttdoc">name -&gt; Uniform cache to skip repeated glGetUniformLocation calls.</div><div class="ttdef"><b>Definition</b> <a href="_shader_program_8hpp_source.html#l00099">ShaderProgram.hpp:99</a></div></div>
+<div class="ttc" id="a_uniforms_8hpp_html_abf4002334bc1ad0befa769b00a45e438"><div class="ttname"><a href="_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438">sog::gfx::uniform::getLocation</a></div><div class="ttdeci">Uniform getLocation(const ShaderProgram &amp;program, const std::string &amp;name)</div><div class="ttdoc">Looks up a uniform&#39;s location by name within a linked program.</div><div class="ttdef"><b>Definition</b> <a href="_uniforms_8cpp_source.html#l00028">Uniforms.cpp:28</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_g_l_handle_html_a12f02c7e06ebaeabcd8ba0670695abb8"><div class="ttname"><a href="classsog_1_1gfx_1_1_g_l_handle.html#a12f02c7e06ebaeabcd8ba0670695abb8">sog::gfx::GLHandle::valid</a></div><div class="ttdeci">constexpr bool valid() const noexcept</div><div class="ttdoc">Reports whether this handle names a real GL object.</div><div class="ttdef"><b>Definition</b> <a href="_g_l_handle_8hpp_source.html#l00086">GLHandle.hpp:86</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_g_l_handle_html_ad19fb8dedd15d4c3a3e190f374f7cc61"><div class="ttname"><a href="classsog_1_1gfx_1_1_g_l_handle.html#ad19fb8dedd15d4c3a3e190f374f7cc61">sog::gfx::GLHandle::raw</a></div><div class="ttdeci">GLuint &amp; raw() noexcept</div><div class="ttdoc">Returns a mutable reference to the stored name.</div><div class="ttdef"><b>Definition</b> <a href="_g_l_handle_8hpp_source.html#l00080">GLHandle.hpp:80</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html_a4a81cf9549a043e1be7d846f87065665"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665">sog::gfx::ShaderProgram::getLocation</a></div><div class="ttdeci">std::optional&lt; Uniform &gt; getLocation(const std::string &amp;name)</div><div class="ttdoc">Returns a uniform&#39;s location, caching successful lookups by name.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">ShaderProgram.cpp:18</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html_a7e88221f058bd05bb690bf1b3481feb2"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html#a7e88221f058bd05bb690bf1b3481feb2">sog::gfx::ShaderProgram::m_CachedUniforms</a></div><div class="ttdeci">std::unordered_map&lt; uniformName, Uniform &gt; m_CachedUniforms</div><div class="ttdoc">name -&gt; Uniform cache to skip repeated glGetUniformLocation calls.</div><div class="ttdef"><b>Definition</b> <a href="_shader_program_8hpp_source.html#l00122">ShaderProgram.hpp:122</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html_ab137ad462289e990bf7a04074a2ecf47"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html#ab137ad462289e990bf7a04074a2ecf47">sog::gfx::ShaderProgram::m_Handle</a></div><div class="ttdeci">ShaderProgramHandle m_Handle</div><div class="ttdoc">Raw GL program name.</div><div class="ttdef"><b>Definition</b> <a href="_shader_program_8hpp_source.html#l00117">ShaderProgram.hpp:117</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html_aba6d17553523e95c952ed6ec6541f00f"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html#aba6d17553523e95c952ed6ec6541f00f">sog::gfx::ShaderProgram::create</a></div><div class="ttdeci">void create()</div><div class="ttdoc">Creates the GL program object (glCreateProgram) if it does not exist yet.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ShaderProgram.cpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>OpenGL</b></li><li class="navelem"><b>Objects</b></li><li class="navelem"><a href="_shader_program_8cpp.html">ShaderProgram.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>OpenGL</b></li><li class="navelem"><b>Objects</b></li><li class="navelem"><a href="_shader_program_8cpp.html">ShaderProgram.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

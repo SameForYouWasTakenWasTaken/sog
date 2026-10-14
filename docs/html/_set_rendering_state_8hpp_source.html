@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/gfx/OpenGL/SetRenderingState.hpp Source File</title>
+<title>sog (Small OpenGL Graphics): src/sog/include/sog/gfx/OpenGL/SetRenderingState.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,43 +114,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_set_rendering
 </div><!--header-->
 <div class="contents">
 <a href="_set_rendering_state_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_render_settings_8hpp.html">RenderSettings.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;glad/gl.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span>sog::gfx::backend</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">   16</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">enable</a>(<span class="keyword">const</span> GLenum e) { glEnable(e); }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">   22</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">disable</a>(<span class="keyword">const</span> GLenum e) { glDisable(e); }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">   29</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">set</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> val, <span class="keyword">const</span> GLenum e)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (val)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_function" href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">enable</a>(e);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_function" href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">disable</a>(e);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_render_settings_8hpp.html">RenderSettings.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;glad/gl.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>sog::gfx::backend</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">   17</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">enable</a>(<span class="keyword">const</span> GLenum e) { glEnable(e); }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">   23</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">disable</a>(<span class="keyword">const</span> GLenum e) { glDisable(e); }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">   30</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">set</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> val, <span class="keyword">const</span> GLenum e)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (val)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_function" href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">enable</a>(e);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_function" href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">disable</a>(e);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>} <span class="comment">// namespace sog::gfx::backend</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">namespace </span>sog::gfx</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#afbddcbeda457d8a1b438ad29f3e773f3">   48</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#afbddcbeda457d8a1b438ad29f3e773f3">SetRenderingState</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structsog_1_1gfx_1_1_render_settings.html">RenderSettings</a>&amp; settings)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">backend::set</a>(settings.<a class="code hl_variable" href="structsog_1_1gfx_1_1_render_settings.html#a310587d10b1842b08bdc712c333ad9e5">depthTest</a>, GL_DEPTH_TEST);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">backend::set</a>(settings.<a class="code hl_variable" href="structsog_1_1gfx_1_1_render_settings.html#a6604f48afa4dab8d1a126d39b3333dd9">blending</a>, GL_BLEND);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">backend::set</a>(settings.<a class="code hl_variable" href="structsog_1_1gfx_1_1_render_settings.html#a2951b50a7045971deb2bed5082a41c37">faceCulling</a>, GL_CULL_FACE);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>} <span class="comment">// namespace sog::gfx::backend</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span>sog::gfx</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_set_rendering_state_8hpp.html#afbddcbeda457d8a1b438ad29f3e773f3">   49</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_set_rendering_state_8hpp.html#afbddcbeda457d8a1b438ad29f3e773f3">SetRenderingState</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structsog_1_1gfx_1_1_render_settings.html">RenderSettings</a>&amp; settings)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">backend::set</a>(settings.<a class="code hl_variable" href="structsog_1_1gfx_1_1_render_settings.html#a310587d10b1842b08bdc712c333ad9e5">depthTest</a>, GL_DEPTH_TEST);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">backend::set</a>(settings.<a class="code hl_variable" href="structsog_1_1gfx_1_1_render_settings.html#a6604f48afa4dab8d1a126d39b3333dd9">blending</a>, GL_BLEND);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">backend::set</a>(settings.<a class="code hl_variable" href="structsog_1_1gfx_1_1_render_settings.html#a2951b50a7045971deb2bed5082a41c37">faceCulling</a>, GL_CULL_FACE);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>} <span class="comment">// namespace sog::gfx</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>} <span class="comment">// namespace sog::gfx</span></div>
 <div class="ttc" id="a_render_settings_8hpp_html"><div class="ttname"><a href="_render_settings_8hpp.html">RenderSettings.hpp</a></div><div class="ttdoc">Defines RenderSettings, a plain struct of boolean toggles for global pipeline state (depth test,...</div></div>
-<div class="ttc" id="a_set_rendering_state_8hpp_html_a240b6f6b7465188981cf9f0af19e8808"><div class="ttname"><a href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">sog::gfx::backend::disable</a></div><div class="ttdeci">void disable(const GLenum e)</div><div class="ttdoc">Disables a GL capability.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">SetRenderingState.hpp:22</a></div></div>
-<div class="ttc" id="a_set_rendering_state_8hpp_html_a59ce45fa6637b1e46272b593a70e6039"><div class="ttname"><a href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">sog::gfx::backend::set</a></div><div class="ttdeci">void set(const bool val, const GLenum e)</div><div class="ttdoc">Enables or disables a GL capability based on a boolean.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">SetRenderingState.hpp:29</a></div></div>
-<div class="ttc" id="a_set_rendering_state_8hpp_html_acb02ea8df8df7df1e8a139e74b62d496"><div class="ttname"><a href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">sog::gfx::backend::enable</a></div><div class="ttdeci">void enable(const GLenum e)</div><div class="ttdoc">Enables a GL capability.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">SetRenderingState.hpp:16</a></div></div>
-<div class="ttc" id="a_set_rendering_state_8hpp_html_afbddcbeda457d8a1b438ad29f3e773f3"><div class="ttname"><a href="_set_rendering_state_8hpp.html#afbddcbeda457d8a1b438ad29f3e773f3">sog::gfx::SetRenderingState</a></div><div class="ttdeci">void SetRenderingState(const RenderSettings &amp;settings)</div><div class="ttdoc">Applies a RenderSettings struct to the current GL context&#39;s global state.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">SetRenderingState.hpp:48</a></div></div>
+<div class="ttc" id="a_set_rendering_state_8hpp_html_a240b6f6b7465188981cf9f0af19e8808"><div class="ttname"><a href="_set_rendering_state_8hpp.html#a240b6f6b7465188981cf9f0af19e8808">sog::gfx::backend::disable</a></div><div class="ttdeci">void disable(const GLenum e)</div><div class="ttdoc">Disables a GL capability.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">SetRenderingState.hpp:23</a></div></div>
+<div class="ttc" id="a_set_rendering_state_8hpp_html_a59ce45fa6637b1e46272b593a70e6039"><div class="ttname"><a href="_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039">sog::gfx::backend::set</a></div><div class="ttdeci">void set(const bool val, const GLenum e)</div><div class="ttdoc">Enables or disables a GL capability based on a boolean.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">SetRenderingState.hpp:30</a></div></div>
+<div class="ttc" id="a_set_rendering_state_8hpp_html_acb02ea8df8df7df1e8a139e74b62d496"><div class="ttname"><a href="_set_rendering_state_8hpp.html#acb02ea8df8df7df1e8a139e74b62d496">sog::gfx::backend::enable</a></div><div class="ttdeci">void enable(const GLenum e)</div><div class="ttdoc">Enables a GL capability.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">SetRenderingState.hpp:17</a></div></div>
+<div class="ttc" id="a_set_rendering_state_8hpp_html_afbddcbeda457d8a1b438ad29f3e773f3"><div class="ttname"><a href="_set_rendering_state_8hpp.html#afbddcbeda457d8a1b438ad29f3e773f3">sog::gfx::SetRenderingState</a></div><div class="ttdeci">void SetRenderingState(const RenderSettings &amp;settings)</div><div class="ttdoc">Applies a RenderSettings struct to the current GL context&#39;s global state.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">SetRenderingState.hpp:49</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_render_settings_html"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_settings.html">sog::gfx::RenderSettings</a></div><div class="ttdoc">Desired global rendering state, applied via SetRenderingState().</div><div class="ttdef"><b>Definition</b> <a href="_render_settings_8hpp_source.html#l00019">RenderSettings.hpp:20</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_render_settings_html_a2951b50a7045971deb2bed5082a41c37"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_settings.html#a2951b50a7045971deb2bed5082a41c37">sog::gfx::RenderSettings::faceCulling</a></div><div class="ttdeci">bool faceCulling</div><div class="ttdoc">Whether back/front face culling is enabled (GL_CULL_FACE).</div><div class="ttdef"><b>Definition</b> <a href="_render_settings_8hpp_source.html#l00022">RenderSettings.hpp:22</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_render_settings_html_a310587d10b1842b08bdc712c333ad9e5"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_settings.html#a310587d10b1842b08bdc712c333ad9e5">sog::gfx::RenderSettings::depthTest</a></div><div class="ttdeci">bool depthTest</div><div class="ttdoc">Whether depth testing is enabled (GL_DEPTH_TEST).</div><div class="ttdef"><b>Definition</b> <a href="_render_settings_8hpp_source.html#l00021">RenderSettings.hpp:21</a></div></div>
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_set_rendering
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>OpenGL</b></li><li class="navelem"><a href="_set_rendering_state_8hpp.html">SetRenderingState.hpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>OpenGL</b></li><li class="navelem"><a href="_set_rendering_state_8hpp.html">SetRenderingState.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

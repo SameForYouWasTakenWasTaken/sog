@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/gfx/Window/RenderState.hpp Source File</title>
+<title>sog (Small OpenGL Graphics): src/sog/include/sog/gfx/Window/RenderState.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,13 +114,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_render_state_
 </div><!--header-->
 <div class="contents">
 <a href="_render_state_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_shader_program_8hpp.html">../OpenGL/Objects/ShaderProgram.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_vertex_array_8hpp.html">../OpenGL/Objects/VertexArray.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_texture2_d_8hpp.html">gfx/OpenGL/Objects/Texture2D.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="_shader_program_8hpp.html">sog/gfx/OpenGL/Objects/ShaderProgram.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="_texture2_d_8hpp.html">sog/gfx/OpenGL/Objects/Texture2D.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="_vertex_array_8hpp.html">sog/gfx/OpenGL/Objects/VertexArray.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>sog::gfx</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
@@ -128,32 +127,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_render_state_
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html">   29</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsog_1_1gfx_1_1_render_state.html">RenderState</a></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a679f5b9f17fce3ded5423ae5be3ac4dc">   31</a></span>    <span class="keyword">const</span> <a class="code hl_typedef" href="_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c">VertexBuffer</a>&amp; <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a679f5b9f17fce3ded5423ae5be3ac4dc">vertexBuffer</a>; </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">   32</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_vertex_array.html">VertexArray</a>&amp; <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">vertexArray</a>;   </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">   33</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_texture2_d.html">Texture2D</a>* <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">texture2D</a> = <span class="keyword">nullptr</span>; </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a083f62c9434493ef7db3999e39581949">   35</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a>&amp; <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a083f62c9434493ef7db3999e39581949">shaderProgram</a>; </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">   33</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_vertex_array.html">VertexArray</a>&amp; <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">vertexArray</a>;   </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">   35</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_texture2_d.html">Texture2D</a>* <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">texture2D</a> =</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">nullptr</span>; </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a>&amp;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a083f62c9434493ef7db3999e39581949">   39</a></span>        <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a083f62c9434493ef7db3999e39581949">shaderProgram</a>; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>} <span class="comment">// namespace sog::gfx</span></div>
-<div class="ttc" id="a_buffers_8hpp_html_a9b844644811a58c72b8b3e9595b5d88c"><div class="ttname"><a href="_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c">sog::gfx::VertexBuffer</a></div><div class="ttdeci">GpuBuffer&lt; VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, BindingMode::Regular &gt; VertexBuffer</div><div class="ttdoc">Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.</div><div class="ttdef"><b>Definition</b> <a href="_buffers_8hpp_source.html#l00018">Buffers.hpp:18</a></div></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <span class="comment">// namespace sog::gfx</span></div>
+<div class="ttc" id="a_buffers_8hpp_html_a9b844644811a58c72b8b3e9595b5d88c"><div class="ttname"><a href="_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c">sog::gfx::VertexBuffer</a></div><div class="ttdeci">GpuBuffer&lt; VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, BindingMode::Regular &gt; VertexBuffer</div><div class="ttdoc">Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.</div><div class="ttdef"><b>Definition</b> <a href="_buffers_8hpp_source.html#l00019">Buffers.hpp:19</a></div></div>
 <div class="ttc" id="a_shader_program_8hpp_html"><div class="ttname"><a href="_shader_program_8hpp.html">ShaderProgram.hpp</a></div><div class="ttdoc">Defines ShaderProgram, a linked GL program that attaches shader stages, binds for drawing and caches ...</div></div>
 <div class="ttc" id="a_texture2_d_8hpp_html"><div class="ttname"><a href="_texture2_d_8hpp.html">Texture2D.hpp</a></div><div class="ttdoc">Defines Texture2D, a RAII 2D texture that loads from file (via stb_image) or raw pixel data,...</div></div>
 <div class="ttc" id="a_vertex_array_8hpp_html"><div class="ttname"><a href="_vertex_array_8hpp.html">VertexArray.hpp</a></div><div class="ttdoc">Defines VertexArray, a RAII wrapper around a GL vertex array object that binds vertex/index buffers a...</div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html">sog::gfx::ShaderProgram</a></div><div class="ttdoc">A linked OpenGL shader program owning two shader stages.</div><div class="ttdef"><b>Definition</b> <a href="_shader_program_8hpp_source.html#l00060">ShaderProgram.hpp:61</a></div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_texture2_d_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></div><div class="ttdoc">Owns a GL 2D texture and manages its creation, upload and binding.</div><div class="ttdef"><b>Definition</b> <a href="_texture2_d_8hpp_source.html#l00038">Texture2D.hpp:39</a></div></div>
-<div class="ttc" id="aclasssog_1_1gfx_1_1_vertex_array_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_vertex_array.html">sog::gfx::VertexArray</a></div><div class="ttdoc">Owns a GL vertex array object (VAO) and configures how vertex data is read.</div><div class="ttdef"><b>Definition</b> <a href="_vertex_array_8hpp_source.html#l00037">VertexArray.hpp:38</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_shader_program_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_shader_program.html">sog::gfx::ShaderProgram</a></div><div class="ttdoc">A linked OpenGL shader program owning two shader stages.</div><div class="ttdef"><b>Definition</b> <a href="_shader_program_8hpp_source.html#l00061">ShaderProgram.hpp:62</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_texture2_d_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_texture2_d.html">sog::gfx::Texture2D</a></div><div class="ttdoc">Owns a GL 2D texture and manages its creation, upload and binding.</div><div class="ttdef"><b>Definition</b> <a href="_texture2_d_8hpp_source.html#l00041">Texture2D.hpp:42</a></div></div>
+<div class="ttc" id="aclasssog_1_1gfx_1_1_vertex_array_html"><div class="ttname"><a href="classsog_1_1gfx_1_1_vertex_array.html">sog::gfx::VertexArray</a></div><div class="ttdoc">Owns a GL vertex array object (VAO) and configures how vertex data is read.</div><div class="ttdef"><b>Definition</b> <a href="_vertex_array_8hpp_source.html#l00036">VertexArray.hpp:37</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html">sog::gfx::RenderState</a></div><div class="ttdoc">Everything Window::draw() needs to render one batch.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">RenderState.hpp:30</a></div></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html_a083f62c9434493ef7db3999e39581949"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html#a083f62c9434493ef7db3999e39581949">sog::gfx::RenderState::shaderProgram</a></div><div class="ttdeci">const ShaderProgram &amp; shaderProgram</div><div class="ttdoc">Linked program whose uniforms/attributes the draw uses.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">RenderState.hpp:35</a></div></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html_a4ec6a6a6985f14ca4b9f51113e768804"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">sog::gfx::RenderState::texture2D</a></div><div class="ttdeci">const Texture2D * texture2D</div><div class="ttdoc">Optional texture bound to unit 0; null means no texture is bound.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">RenderState.hpp:33</a></div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html_a083f62c9434493ef7db3999e39581949"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html#a083f62c9434493ef7db3999e39581949">sog::gfx::RenderState::shaderProgram</a></div><div class="ttdeci">const ShaderProgram &amp; shaderProgram</div><div class="ttdoc">Linked program whose uniforms/attributes the draw uses.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">RenderState.hpp:39</a></div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html_a4ec6a6a6985f14ca4b9f51113e768804"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">sog::gfx::RenderState::texture2D</a></div><div class="ttdeci">const Texture2D * texture2D</div><div class="ttdoc">Optional texture bound to unit 0; null means no texture is bound.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">RenderState.hpp:35</a></div></div>
 <div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html_a679f5b9f17fce3ded5423ae5be3ac4dc"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html#a679f5b9f17fce3ded5423ae5be3ac4dc">sog::gfx::RenderState::vertexBuffer</a></div><div class="ttdeci">const VertexBuffer &amp; vertexBuffer</div><div class="ttdoc">Geometry data backing the draw; used for the vertex count in non-indexed draws.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">RenderState.hpp:31</a></div></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html_aae452c16b3083472ac96c145d75d1b7f"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">sog::gfx::RenderState::vertexArray</a></div><div class="ttdeci">const VertexArray &amp; vertexArray</div><div class="ttdoc">Vertex array object defining the attribute layout and, optionally, the index buffer.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">RenderState.hpp:32</a></div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_render_state_html_aae452c16b3083472ac96c145d75d1b7f"><div class="ttname"><a href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">sog::gfx::RenderState::vertexArray</a></div><div class="ttdeci">const VertexArray &amp; vertexArray</div><div class="ttdoc">Vertex array object defining the attribute layout and, optionally, the index buffer.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">RenderState.hpp:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>Window</b></li><li class="navelem"><a href="_render_state_8hpp.html">RenderState.hpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>Window</b></li><li class="navelem"><a href="_render_state_8hpp.html">RenderState.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

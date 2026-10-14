@@ -6,6 +6,6 @@ var searchData=
   ['reserve_3',['reserve',['../classsog_1_1gfx_1_1_gpu_buffer.html#aa3569eec96c09a385c8c61553fa09db0',1,'sog::gfx::GpuBuffer']]],
   ['resize_4',['resize',['../classsog_1_1gfx_1_1backend_1_1_g_l_buffer.html#acb6769cce9ed8fd93761b5189da658e9',1,'sog::gfx::backend::GLBuffer']]],
   ['rotateby_5',['rotateBy',['../classsog_1_1gfx_1_1_camera.html#ae8ee44ecbc6cdf3263cf721461a56e63',1,'sog::gfx::Camera']]],
-  ['run_6',['Run',['../classsog_1_1_application.html#a8676970789ebf44cc12eefefb549afee',1,'sog::Application']]],
+  ['run_6',['Run',['../class_application.html#a02799e64b246a6b6b8fa58477882a4be',1,'Application']]],
   ['runsafe_7',['runSafe',['../_uniforms_8hpp.html#ab0b1deadc29db1f901fd0439dddd47e7',1,'sog::gfx::uniform']]]
 ];

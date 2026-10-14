@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Camera::Basis Struct Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Camera::Basis Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -120,14 +120,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structsog_1_1g
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a906ec62c75c4845ec9d42f3960668979" id="r_a906ec62c75c4845ec9d42f3960668979"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a906ec62c75c4845ec9d42f3960668979">forward</a></td></tr>
+<tr class="memdesc:a906ec62c75c4845ec9d42f3960668979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit vector pointing along the view direction.  <br /></td></tr>
 <tr class="memitem:a79e3418e939dfadb934e3b64e6e4f5ef" id="r_a79e3418e939dfadb934e3b64e6e4f5ef"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a79e3418e939dfadb934e3b64e6e4f5ef">right</a></td></tr>
+<tr class="memdesc:a79e3418e939dfadb934e3b64e6e4f5ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit vector pointing to the camera's right.  <br /></td></tr>
 <tr class="memitem:a65fdccf748a2290e78fdea81f1650f07" id="r_a65fdccf748a2290e78fdea81f1650f07"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a65fdccf748a2290e78fdea81f1650f07">up</a></td></tr>
-<tr class="memdesc:a65fdccf748a2290e78fdea81f1650f07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_camera.html" title="A movable, rotatable camera producing view and projection matrices.">Camera</a> basis vectors (unit length, mutually perpendicular).  <br /></td></tr>
+<tr class="memdesc:a65fdccf748a2290e78fdea81f1650f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit vector pointing up, perpendicular to forward and right.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Bundle of the three orthonormal camera axes. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00214">214</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00215">215</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a906ec62c75c4845ec9d42f3960668979" name="a906ec62c75c4845ec9d42f3960668979"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a906ec62c75c4845ec9d42f3960668979">&#9670;&#160;</a></span>forward</h2>
@@ -141,7 +143,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00216">216</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Unit vector pointing along the view direction. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00217">217</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00058">sog::gfx::Camera::getForward()</a>, <a class="el" href="_camera_8cpp_source.html#l00141">sog::gfx::Camera::getView()</a>, and <a class="el" href="_camera_8cpp_source.html#l00074">sog::gfx::Camera::moveLocal()</a>.</p>
 
 </div>
 </div>
@@ -157,7 +163,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00216">216</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p>Unit vector pointing to the camera's right. </p>
+
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00218">218</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00059">sog::gfx::Camera::getRight()</a>, and <a class="el" href="_camera_8cpp_source.html#l00074">sog::gfx::Camera::moveLocal()</a>.</p>
 
 </div>
 </div>
@@ -173,16 +183,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classsog_1_1gfx_1_1_camera.html" title="A movable, rotatable camera producing view and projection matrices.">Camera</a> basis vectors (unit length, mutually perpendicular). </p>
+<p>Unit vector pointing up, perpendicular to forward and right. </p>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00216">216</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00219">219</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_camera_8cpp_source.html#l00060">sog::gfx::Camera::getUp()</a>, <a class="el" href="_camera_8cpp_source.html#l00141">sog::gfx::Camera::getView()</a>, and <a class="el" href="_camera_8cpp_source.html#l00074">sog::gfx::Camera::moveLocal()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Core/gfx/<a class="el" href="_camera_8hpp_source.html">Camera.hpp</a></li>
+<li>src/sog/include/sog/gfx/<a class="el" href="_camera_8hpp_source.html">Camera.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

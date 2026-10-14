@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::VertexArray Class Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::VertexArray Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -157,7 +157,7 @@ Static Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af9ba0e91e641e175c72bbbecd0159663" id="r_af9ba0e91e641e175c72bbbecd0159663"><td class="memItemLeft"><a class="el" href="_handles_8hpp.html#a473f478c797e9e25fa4e1471a761a116">VertexArrayHandle</a>&#160;</td><td class="memItemRight"><a class="el" href="#af9ba0e91e641e175c72bbbecd0159663">m_Handle</a></td></tr>
 <tr class="memdesc:af9ba0e91e641e175c72bbbecd0159663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typed handle to the owned VAO.  <br /></td></tr>
-<tr class="memitem:a1a7beb34bf8df85f9f098e00ede8c52e" id="r_a1a7beb34bf8df85f9f098e00ede8c52e"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a1a7beb34bf8df85f9f098e00ede8c52e">m_IndexCount</a> {0}</td></tr>
+<tr class="memitem:a1a7beb34bf8df85f9f098e00ede8c52e" id="r_a1a7beb34bf8df85f9f098e00ede8c52e"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a1a7beb34bf8df85f9f098e00ede8c52e">m_IndexCount</a></td></tr>
 <tr class="memdesc:a1a7beb34bf8df85f9f098e00ede8c52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of indices recorded by setIndexBuffer (0 = non-indexed).  <br /></td></tr>
 <tr class="memitem:aa996cdfe7e851a6a832ce8b0121b3a13" id="r_aa996cdfe7e851a6a832ce8b0121b3a13"><td class="memItemLeft">GLenum&#160;</td><td class="memItemRight"><a class="el" href="#aa996cdfe7e851a6a832ce8b0121b3a13">m_IndexType</a> {GL_UNSIGNED_INT}</td></tr>
 <tr class="memdesc:aa996cdfe7e851a6a832ce8b0121b3a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element type of the attached index buffer.  <br /></td></tr>
@@ -167,9 +167,9 @@ Private Attributes</h2></td></tr>
 <p><a class="el" href="#af10ca3a4fd9d54584b1eccfaa29be3dc" title="Creates the GL vertex array object (no-op if already created).">create()</a> allocates the VAO (no-op if one already exists). The set* methods use GL's direct-state-access entry points to attach a vertex buffer, attach an index buffer and apply a set of attribute formats without requiring the VAO to be bound first. <a class="el" href="#a88b25bc9f09259b4c036084e7c088e2c" title="Binds this VAO as the current one (glBindVertexArray).">bind()</a> makes the VAO current; the constructor/destructor manage the GL object's lifetime.</p>
 <p>Attaching an index buffer via <a class="el" href="#a2fe2e591a0fb4b65864155b95cdc709b" title="Attaches an index buffer to this VAO and records its element count.">setIndexBuffer()</a> also records the element count, which <a class="el" href="#aa6871f58d9654bcb03a82cd3d33c33b7" title="Reports whether an index buffer has been attached.">indexed()</a> and <a class="el" href="#a1401461453a2840fcfb101c6b9b55c03" title="Returns the number of indices recorded from the attached index buffer.">indexCount()</a> expose; <a class="el" href="classsog_1_1gfx_1_1_window.html#ad07690ae2f55c48de5ea68e7b6ced1f9" title="Binds the state and issues the draw call (indexed or non-indexed).">Window::draw()</a> uses this to choose glDrawElements over glDrawArrays.</p>
 <p>The class is move-only; the GL object is deleted on destruction or <a class="el" href="#a6b29c8aea3f36b4455ab5a302dd16428" title="Deletes the owned VAO (if any) and resets the handle.">release()</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>sog::VertexArrayAttributes, sog::VertexBuffer, sog::IndexBuffer </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>sog::VertexArrayAttributes, <a class="el" href="sog_8hpp.html#a9b3d3fc4a37afecc9e623d0a52e3eb52" title="Vertex data buffer (GL_ARRAY_BUFFER); alias of gfx::VertexBuffer.">sog::VertexBuffer</a>, <a class="el" href="sog_8hpp.html#a581d27cbee92b888175c87356db80c50" title="Element (index) buffer (GL_ELEMENT_ARRAY_BUFFER); alias of gfx::IndexBuffer.">sog::IndexBuffer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00037">37</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00036">36</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2226a0a2534e3a843dc523e610dded25" name="a2226a0a2534e3a843dc523e610dded25"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2226a0a2534e3a843dc523e610dded25">&#9670;&#160;</a></span>VertexArray() <span class="overload">[1/2]</span></h2>
@@ -198,7 +198,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="#a2226a0a2534e3a843dc523e610dded25">VertexArray()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_array_8hpp_source.html#l00057">operator=()</a>, <a class="el" href="#a2226a0a2534e3a843dc523e610dded25">VertexArray()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00050">VertexArray()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_array_8hpp_source.html#l00056">operator=()</a>, <a class="el" href="#a2226a0a2534e3a843dc523e610dded25">VertexArray()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00049">VertexArray()</a>.</p>
 
 </div>
 </div>
@@ -219,9 +219,9 @@ Private Attributes</h2></td></tr>
 
 <p>Destroys the owned VAO (if any). </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00016">16</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00017">17</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_array_8cpp_source.html#l00064">release()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_array_8cpp_source.html#l00065">release()</a>.</p>
 
 </div>
 </div>
@@ -256,9 +256,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00050">50</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00049">49</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>, and <a class="el" href="#a2226a0a2534e3a843dc523e610dded25">VertexArray()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>, and <a class="el" href="#a2226a0a2534e3a843dc523e610dded25">VertexArray()</a>.</p>
 
 </div>
 </div>
@@ -286,11 +286,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00024">24</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00025">25</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00107">sog::gfx::Window::draw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00105">sog::gfx::Window::draw()</a>.</p>
 
 </div>
 </div>
@@ -311,11 +311,11 @@ Private Attributes</h2></td></tr>
 
 <p>Creates the GL vertex array object (no-op if already created). </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00017">17</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00018">18</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -345,11 +345,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the number of indices recorded from the attached index buffer. </p>
 <dl class="section return"><dt>Returns</dt><dd>Element count (0 when not indexed). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00124">124</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00123">123</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00128">m_IndexCount</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_IndexCount</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00107">sog::gfx::Window::draw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00105">sog::gfx::Window::draw()</a>.</p>
 
 </div>
 </div>
@@ -379,11 +379,11 @@ Private Attributes</h2></td></tr>
 <p>Reports whether an index buffer has been attached. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if <a class="el" href="#a1401461453a2840fcfb101c6b9b55c03" title="Returns the number of indices recorded from the attached index buffer.">indexCount()</a> is greater than zero. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00118">118</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00117">117</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00128">m_IndexCount</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_IndexCount</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00107">sog::gfx::Window::draw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00105">sog::gfx::Window::draw()</a>.</p>
 
 </div>
 </div>
@@ -413,9 +413,9 @@ Private Attributes</h2></td></tr>
 <p>Reports whether this VAO is currently bound. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if this VAO's handle matches the currently bound VAO. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00041">41</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00042">42</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>.</p>
 
 </div>
 </div>
@@ -451,9 +451,9 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this <a class="el" href="classsog_1_1gfx_1_1_vertex_array.html" title="Owns a GL vertex array object (VAO) and configures how vertex data is read.">VertexArray</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00057">57</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00056">56</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00064">release()</a>, and <a class="el" href="#a2226a0a2534e3a843dc523e610dded25">VertexArray()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00065">release()</a>, and <a class="el" href="#a2226a0a2534e3a843dc523e610dded25">VertexArray()</a>.</p>
 
 </div>
 </div>
@@ -474,11 +474,11 @@ Private Attributes</h2></td></tr>
 
 <p>Deletes the owned VAO (if any) and resets the handle. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00064">64</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00065">65</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00080">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00086">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_array_8hpp_source.html#l00057">operator=()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00016">~VertexArray()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_array_8hpp_source.html#l00056">operator=()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00017">~VertexArray()</a>.</p>
 
 </div>
 </div>
@@ -505,11 +505,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00049">49</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00050">50</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -536,11 +536,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00035">35</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00036">36</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="_gpu_buffer_8hpp_source.html#l00148">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::id()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00128">m_IndexCount</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00129">m_IndexType</a>, and <a class="el" href="_gpu_buffer_8hpp_source.html#l00136">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::size()</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="_gpu_buffer_8hpp_source.html#l00149">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::id()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_IndexCount</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00129">m_IndexType</a>, and <a class="el" href="_gpu_buffer_8hpp_source.html#l00137">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::size()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -578,11 +578,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00031">31</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00032">32</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="_gpu_buffer_8hpp_source.html#l00148">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::id()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00127">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="_gpu_buffer_8hpp_source.html#l00149">sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;::id()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00126">m_Handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -611,7 +611,7 @@ Private Attributes</h2></td></tr>
 
 <p>Unbinds any VAO (binds 0) on the current context. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00063">63</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8cpp_source.html#l00064">64</a> of file <a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a>.</p>
 
 </div>
 </div>
@@ -638,9 +638,9 @@ Private Attributes</h2></td></tr>
 
 <p>Typed handle to the owned VAO. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00127">127</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00126">126</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_array_8cpp_source.html#l00024">bind()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00017">create()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00041">isBound()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00057">operator=()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00064">release()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00049">setAttributes()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00035">setIndexBuffer()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00031">setVertexBuffer()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00050">VertexArray()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_array_8cpp_source.html#l00025">bind()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00018">create()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00042">isBound()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00056">operator=()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00065">release()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00050">setAttributes()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00036">setIndexBuffer()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00032">setVertexBuffer()</a>, and <a class="el" href="_vertex_array_8hpp_source.html#l00049">VertexArray()</a>.</p>
 
 </div>
 </div>
@@ -654,7 +654,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t sog::gfx::VertexArray::m_IndexCount {0}</td>
+          <td class="memname">std::size_t sog::gfx::VertexArray::m_IndexCount</td>
         </tr>
       </table>
   </td>
@@ -663,12 +663,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">        0}</div>
+</div><!-- fragment -->
 <p>Number of indices recorded by setIndexBuffer (0 = non-indexed). </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00128">128</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00127">127</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_array_8hpp_source.html#l00124">indexCount()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00118">indexed()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00035">setIndexBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_array_8hpp_source.html#l00123">indexCount()</a>, <a class="el" href="_vertex_array_8hpp_source.html#l00117">indexed()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00036">setIndexBuffer()</a>.</p>
 
 </div>
 </div>
@@ -696,13 +698,13 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_vertex_array_8hpp_source.html#l00129">129</a> of file <a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_array_8cpp_source.html#l00035">setIndexBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_array_8cpp_source.html#l00036">setIndexBuffer()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/Core/gfx/OpenGL/Objects/<a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a></li>
-<li>src/Core/gfx/OpenGL/Objects/<a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a></li>
+<li>src/sog/include/sog/gfx/OpenGL/Objects/<a class="el" href="_vertex_array_8hpp_source.html">VertexArray.hpp</a></li>
+<li>src/sog/gfx/OpenGL/Objects/<a class="el" href="_vertex_array_8cpp_source.html">VertexArray.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

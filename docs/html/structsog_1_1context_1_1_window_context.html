@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::context::WindowContext Struct Reference</title>
+<title>sog (Small OpenGL Graphics): sog::context::WindowContext Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structsog_1_1c
 </div><!--header-->
 <div class="contents">
 
-<p>Creation parameters for a Window: OpenGL version and profile, dimensions and title.  
+<p>Creation parameters for a <a class="el" href="sog_8hpp.html#a378827eb068315c5e4cf9917b1e19c35" title="GLFW-backed OS window with an OpenGL context; alias of gfx::Window.">Window</a>: OpenGL version and profile, dimensions and title.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_window_context_8hpp_source.html">WindowContext.hpp</a>&gt;</code></p>
@@ -139,10 +139,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ac3f33622087d01ddda56a5eb2e84b753" id="r_ac3f33622087d01ddda56a5eb2e84b753"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac3f33622087d01ddda56a5eb2e84b753">height</a> = 600</td></tr>
 <tr class="memdesc:ac3f33622087d01ddda56a5eb2e84b753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial window height in pixels.  <br /></td></tr>
 <tr class="memitem:abbfb5cf35870b9ecf6728d741272d7b7" id="r_abbfb5cf35870b9ecf6728d741272d7b7"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#abbfb5cf35870b9ecf6728d741272d7b7">title</a> {}</td></tr>
-<tr class="memdesc:abbfb5cf35870b9ecf6728d741272d7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window title shown in the title bar.  <br /></td></tr>
+<tr class="memdesc:abbfb5cf35870b9ecf6728d741272d7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="sog_8hpp.html#a378827eb068315c5e4cf9917b1e19c35" title="GLFW-backed OS window with an OpenGL context; alias of gfx::Window.">Window</a> title shown in the title bar.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Creation parameters for a Window: OpenGL version and profile, dimensions and title. </p>
+<div class="textblock"><p>Creation parameters for a <a class="el" href="sog_8hpp.html#a378827eb068315c5e4cf9917b1e19c35" title="GLFW-backed OS window with an OpenGL context; alias of gfx::Window.">Window</a>: OpenGL version and profile, dimensions and title. </p>
 <p>Passed to the <a class="el" href="classsog_1_1gfx_1_1_window.html" title="Owns a GLFW window and its OpenGL context, and drives the per-frame render loop.">sog::gfx::Window</a> constructor; defaults request a 4.6 core-profile context on an 800x600 window with an empty title. </p>
 
 <p class="definition">Definition at line <a class="el" href="_window_context_8hpp_source.html#l00018">18</a> of file <a class="el" href="_window_context_8hpp_source.html">WindowContext.hpp</a>.</p>
@@ -196,7 +196,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_window_context_8hpp_source.html#l00034">34</a> of file <a class="el" href="_window_context_8hpp_source.html">WindowContext.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8hpp_source.html#l00129">sog::gfx::Window::getHeight()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8hpp_source.html#l00131">sog::gfx::Window::getHeight()</a>.</p>
 
 </div>
 </div>
@@ -266,7 +266,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Window title shown in the title bar. </p>
+<p><a class="el" href="sog_8hpp.html#a378827eb068315c5e4cf9917b1e19c35" title="GLFW-backed OS window with an OpenGL context; alias of gfx::Window.">Window</a> title shown in the title bar. </p>
 
 <p class="definition">Definition at line <a class="el" href="_window_context_8hpp_source.html#l00035">35</a> of file <a class="el" href="_window_context_8hpp_source.html">WindowContext.hpp</a>.</p>
 
@@ -288,12 +288,12 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_window_context_8hpp_source.html#l00033">33</a> of file <a class="el" href="_window_context_8hpp_source.html">WindowContext.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8hpp_source.html#l00123">sog::gfx::Window::getWidth()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8hpp_source.html#l00125">sog::gfx::Window::getWidth()</a>, and <a class="el" href="_window_8cpp_source.html#l00059">sog::gfx::Window::ImplWindow::on_resize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Core/gfx/Window/<a class="el" href="_window_context_8hpp_source.html">WindowContext.hpp</a></li>
+<li>src/sog/include/sog/gfx/Window/<a class="el" href="_window_context_8hpp_source.html">WindowContext.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

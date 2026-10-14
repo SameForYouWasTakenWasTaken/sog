@@ -1,6 +1,6 @@
 /**
  * @file Application.cpp
- * @brief Implements sog::Application::Run(), the demo main loop: builds a textured cube, renders it
+ * @brief Implements Application::Run(), the demo main loop: builds a textured cube, renders it
  * into an offscreen framebuffer, then applies a post-processing pass.
  */
 

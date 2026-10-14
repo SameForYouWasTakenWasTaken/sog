@@ -33,6 +33,12 @@ struct Vertex
     static constexpr GLuint TexCoordinateIndex =
         2; ///< Shader attribute location for texture coordinate.
 
+    /**
+     * @brief Constructs a vertex from its position, color and texture coordinate.
+     * @param position Vertex position (x, y, z).
+     * @param color Per-vertex RGBA color.
+     * @param tex_coord Texture coordinate (u, v).
+     */
     Vertex(const math::Vec3& position, const math::Vec4& color, const math::Vec2& tex_coord)
         : position(position), color(color), texCoord(tex_coord)
     {

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/gfx/Types/Enums.hpp File Reference</title>
+<title>sog (Small OpenGL Graphics): src/sog/include/sog/gfx/Types/Enums.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_enums_8hpp.ht
 </div><!--header-->
 <div class="contents">
 
-<p>Type-safe enums over raw OpenGL constants (buffers, vertex arrays, shaders, textures) for use throughout the engine.  
+<p>Type-safe enums over raw OpenGL constants (buffers, vertex arrays, shaders, textures, pixel formats and draw-call parameters) for use throughout the engine.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;glad/gl.h&quot;</code><br />
 </div>
@@ -122,78 +122,127 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_enums_8hpp.ht
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:af18f86762401085c91d6529377b78d96" id="r_af18f86762401085c91d6529377b78d96"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#af18f86762401085c91d6529377b78d96">sog::gfx::error</a> { <a class="el" href="#af18f86762401085c91d6529377b78d96ab50339a10e1de285ac99d4c3990b8693">NONE</a> = GL_NONE
+<tr class="memitem:acbf551e779956773438401982e9786eb" id="r_acbf551e779956773438401982e9786eb"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#acbf551e779956773438401982e9786eb">sog::gfx::error</a> { <a class="el" href="#acbf551e779956773438401982e9786ebab50339a10e1de285ac99d4c3990b8693">NONE</a> = GL_NONE
  }</td></tr>
-<tr class="memdesc:af18f86762401085c91d6529377b78d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sentinel for "no error" (mirrors GL_NONE).  <a href="#af18f86762401085c91d6529377b78d96">More...</a><br /></td></tr>
-<tr class="memitem:a1aa4bda075373a4066c1a2417289d9ed" id="r_a1aa4bda075373a4066c1a2417289d9ed"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a1aa4bda075373a4066c1a2417289d9ed">sog::gfx::buffer_target</a> : GLenum { <a class="el" href="#a1aa4bda075373a4066c1a2417289d9eda51ddaa5aba54c88aeb05f25bf5211938">VBO_BUFFER</a> = GL_ARRAY_BUFFER
-, <a class="el" href="#a1aa4bda075373a4066c1a2417289d9eda264828a2ab663818329e745d63e1063c">EBO_BUFFER</a> = GL_ELEMENT_ARRAY_BUFFER
+<tr class="memdesc:acbf551e779956773438401982e9786eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sentinel for "no error" (mirrors GL_NONE).  <a href="#acbf551e779956773438401982e9786eb">More...</a><br /></td></tr>
+<tr class="memitem:a5d0aa18730daae1fb14ee066d1c5119e" id="r_a5d0aa18730daae1fb14ee066d1c5119e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a5d0aa18730daae1fb14ee066d1c5119e">sog::gfx::buffer_target</a> : GLenum { <a class="el" href="#a5d0aa18730daae1fb14ee066d1c5119ea51ddaa5aba54c88aeb05f25bf5211938">VBO_BUFFER</a> = GL_ARRAY_BUFFER
+, <a class="el" href="#a5d0aa18730daae1fb14ee066d1c5119ea264828a2ab663818329e745d63e1063c">EBO_BUFFER</a>
  }</td></tr>
-<tr class="memdesc:a1aa4bda075373a4066c1a2417289d9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target a buffer object can be bound to (mirrors GL_ARRAY_BUFFER / GL_ELEMENT_ARRAY_BUFFER).  <a href="#a1aa4bda075373a4066c1a2417289d9ed">More...</a><br /></td></tr>
-<tr class="memitem:ad1944bcf189b39fae5d394cd136c782e" id="r_ad1944bcf189b39fae5d394cd136c782e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad1944bcf189b39fae5d394cd136c782e">sog::gfx::buffer_query</a> : GLenum { <a class="el" href="#ad1944bcf189b39fae5d394cd136c782ea3b864ac1cf5e4ccea84b7c0c56b98da4">BINDING</a> = GL_ARRAY_BUFFER_BINDING
+<tr class="memdesc:a5d0aa18730daae1fb14ee066d1c5119e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target a buffer object can be bound to (mirrors GL_ARRAY_BUFFER / GL_ELEMENT_ARRAY_BUFFER).  <a href="#a5d0aa18730daae1fb14ee066d1c5119e">More...</a><br /></td></tr>
+<tr class="memitem:adc7220777b185dec565f656d830b9a22" id="r_adc7220777b185dec565f656d830b9a22"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#adc7220777b185dec565f656d830b9a22">sog::gfx::buffer_query</a> : GLenum { <a class="el" href="#adc7220777b185dec565f656d830b9a22a3b864ac1cf5e4ccea84b7c0c56b98da4">BINDING</a> = GL_ARRAY_BUFFER_BINDING
  }</td></tr>
-<tr class="memdesc:ad1944bcf189b39fae5d394cd136c782e"><td class="mdescLeft">&#160;</td><td class="mdescRight">State to query for a bound vertex buffer (mirrors GL_ARRAY_BUFFER_BINDING).  <a href="#ad1944bcf189b39fae5d394cd136c782e">More...</a><br /></td></tr>
-<tr class="memitem:a63d6dea47ff56ef3ed95217a8b550f91" id="r_a63d6dea47ff56ef3ed95217a8b550f91"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91">sog::gfx::buffer_usage</a> : GLenum { <br />
-&#160;&#160;<a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91a4b631f47edaf0aaac92dfe66e19d65cf">STREAM_DRAW</a> = GL_STREAM_DRAW
-, <a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91aee7b9d8b4c95804a698625ae5688195e">STREAM_READ</a> = GL_STREAM_READ
-, <a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91a99a4720a5c05c55db5447d23141412eb">STREAM_COPY</a> = GL_STREAM_COPY
-, <a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91a5ff708d7d781ea10e2ce8d6d3d4022eb">DYNAMIC_DRAW</a> = GL_DYNAMIC_DRAW
+<tr class="memdesc:adc7220777b185dec565f656d830b9a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">State to query for a bound vertex buffer (mirrors GL_ARRAY_BUFFER_BINDING).  <a href="#adc7220777b185dec565f656d830b9a22">More...</a><br /></td></tr>
+<tr class="memitem:ad912a2624f4992602775581af231d378" id="r_ad912a2624f4992602775581af231d378"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad912a2624f4992602775581af231d378">sog::gfx::buffer_usage</a> : GLenum { <br />
+&#160;&#160;<a class="el" href="#ad912a2624f4992602775581af231d378a4b631f47edaf0aaac92dfe66e19d65cf">STREAM_DRAW</a> = GL_STREAM_DRAW
+, <a class="el" href="#ad912a2624f4992602775581af231d378aee7b9d8b4c95804a698625ae5688195e">STREAM_READ</a> = GL_STREAM_READ
+, <a class="el" href="#ad912a2624f4992602775581af231d378a99a4720a5c05c55db5447d23141412eb">STREAM_COPY</a> = GL_STREAM_COPY
+, <a class="el" href="#ad912a2624f4992602775581af231d378a5ff708d7d781ea10e2ce8d6d3d4022eb">DYNAMIC_DRAW</a>
 , <br />
-&#160;&#160;<a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91aa268cb8a741446ef5f5d333e4b80f177">DYNAMIC_COPY</a> = GL_DYNAMIC_COPY
-, <a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91abeb35e499664be3fb486fcfface04aea">DYNAMIC_READ</a> = GL_DYNAMIC_READ
-, <a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91a0c5234f5830e196c1079d1fdcf3f9aba">STATIC_DRAW</a> = GL_STATIC_DRAW
-, <a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91a150f2044a549b43d2dee980cc887fc7b">STATIC_COPY</a> = GL_STATIC_COPY
+&#160;&#160;<a class="el" href="#ad912a2624f4992602775581af231d378aa268cb8a741446ef5f5d333e4b80f177">DYNAMIC_COPY</a>
+, <a class="el" href="#ad912a2624f4992602775581af231d378abeb35e499664be3fb486fcfface04aea">DYNAMIC_READ</a> = GL_DYNAMIC_READ
+, <a class="el" href="#ad912a2624f4992602775581af231d378a0c5234f5830e196c1079d1fdcf3f9aba">STATIC_DRAW</a>
+, <a class="el" href="#ad912a2624f4992602775581af231d378a150f2044a549b43d2dee980cc887fc7b">STATIC_COPY</a>
 , <br />
-&#160;&#160;<a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91a9cb802cb164e929c4c1ef02d397b9c23">STATIC_READ</a> = GL_STATIC_READ
+&#160;&#160;<a class="el" href="#ad912a2624f4992602775581af231d378a9cb802cb164e929c4c1ef02d397b9c23">STATIC_READ</a> = GL_STATIC_READ
 <br />
  }</td></tr>
-<tr class="memdesc:a63d6dea47ff56ef3ed95217a8b550f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expected usage pattern of a buffer, guiding GL driver storage (mirrors GL_*_DRAW/READ/COPY).  <a href="#a63d6dea47ff56ef3ed95217a8b550f91">More...</a><br /></td></tr>
-<tr class="memitem:ad30e0dd21967e1a2dec11958296d669e" id="r_ad30e0dd21967e1a2dec11958296d669e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad30e0dd21967e1a2dec11958296d669e">sog::gfx::vertex_target</a> : GLenum { <a class="el" href="#ad30e0dd21967e1a2dec11958296d669eadc0d8c9db2ffa3d5a7f57a20701d5f28">VAO_BUFFER</a> = GL_ARRAY_BUFFER
+<tr class="memdesc:ad912a2624f4992602775581af231d378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expected usage pattern of a buffer, guiding GL driver storage (mirrors GL_*_DRAW/READ/COPY).  <a href="#ad912a2624f4992602775581af231d378">More...</a><br /></td></tr>
+<tr class="memitem:a81ddf94fe556e58b8f789eb14af41b72" id="r_a81ddf94fe556e58b8f789eb14af41b72"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a81ddf94fe556e58b8f789eb14af41b72">sog::gfx::vertex_target</a> : GLenum { <a class="el" href="#a81ddf94fe556e58b8f789eb14af41b72adc0d8c9db2ffa3d5a7f57a20701d5f28">VAO_BUFFER</a> = GL_ARRAY_BUFFER
  }</td></tr>
-<tr class="memdesc:ad30e0dd21967e1a2dec11958296d669e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target a vertex array object can be bound to (mirrors GL_ARRAY_BUFFER).  <a href="#ad30e0dd21967e1a2dec11958296d669e">More...</a><br /></td></tr>
-<tr class="memitem:a43c8bfc9f44e48e476b2cef773843bbb" id="r_a43c8bfc9f44e48e476b2cef773843bbb"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a43c8bfc9f44e48e476b2cef773843bbb">sog::gfx::vertex_query</a> : GLenum { <a class="el" href="#a43c8bfc9f44e48e476b2cef773843bbba3b864ac1cf5e4ccea84b7c0c56b98da4">BINDING</a> = GL_VERTEX_ARRAY_BINDING
+<tr class="memdesc:a81ddf94fe556e58b8f789eb14af41b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target a vertex array object can be bound to (mirrors GL_ARRAY_BUFFER).  <a href="#a81ddf94fe556e58b8f789eb14af41b72">More...</a><br /></td></tr>
+<tr class="memitem:a83dd47b3816dab177a1e0a0d8c107a87" id="r_a83dd47b3816dab177a1e0a0d8c107a87"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a83dd47b3816dab177a1e0a0d8c107a87">sog::gfx::vertex_query</a> : GLenum { <a class="el" href="#a83dd47b3816dab177a1e0a0d8c107a87a3b864ac1cf5e4ccea84b7c0c56b98da4">BINDING</a> = GL_VERTEX_ARRAY_BINDING
  }</td></tr>
-<tr class="memdesc:a43c8bfc9f44e48e476b2cef773843bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">State to query for a bound vertex array object (mirrors GL_VERTEX_ARRAY_BINDING).  <a href="#a43c8bfc9f44e48e476b2cef773843bbb">More...</a><br /></td></tr>
-<tr class="memitem:ad3dc4b9935a04899ad5defb69900f4ae" id="r_ad3dc4b9935a04899ad5defb69900f4ae"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad3dc4b9935a04899ad5defb69900f4ae">sog::gfx::shader_type</a> : GLenum { <a class="el" href="#ad3dc4b9935a04899ad5defb69900f4aea0c3e47aef93a7f244f41ab309a33634b">VERTEX</a> = GL_VERTEX_SHADER
-, <a class="el" href="#ad3dc4b9935a04899ad5defb69900f4aea7345a249ed5c2f850d85dc1727c24716">FRAGMENT</a> = GL_FRAGMENT_SHADER
-, <a class="el" href="#ad3dc4b9935a04899ad5defb69900f4aeab22957ad8078e8d73de61aef53d13a74">GEOMETRY</a> = GL_GEOMETRY_SHADER
-, <a class="el" href="#ad3dc4b9935a04899ad5defb69900f4aeaac404d7ce6ca5862e9b8a2641fbafd90">COMPUTE</a> = GL_COMPUTE_SHADER
+<tr class="memdesc:a83dd47b3816dab177a1e0a0d8c107a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">State to query for a bound vertex array object (mirrors GL_VERTEX_ARRAY_BINDING).  <a href="#a83dd47b3816dab177a1e0a0d8c107a87">More...</a><br /></td></tr>
+<tr class="memitem:a9f2f1b58d0fbe47069bb6699e2597f41" id="r_a9f2f1b58d0fbe47069bb6699e2597f41"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a9f2f1b58d0fbe47069bb6699e2597f41">sog::gfx::shader_type</a> : GLenum { <a class="el" href="#a9f2f1b58d0fbe47069bb6699e2597f41a0c3e47aef93a7f244f41ab309a33634b">VERTEX</a> = GL_VERTEX_SHADER
+, <a class="el" href="#a9f2f1b58d0fbe47069bb6699e2597f41a7345a249ed5c2f850d85dc1727c24716">FRAGMENT</a> = GL_FRAGMENT_SHADER
+, <a class="el" href="#a9f2f1b58d0fbe47069bb6699e2597f41ab22957ad8078e8d73de61aef53d13a74">GEOMETRY</a>
+, <a class="el" href="#a9f2f1b58d0fbe47069bb6699e2597f41aac404d7ce6ca5862e9b8a2641fbafd90">COMPUTE</a> = GL_COMPUTE_SHADER
  }</td></tr>
-<tr class="memdesc:ad3dc4b9935a04899ad5defb69900f4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> stage types (mirrors GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER, GL_COMPUTE_SHADER).  <a href="#ad3dc4b9935a04899ad5defb69900f4ae">More...</a><br /></td></tr>
-<tr class="memitem:a8bcf6ba5e3a8862b202482faed61a943" id="r_a8bcf6ba5e3a8862b202482faed61a943"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a8bcf6ba5e3a8862b202482faed61a943">sog::gfx::texture_params</a> : GLint { <a class="el" href="#a8bcf6ba5e3a8862b202482faed61a943acf6164235e7bfffb5c4c7c4b685f660a">MIRRORED_REPEAT</a> = GL_MIRRORED_REPEAT
-, <a class="el" href="#a8bcf6ba5e3a8862b202482faed61a943a5be68175be14dfaa080165456c2e9555">REPEAT</a> = GL_REPEAT
-, <a class="el" href="#a8bcf6ba5e3a8862b202482faed61a943aca305cdc5d749d643055111218063f26">CLAMP_TO_EDGE</a> = GL_CLAMP_TO_EDGE
-, <a class="el" href="#a8bcf6ba5e3a8862b202482faed61a943afcb162090f81b0a56721e5aa01b880c3">CLAMP_TO_BORDER</a> = GL_CLAMP_TO_BORDER
+<tr class="memdesc:a9f2f1b58d0fbe47069bb6699e2597f41"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> stage types (mirrors GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER, GL_COMPUTE_SHADER).  <a href="#a9f2f1b58d0fbe47069bb6699e2597f41">More...</a><br /></td></tr>
+<tr class="memitem:a43bed2cff125f89e94baad11a16f6e3e" id="r_a43bed2cff125f89e94baad11a16f6e3e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a43bed2cff125f89e94baad11a16f6e3e">sog::gfx::texture_params</a> : GLint { <a class="el" href="#a43bed2cff125f89e94baad11a16f6e3eacf6164235e7bfffb5c4c7c4b685f660a">MIRRORED_REPEAT</a> = GL_MIRRORED_REPEAT
+, <a class="el" href="#a43bed2cff125f89e94baad11a16f6e3ea5be68175be14dfaa080165456c2e9555">REPEAT</a> = GL_REPEAT
+, <a class="el" href="#a43bed2cff125f89e94baad11a16f6e3eaca305cdc5d749d643055111218063f26">CLAMP_TO_EDGE</a> = GL_CLAMP_TO_EDGE
+, <a class="el" href="#a43bed2cff125f89e94baad11a16f6e3eafcb162090f81b0a56721e5aa01b880c3">CLAMP_TO_BORDER</a> = GL_CLAMP_TO_BORDER
  }</td></tr>
-<tr class="memdesc:a8bcf6ba5e3a8862b202482faed61a943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture wrap modes, applied when texture coordinates leave [0, 1] (mirrors GL_MIRRORED_REPEAT, GL_REPEAT, GL_CLAMP_TO_EDGE, GL_CLAMP_TO_BORDER).  <a href="#a8bcf6ba5e3a8862b202482faed61a943">More...</a><br /></td></tr>
-<tr class="memitem:a671e5580595ec6d61e665a37d7b7e15a" id="r_a671e5580595ec6d61e665a37d7b7e15a"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a671e5580595ec6d61e665a37d7b7e15a">sog::gfx::texture_min_filters</a> : GLint { <br />
-&#160;&#160;<a class="el" href="#a671e5580595ec6d61e665a37d7b7e15aaad135772d7cf93dd0ccf9d2474b34e6a">NEAREST</a> = GL_NEAREST
-, <a class="el" href="#a671e5580595ec6d61e665a37d7b7e15aaaac544aacc3615aada24897a215f5046">LINEAR</a> = GL_LINEAR
-, <a class="el" href="#a671e5580595ec6d61e665a37d7b7e15aa1fbb2c20778f4e3e3ea0ec17ebd5dce3">NEAREST_MIPMAP_NEAREST</a> = GL_NEAREST_MIPMAP_NEAREST
-, <a class="el" href="#a671e5580595ec6d61e665a37d7b7e15aa4502b1444d65ae5c38b2ec088ec493b6">LINEAR_MIPMAP_NEAREST</a> = GL_LINEAR_MIPMAP_NEAREST
+<tr class="memdesc:a43bed2cff125f89e94baad11a16f6e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture wrap modes, applied when texture coordinates leave [0, 1] (mirrors GL_MIRRORED_REPEAT, GL_REPEAT, GL_CLAMP_TO_EDGE, GL_CLAMP_TO_BORDER).  <a href="#a43bed2cff125f89e94baad11a16f6e3e">More...</a><br /></td></tr>
+<tr class="memitem:ac80ba303a114317dd6d86a7eecc24d79" id="r_ac80ba303a114317dd6d86a7eecc24d79"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79">sog::gfx::texture_min_filters</a> : GLint { <br />
+&#160;&#160;<a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79aad135772d7cf93dd0ccf9d2474b34e6a">NEAREST</a> = GL_NEAREST
+, <a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79aaac544aacc3615aada24897a215f5046">LINEAR</a> = GL_LINEAR
+, <a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79a1fbb2c20778f4e3e3ea0ec17ebd5dce3">NEAREST_MIPMAP_NEAREST</a>
+, <a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79a4502b1444d65ae5c38b2ec088ec493b6">LINEAR_MIPMAP_NEAREST</a>
 , <br />
-&#160;&#160;<a class="el" href="#a671e5580595ec6d61e665a37d7b7e15aa65706de8e74692e0dcd9cd776d668bab">NEAREST_MIPMAP_LINEAR</a> = GL_NEAREST_MIPMAP_LINEAR
-, <a class="el" href="#a671e5580595ec6d61e665a37d7b7e15aab127db2c1e3a1fa7097b0cc774cbcd24">LINEAR_MIPMAP_LINEAR</a> = GL_LINEAR_MIPMAP_LINEAR
+&#160;&#160;<a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79a65706de8e74692e0dcd9cd776d668bab">NEAREST_MIPMAP_LINEAR</a> = GL_NEAREST_MIPMAP_LINEAR
+, <a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79ab127db2c1e3a1fa7097b0cc774cbcd24">LINEAR_MIPMAP_LINEAR</a> = GL_LINEAR_MIPMAP_LINEAR
 <br />
  }</td></tr>
-<tr class="memdesc:a671e5580595ec6d61e665a37d7b7e15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minification filters for textures, including mipmap-aware variants (mirrors GL_NEAREST, GL_LINEAR and the GL_*_MIPMAP_* combinations).  <a href="#a671e5580595ec6d61e665a37d7b7e15a">More...</a><br /></td></tr>
-<tr class="memitem:a0a917205ad04659bdddb03c071e09d34" id="r_a0a917205ad04659bdddb03c071e09d34"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a0a917205ad04659bdddb03c071e09d34">sog::gfx::texture_mag_filters</a> : GLint { <a class="el" href="#a0a917205ad04659bdddb03c071e09d34aad135772d7cf93dd0ccf9d2474b34e6a">NEAREST</a> = GL_NEAREST
-, <a class="el" href="#a0a917205ad04659bdddb03c071e09d34aaac544aacc3615aada24897a215f5046">LINEAR</a> = GL_LINEAR
+<tr class="memdesc:ac80ba303a114317dd6d86a7eecc24d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minification filters for textures, including mipmap-aware variants (mirrors GL_NEAREST, GL_LINEAR and the GL_*_MIPMAP_* combinations).  <a href="#ac80ba303a114317dd6d86a7eecc24d79">More...</a><br /></td></tr>
+<tr class="memitem:a36ea70ef54af5a77b3218ebdd06f61ab" id="r_a36ea70ef54af5a77b3218ebdd06f61ab"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a36ea70ef54af5a77b3218ebdd06f61ab">sog::gfx::texture_mag_filters</a> : GLint { <a class="el" href="#a36ea70ef54af5a77b3218ebdd06f61abaad135772d7cf93dd0ccf9d2474b34e6a">NEAREST</a> = GL_NEAREST
+, <a class="el" href="#a36ea70ef54af5a77b3218ebdd06f61abaaac544aacc3615aada24897a215f5046">LINEAR</a> = GL_LINEAR
  }</td></tr>
-<tr class="memdesc:a0a917205ad04659bdddb03c071e09d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magnification filters for textures (mirrors GL_NEAREST, GL_LINEAR; no mipmap variants exist for magnification).  <a href="#a0a917205ad04659bdddb03c071e09d34">More...</a><br /></td></tr>
-<tr class="memitem:a0f8db54411552f3d493ee052c77f0119" id="r_a0f8db54411552f3d493ee052c77f0119"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a0f8db54411552f3d493ee052c77f0119">sog::gfx::texture_mipmaps</a> : GLenum { <a class="el" href="#a0f8db54411552f3d493ee052c77f0119aad135772d7cf93dd0ccf9d2474b34e6a">NEAREST</a> = GL_NEAREST_MIPMAP_NEAREST
-, <a class="el" href="#a0f8db54411552f3d493ee052c77f0119aea900ba8219b4246303461ec5b529a9d">LINEAR_NEAREST</a> = GL_LINEAR_MIPMAP_NEAREST
-, <a class="el" href="#a0f8db54411552f3d493ee052c77f0119a704f21e07e578564824a3102bbbccac2">NEAREST_LINEAR</a> = GL_NEAREST_MIPMAP_LINEAR
-, <a class="el" href="#a0f8db54411552f3d493ee052c77f0119a4efe1867144bfaabd20855d80619895a">LINEAR_LINEAR</a> = GL_LINEAR_MIPMAP_LINEAR
+<tr class="memdesc:a36ea70ef54af5a77b3218ebdd06f61ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magnification filters for textures (mirrors GL_NEAREST, GL_LINEAR; no mipmap variants exist for magnification).  <a href="#a36ea70ef54af5a77b3218ebdd06f61ab">More...</a><br /></td></tr>
+<tr class="memitem:a8483193ab9eb605d27c2b78240ab396d" id="r_a8483193ab9eb605d27c2b78240ab396d"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a8483193ab9eb605d27c2b78240ab396d">sog::gfx::texture_mipmaps</a> : GLenum { <a class="el" href="#a8483193ab9eb605d27c2b78240ab396daad135772d7cf93dd0ccf9d2474b34e6a">NEAREST</a> = GL_NEAREST_MIPMAP_NEAREST
+, <a class="el" href="#a8483193ab9eb605d27c2b78240ab396daea900ba8219b4246303461ec5b529a9d">LINEAR_NEAREST</a>
+, <a class="el" href="#a8483193ab9eb605d27c2b78240ab396da704f21e07e578564824a3102bbbccac2">NEAREST_LINEAR</a>
+, <a class="el" href="#a8483193ab9eb605d27c2b78240ab396da4efe1867144bfaabd20855d80619895a">LINEAR_LINEAR</a>
  }</td></tr>
-<tr class="memdesc:a0f8db54411552f3d493ee052c77f0119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mipmap level-selection strategies derived from the minification filter (mirrors the GL_*_MIPMAP_* constants).  <a href="#a0f8db54411552f3d493ee052c77f0119">More...</a><br /></td></tr>
+<tr class="memdesc:a8483193ab9eb605d27c2b78240ab396d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mipmap level-selection strategies derived from the minification filter (mirrors the GL_*_MIPMAP_* constants).  <a href="#a8483193ab9eb605d27c2b78240ab396d">More...</a><br /></td></tr>
+<tr class="memitem:ad8ecb177a420a954561a8faf041c2837" id="r_ad8ecb177a420a954561a8faf041c2837"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad8ecb177a420a954561a8faf041c2837">sog::gfx::texture_internal_format</a> : GLenum { <br />
+&#160;&#160;<a class="el" href="#ad8ecb177a420a954561a8faf041c2837ab4b279046a02077466fa26cabb00c642">RGBA8</a> = GL_RGBA8
+, <a class="el" href="#ad8ecb177a420a954561a8faf041c2837a165c6379d01617e12de274a3952efa63">RGB8</a> = GL_RGB8
+, <a class="el" href="#ad8ecb177a420a954561a8faf041c2837aa29d843695056f9c171a9eb702d6910a">RGBA16F</a> = GL_RGBA16F
+, <a class="el" href="#ad8ecb177a420a954561a8faf041c2837a25cd126670bd567a899c64c4e6e8ca7d">RGB16F</a> = GL_RGB16F
+, <br />
+&#160;&#160;<a class="el" href="#ad8ecb177a420a954561a8faf041c2837acfff813d86d447fa2a9c858650ebbb90">R8</a> = GL_R8
+, <a class="el" href="#ad8ecb177a420a954561a8faf041c2837a78181d4f5d4b30baefed6c0da0de894f">Depth24Stencil8</a> = GL_DEPTH24_STENCIL8
+<br />
+ }</td></tr>
+<tr class="memdesc:ad8ecb177a420a954561a8faf041c2837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sized GL internal formats a texture storage can be allocated with (mirrors GL_RGBA8, GL_RGB8, GL_RGBA16F, GL_RGB16F, GL_R8, GL_DEPTH24_STENCIL8).  <a href="#ad8ecb177a420a954561a8faf041c2837">More...</a><br /></td></tr>
+<tr class="memitem:a5aeb0fedecac1c5775ff9eee5b7044fa" id="r_a5aeb0fedecac1c5775ff9eee5b7044fa"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a5aeb0fedecac1c5775ff9eee5b7044fa">sog::gfx::pixel_format</a> : GLenum { <br />
+&#160;&#160;<a class="el" href="#a5aeb0fedecac1c5775ff9eee5b7044faaea3495a278957dc58165e48a8945469f">RGBA</a> = GL_RGBA
+, <a class="el" href="#a5aeb0fedecac1c5775ff9eee5b7044faa889574aebacda6bfd3e534e2b49b8028">RGB</a> = GL_RGB
+, <a class="el" href="#a5aeb0fedecac1c5775ff9eee5b7044faaee38e4d5dd68c4e440825018d549cb47">Red</a> = GL_RED
+, <a class="el" href="#a5aeb0fedecac1c5775ff9eee5b7044faabac953e88f6d79514b0b6fc42eb6f3b7">RG</a> = GL_RG
+, <br />
+&#160;&#160;<a class="el" href="#a5aeb0fedecac1c5775ff9eee5b7044faa2fa8076285272883c91e14402975a441">DepthStencil</a> = GL_DEPTH_STENCIL
+<br />
+ }</td></tr>
+<tr class="memdesc:a5aeb0fedecac1c5775ff9eee5b7044fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixel layout of data uploaded to (or read from) a texture (mirrors GL_RGBA, GL_RGB, GL_RED, GL_RG, GL_DEPTH_STENCIL).  <a href="#a5aeb0fedecac1c5775ff9eee5b7044fa">More...</a><br /></td></tr>
+<tr class="memitem:affc57cb0b078305ef6584a5ca8ecc133" id="r_affc57cb0b078305ef6584a5ca8ecc133"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#affc57cb0b078305ef6584a5ca8ecc133">sog::gfx::pixel_type</a> : GLenum { <a class="el" href="#affc57cb0b078305ef6584a5ca8ecc133a8f0fb883eb5a52838534191513e365a2">UnsignedByte</a> = GL_UNSIGNED_BYTE
+, <a class="el" href="#affc57cb0b078305ef6584a5ca8ecc133a22ae0e2b89e5e3d477f988cc36d3272b">Float</a> = GL_FLOAT
+, <a class="el" href="#affc57cb0b078305ef6584a5ca8ecc133a1686a6c336b71b36d77354cea19a8b52">Int</a> = GL_INT
+, <a class="el" href="#affc57cb0b078305ef6584a5ca8ecc133a97788b3aa5f586ee2e387dd091a80bb1">UnsignedInt248</a>
+ }</td></tr>
+<tr class="memdesc:affc57cb0b078305ef6584a5ca8ecc133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Component type of the caller's pixel data (mirrors GL_UNSIGNED_BYTE, GL_FLOAT, GL_INT, GL_UNSIGNED_INT_24_8).  <a href="#affc57cb0b078305ef6584a5ca8ecc133">More...</a><br /></td></tr>
+<tr class="memitem:ae00bbe2a1f45a40c45c67a38026ac0cb" id="r_ae00bbe2a1f45a40c45c67a38026ac0cb"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cb">sog::gfx::draw_mode</a> : GLenum { <br />
+&#160;&#160;<a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cbadd3bfee8042d1b85c224f08b42a3fc2e">TRIANGLES</a> = GL_TRIANGLES
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cba23d5348dd7bef544d6341bec3480287f">QUADS</a> = GL_QUADS
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cba70b71cabeeaf8c2bf473c896d5442ddb">POINTS</a> = GL_POINTS
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cbae585142391f356c60bcfe68279ec2727">LINES</a> = GL_LINES
+, <br />
+&#160;&#160;<a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cbae64a4d2159ed46d077e21a505575c814">LINE_STRIP</a> = GL_LINE_STRIP
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cba708de017e3b83ccba21dfc9f6367d46f">TRIANGLE_STRIP</a> = GL_TRIANGLE_STRIP
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cbaa9f047dff7e4cd4d8d3bdeafc4029d47">TRIANGLE_FAN</a> = GL_TRIANGLE_FAN
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cba9dc75a703ed4b52d920e15806956e750">LINES_ADJACENCY</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cba54ad4e951aafc624495cfbc7fe978e18">LINE_STRIP_ADJACENCY</a>
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cba96af0037e7ad76831afd4df272e040ca">TRIANGLES_ADJACENCY</a>
+, <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cba3bd8519568230caf7877922c9956a456">TRIANGLE_STRIP_ADJACENCY</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ae00bbe2a1f45a40c45c67a38026ac0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive topology for a draw call (mirrors GL_TRIANGLES, GL_POINTS, GL_LINES and the strip/fan/adjacency variants).  <a href="#ae00bbe2a1f45a40c45c67a38026ac0cb">More...</a><br /></td></tr>
+<tr class="memitem:ac80eb8f5d166941c85a50ffaec495c4d" id="r_ac80eb8f5d166941c85a50ffaec495c4d"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ac80eb8f5d166941c85a50ffaec495c4d">sog::gfx::index_type</a> : GLenum { <a class="el" href="#ac80eb8f5d166941c85a50ffaec495c4da6df7643c26cd4b455d883d8fae3d6bf1">UBYTE</a> = GL_UNSIGNED_BYTE
+, <a class="el" href="#ac80eb8f5d166941c85a50ffaec495c4dab8627cc5bae17ed1687bb487a4d70a3e">USHORT</a> = GL_UNSIGNED_SHORT
+, <a class="el" href="#ac80eb8f5d166941c85a50ffaec495c4da3351504090a741e69da641a42e00da80">UINT</a> = GL_UNSIGNED_INT
+ }</td></tr>
+<tr class="memdesc:ac80eb8f5d166941c85a50ffaec495c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Component type of the indices stored in an element (index) buffer (mirrors GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, GL_UNSIGNED_INT).  <a href="#ac80eb8f5d166941c85a50ffaec495c4d">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Type-safe enums over raw OpenGL constants (buffers, vertex arrays, shaders, textures) for use throughout the engine. </p>
+<div class="textblock"><p>Type-safe enums over raw OpenGL constants (buffers, vertex arrays, shaders, textures, pixel formats and draw-call parameters) for use throughout the engine. </p>
 
 <p class="definition">Definition in file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
-<a id="ad1944bcf189b39fae5d394cd136c782e" name="ad1944bcf189b39fae5d394cd136c782e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1944bcf189b39fae5d394cd136c782e">&#9670;&#160;</a></span>buffer_query</h2>
+<a id="adc7220777b185dec565f656d830b9a22" name="adc7220777b185dec565f656d830b9a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7220777b185dec565f656d830b9a22">&#9670;&#160;</a></span>buffer_query</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +251,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#ad1944bcf189b39fae5d394cd136c782e">sog::gfx::buffer_query</a> : GLenum</td>
+          <td class="memname">enum class <a class="el" href="#adc7220777b185dec565f656d830b9a22">sog::gfx::enums::buffer_query</a> : GLenum</td>
         </tr>
       </table>
   </td>
@@ -214,16 +263,16 @@ Enumerations</h2></td></tr>
 
 <p>State to query for a bound vertex buffer (mirrors GL_ARRAY_BUFFER_BINDING). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad1944bcf189b39fae5d394cd136c782ea3b864ac1cf5e4ccea84b7c0c56b98da4" name="ad1944bcf189b39fae5d394cd136c782ea3b864ac1cf5e4ccea84b7c0c56b98da4"></a>BINDING&#160;</td><td class="fielddoc"><p>Query the buffer currently bound to GL_ARRAY_BUFFER. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="adc7220777b185dec565f656d830b9a22a3b864ac1cf5e4ccea84b7c0c56b98da4" name="adc7220777b185dec565f656d830b9a22a3b864ac1cf5e4ccea84b7c0c56b98da4"></a>BINDING&#160;</td><td class="fielddoc"><p>Query the buffer currently bound to GL_ARRAY_BUFFER. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00033">33</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00037">37</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a1aa4bda075373a4066c1a2417289d9ed" name="a1aa4bda075373a4066c1a2417289d9ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1aa4bda075373a4066c1a2417289d9ed">&#9670;&#160;</a></span>buffer_target</h2>
+<a id="a5d0aa18730daae1fb14ee066d1c5119e" name="a5d0aa18730daae1fb14ee066d1c5119e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0aa18730daae1fb14ee066d1c5119e">&#9670;&#160;</a></span>buffer_target</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,7 +281,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#a1aa4bda075373a4066c1a2417289d9ed">sog::gfx::buffer_target</a> : GLenum</td>
+          <td class="memname">enum class <a class="el" href="#a5d0aa18730daae1fb14ee066d1c5119e">sog::gfx::enums::buffer_target</a> : GLenum</td>
         </tr>
       </table>
   </td>
@@ -245,18 +294,18 @@ Enumerations</h2></td></tr>
 <p>Target a buffer object can be bound to (mirrors GL_ARRAY_BUFFER / GL_ELEMENT_ARRAY_BUFFER). </p>
 <dl class="section see"><dt>See also</dt><dd>buffer_usage </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1aa4bda075373a4066c1a2417289d9eda51ddaa5aba54c88aeb05f25bf5211938" name="a1aa4bda075373a4066c1a2417289d9eda51ddaa5aba54c88aeb05f25bf5211938"></a>VBO_BUFFER&#160;</td><td class="fielddoc"><p><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> buffer target (GL_ARRAY_BUFFER). </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5d0aa18730daae1fb14ee066d1c5119ea51ddaa5aba54c88aeb05f25bf5211938" name="a5d0aa18730daae1fb14ee066d1c5119ea51ddaa5aba54c88aeb05f25bf5211938"></a>VBO_BUFFER&#160;</td><td class="fielddoc"><p><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> buffer target (GL_ARRAY_BUFFER). </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a1aa4bda075373a4066c1a2417289d9eda264828a2ab663818329e745d63e1063c" name="a1aa4bda075373a4066c1a2417289d9eda264828a2ab663818329e745d63e1063c"></a>EBO_BUFFER&#160;</td><td class="fielddoc"><p>Element (index) buffer target (GL_ELEMENT_ARRAY_BUFFER). </p>
+<tr><td class="fieldname"><a id="a5d0aa18730daae1fb14ee066d1c5119ea264828a2ab663818329e745d63e1063c" name="a5d0aa18730daae1fb14ee066d1c5119ea264828a2ab663818329e745d63e1063c"></a>EBO_BUFFER&#160;</td><td class="fielddoc"><p>Element (index) buffer target (GL_ELEMENT_ARRAY_BUFFER). </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00024">24</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00027">27</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a63d6dea47ff56ef3ed95217a8b550f91" name="a63d6dea47ff56ef3ed95217a8b550f91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63d6dea47ff56ef3ed95217a8b550f91">&#9670;&#160;</a></span>buffer_usage</h2>
+<a id="ad912a2624f4992602775581af231d378" name="ad912a2624f4992602775581af231d378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad912a2624f4992602775581af231d378">&#9670;&#160;</a></span>buffer_usage</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +314,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#a63d6dea47ff56ef3ed95217a8b550f91">sog::gfx::buffer_usage</a> : GLenum</td>
+          <td class="memname">enum class <a class="el" href="#ad912a2624f4992602775581af231d378">sog::gfx::enums::buffer_usage</a> : GLenum</td>
         </tr>
       </table>
   </td>
@@ -278,32 +327,32 @@ Enumerations</h2></td></tr>
 <p>Expected usage pattern of a buffer, guiding GL driver storage (mirrors GL_*_DRAW/READ/COPY). </p>
 <p>Hints only — they do not change correctness. STREAM means the data changes once and is used a few times, DYNAMIC a few times, STATIC many times; DRAW consumes the data for rendering, READ is read back by the client, COPY is reused as source data for other GL commands. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91a4b631f47edaf0aaac92dfe66e19d65cf" name="a63d6dea47ff56ef3ed95217a8b550f91a4b631f47edaf0aaac92dfe66e19d65cf"></a>STREAM_DRAW&#160;</td><td class="fielddoc"><p>Modified once, consumed a few times for drawing. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378a4b631f47edaf0aaac92dfe66e19d65cf" name="ad912a2624f4992602775581af231d378a4b631f47edaf0aaac92dfe66e19d65cf"></a>STREAM_DRAW&#160;</td><td class="fielddoc"><p>Modified once, consumed a few times for drawing. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91aee7b9d8b4c95804a698625ae5688195e" name="a63d6dea47ff56ef3ed95217a8b550f91aee7b9d8b4c95804a698625ae5688195e"></a>STREAM_READ&#160;</td><td class="fielddoc"><p>Modified once, then read back a few times. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378aee7b9d8b4c95804a698625ae5688195e" name="ad912a2624f4992602775581af231d378aee7b9d8b4c95804a698625ae5688195e"></a>STREAM_READ&#160;</td><td class="fielddoc"><p>Modified once, then read back a few times. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91a99a4720a5c05c55db5447d23141412eb" name="a63d6dea47ff56ef3ed95217a8b550f91a99a4720a5c05c55db5447d23141412eb"></a>STREAM_COPY&#160;</td><td class="fielddoc"><p>Modified once, then used as source data a few times. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378a99a4720a5c05c55db5447d23141412eb" name="ad912a2624f4992602775581af231d378a99a4720a5c05c55db5447d23141412eb"></a>STREAM_COPY&#160;</td><td class="fielddoc"><p>Modified once, then used as source data a few times. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91a5ff708d7d781ea10e2ce8d6d3d4022eb" name="a63d6dea47ff56ef3ed95217a8b550f91a5ff708d7d781ea10e2ce8d6d3d4022eb"></a>DYNAMIC_DRAW&#160;</td><td class="fielddoc"><p>Modified a handful of times, consumed many times for drawing. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378a5ff708d7d781ea10e2ce8d6d3d4022eb" name="ad912a2624f4992602775581af231d378a5ff708d7d781ea10e2ce8d6d3d4022eb"></a>DYNAMIC_DRAW&#160;</td><td class="fielddoc"><p>Modified a handful of times, consumed many times for drawing. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91aa268cb8a741446ef5f5d333e4b80f177" name="a63d6dea47ff56ef3ed95217a8b550f91aa268cb8a741446ef5f5d333e4b80f177"></a>DYNAMIC_COPY&#160;</td><td class="fielddoc"><p>Modified a handful of times, then used as source data repeatedly. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378aa268cb8a741446ef5f5d333e4b80f177" name="ad912a2624f4992602775581af231d378aa268cb8a741446ef5f5d333e4b80f177"></a>DYNAMIC_COPY&#160;</td><td class="fielddoc"><p>Modified a handful of times, then used as source data repeatedly. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91abeb35e499664be3fb486fcfface04aea" name="a63d6dea47ff56ef3ed95217a8b550f91abeb35e499664be3fb486fcfface04aea"></a>DYNAMIC_READ&#160;</td><td class="fielddoc"><p>Modified a handful of times, then read back repeatedly. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378abeb35e499664be3fb486fcfface04aea" name="ad912a2624f4992602775581af231d378abeb35e499664be3fb486fcfface04aea"></a>DYNAMIC_READ&#160;</td><td class="fielddoc"><p>Modified a handful of times, then read back repeatedly. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91a0c5234f5830e196c1079d1fdcf3f9aba" name="a63d6dea47ff56ef3ed95217a8b550f91a0c5234f5830e196c1079d1fdcf3f9aba"></a>STATIC_DRAW&#160;</td><td class="fielddoc"><p>Modified once at creation, consumed many times for drawing. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378a0c5234f5830e196c1079d1fdcf3f9aba" name="ad912a2624f4992602775581af231d378a0c5234f5830e196c1079d1fdcf3f9aba"></a>STATIC_DRAW&#160;</td><td class="fielddoc"><p>Modified once at creation, consumed many times for drawing. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91a150f2044a549b43d2dee980cc887fc7b" name="a63d6dea47ff56ef3ed95217a8b550f91a150f2044a549b43d2dee980cc887fc7b"></a>STATIC_COPY&#160;</td><td class="fielddoc"><p>Modified once at creation, then used as source data repeatedly. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378a150f2044a549b43d2dee980cc887fc7b" name="ad912a2624f4992602775581af231d378a150f2044a549b43d2dee980cc887fc7b"></a>STATIC_COPY&#160;</td><td class="fielddoc"><p>Modified once at creation, then used as source data repeatedly. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a63d6dea47ff56ef3ed95217a8b550f91a9cb802cb164e929c4c1ef02d397b9c23" name="a63d6dea47ff56ef3ed95217a8b550f91a9cb802cb164e929c4c1ef02d397b9c23"></a>STATIC_READ&#160;</td><td class="fielddoc"><p>Modified once at creation, then read back repeatedly. </p>
+<tr><td class="fieldname"><a id="ad912a2624f4992602775581af231d378a9cb802cb164e929c4c1ef02d397b9c23" name="ad912a2624f4992602775581af231d378a9cb802cb164e929c4c1ef02d397b9c23"></a>STATIC_READ&#160;</td><td class="fielddoc"><p>Modified once at creation, then read back repeatedly. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00046">46</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00051">51</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="af18f86762401085c91d6529377b78d96" name="af18f86762401085c91d6529377b78d96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af18f86762401085c91d6529377b78d96">&#9670;&#160;</a></span>error</h2>
+<a id="ae00bbe2a1f45a40c45c67a38026ac0cb" name="ae00bbe2a1f45a40c45c67a38026ac0cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00bbe2a1f45a40c45c67a38026ac0cb">&#9670;&#160;</a></span>draw_mode</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +361,59 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#af18f86762401085c91d6529377b78d96">sog::gfx::error</a></td>
+          <td class="memname">enum class <a class="el" href="#ae00bbe2a1f45a40c45c67a38026ac0cb">sog::gfx::enums::draw_mode</a> : GLenum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Primitive topology for a draw call (mirrors GL_TRIANGLES, GL_POINTS, GL_LINES and the strip/fan/adjacency variants). </p>
+<p>Passed to the sog::gfx::common draw entry points; adjacency variants are only meaningful for geometry shaders.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_common_8hpp.html#aba5c8bec535adf0611cc9ff0132c26f1" title="Draws a range of consecutive vertices (glDrawArrays).">sog::gfx::common::DrawArrays</a>, <a class="el" href="_common_8hpp.html#a76b69d089806480b4f5ea4411f5f5f17" title="Draws vertices through an element (index) buffer (glDrawElements).">sog::gfx::common::DrawElements</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cbadd3bfee8042d1b85c224f08b42a3fc2e" name="ae00bbe2a1f45a40c45c67a38026ac0cbadd3bfee8042d1b85c224f08b42a3fc2e"></a>TRIANGLES&#160;</td><td class="fielddoc"><p>Separate triangles (3 vertices each). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cba23d5348dd7bef544d6341bec3480287f" name="ae00bbe2a1f45a40c45c67a38026ac0cba23d5348dd7bef544d6341bec3480287f"></a>QUADS&#160;</td><td class="fielddoc"><p>Quads (legacy; not in core profile). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cba70b71cabeeaf8c2bf473c896d5442ddb" name="ae00bbe2a1f45a40c45c67a38026ac0cba70b71cabeeaf8c2bf473c896d5442ddb"></a>POINTS&#160;</td><td class="fielddoc"><p>Independent points. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cbae585142391f356c60bcfe68279ec2727" name="ae00bbe2a1f45a40c45c67a38026ac0cbae585142391f356c60bcfe68279ec2727"></a>LINES&#160;</td><td class="fielddoc"><p>Independent line segments (2 vertices each). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cbae64a4d2159ed46d077e21a505575c814" name="ae00bbe2a1f45a40c45c67a38026ac0cbae64a4d2159ed46d077e21a505575c814"></a>LINE_STRIP&#160;</td><td class="fielddoc"><p>Connected line strip. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cba708de017e3b83ccba21dfc9f6367d46f" name="ae00bbe2a1f45a40c45c67a38026ac0cba708de017e3b83ccba21dfc9f6367d46f"></a>TRIANGLE_STRIP&#160;</td><td class="fielddoc"><p>Connected triangle strip. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cbaa9f047dff7e4cd4d8d3bdeafc4029d47" name="ae00bbe2a1f45a40c45c67a38026ac0cbaa9f047dff7e4cd4d8d3bdeafc4029d47"></a>TRIANGLE_FAN&#160;</td><td class="fielddoc"><p>Triangle fan around the first vertex. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cba9dc75a703ed4b52d920e15806956e750" name="ae00bbe2a1f45a40c45c67a38026ac0cba9dc75a703ed4b52d920e15806956e750"></a>LINES_ADJACENCY&#160;</td><td class="fielddoc"><p>Segments with adjacency vertices (geometry shaders). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cba54ad4e951aafc624495cfbc7fe978e18" name="ae00bbe2a1f45a40c45c67a38026ac0cba54ad4e951aafc624495cfbc7fe978e18"></a>LINE_STRIP_ADJACENCY&#160;</td><td class="fielddoc"><p>Line strip with adjacency vertices (geometry shaders). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cba96af0037e7ad76831afd4df272e040ca" name="ae00bbe2a1f45a40c45c67a38026ac0cba96af0037e7ad76831afd4df272e040ca"></a>TRIANGLES_ADJACENCY&#160;</td><td class="fielddoc"><p>Triangles with adjacency vertices (geometry shaders). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae00bbe2a1f45a40c45c67a38026ac0cba3bd8519568230caf7877922c9956a456" name="ae00bbe2a1f45a40c45c67a38026ac0cba3bd8519568230caf7877922c9956a456"></a>TRIANGLE_STRIP_ADJACENCY&#160;</td><td class="fielddoc"><p>Strip with adjacency vertices (geometry shaders). </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00228">228</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acbf551e779956773438401982e9786eb" name="acbf551e779956773438401982e9786eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf551e779956773438401982e9786eb">&#9670;&#160;</a></span>error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#acbf551e779956773438401982e9786eb">sog::gfx::enums::error</a></td>
         </tr>
       </table>
   </td>
@@ -324,16 +425,16 @@ Enumerations</h2></td></tr>
 
 <p>Sentinel for "no error" (mirrors GL_NONE). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af18f86762401085c91d6529377b78d96ab50339a10e1de285ac99d4c3990b8693" name="af18f86762401085c91d6529377b78d96ab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"><p>No error pending. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acbf551e779956773438401982e9786ebab50339a10e1de285ac99d4c3990b8693" name="acbf551e779956773438401982e9786ebab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"><p>No error pending. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00015">15</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00017">17</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad3dc4b9935a04899ad5defb69900f4ae" name="ad3dc4b9935a04899ad5defb69900f4ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3dc4b9935a04899ad5defb69900f4ae">&#9670;&#160;</a></span>shader_type</h2>
+<a id="ac80eb8f5d166941c85a50ffaec495c4d" name="ac80eb8f5d166941c85a50ffaec495c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80eb8f5d166941c85a50ffaec495c4d">&#9670;&#160;</a></span>index_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,7 +443,121 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#ad3dc4b9935a04899ad5defb69900f4ae">sog::gfx::shader_type</a> : GLenum</td>
+          <td class="memname">enum class <a class="el" href="#ac80eb8f5d166941c85a50ffaec495c4d">sog::gfx::enums::index_type</a> : GLenum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Component type of the indices stored in an element (index) buffer (mirrors GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, GL_UNSIGNED_INT). </p>
+<p>Passed to the indexed draw entry points; must match how the index data was uploaded (<a class="el" href="sog_8hpp.html#abdd5dc2837fe155c116d4bfb397bbd76" title="Element index type of index buffers (32-bit unsigned); alias of gfx::Index.">sog::Index</a> is a 32-bit unsigned integer, i.e. index_type::UINT).</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="sog_8hpp.html#abdd5dc2837fe155c116d4bfb397bbd76" title="Element index type of index buffers (32-bit unsigned); alias of gfx::Index.">sog::Index</a>, <a class="el" href="_common_8hpp.html#a76b69d089806480b4f5ea4411f5f5f17" title="Draws vertices through an element (index) buffer (glDrawElements).">sog::gfx::common::DrawElements</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac80eb8f5d166941c85a50ffaec495c4da6df7643c26cd4b455d883d8fae3d6bf1" name="ac80eb8f5d166941c85a50ffaec495c4da6df7643c26cd4b455d883d8fae3d6bf1"></a>UBYTE&#160;</td><td class="fielddoc"><p>8-bit indices (up to 255 vertices). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac80eb8f5d166941c85a50ffaec495c4dab8627cc5bae17ed1687bb487a4d70a3e" name="ac80eb8f5d166941c85a50ffaec495c4dab8627cc5bae17ed1687bb487a4d70a3e"></a>USHORT&#160;</td><td class="fielddoc"><p>16-bit indices (up to 65 535 vertices). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac80eb8f5d166941c85a50ffaec495c4da3351504090a741e69da641a42e00da80" name="ac80eb8f5d166941c85a50ffaec495c4da3351504090a741e69da641a42e00da80"></a>UINT&#160;</td><td class="fielddoc"><p>32-bit indices (meshes beyond 65k vertices). </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00256">256</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5aeb0fedecac1c5775ff9eee5b7044fa" name="a5aeb0fedecac1c5775ff9eee5b7044fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aeb0fedecac1c5775ff9eee5b7044fa">&#9670;&#160;</a></span>pixel_format</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a5aeb0fedecac1c5775ff9eee5b7044fa">sog::gfx::enums::pixel_format</a> : GLenum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pixel layout of data uploaded to (or read from) a texture (mirrors GL_RGBA, GL_RGB, GL_RED, GL_RG, GL_DEPTH_STENCIL). </p>
+<p>Describes the channels present in the caller's pixel data, not how the texture stores them internally.</p>
+<dl class="section see"><dt>See also</dt><dd>sog::texture_internal_format, sog::pixel_type </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5aeb0fedecac1c5775ff9eee5b7044faaea3495a278957dc58165e48a8945469f" name="a5aeb0fedecac1c5775ff9eee5b7044faaea3495a278957dc58165e48a8945469f"></a>RGBA&#160;</td><td class="fielddoc"><p>Four channels: red, green, blue, alpha. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5aeb0fedecac1c5775ff9eee5b7044faa889574aebacda6bfd3e534e2b49b8028" name="a5aeb0fedecac1c5775ff9eee5b7044faa889574aebacda6bfd3e534e2b49b8028"></a>RGB&#160;</td><td class="fielddoc"><p>Three channels: red, green, blue. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5aeb0fedecac1c5775ff9eee5b7044faaee38e4d5dd68c4e440825018d549cb47" name="a5aeb0fedecac1c5775ff9eee5b7044faaee38e4d5dd68c4e440825018d549cb47"></a>Red&#160;</td><td class="fielddoc"><p>Single red channel. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5aeb0fedecac1c5775ff9eee5b7044faabac953e88f6d79514b0b6fc42eb6f3b7" name="a5aeb0fedecac1c5775ff9eee5b7044faabac953e88f6d79514b0b6fc42eb6f3b7"></a>RG&#160;</td><td class="fielddoc"><p>Two channels: red and green. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5aeb0fedecac1c5775ff9eee5b7044faa2fa8076285272883c91e14402975a441" name="a5aeb0fedecac1c5775ff9eee5b7044faa2fa8076285272883c91e14402975a441"></a>DepthStencil&#160;</td><td class="fielddoc"><p>Packed depth/stencil data. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00192">192</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+
+</div>
+</div>
+<a id="affc57cb0b078305ef6584a5ca8ecc133" name="affc57cb0b078305ef6584a5ca8ecc133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc57cb0b078305ef6584a5ca8ecc133">&#9670;&#160;</a></span>pixel_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#affc57cb0b078305ef6584a5ca8ecc133">sog::gfx::enums::pixel_type</a> : GLenum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Component type of the caller's pixel data (mirrors GL_UNSIGNED_BYTE, GL_FLOAT, GL_INT, GL_UNSIGNED_INT_24_8). </p>
+<p>Tells OpenGL how to interpret the bytes passed to a texture upload; the default for image files loaded via Texture2D::createFromFile is UnsignedByte.</p>
+<dl class="section see"><dt>See also</dt><dd>sog::texture_internal_format, sog::pixel_format </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="affc57cb0b078305ef6584a5ca8ecc133a8f0fb883eb5a52838534191513e365a2" name="affc57cb0b078305ef6584a5ca8ecc133a8f0fb883eb5a52838534191513e365a2"></a>UnsignedByte&#160;</td><td class="fielddoc"><p>8-bit unsigned integer per component. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="affc57cb0b078305ef6584a5ca8ecc133a22ae0e2b89e5e3d477f988cc36d3272b" name="affc57cb0b078305ef6584a5ca8ecc133a22ae0e2b89e5e3d477f988cc36d3272b"></a>Float&#160;</td><td class="fielddoc"><p>32-bit float per component (HDR data). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="affc57cb0b078305ef6584a5ca8ecc133a1686a6c336b71b36d77354cea19a8b52" name="affc57cb0b078305ef6584a5ca8ecc133a1686a6c336b71b36d77354cea19a8b52"></a>Int&#160;</td><td class="fielddoc"><p>32-bit signed integer per component. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="affc57cb0b078305ef6584a5ca8ecc133a97788b3aa5f586ee2e387dd091a80bb1" name="affc57cb0b078305ef6584a5ca8ecc133a97788b3aa5f586ee2e387dd091a80bb1"></a>UnsignedInt248&#160;</td><td class="fielddoc"><p>Single packed 24-bit depth + 8-bit stencil value. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00210">210</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9f2f1b58d0fbe47069bb6699e2597f41" name="a9f2f1b58d0fbe47069bb6699e2597f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f2f1b58d0fbe47069bb6699e2597f41">&#9670;&#160;</a></span>shader_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a9f2f1b58d0fbe47069bb6699e2597f41">sog::gfx::enums::shader_type</a> : GLenum</td>
         </tr>
       </table>
   </td>
@@ -353,24 +568,24 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Shader stage types (mirrors GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER, GL_COMPUTE_SHADER). </p>
-<dl class="section see"><dt>See also</dt><dd>sog::backend::Shader, sog::backend::ShaderProgram </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="sog_8hpp.html#a197431248218d49952f7fe6d36982edf" title="Shader stage of a given shader_type; alias of gfx::Shader.">sog::Shader</a>, <a class="el" href="sog_8hpp.html#a8c257c37be2a2eff75eaf885e31a075f" title="Linked shader program; alias of gfx::ShaderProgram.">sog::ShaderProgram</a> </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad3dc4b9935a04899ad5defb69900f4aea0c3e47aef93a7f244f41ab309a33634b" name="ad3dc4b9935a04899ad5defb69900f4aea0c3e47aef93a7f244f41ab309a33634b"></a>VERTEX&#160;</td><td class="fielddoc"><p><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> processing stage. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9f2f1b58d0fbe47069bb6699e2597f41a0c3e47aef93a7f244f41ab309a33634b" name="a9f2f1b58d0fbe47069bb6699e2597f41a0c3e47aef93a7f244f41ab309a33634b"></a>VERTEX&#160;</td><td class="fielddoc"><p><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> processing stage. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad3dc4b9935a04899ad5defb69900f4aea7345a249ed5c2f850d85dc1727c24716" name="ad3dc4b9935a04899ad5defb69900f4aea7345a249ed5c2f850d85dc1727c24716"></a>FRAGMENT&#160;</td><td class="fielddoc"><p>Fragment (per-pixel) processing stage. </p>
+<tr><td class="fieldname"><a id="a9f2f1b58d0fbe47069bb6699e2597f41a7345a249ed5c2f850d85dc1727c24716" name="a9f2f1b58d0fbe47069bb6699e2597f41a7345a249ed5c2f850d85dc1727c24716"></a>FRAGMENT&#160;</td><td class="fielddoc"><p>Fragment (per-pixel) processing stage. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad3dc4b9935a04899ad5defb69900f4aeab22957ad8078e8d73de61aef53d13a74" name="ad3dc4b9935a04899ad5defb69900f4aeab22957ad8078e8d73de61aef53d13a74"></a>GEOMETRY&#160;</td><td class="fielddoc"><p>Geometry processing stage (requires GL 3.2+ or extensions). </p>
+<tr><td class="fieldname"><a id="a9f2f1b58d0fbe47069bb6699e2597f41ab22957ad8078e8d73de61aef53d13a74" name="a9f2f1b58d0fbe47069bb6699e2597f41ab22957ad8078e8d73de61aef53d13a74"></a>GEOMETRY&#160;</td><td class="fielddoc"><p>Geometry processing stage (requires GL 3.2+ or extensions). </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad3dc4b9935a04899ad5defb69900f4aeaac404d7ce6ca5862e9b8a2641fbafd90" name="ad3dc4b9935a04899ad5defb69900f4aeaac404d7ce6ca5862e9b8a2641fbafd90"></a>COMPUTE&#160;</td><td class="fielddoc"><p>Compute stage (requires GL 4.3+). </p>
+<tr><td class="fieldname"><a id="a9f2f1b58d0fbe47069bb6699e2597f41aac404d7ce6ca5862e9b8a2641fbafd90" name="a9f2f1b58d0fbe47069bb6699e2597f41aac404d7ce6ca5862e9b8a2641fbafd90"></a>COMPUTE&#160;</td><td class="fielddoc"><p>Compute stage (requires GL 4.3+). </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00081">81</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00092">92</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a0a917205ad04659bdddb03c071e09d34" name="a0a917205ad04659bdddb03c071e09d34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a917205ad04659bdddb03c071e09d34">&#9670;&#160;</a></span>texture_mag_filters</h2>
+<a id="ad8ecb177a420a954561a8faf041c2837" name="ad8ecb177a420a954561a8faf041c2837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ecb177a420a954561a8faf041c2837">&#9670;&#160;</a></span>texture_internal_format</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +594,49 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#a0a917205ad04659bdddb03c071e09d34">sog::gfx::texture_mag_filters</a> : GLint</td>
+          <td class="memname">enum class <a class="el" href="#ad8ecb177a420a954561a8faf041c2837">sog::gfx::enums::texture_internal_format</a> : GLenum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sized GL internal formats a texture storage can be allocated with (mirrors GL_RGBA8, GL_RGB8, GL_RGBA16F, GL_RGB16F, GL_R8, GL_DEPTH24_STENCIL8). </p>
+<p>Chosen at allocation time by Texture2D::createFromRaw(); it decides how the render target stores texels, independently of the pixel_format of the data uploaded afterwards.</p>
+<dl class="section see"><dt>See also</dt><dd>sog::pixel_format, sog::pixel_type </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad8ecb177a420a954561a8faf041c2837ab4b279046a02077466fa26cabb00c642" name="ad8ecb177a420a954561a8faf041c2837ab4b279046a02077466fa26cabb00c642"></a>RGBA8&#160;</td><td class="fielddoc"><p>8 bits per channel, RGBA (LDR, most common). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad8ecb177a420a954561a8faf041c2837a165c6379d01617e12de274a3952efa63" name="ad8ecb177a420a954561a8faf041c2837a165c6379d01617e12de274a3952efa63"></a>RGB8&#160;</td><td class="fielddoc"><p>8 bits per channel, RGB (no alpha). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad8ecb177a420a954561a8faf041c2837aa29d843695056f9c171a9eb702d6910a" name="ad8ecb177a420a954561a8faf041c2837aa29d843695056f9c171a9eb702d6910a"></a>RGBA16F&#160;</td><td class="fielddoc"><p>16-bit float per channel, RGBA (HDR render targets). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad8ecb177a420a954561a8faf041c2837a25cd126670bd567a899c64c4e6e8ca7d" name="ad8ecb177a420a954561a8faf041c2837a25cd126670bd567a899c64c4e6e8ca7d"></a>RGB16F&#160;</td><td class="fielddoc"><p>16-bit float per channel, RGB (HDR, no alpha). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad8ecb177a420a954561a8faf041c2837acfff813d86d447fa2a9c858650ebbb90" name="ad8ecb177a420a954561a8faf041c2837acfff813d86d447fa2a9c858650ebbb90"></a>R8&#160;</td><td class="fielddoc"><p>Single 8-bit channel (masks, lookup data). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad8ecb177a420a954561a8faf041c2837a78181d4f5d4b30baefed6c0da0de894f" name="ad8ecb177a420a954561a8faf041c2837a78181d4f5d4b30baefed6c0da0de894f"></a>Depth24Stencil8&#160;</td><td class="fielddoc"><p>24-bit depth plus 8-bit stencil. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00173">173</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a36ea70ef54af5a77b3218ebdd06f61ab" name="a36ea70ef54af5a77b3218ebdd06f61ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ea70ef54af5a77b3218ebdd06f61ab">&#9670;&#160;</a></span>texture_mag_filters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a36ea70ef54af5a77b3218ebdd06f61ab">sog::gfx::enums::texture_mag_filters</a> : GLint</td>
         </tr>
       </table>
   </td>
@@ -391,18 +648,18 @@ Enumerations</h2></td></tr>
 
 <p>Magnification filters for textures (mirrors GL_NEAREST, GL_LINEAR; no mipmap variants exist for magnification). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0a917205ad04659bdddb03c071e09d34aad135772d7cf93dd0ccf9d2474b34e6a" name="a0a917205ad04659bdddb03c071e09d34aad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>Closest texel; crisp pixel-art look. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a36ea70ef54af5a77b3218ebdd06f61abaad135772d7cf93dd0ccf9d2474b34e6a" name="a36ea70ef54af5a77b3218ebdd06f61abaad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>Closest texel; crisp pixel-art look. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0a917205ad04659bdddb03c071e09d34aaac544aacc3615aada24897a215f5046" name="a0a917205ad04659bdddb03c071e09d34aaac544aacc3615aada24897a215f5046"></a>LINEAR&#160;</td><td class="fielddoc"><p>Bilinear interpolation; smooth look. </p>
+<tr><td class="fieldname"><a id="a36ea70ef54af5a77b3218ebdd06f61abaaac544aacc3615aada24897a215f5046" name="a36ea70ef54af5a77b3218ebdd06f61abaaac544aacc3615aada24897a215f5046"></a>LINEAR&#160;</td><td class="fielddoc"><p>Bilinear interpolation; smooth look. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00119">119</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00138">138</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a671e5580595ec6d61e665a37d7b7e15a" name="a671e5580595ec6d61e665a37d7b7e15a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a671e5580595ec6d61e665a37d7b7e15a">&#9670;&#160;</a></span>texture_min_filters</h2>
+<a id="ac80ba303a114317dd6d86a7eecc24d79" name="ac80ba303a114317dd6d86a7eecc24d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80ba303a114317dd6d86a7eecc24d79">&#9670;&#160;</a></span>texture_min_filters</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +668,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#a671e5580595ec6d61e665a37d7b7e15a">sog::gfx::texture_min_filters</a> : GLint</td>
+          <td class="memname">enum class <a class="el" href="#ac80ba303a114317dd6d86a7eecc24d79">sog::gfx::enums::texture_min_filters</a> : GLint</td>
         </tr>
       </table>
   </td>
@@ -424,26 +681,26 @@ Enumerations</h2></td></tr>
 <p>Minification filters for textures, including mipmap-aware variants (mirrors GL_NEAREST, GL_LINEAR and the GL_*_MIPMAP_* combinations). </p>
 <p>The mipmapped entries select between two mip levels by distance (LINEAR) or pick the nearest level and filter within it (NEAREST). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a671e5580595ec6d61e665a37d7b7e15aaad135772d7cf93dd0ccf9d2474b34e6a" name="a671e5580595ec6d61e665a37d7b7e15aaad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>Closest texel; blocky when magnified/minified. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac80ba303a114317dd6d86a7eecc24d79aad135772d7cf93dd0ccf9d2474b34e6a" name="ac80ba303a114317dd6d86a7eecc24d79aad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>Closest texel; blocky when magnified/minified. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a671e5580595ec6d61e665a37d7b7e15aaaac544aacc3615aada24897a215f5046" name="a671e5580595ec6d61e665a37d7b7e15aaaac544aacc3615aada24897a215f5046"></a>LINEAR&#160;</td><td class="fielddoc"><p>Bilinear interpolation between texels. </p>
+<tr><td class="fieldname"><a id="ac80ba303a114317dd6d86a7eecc24d79aaac544aacc3615aada24897a215f5046" name="ac80ba303a114317dd6d86a7eecc24d79aaac544aacc3615aada24897a215f5046"></a>LINEAR&#160;</td><td class="fielddoc"><p>Bilinear interpolation between texels. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a671e5580595ec6d61e665a37d7b7e15aa1fbb2c20778f4e3e3ea0ec17ebd5dce3" name="a671e5580595ec6d61e665a37d7b7e15aa1fbb2c20778f4e3e3ea0ec17ebd5dce3"></a>NEAREST_MIPMAP_NEAREST&#160;</td><td class="fielddoc"><p>Nearest mip level, nearest texel within it. </p>
+<tr><td class="fieldname"><a id="ac80ba303a114317dd6d86a7eecc24d79a1fbb2c20778f4e3e3ea0ec17ebd5dce3" name="ac80ba303a114317dd6d86a7eecc24d79a1fbb2c20778f4e3e3ea0ec17ebd5dce3"></a>NEAREST_MIPMAP_NEAREST&#160;</td><td class="fielddoc"><p>Nearest mip level, nearest texel within it. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a671e5580595ec6d61e665a37d7b7e15aa4502b1444d65ae5c38b2ec088ec493b6" name="a671e5580595ec6d61e665a37d7b7e15aa4502b1444d65ae5c38b2ec088ec493b6"></a>LINEAR_MIPMAP_NEAREST&#160;</td><td class="fielddoc"><p>Nearest mip level, linear filtering within it. </p>
+<tr><td class="fieldname"><a id="ac80ba303a114317dd6d86a7eecc24d79a4502b1444d65ae5c38b2ec088ec493b6" name="ac80ba303a114317dd6d86a7eecc24d79a4502b1444d65ae5c38b2ec088ec493b6"></a>LINEAR_MIPMAP_NEAREST&#160;</td><td class="fielddoc"><p>Nearest mip level, linear filtering within it. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a671e5580595ec6d61e665a37d7b7e15aa65706de8e74692e0dcd9cd776d668bab" name="a671e5580595ec6d61e665a37d7b7e15aa65706de8e74692e0dcd9cd776d668bab"></a>NEAREST_MIPMAP_LINEAR&#160;</td><td class="fielddoc"><p>Linear blend between the two nearest mip levels, nearest texel. </p>
+<tr><td class="fieldname"><a id="ac80ba303a114317dd6d86a7eecc24d79a65706de8e74692e0dcd9cd776d668bab" name="ac80ba303a114317dd6d86a7eecc24d79a65706de8e74692e0dcd9cd776d668bab"></a>NEAREST_MIPMAP_LINEAR&#160;</td><td class="fielddoc"><p>Linear blend between the two nearest mip levels, nearest texel. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a671e5580595ec6d61e665a37d7b7e15aab127db2c1e3a1fa7097b0cc774cbcd24" name="a671e5580595ec6d61e665a37d7b7e15aab127db2c1e3a1fa7097b0cc774cbcd24"></a>LINEAR_MIPMAP_LINEAR&#160;</td><td class="fielddoc"><p>Trilinear filtering: linear across mip levels and within each. </p>
+<tr><td class="fieldname"><a id="ac80ba303a114317dd6d86a7eecc24d79ab127db2c1e3a1fa7097b0cc774cbcd24" name="ac80ba303a114317dd6d86a7eecc24d79ab127db2c1e3a1fa7097b0cc774cbcd24"></a>LINEAR_MIPMAP_LINEAR&#160;</td><td class="fielddoc"><p>Trilinear filtering: linear across mip levels and within each. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00106">106</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00120">120</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a0f8db54411552f3d493ee052c77f0119" name="a0f8db54411552f3d493ee052c77f0119"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f8db54411552f3d493ee052c77f0119">&#9670;&#160;</a></span>texture_mipmaps</h2>
+<a id="a8483193ab9eb605d27c2b78240ab396d" name="a8483193ab9eb605d27c2b78240ab396d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8483193ab9eb605d27c2b78240ab396d">&#9670;&#160;</a></span>texture_mipmaps</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -452,7 +709,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#a0f8db54411552f3d493ee052c77f0119">sog::gfx::texture_mipmaps</a> : GLenum</td>
+          <td class="memname">enum class <a class="el" href="#a8483193ab9eb605d27c2b78240ab396d">sog::gfx::enums::texture_mipmaps</a> : GLenum</td>
         </tr>
       </table>
   </td>
@@ -465,22 +722,22 @@ Enumerations</h2></td></tr>
 <p>Mipmap level-selection strategies derived from the minification filter (mirrors the GL_*_MIPMAP_* constants). </p>
 <p>Names follow the "level filter, within-level filter" convention: LINEAR_NEAREST blends linearly between mip levels but samples the nearest texel inside each level, and so on. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0f8db54411552f3d493ee052c77f0119aad135772d7cf93dd0ccf9d2474b34e6a" name="a0f8db54411552f3d493ee052c77f0119aad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>Nearest level, nearest texel within it. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8483193ab9eb605d27c2b78240ab396daad135772d7cf93dd0ccf9d2474b34e6a" name="a8483193ab9eb605d27c2b78240ab396daad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>Nearest level, nearest texel within it. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0f8db54411552f3d493ee052c77f0119aea900ba8219b4246303461ec5b529a9d" name="a0f8db54411552f3d493ee052c77f0119aea900ba8219b4246303461ec5b529a9d"></a>LINEAR_NEAREST&#160;</td><td class="fielddoc"><p>Nearest level, linear texel filtering within it. </p>
+<tr><td class="fieldname"><a id="a8483193ab9eb605d27c2b78240ab396daea900ba8219b4246303461ec5b529a9d" name="a8483193ab9eb605d27c2b78240ab396daea900ba8219b4246303461ec5b529a9d"></a>LINEAR_NEAREST&#160;</td><td class="fielddoc"><p>Nearest level, linear texel filtering within it. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0f8db54411552f3d493ee052c77f0119a704f21e07e578564824a3102bbbccac2" name="a0f8db54411552f3d493ee052c77f0119a704f21e07e578564824a3102bbbccac2"></a>NEAREST_LINEAR&#160;</td><td class="fielddoc"><p>Linear level blend, nearest texel within levels. </p>
+<tr><td class="fieldname"><a id="a8483193ab9eb605d27c2b78240ab396da704f21e07e578564824a3102bbbccac2" name="a8483193ab9eb605d27c2b78240ab396da704f21e07e578564824a3102bbbccac2"></a>NEAREST_LINEAR&#160;</td><td class="fielddoc"><p>Linear level blend, nearest texel within levels. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a0f8db54411552f3d493ee052c77f0119a4efe1867144bfaabd20855d80619895a" name="a0f8db54411552f3d493ee052c77f0119a4efe1867144bfaabd20855d80619895a"></a>LINEAR_LINEAR&#160;</td><td class="fielddoc"><p>Trilinear: linear level blend and linear texel filtering. </p>
+<tr><td class="fieldname"><a id="a8483193ab9eb605d27c2b78240ab396da4efe1867144bfaabd20855d80619895a" name="a8483193ab9eb605d27c2b78240ab396da4efe1867144bfaabd20855d80619895a"></a>LINEAR_LINEAR&#160;</td><td class="fielddoc"><p>Trilinear: linear level blend and linear texel filtering. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00132">132</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00152">152</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8bcf6ba5e3a8862b202482faed61a943" name="a8bcf6ba5e3a8862b202482faed61a943"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bcf6ba5e3a8862b202482faed61a943">&#9670;&#160;</a></span>texture_params</h2>
+<a id="a43bed2cff125f89e94baad11a16f6e3e" name="a43bed2cff125f89e94baad11a16f6e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43bed2cff125f89e94baad11a16f6e3e">&#9670;&#160;</a></span>texture_params</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,7 +746,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#a8bcf6ba5e3a8862b202482faed61a943">sog::gfx::texture_params</a> : GLint</td>
+          <td class="memname">enum class <a class="el" href="#a43bed2cff125f89e94baad11a16f6e3e">sog::gfx::enums::texture_params</a> : GLint</td>
         </tr>
       </table>
   </td>
@@ -501,22 +758,22 @@ Enumerations</h2></td></tr>
 
 <p>Texture wrap modes, applied when texture coordinates leave [0, 1] (mirrors GL_MIRRORED_REPEAT, GL_REPEAT, GL_CLAMP_TO_EDGE, GL_CLAMP_TO_BORDER). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8bcf6ba5e3a8862b202482faed61a943acf6164235e7bfffb5c4c7c4b685f660a" name="a8bcf6ba5e3a8862b202482faed61a943acf6164235e7bfffb5c4c7c4b685f660a"></a>MIRRORED_REPEAT&#160;</td><td class="fielddoc"><p>Wraps and mirrors at each repeat. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a43bed2cff125f89e94baad11a16f6e3eacf6164235e7bfffb5c4c7c4b685f660a" name="a43bed2cff125f89e94baad11a16f6e3eacf6164235e7bfffb5c4c7c4b685f660a"></a>MIRRORED_REPEAT&#160;</td><td class="fielddoc"><p>Wraps and mirrors at each repeat. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a8bcf6ba5e3a8862b202482faed61a943a5be68175be14dfaa080165456c2e9555" name="a8bcf6ba5e3a8862b202482faed61a943a5be68175be14dfaa080165456c2e9555"></a>REPEAT&#160;</td><td class="fielddoc"><p>Wraps and repeats, resetting at each integer boundary. </p>
+<tr><td class="fieldname"><a id="a43bed2cff125f89e94baad11a16f6e3ea5be68175be14dfaa080165456c2e9555" name="a43bed2cff125f89e94baad11a16f6e3ea5be68175be14dfaa080165456c2e9555"></a>REPEAT&#160;</td><td class="fielddoc"><p>Wraps and repeats, resetting at each integer boundary. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a8bcf6ba5e3a8862b202482faed61a943aca305cdc5d749d643055111218063f26" name="a8bcf6ba5e3a8862b202482faed61a943aca305cdc5d749d643055111218063f26"></a>CLAMP_TO_EDGE&#160;</td><td class="fielddoc"><p>Clamps to the edge texel of the texture. </p>
+<tr><td class="fieldname"><a id="a43bed2cff125f89e94baad11a16f6e3eaca305cdc5d749d643055111218063f26" name="a43bed2cff125f89e94baad11a16f6e3eaca305cdc5d749d643055111218063f26"></a>CLAMP_TO_EDGE&#160;</td><td class="fielddoc"><p>Clamps to the edge texel of the texture. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a8bcf6ba5e3a8862b202482faed61a943afcb162090f81b0a56721e5aa01b880c3" name="a8bcf6ba5e3a8862b202482faed61a943afcb162090f81b0a56721e5aa01b880c3"></a>CLAMP_TO_BORDER&#160;</td><td class="fielddoc"><p>Clamps to a user-defined border color. </p>
+<tr><td class="fieldname"><a id="a43bed2cff125f89e94baad11a16f6e3eafcb162090f81b0a56721e5aa01b880c3" name="a43bed2cff125f89e94baad11a16f6e3eafcb162090f81b0a56721e5aa01b880c3"></a>CLAMP_TO_BORDER&#160;</td><td class="fielddoc"><p>Clamps to a user-defined border color. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00092">92</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00105">105</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a43c8bfc9f44e48e476b2cef773843bbb" name="a43c8bfc9f44e48e476b2cef773843bbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43c8bfc9f44e48e476b2cef773843bbb">&#9670;&#160;</a></span>vertex_query</h2>
+<a id="a83dd47b3816dab177a1e0a0d8c107a87" name="a83dd47b3816dab177a1e0a0d8c107a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83dd47b3816dab177a1e0a0d8c107a87">&#9670;&#160;</a></span>vertex_query</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,7 +782,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#a43c8bfc9f44e48e476b2cef773843bbb">sog::gfx::vertex_query</a> : GLenum</td>
+          <td class="memname">enum class <a class="el" href="#a83dd47b3816dab177a1e0a0d8c107a87">sog::gfx::enums::vertex_query</a> : GLenum</td>
         </tr>
       </table>
   </td>
@@ -537,16 +794,16 @@ Enumerations</h2></td></tr>
 
 <p>State to query for a bound vertex array object (mirrors GL_VERTEX_ARRAY_BINDING). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a43c8bfc9f44e48e476b2cef773843bbba3b864ac1cf5e4ccea84b7c0c56b98da4" name="a43c8bfc9f44e48e476b2cef773843bbba3b864ac1cf5e4ccea84b7c0c56b98da4"></a>BINDING&#160;</td><td class="fielddoc"><p>Query the vertex array currently bound to the active target. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a83dd47b3816dab177a1e0a0d8c107a87a3b864ac1cf5e4ccea84b7c0c56b98da4" name="a83dd47b3816dab177a1e0a0d8c107a87a3b864ac1cf5e4ccea84b7c0c56b98da4"></a>BINDING&#160;</td><td class="fielddoc"><p>Query the vertex array currently bound to the active target. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00072">72</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00081">81</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad30e0dd21967e1a2dec11958296d669e" name="ad30e0dd21967e1a2dec11958296d669e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad30e0dd21967e1a2dec11958296d669e">&#9670;&#160;</a></span>vertex_target</h2>
+<a id="a81ddf94fe556e58b8f789eb14af41b72" name="a81ddf94fe556e58b8f789eb14af41b72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ddf94fe556e58b8f789eb14af41b72">&#9670;&#160;</a></span>vertex_target</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,7 +812,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="#ad30e0dd21967e1a2dec11958296d669e">sog::gfx::vertex_target</a> : GLenum</td>
+          <td class="memname">enum class <a class="el" href="#a81ddf94fe556e58b8f789eb14af41b72">sog::gfx::enums::vertex_target</a> : GLenum</td>
         </tr>
       </table>
   </td>
@@ -567,11 +824,11 @@ Enumerations</h2></td></tr>
 
 <p>Target a vertex array object can be bound to (mirrors GL_ARRAY_BUFFER). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad30e0dd21967e1a2dec11958296d669eadc0d8c9db2ffa3d5a7f57a20701d5f28" name="ad30e0dd21967e1a2dec11958296d669eadc0d8c9db2ffa3d5a7f57a20701d5f28"></a>VAO_BUFFER&#160;</td><td class="fielddoc"><p>Buffer target associated with vertex attribute setup. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a81ddf94fe556e58b8f789eb14af41b72adc0d8c9db2ffa3d5a7f57a20701d5f28" name="a81ddf94fe556e58b8f789eb14af41b72adc0d8c9db2ffa3d5a7f57a20701d5f28"></a>VAO_BUFFER&#160;</td><td class="fielddoc"><p>Buffer target associated with vertex attribute setup. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00064">64</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_enums_8hpp_source.html#l00073">73</a> of file <a class="el" href="_enums_8hpp_source.html">Enums.hpp</a>.</p>
 
 </div>
 </div>
@@ -588,7 +845,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>Types</b></li><li class="navelem"><a href="_enums_8hpp.html">Enums.hpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>Types</b></li><li class="navelem"><a href="_enums_8hpp.html">Enums.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

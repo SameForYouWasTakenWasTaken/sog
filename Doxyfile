@@ -1,4 +1,4 @@
-# Doxyfile for the sog OpenGL engine
+# Doxyfile for sog (Small OpenGL Graphics)
 # Tuned for the project layout: documents src/, skips the vendored headers.
 #
 # Generate HTML with:   doxygen Doxyfile
@@ -7,9 +7,9 @@
 #---------------------------------------------------------------------------
 # Project identity
 #---------------------------------------------------------------------------
-PROJECT_NAME           = "sog OpenGL Engine"
+PROJECT_NAME           = "sog (Small OpenGL Graphics)"
 PROJECT_NUMBER         =
-PROJECT_BRIEF          = "A C++20 OpenGL engine (windowing, rendering, GL object wrappers)"
+PROJECT_BRIEF          = "A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)"
 PROJECT_LOGO           =
 
 #---------------------------------------------------------------------------
@@ -18,7 +18,7 @@ PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = docs
 CREATE_SUBDIRS         = NO
 
-# Only the first-party sources. src/Shared/vendor (glad, KHR) is excluded so we
+# Only the first-party sources. src/sog/vendor (glad, KHR) is excluded so we
 # never generate docs for third-party code.
 INPUT                  = src
 INPUT_ENCODING         = UTF-8
@@ -26,7 +26,7 @@ FILE_PATTERNS          = *.hpp \
                          *.cpp \
                          *.h
 RECURSIVE              = YES
-EXCLUDE                = src/Shared/vendor
+EXCLUDE                = src/sog/vendor
 EXCLUDE_PATTERNS       =
 EXCLUDE_SYMBOLS        =
 
@@ -64,9 +64,7 @@ MARKDOWN_SUPPORT       = YES
 AUTOLINK_SUPPORT       = YES
 BUILTIN_STL_SUPPORT    = YES
 
-# C++20: let Doxygen understand requires-clauses, concepts, etc.
-OPTIMIZE_OUTPUT_FOR_C  = NO
-OPTIMIZE_OUTPUT_FOR_C++ = YES
+# C++23: let Doxygen understand requires-clauses, concepts, etc.
 CPP_CLI_SUPPORT        = NO
 SIP_SUPPORT            = NO
 
@@ -91,4 +89,3 @@ SKIP_FUNCTION_MACROS   = YES
 # Dot / graphs (optional; requires Graphviz `dot` on PATH to actually render)
 #---------------------------------------------------------------------------
 HAVE_DOT               = NO
-CLASS_DIAGRAMS         = YES

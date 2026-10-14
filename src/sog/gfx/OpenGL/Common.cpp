@@ -1,3 +1,9 @@
+/**
+ * @file Common.cpp
+ * @brief Implements the sog::gfx::common draw entry points as direct forwards to their GL
+ * counterparts (std::to_underlying converts the engine enums on the way out).
+ */
+
 #include <sog/gfx/OpenGL/Common.hpp>
 #include <utility>
 

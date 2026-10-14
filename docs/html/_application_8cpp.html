@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/App/Application.cpp File Reference</title>
+<title>sog (Small OpenGL Graphics): src/examples/Application.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -114,24 +114,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_application_8
 </div><!--header-->
 <div class="contents">
 
-<p>Implements <a class="el" href="classsog_1_1_application.html#a8676970789ebf44cc12eefefb549afee" title="Runs the main render loop until the window is closed.">sog::Application::Run()</a>, the demo main loop: builds a textured cube, renders it into an offscreen framebuffer, then applies a post-processing pass.  
+<p>Implements <a class="el" href="class_application.html#a02799e64b246a6b6b8fa58477882a4be" title="Runs the main render loop until the window is closed.">Application::Run()</a>, the demo main loop: builds a textured cube, renders it into an offscreen framebuffer, then applies a post-processing pass.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_application_8hpp_source.html">Application.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_uniforms_8hpp_source.html">../Core/Utility/Uniforms.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_shader_8hpp_source.html">../Core/gfx/OpenGL/Objects/Shader.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_shader_program_8hpp_source.html">../Core/gfx/OpenGL/Objects/ShaderProgram.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_vertex_array_8hpp_source.html">../Core/gfx/OpenGL/Objects/VertexArray.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_input_8hpp_source.html">Input.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_time_8hpp_source.html">Utility/Time.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_camera_8hpp_source.html">gfx/Camera.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_indices_8hpp_source.html">gfx/Indices.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_frame_buffer_8hpp_source.html">gfx/OpenGL/Objects/FrameBuffer.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_set_rendering_state_8hpp_source.html">gfx/OpenGL/SetRenderingState.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_window_8hpp_source.html">gfx/Window/Window.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_set_rendering_state_8hpp_source.html">sog/gfx/OpenGL/SetRenderingState.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sog_8hpp_source.html">sog/sog.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sog__glad_8hpp_source.html">sog/sog_glad.hpp</a>&quot;</code><br />
 </div>
 <p><a href="_application_8cpp_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implements <a class="el" href="classsog_1_1_application.html#a8676970789ebf44cc12eefefb549afee" title="Runs the main render loop until the window is closed.">sog::Application::Run()</a>, the demo main loop: builds a textured cube, renders it into an offscreen framebuffer, then applies a post-processing pass. </p>
+<div class="textblock"><p>Implements <a class="el" href="class_application.html#a02799e64b246a6b6b8fa58477882a4be" title="Runs the main render loop until the window is closed.">Application::Run()</a>, the demo main loop: builds a textured cube, renders it into an offscreen framebuffer, then applies a post-processing pass. </p>
 
 <p class="definition">Definition in file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 </div></div><!-- contents -->
@@ -147,7 +139,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_application_8
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>App</b></li><li class="navelem"><a href="_application_8cpp.html">Application.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>examples</b></li><li class="navelem"><a href="_application_8cpp.html">Application.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['uniformbuffer_0',['UniformBuffer',['../_buffers_8hpp.html#ad45d8639734dada223679773bffe0d8b',1,'sog::gfx']]],
-  ['uniformbufferhandle_1',['UniformBufferHandle',['../_handles_8hpp.html#a05b22fbe3137c6f2854aba4018fb8eed',1,'sog::gfx']]],
-  ['uniformname_2',['uniformName',['../classsog_1_1gfx_1_1_shader_program.html#a9532a59ec753cec978510c204228e503',1,'sog::gfx::ShaderProgram']]]
+  ['tag_5ftype_0',['tag_type',['../classsog_1_1gfx_1_1_g_l_handle.html#a61c72b4f59fec67a8b8da9863af38e7a',1,'sog::gfx::GLHandle']]],
+  ['texture2d_1',['Texture2D',['../sog_8hpp.html#a6567eea990859c8f575d06bc82205611',1,'sog']]],
+  ['texturehandle_2',['TextureHandle',['../_handles_8hpp.html#a3d96bf276395a08d271889223a5bd86d',1,'sog::gfx']]]
 ];

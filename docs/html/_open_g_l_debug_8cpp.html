@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/gfx/backend/OpenGLDebug.cpp File Reference</title>
+<title>sog (Small OpenGL Graphics): src/sog/gfx/backend/OpenGLDebug.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -167,7 +167,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Static string such as "HIGH", "MEDIUM", "LOW", "NOTIFICATION", or "UNKNOWN". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00073">73</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00076">76</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,7 +195,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Static string such as "API", "WINDOW_SYSTEM", "SHADER_COMPILER", "THIRD_PARTY", "APPLICATION", "OTHER", or "UNKNOWN". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00015">15</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00017">17</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
 
 </div>
 </div>
@@ -223,7 +223,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Static string such as "ERROR", "DEPRECATED_BEHAVIOR", "PERFORMANCE", "MARKER", or "UNKNOWN". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00041">41</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00044">44</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
 
 </div>
 </div>
@@ -272,20 +272,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Internal bridge installed with glDebugMessageCallback; translates enums and forwards to the user callback. </p>
+<p>The GL length argument is unused (the message is NUL-terminated), as is userParam: the bridge reads the module-level s_UserCallback instead.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source</td><td>GL debug source enum. </td></tr>
     <tr><td class="paramname">type</td><td>GL debug type enum. </td></tr>
     <tr><td class="paramname">id</td><td>GL debug message id. </td></tr>
     <tr><td class="paramname">severity</td><td>GL debug severity enum. </td></tr>
-    <tr><td class="paramname">length</td><td>Message length (unused; message is NUL-terminated). </td></tr>
     <tr><td class="paramname">message</td><td>The debug message text. </td></tr>
-    <tr><td class="paramname">userParam</td><td>Unused (the callback uses the module-level s_UserCallback). </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00103">103</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00109">109</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
 
 </div>
 </div>
@@ -306,12 +305,6 @@ Variables</h2></td></tr>
 
 <p>Stores the user callback and enables OpenGL debug output. </p>
 <p>Registers a handler for OpenGL debug messages and enables debug output.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">callback</td><td>Handler to receive translated debug messages (moved into a module-level slot).</td></tr>
-  </table>
-  </dd>
-</dl>
 <p>Installs internalOpenGlBridge as the GL debug callback, then enables GL_DEBUG_OUTPUT and GL_DEBUG_OUTPUT_SYNCHRONOUS.</p>
 <p>Stores the callback, installs an internal bridge with glDebugMessageCallback and enables GL_DEBUG_OUTPUT (plus synchronous output for reliable debuggers). Every subsequent GL debug message is translated and forwarded to callback.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -322,7 +315,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Requires a debug context (the engine requests one in Window::initialize via GLFW_OPENGL_DEBUG_CONTEXT). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00123">123</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00128">128</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
 
 </div>
 </div>
@@ -349,7 +342,7 @@ Variables</h2></td></tr>
 
 <p>The most recently registered user callback (replaced by setDebugCallback). </p>
 
-<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00091">91</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_open_g_l_debug_8cpp_source.html#l00094">94</a> of file <a class="el" href="_open_g_l_debug_8cpp_source.html">OpenGLDebug.cpp</a>.</p>
 
 </div>
 </div>
@@ -366,7 +359,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>backend</b></li><li class="navelem"><a href="_open_g_l_debug_8cpp.html">OpenGLDebug.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>gfx</b></li><li class="navelem"><b>backend</b></li><li class="navelem"><a href="_open_g_l_debug_8cpp.html">OpenGLDebug.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

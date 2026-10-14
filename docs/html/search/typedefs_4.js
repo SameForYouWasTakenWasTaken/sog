@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['fragmentshader_0',['FragmentShader',['../_shader_8hpp.html#a7c947c6f637c602fe5c0c3e16eb76231',1,'sog::gfx']]],
-  ['framebufferhandle_1',['FrameBufferHandle',['../_handles_8hpp.html#a4854f5693a58e3ddb653ef6a8927ad9b',1,'sog::gfx']]]
+  ['elementbufferhandle_0',['ElementBufferHandle',['../_handles_8hpp.html#a4ea03478490602aadb6d2e8b8daa0196',1,'sog::gfx']]],
+  ['event_1',['Event',['../sog_8hpp.html#aba30eb392b283c97f6a2e8fbe28efd42',1,'sog']]],
+  ['eventtype_2',['EventType',['../sog_8hpp.html#a8cdb1efb2c1772419a42cc8c526c3ff9',1,'sog']]]
 ];

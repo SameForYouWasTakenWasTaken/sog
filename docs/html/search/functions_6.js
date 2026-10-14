@@ -1,12 +1,12 @@
 var searchData=
 [
   ['get_0',['get',['../classsog_1_1gfx_1_1_g_l_handle.html#af2b599accd490698a838008c0c7ad256',1,'sog::gfx::GLHandle::get()'],['../classsog_1_1gfx_1_1_shader.html#a69d4d670d3e489f133c2d743adde93ee',1,'sog::gfx::Shader::get()'],['../classsog_1_1gfx_1_1_shader_program.html#af244ff5e771514274114fceca817d151',1,'sog::gfx::ShaderProgram::get()']]],
-  ['getcursordelta_1',['getCursorDelta',['../_input_8cpp.html#ae03d04602a30983995a0e28edfd1b1db',1,'sog::input']]],
-  ['getcursorposition_2',['getCursorPosition',['../_input_8cpp.html#af9561160ab4cb4a0bfb827460ab5367c',1,'sog::input']]],
+  ['getcursordelta_1',['getCursorDelta',['../_input_8hpp.html#ae03d04602a30983995a0e28edfd1b1db',1,'sog::input']]],
+  ['getcursorposition_2',['getCursorPosition',['../_input_8hpp.html#af9561160ab4cb4a0bfb827460ab5367c',1,'sog::input']]],
   ['getforward_3',['getForward',['../classsog_1_1gfx_1_1_camera.html#abace853217afa75148df2edffb5ad9f4',1,'sog::gfx::Camera']]],
   ['gethandle_4',['getHandle',['../classsog_1_1gfx_1_1_texture2_d.html#af910a95e73fa3d33cce4af284a61c4d9',1,'sog::gfx::Texture2D']]],
   ['getheight_5',['getHeight',['../classsog_1_1gfx_1_1_window.html#a3a691334f48d69ad6e3fcdfcc6b3b653',1,'sog::gfx::Window']]],
-  ['getlocation_6',['getLocation',['../classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665',1,'sog::gfx::ShaderProgram::getLocation()'],['../_uniforms_8cpp.html#abf4002334bc1ad0befa769b00a45e438',1,'sog::gfx::uniform::getLocation()']]],
+  ['getlocation_6',['getLocation',['../classsog_1_1gfx_1_1_shader_program.html#a4a81cf9549a043e1be7d846f87065665',1,'sog::gfx::ShaderProgram::getLocation()'],['../_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438',1,'sog::gfx::uniform::getLocation()']]],
   ['getnativehandle_7',['getNativeHandle',['../classsog_1_1gfx_1_1_window.html#aca6a399fdf9b2983f190379f9cf1b262',1,'sog::gfx::Window']]],
   ['getpitch_8',['getPitch',['../classsog_1_1gfx_1_1_camera.html#adad8ad08b4ef8b0ca622d22b79cefe9e',1,'sog::gfx::Camera']]],
   ['getposition_9',['getPosition',['../classsog_1_1gfx_1_1_camera.html#af0814d0c2f98d669334d4f6c8769977b',1,'sog::gfx::Camera']]],

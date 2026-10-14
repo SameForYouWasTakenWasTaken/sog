@@ -100,8 +100,11 @@ class Window
     static void clear(ClearBuffer buffers, Color color);
 
     /**
-     * @brief Clears the given buffers with an opaque black color.
+     * @brief Clears the given buffers with a black color (0, 0, 0, 0).
      * @param buffers Which buffer(s) to clear; combine with operator|.
+     *
+     * @note Unlike beginFrame()'s default color ({0, 0, 0, 255}, opaque black),
+     * the alpha channel here is cleared to 0.
      */
     static void clear(ClearBuffer buffers);
 

@@ -13,5 +13,6 @@ var classsog_1_1gfx_1_1_gpu_buffer =
     [ "size", "classsog_1_1gfx_1_1_gpu_buffer.html#ad510604ae1885ef05080bb8bc52f3d81", null ],
     [ "update", "classsog_1_1gfx_1_1_gpu_buffer.html#a0aaf46301576ab0ed701a79b9166b502", null ],
     [ "buf_", "classsog_1_1gfx_1_1_gpu_buffer.html#a279c015915c9aa9b40bead031e75b553", null ],
-    [ "capacity_", "classsog_1_1gfx_1_1_gpu_buffer.html#a38ca526b0db550e0caaa888cfc858db3", null ]
+    [ "capacity_", "classsog_1_1gfx_1_1_gpu_buffer.html#a38ca526b0db550e0caaa888cfc858db3", null ],
+    [ "count_", "classsog_1_1gfx_1_1_gpu_buffer.html#aafbf028d18da36bf085533c1e6b12605", null ]
 ];

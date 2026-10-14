@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Color Struct Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Color Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -129,25 +129,28 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a7d0894c85999802260c782a5d0e370" id="r_a0a7d0894c85999802260c782a5d0e370"><td class="memItemLeft">static constexpr <a class="el" href="structsog_1_1gfx_1_1_color.html">Color</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0a7d0894c85999802260c782a5d0e370">fromRGBA</a> (std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a) noexcept</td></tr>
 <tr class="memdesc:a0a7d0894c85999802260c782a5d0e370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a normalized <a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> from conventional 8-bit-per-channel values.  <br /></td></tr>
 <tr class="memitem:ad7a3d0e723ffb7ebc53d0df7fab7816f" id="r_ad7a3d0e723ffb7ebc53d0df7fab7816f"><td class="memItemLeft">static constexpr <a class="el" href="structsog_1_1gfx_1_1_color.html">Color</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad7a3d0e723ffb7ebc53d0df7fab7816f">toRGBA</a> (std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a) noexcept</td></tr>
-<tr class="memdesc:ad7a3d0e723ffb7ebc53d0df7fab7816f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales float channels into the 0-255 range, rounding each to a whole number.  <br /></td></tr>
+<tr class="memdesc:ad7a3d0e723ffb7ebc53d0df7fab7816f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales 8-bit channels into whole-number 0-255 float values.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a437d9125835194ab2ad749b562bc161a" id="r_a437d9125835194ab2ad749b562bc161a"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a437d9125835194ab2ad749b562bc161a">r</a> {}</td></tr>
+<tr class="memdesc:a437d9125835194ab2ad749b562bc161a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red channel (0.0 - 1.0); defaults to 0.0 (black).  <br /></td></tr>
 <tr class="memitem:aa5b19034989f3dc86930ca29eb56426f" id="r_aa5b19034989f3dc86930ca29eb56426f"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa5b19034989f3dc86930ca29eb56426f">g</a> {}</td></tr>
+<tr class="memdesc:aa5b19034989f3dc86930ca29eb56426f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green channel (0.0 - 1.0); defaults to 0.0 (black).  <br /></td></tr>
 <tr class="memitem:a7b38e28891f44d43e028b64f291157bf" id="r_a7b38e28891f44d43e028b64f291157bf"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a7b38e28891f44d43e028b64f291157bf">b</a> {}</td></tr>
+<tr class="memdesc:a7b38e28891f44d43e028b64f291157bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue channel (0.0 - 1.0); defaults to 0.0 (black).  <br /></td></tr>
 <tr class="memitem:a6665818db07d1a8d4befb241a863e278" id="r_a6665818db07d1a8d4befb241a863e278"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6665818db07d1a8d4befb241a863e278">a</a> = 0</td></tr>
-<tr class="memdesc:a6665818db07d1a8d4befb241a863e278"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> channels; r/g/b default to 0.0 (black), a defaults to 0.0 (fully transparent).  <br /></td></tr>
+<tr class="memdesc:a6665818db07d1a8d4befb241a863e278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alpha channel (0.0 - 1.0); defaults to 0.0 (fully transparent).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a0f550a1585eb2fb94ac757d86dcf2cdd" id="r_a0f550a1585eb2fb94ac757d86dcf2cdd"><td class="memItemLeft">static constexpr float&#160;</td><td class="memItemRight"><a class="el" href="#a0f550a1585eb2fb94ac757d86dcf2cdd">MAX_VALUE</a></td></tr>
-<tr class="memdesc:a0f550a1585eb2fb94ac757d86dcf2cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largest value of an 8-bit channel; scale factor for <a class="el" href="#ad7a3d0e723ffb7ebc53d0df7fab7816f" title="Scales float channels into the 0-255 range, rounding each to a whole number.">toRGBA()</a>.  <br /></td></tr>
+<tr class="memdesc:a0f550a1585eb2fb94ac757d86dcf2cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largest value of an 8-bit channel; scale factor for <a class="el" href="#ad7a3d0e723ffb7ebc53d0df7fab7816f" title="Scales 8-bit channels into whole-number 0-255 float values.">toRGBA()</a>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RGBA color stored as normalized floats (0.0 - 1.0 per channel). </p>
 <p>Matches the component range expected by OpenGL (e.g. glClearColor, glClear), so a <a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> can be handed straight to the API. Use <a class="el" href="#a0a7d0894c85999802260c782a5d0e370" title="Builds a normalized Color from conventional 8-bit-per-channel values.">fromRGBA()</a> to build a color from conventional 8-bit values.</p>
-<dl class="section attention"><dt>Attention</dt><dd>The members are assumed to be normalized floats in [0, 1]. See <a class="el" href="#ad7a3d0e723ffb7ebc53d0df7fab7816f" title="Scales float channels into the 0-255 range, rounding each to a whole number.">toRGBA()</a> for the (unexpected) behaviour of that helper before using it. </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>The members are assumed to be normalized floats in [0, 1]. See <a class="el" href="#ad7a3d0e723ffb7ebc53d0df7fab7816f" title="Scales 8-bit channels into whole-number 0-255 float values.">toRGBA()</a> for the (unexpected) behaviour of that helper before using it. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00023">23</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -200,13 +203,13 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> with each channel divided by 255 into the [0, 1] range.</dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> red = <a class="code hl_function" href="#a0a7d0894c85999802260c782a5d0e370">Color::fromRGBA</a>(255, 0, 0, 255); <span class="comment">// r == 1.0f, a == 1.0f</span></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_color_html_a0a7d0894c85999802260c782a5d0e370"><div class="ttname"><a href="#a0a7d0894c85999802260c782a5d0e370">sog::gfx::Color::fromRGBA</a></div><div class="ttdeci">static constexpr Color fromRGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a) noexcept</div><div class="ttdoc">Builds a normalized Color from conventional 8-bit-per-channel values.</div><div class="ttdef"><b>Definition</b> <a href="_colors_8hpp_source.html#l00049">Colors.hpp:49</a></div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_color_html_a0a7d0894c85999802260c782a5d0e370"><div class="ttname"><a href="#a0a7d0894c85999802260c782a5d0e370">sog::gfx::Color::fromRGBA</a></div><div class="ttdeci">static constexpr Color fromRGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a) noexcept</div><div class="ttdoc">Builds a normalized Color from conventional 8-bit-per-channel values.</div><div class="ttdef"><b>Definition</b> <a href="_colors_8hpp_source.html#l00051">Colors.hpp:51</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00049">49</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00051">51</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00028">a</a>.</p>
+<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00031">a</a>, <a class="el" href="_colors_8hpp_source.html#l00030">b</a>, <a class="el" href="_colors_8hpp_source.html#l00029">g</a>, and <a class="el" href="_colors_8hpp_source.html#l00028">r</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00100">sog::gfx::Window::clear()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00098">sog::gfx::Window::clear()</a>.</p>
 
 </div>
 </div>
@@ -236,9 +239,9 @@ Static Public Attributes</h2></td></tr>
 <p>Converts this color to a 4-component vector for GL calls. </p>
 <dl class="section return"><dt>Returns</dt><dd>glm::vec4 holding the r, g, b, a components in that order. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00035">35</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00037">37</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00028">a</a>.</p>
+<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00031">a</a>, <a class="el" href="_colors_8hpp_source.html#l00030">b</a>, <a class="el" href="_colors_8hpp_source.html#l00029">g</a>, and <a class="el" href="_colors_8hpp_source.html#l00028">r</a>.</p>
 
 </div>
 </div>
@@ -279,22 +282,22 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Scales float channels into the 0-255 range, rounding each to a whole number. </p>
+<p>Scales 8-bit channels into whole-number 0-255 float values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">r</td><td>Red channel, expected in [0, 1]. </td></tr>
-    <tr><td class="paramname">g</td><td>Green channel, expected in [0, 1]. </td></tr>
-    <tr><td class="paramname">b</td><td>Blue channel, expected in [0, 1]. </td></tr>
-    <tr><td class="paramname">a</td><td>Alpha channel, expected in [0, 1]. </td></tr>
+    <tr><td class="paramname">r</td><td>Red channel, 0-255. </td></tr>
+    <tr><td class="paramname">g</td><td>Green channel, 0-255. </td></tr>
+    <tr><td class="paramname">b</td><td>Blue channel, 0-255. </td></tr>
+    <tr><td class="paramname">a</td><td>Alpha channel, 0-255. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> whose members hold the rounded 0-255 values as floats.</dd></dl>
-<dl class="section attention"><dt>Attention</dt><dd>Despite the name, this does not produce 8-bit integers; it returns a <a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> whose float members are scaled to 0-255. The result is only suitable as an intermediate for further conversion (e.g. before writing bytes to disk), not for direct use with OpenGL calls that expect normalized [0, 1] colors. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> whose members hold the rounded, scaled channel values as floats.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Despite the name, this does not produce normalized 8-bit values usable with OpenGL: the parameters are 0-255 inputs, and the current implementation multiplies them by 255 again (0-255 becomes 0-65025). Treat this helper as unusable until it is fixed; use <a class="el" href="#a0a7d0894c85999802260c782a5d0e370" title="Builds a normalized Color from conventional 8-bit-per-channel values.">fromRGBA()</a> to build a normalized [0, 1] <a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> instead. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00070">70</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00073">73</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00028">a</a>.</p>
+<p class="reference">References <a class="el" href="_colors_8hpp_source.html#l00031">a</a>, <a class="el" href="_colors_8hpp_source.html#l00030">b</a>, <a class="el" href="_colors_8hpp_source.html#l00029">g</a>, and <a class="el" href="_colors_8hpp_source.html#l00028">r</a>.</p>
 
 </div>
 </div>
@@ -311,11 +314,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structsog_1_1gfx_1_1_color.html" title="RGBA color stored as normalized floats (0.0 - 1.0 per channel).">Color</a> channels; r/g/b default to 0.0 (black), a defaults to 0.0 (fully transparent). </p>
+<p>Alpha channel (0.0 - 1.0); defaults to 0.0 (fully transparent). </p>
 
-<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00028">28</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00031">31</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00100">sog::gfx::Window::clear()</a>, <a class="el" href="_colors_8hpp_source.html#l00049">fromRGBA()</a>, <a class="el" href="_colors_8hpp_source.html#l00035">operator math::Vec4()</a>, and <a class="el" href="_colors_8hpp_source.html#l00070">toRGBA()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00098">sog::gfx::Window::clear()</a>, <a class="el" href="_colors_8hpp_source.html#l00051">fromRGBA()</a>, <a class="el" href="_colors_8hpp_source.html#l00037">operator math::Vec4()</a>, and <a class="el" href="_colors_8hpp_source.html#l00073">toRGBA()</a>.</p>
 
 </div>
 </div>
@@ -331,7 +334,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00028">28</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+<p>Blue channel (0.0 - 1.0); defaults to 0.0 (black). </p>
+
+<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00030">30</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00098">sog::gfx::Window::clear()</a>, <a class="el" href="_colors_8hpp_source.html#l00051">fromRGBA()</a>, <a class="el" href="_colors_8hpp_source.html#l00037">operator math::Vec4()</a>, and <a class="el" href="_colors_8hpp_source.html#l00073">toRGBA()</a>.</p>
 
 </div>
 </div>
@@ -347,7 +354,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00028">28</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+<p>Green channel (0.0 - 1.0); defaults to 0.0 (black). </p>
+
+<p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00029">29</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00098">sog::gfx::Window::clear()</a>, <a class="el" href="_colors_8hpp_source.html#l00051">fromRGBA()</a>, <a class="el" href="_colors_8hpp_source.html#l00037">operator math::Vec4()</a>, and <a class="el" href="_colors_8hpp_source.html#l00073">toRGBA()</a>.</p>
 
 </div>
 </div>
@@ -373,7 +384,7 @@ Static Public Attributes</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">                             =</div>
 <div class="line">255.f</div>
 </div><!-- fragment -->
-<p>Largest value of an 8-bit channel; scale factor for <a class="el" href="#ad7a3d0e723ffb7ebc53d0df7fab7816f" title="Scales float channels into the 0-255 range, rounding each to a whole number.">toRGBA()</a>. </p>
+<p>Largest value of an 8-bit channel; scale factor for <a class="el" href="#ad7a3d0e723ffb7ebc53d0df7fab7816f" title="Scales 8-bit channels into whole-number 0-255 float values.">toRGBA()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00025">25</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
 
@@ -391,12 +402,16 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Red channel (0.0 - 1.0); defaults to 0.0 (black). </p>
+
 <p class="definition">Definition at line <a class="el" href="_colors_8hpp_source.html#l00028">28</a> of file <a class="el" href="_colors_8hpp_source.html">Colors.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00098">sog::gfx::Window::clear()</a>, <a class="el" href="_colors_8hpp_source.html#l00051">fromRGBA()</a>, <a class="el" href="_colors_8hpp_source.html#l00037">operator math::Vec4()</a>, and <a class="el" href="_colors_8hpp_source.html#l00073">toRGBA()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Core/gfx/Types/<a class="el" href="_colors_8hpp_source.html">Colors.hpp</a></li>
+<li>src/sog/include/sog/gfx/Types/<a class="el" href="_colors_8hpp_source.html">Colors.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

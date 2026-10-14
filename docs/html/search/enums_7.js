@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['projectiontype_0',['ProjectionType',['../classsog_1_1gfx_1_1_camera.html#ac87386c018fa1ac9a1f1aca156e8f5f2',1,'sog::gfx::Camera']]]
+  ['index_5ftype_0',['index_type',['../_enums_8hpp.html#ac80eb8f5d166941c85a50ffaec495c4d',1,'sog::gfx::enums']]]
 ];

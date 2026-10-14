@@ -1,6 +1,7 @@
 /**
  * @file GpuBuffer.hpp
- * @brief Defines GpuBuffer<T, Target, BindMode>, a growable typed buffer that keeps a count/capacity view over a backend::GLBuffer.
+ * @brief Defines GpuBuffer<T, Target, BindMode>, a growable typed buffer that keeps a
+ * count/capacity view over a backend::GLBuffer.
  */
 
 #pragma once
@@ -160,6 +161,7 @@ template <typename T, GLenum Target, BindingMode BindMode> class GpuBuffer
     }
 
     backend::GLBuffer<T> buf_; /**< Byte-level GL storage backing this buffer. */
-    size_t count_ = 0, capacity_ = 0; /**< Live element count and allocated element capacity. */
+    size_t count_ = 0;     /**< Number of live elements in the buffer. */
+    size_t capacity_ = 0;  /**< Number of elements that fit before the next growth. */
 };
 } // namespace sog::gfx

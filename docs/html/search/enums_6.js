@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['openglprofile_0',['OpenGLProfile',['../structsog_1_1context_1_1_window_context.html#a4c0c01ebeccc801c994fd44c90a94560',1,'sog::context::WindowContext']]]
+  ['graphics_5ferror_5fcode_0',['graphics_error_code',['../graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428b',1,'sog']]]
 ];

@@ -1,7 +1,7 @@
 /**
  * @file Enums.hpp
- * @brief Type-safe enums over raw OpenGL constants (buffers, vertex arrays, shaders, textures) for
- * use throughout the engine.
+ * @brief Type-safe enums over raw OpenGL constants (buffers, vertex arrays, shaders, textures,
+ * pixel formats and draw-call parameters) for use throughout the engine.
  */
 
 #pragma once
@@ -87,7 +87,7 @@ enum class vertex_query : GLenum
 /**
  * @brief Shader stage types (mirrors GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER,
  * GL_COMPUTE_SHADER).
- * @see sog::backend::Shader, sog::backend::ShaderProgram
+ * @see sog::Shader, sog::ShaderProgram
  */
 enum class shader_type : GLenum
 {
@@ -160,53 +160,104 @@ enum class texture_mipmaps : GLenum
         GL_LINEAR_MIPMAP_LINEAR, /**< Trilinear: linear level blend and linear texel filtering. */
 };
 
+/**
+ * @brief Sized GL internal formats a texture storage can be allocated with (mirrors GL_RGBA8,
+ * GL_RGB8, GL_RGBA16F, GL_RGB16F, GL_R8, GL_DEPTH24_STENCIL8).
+ *
+ * Chosen at allocation time by Texture2D::createFromRaw(); it decides how the
+ * render target stores texels, independently of the pixel_format of the data
+ * uploaded afterwards.
+ *
+ * @see sog::pixel_format, sog::pixel_type
+ */
 enum class texture_internal_format : GLenum
 {
-    RGBA8 = GL_RGBA8,
-    RGB8 = GL_RGB8,
-    RGBA16F = GL_RGBA16F,
-    RGB16F = GL_RGB16F,
-    R8 = GL_R8,
-    Depth24Stencil8 = GL_DEPTH24_STENCIL8
+    RGBA8 = GL_RGBA8,           /**< 8 bits per channel, RGBA (LDR, most common). */
+    RGB8 = GL_RGB8,             /**< 8 bits per channel, RGB (no alpha). */
+    RGBA16F = GL_RGBA16F,       /**< 16-bit float per channel, RGBA (HDR render targets). */
+    RGB16F = GL_RGB16F,         /**< 16-bit float per channel, RGB (HDR, no alpha). */
+    R8 = GL_R8,                 /**< Single 8-bit channel (masks, lookup data). */
+    Depth24Stencil8 = GL_DEPTH24_STENCIL8 /**< 24-bit depth plus 8-bit stencil. */
 };
 
+/**
+ * @brief Pixel layout of data uploaded to (or read from) a texture (mirrors GL_RGBA, GL_RGB,
+ * GL_RED, GL_RG, GL_DEPTH_STENCIL).
+ *
+ * Describes the channels present in the caller's pixel data, not how the
+ * texture stores them internally.
+ *
+ * @see sog::texture_internal_format, sog::pixel_type
+ */
 enum class pixel_format : GLenum
 {
-    RGBA = GL_RGBA,
-    RGB = GL_RGB,
-    Red = GL_RED,
-    RG = GL_RG,
-    DepthStencil = GL_DEPTH_STENCIL
+    RGBA = GL_RGBA,                 /**< Four channels: red, green, blue, alpha. */
+    RGB = GL_RGB,                   /**< Three channels: red, green, blue. */
+    Red = GL_RED,                   /**< Single red channel. */
+    RG = GL_RG,                     /**< Two channels: red and green. */
+    DepthStencil = GL_DEPTH_STENCIL /**< Packed depth/stencil data. */
 };
 
+/**
+ * @brief Component type of the caller's pixel data (mirrors GL_UNSIGNED_BYTE, GL_FLOAT, GL_INT,
+ * GL_UNSIGNED_INT_24_8).
+ *
+ * Tells OpenGL how to interpret the bytes passed to a texture upload; the
+ * default for image files loaded via Texture2D::createFromFile is UnsignedByte.
+ *
+ * @see sog::texture_internal_format, sog::pixel_format
+ */
 enum class pixel_type : GLenum
 {
-    UnsignedByte = GL_UNSIGNED_BYTE,
-    Float = GL_FLOAT,
-    Int = GL_INT,
-    UnsignedInt248 = GL_UNSIGNED_INT_24_8
+    UnsignedByte = GL_UNSIGNED_BYTE,         /**< 8-bit unsigned integer per component. */
+    Float = GL_FLOAT,                        /**< 32-bit float per component (HDR data). */
+    Int = GL_INT,                            /**< 32-bit signed integer per component. */
+    UnsignedInt248 =
+        GL_UNSIGNED_INT_24_8 /**< Single packed 24-bit depth + 8-bit stencil value. */
 };
 
+/**
+ * @brief Primitive topology for a draw call (mirrors GL_TRIANGLES, GL_POINTS, GL_LINES and the
+ * strip/fan/adjacency variants).
+ *
+ * Passed to the sog::gfx::common draw entry points; adjacency variants are only
+ * meaningful for geometry shaders.
+ *
+ * @see sog::gfx::common::DrawArrays, sog::gfx::common::DrawElements
+ */
 enum class draw_mode : GLenum
 {
-    TRIANGLES = GL_TRIANGLES,
-    QUADS = GL_QUADS,
-    POINTS = GL_POINTS,
-    LINES = GL_LINES,
-    LINE_STRIP = GL_LINE_STRIP,
-    TRIANGLE_STRIP = GL_TRIANGLE_STRIP,
-    TRIANGLE_FAN = GL_TRIANGLE_FAN,
-    LINES_ADJACENCY = GL_LINES_ADJACENCY,
-    LINE_STRIP_ADJACENCY = GL_LINE_STRIP_ADJACENCY,
-    TRIANGLES_ADJACENCY = GL_TRIANGLES_ADJACENCY,
-    TRIANGLE_STRIP_ADJACENCY = GL_TRIANGLE_STRIP_ADJACENCY,
+    TRIANGLES = GL_TRIANGLES,     /**< Separate triangles (3 vertices each). */
+    QUADS = GL_QUADS,             /**< Quads (legacy; not in core profile). */
+    POINTS = GL_POINTS,           /**< Independent points. */
+    LINES = GL_LINES,             /**< Independent line segments (2 vertices each). */
+    LINE_STRIP = GL_LINE_STRIP,   /**< Connected line strip. */
+    TRIANGLE_STRIP = GL_TRIANGLE_STRIP, /**< Connected triangle strip. */
+    TRIANGLE_FAN = GL_TRIANGLE_FAN,     /**< Triangle fan around the first vertex. */
+    LINES_ADJACENCY =
+        GL_LINES_ADJACENCY, /**< Segments with adjacency vertices (geometry shaders). */
+    LINE_STRIP_ADJACENCY =
+        GL_LINE_STRIP_ADJACENCY, /**< Line strip with adjacency vertices (geometry shaders). */
+    TRIANGLES_ADJACENCY =
+        GL_TRIANGLES_ADJACENCY, /**< Triangles with adjacency vertices (geometry shaders). */
+    TRIANGLE_STRIP_ADJACENCY =
+        GL_TRIANGLE_STRIP_ADJACENCY /**< Strip with adjacency vertices (geometry shaders). */
 };
 
+/**
+ * @brief Component type of the indices stored in an element (index) buffer (mirrors
+ * GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, GL_UNSIGNED_INT).
+ *
+ * Passed to the indexed draw entry points; must match how the index data was
+ * uploaded (sog::Index is a 32-bit unsigned integer, i.e. index_type::UINT).
+ *
+ * @see sog::Index, sog::gfx::common::DrawElements
+ */
 enum class index_type : GLenum
 {
-    UBYTE = GL_UNSIGNED_BYTE,
-    USHORT = GL_UNSIGNED_SHORT,
-    UINT = GL_UNSIGNED_INT
+    UBYTE = GL_UNSIGNED_BYTE,   /**< 8-bit indices (up to 255 vertices). */
+    USHORT = GL_UNSIGNED_SHORT, /**< 16-bit indices (up to 65 535 vertices). */
+    UINT = GL_UNSIGNED_INT      /**< 32-bit indices (meshes beyond 65k vertices). */
 };
 } // namespace enums
 } // namespace sog::gfx

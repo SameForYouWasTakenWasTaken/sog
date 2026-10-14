@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: src/Core/Utility/Uniforms.cpp File Reference</title>
+<title>sog (Small OpenGL Graphics): src/sog/Utility/Uniforms.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_uniforms_8cpp
 
 <p>Implements the sog::gfx::uniform helpers: uniform lookup plus typed uploads via GL's direct-state-access glProgramUniform* entry points.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_uniforms_8hpp_source.html">Uniforms.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="_uniforms_8hpp_source.html">sog/Utility/Uniforms.hpp</a>&gt;</code><br />
 <code>#include &quot;glad/gl.h&quot;</code><br />
 </div>
 <p><a href="_uniforms_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -125,21 +125,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_uniforms_8cpp
 Functions</h2></td></tr>
 <tr class="memitem:a8227fb19db08022b7a33e996ea215fc3" id="r_a8227fb19db08022b7a33e996ea215fc3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8227fb19db08022b7a33e996ea215fc3">sog::gfx::uniform::backend::sanityCheck</a> (<a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform)</td></tr>
 <tr class="memdesc:a8227fb19db08022b7a33e996ea215fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws if the given uniform location is invalid (-1).  <br /></td></tr>
-<tr class="memitem:abf4002334bc1ad0befa769b00a45e438" id="r_abf4002334bc1ad0befa769b00a45e438"><td class="memItemLeft"><a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a>&#160;</td><td class="memItemRight"><a class="el" href="#abf4002334bc1ad0befa769b00a45e438">sog::gfx::uniform::getLocation</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, const std::string &amp;name)</td></tr>
+<tr class="memitem:abf4002334bc1ad0befa769b00a45e438" id="r_abf4002334bc1ad0befa769b00a45e438"><td class="memItemLeft"><a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a>&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438">sog::gfx::uniform::getLocation</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, const std::string &amp;name)</td></tr>
 <tr class="memdesc:abf4002334bc1ad0befa769b00a45e438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up a uniform's location by name within a linked program.  <br /></td></tr>
-<tr class="memitem:ac5315974891ada703e1abf937cbea522" id="r_ac5315974891ada703e1abf937cbea522"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac5315974891ada703e1abf937cbea522">sog::gfx::uniform::setVec4</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a> vec)</td></tr>
+<tr class="memitem:ac5315974891ada703e1abf937cbea522" id="r_ac5315974891ada703e1abf937cbea522"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#ac5315974891ada703e1abf937cbea522">sog::gfx::uniform::setVec4</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a> vec)</td></tr>
 <tr class="memdesc:ac5315974891ada703e1abf937cbea522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads a 4-component float vector to a uniform.  <br /></td></tr>
-<tr class="memitem:a14e119f27aab8d533704786cd9edbebb" id="r_a14e119f27aab8d533704786cd9edbebb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a14e119f27aab8d533704786cd9edbebb">sog::gfx::uniform::setVec3</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> vec)</td></tr>
+<tr class="memitem:a14e119f27aab8d533704786cd9edbebb" id="r_a14e119f27aab8d533704786cd9edbebb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#a14e119f27aab8d533704786cd9edbebb">sog::gfx::uniform::setVec3</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> vec)</td></tr>
 <tr class="memdesc:a14e119f27aab8d533704786cd9edbebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads a 3-component float vector to a uniform.  <br /></td></tr>
-<tr class="memitem:ac71faf6f9b7649438ff1b97dfaa68e1e" id="r_ac71faf6f9b7649438ff1b97dfaa68e1e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac71faf6f9b7649438ff1b97dfaa68e1e">sog::gfx::uniform::setVec2</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a> vec)</td></tr>
+<tr class="memitem:ac71faf6f9b7649438ff1b97dfaa68e1e" id="r_ac71faf6f9b7649438ff1b97dfaa68e1e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#ac71faf6f9b7649438ff1b97dfaa68e1e">sog::gfx::uniform::setVec2</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a> vec)</td></tr>
 <tr class="memdesc:ac71faf6f9b7649438ff1b97dfaa68e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads a 2-component float vector to a uniform.  <br /></td></tr>
-<tr class="memitem:ac288840ac27de02f0611a04c6cdf56b0" id="r_ac288840ac27de02f0611a04c6cdf56b0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac288840ac27de02f0611a04c6cdf56b0">sog::gfx::uniform::setMat3</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#aee84dcf628fb34d7f505a13338934b88">math::Mat3</a> mat)</td></tr>
+<tr class="memitem:ac288840ac27de02f0611a04c6cdf56b0" id="r_ac288840ac27de02f0611a04c6cdf56b0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#ac288840ac27de02f0611a04c6cdf56b0">sog::gfx::uniform::setMat3</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#aee84dcf628fb34d7f505a13338934b88">math::Mat3</a> mat)</td></tr>
 <tr class="memdesc:ac288840ac27de02f0611a04c6cdf56b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads a 3x3 matrix to a uniform (column-major, no transpose).  <br /></td></tr>
-<tr class="memitem:a576488fd2fd71d6d99f7bd4faac57b5d" id="r_a576488fd2fd71d6d99f7bd4faac57b5d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a576488fd2fd71d6d99f7bd4faac57b5d">sog::gfx::uniform::setMat4</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> mat)</td></tr>
+<tr class="memitem:a576488fd2fd71d6d99f7bd4faac57b5d" id="r_a576488fd2fd71d6d99f7bd4faac57b5d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#a576488fd2fd71d6d99f7bd4faac57b5d">sog::gfx::uniform::setMat4</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, <a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> mat)</td></tr>
 <tr class="memdesc:a576488fd2fd71d6d99f7bd4faac57b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads a 4x4 matrix to a uniform (column-major, no transpose).  <br /></td></tr>
-<tr class="memitem:a211466e49a9169fd3f4420f83c1de741" id="r_a211466e49a9169fd3f4420f83c1de741"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a211466e49a9169fd3f4420f83c1de741">sog::gfx::uniform::setInt</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, int value)</td></tr>
+<tr class="memitem:a211466e49a9169fd3f4420f83c1de741" id="r_a211466e49a9169fd3f4420f83c1de741"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#a211466e49a9169fd3f4420f83c1de741">sog::gfx::uniform::setInt</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, int value)</td></tr>
 <tr class="memdesc:a211466e49a9169fd3f4420f83c1de741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads an integer to a uniform (commonly sampler bindings).  <br /></td></tr>
-<tr class="memitem:a8f6d51276ac1afca40caada37608884a" id="r_a8f6d51276ac1afca40caada37608884a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8f6d51276ac1afca40caada37608884a">sog::gfx::uniform::setFloat</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, float value)</td></tr>
+<tr class="memitem:a8f6d51276ac1afca40caada37608884a" id="r_a8f6d51276ac1afca40caada37608884a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="_uniforms_8hpp.html#a8f6d51276ac1afca40caada37608884a">sog::gfx::uniform::setFloat</a> (const <a class="el" href="classsog_1_1gfx_1_1_shader_program.html">ShaderProgram</a> &amp;program, <a class="el" href="structsog_1_1gfx_1_1_uniform.html">Uniform</a> uniform, float value)</td></tr>
 <tr class="memdesc:a8f6d51276ac1afca40caada37608884a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads a single float to a uniform.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -185,9 +185,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Uniform holding the location; may be invalid (-1) if not found.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Does not throw for a missing uniform — callers get an invalid Uniform to test. Prefer ShaderProgram::getLocation, which caches results per program. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00027">27</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00028">28</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -220,9 +220,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00017">17</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00018">18</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>.</p>
+<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00062">sog::graphics_error::graphics_error()</a>.</p>
 
 </div>
 </div>
@@ -266,9 +266,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00065">65</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00066">66</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -312,9 +312,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00060">60</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00061">61</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -358,9 +358,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00050">50</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00051">51</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -404,9 +404,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00055">55</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00056">56</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -450,9 +450,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00044">44</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00045">45</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -496,9 +496,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00038">38</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00039">39</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -542,9 +542,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00032">32</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_uniforms_8cpp_source.html#l00033">33</a> of file <a class="el" href="_uniforms_8cpp_source.html">Uniforms.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00085">sog::gfx::ShaderProgram::get()</a>.</p>
+<p class="reference">References <a class="el" href="_shader_program_8hpp_source.html#l00105">sog::gfx::ShaderProgram::get()</a>.</p>
 
 </div>
 </div>
@@ -561,7 +561,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Core</b></li><li class="navelem"><b>Utility</b></li><li class="navelem"><a href="_uniforms_8cpp.html">Uniforms.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>sog</b></li><li class="navelem"><b>Utility</b></li><li class="navelem"><a href="_uniforms_8cpp.html">Uniforms.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

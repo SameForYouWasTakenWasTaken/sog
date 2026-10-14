@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['value_5ftype_0',['value_type',['../classsog_1_1gfx_1_1_g_l_handle.html#aceb38da4a0142a015d2afe25b4b90786',1,'sog::gfx::GLHandle']]],
-  ['vec2_1',['Vec2',['../_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35',1,'sog::math']]],
-  ['vec3_2',['Vec3',['../_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6',1,'sog::math']]],
-  ['vec4_3',['Vec4',['../_math_8hpp.html#ac024fa2e07ab04285111a55214f66146',1,'sog::math']]],
-  ['vertexarrayhandle_4',['VertexArrayHandle',['../_handles_8hpp.html#a473f478c797e9e25fa4e1471a761a116',1,'sog::gfx']]],
-  ['vertexbuffer_5',['VertexBuffer',['../_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c',1,'sog::gfx']]],
-  ['vertexbufferhandle_6',['VertexBufferHandle',['../_handles_8hpp.html#a2001413228f705d4c31d471ad98b2e44',1,'sog::gfx']]],
-  ['vertexshader_7',['VertexShader',['../_shader_8hpp.html#ad22bd8d0661d4a034ba4aeb7a59dd229',1,'sog::gfx']]]
+  ['uniform_0',['Uniform',['../sog_8hpp.html#a9778437b0e653b2cb9e8c76e0469e4d7',1,'sog']]],
+  ['uniformbuffer_1',['UniformBuffer',['../_buffers_8hpp.html#ad45d8639734dada223679773bffe0d8b',1,'sog::gfx::UniformBuffer'],['../sog_8hpp.html#abd1fc8a677ec8f6b7712b1192f29ad59',1,'sog::UniformBuffer']]],
+  ['uniformbufferhandle_2',['UniformBufferHandle',['../_handles_8hpp.html#a05b22fbe3137c6f2854aba4018fb8eed',1,'sog::gfx']]],
+  ['uniformname_3',['uniformName',['../classsog_1_1gfx_1_1_shader_program.html#a9532a59ec753cec978510c204228e503',1,'sog::gfx::ShaderProgram']]]
 ];

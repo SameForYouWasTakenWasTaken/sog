@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::RenderBuffer Class Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::RenderBuffer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -174,7 +174,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Owns a GL renderbuffer object for offscreen storage of a fixed format and size. </p>
 <p>Unlike a texture, a renderbuffer's contents cannot be sampled directly; it is meant to be attached to a framebuffer (e.g. as depth/stencil storage). Storage is allocated at construction or via <a class="el" href="#a71b266e6de6d3cf1f9e6f3d5a7d7d1ee" title="Creates the GL renderbuffer (if needed) and allocates its storage.">create()</a> using GL's direct-state-access glNamedRenderbufferStorage, so it need not be bound.</p>
 <p>The object is move-only; destruction or <a class="el" href="#a14b5e730ac0c6214426343ec51a7a485" title="Deletes the owned renderbuffer (if any) and resets dimensions/format.">release()</a> frees the GL renderbuffer and resets the recorded dimensions and format.</p>
-<dl class="section see"><dt>See also</dt><dd>sog::FrameBuffer::attachRenderbuffer </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsog_1_1gfx_1_1_frame_buffer.html#af5cd537546b81ebcec486c552bba6975" title="Attaches a renderbuffer to an attachment slot (DSA, no bind needed).">sog::FrameBuffer::attachRenderbuffer</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_render_buffer_8hpp_source.html#l00030">30</a> of file <a class="el" href="_render_buffer_8hpp_source.html">RenderBuffer.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -496,7 +496,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00074">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, and <a class="el" href="_render_buffer_8hpp_source.html#l00141">m_Handle</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_frame_buffer_8cpp_source.html#l00028">sog::gfx::FrameBuffer::attachRenderbuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_frame_buffer_8cpp_source.html#l00029">sog::gfx::FrameBuffer::attachRenderbuffer()</a>.</p>
 
 </div>
 </div>
@@ -874,8 +874,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/Core/gfx/OpenGL/<a class="el" href="_render_buffer_8hpp_source.html">RenderBuffer.hpp</a></li>
-<li>src/Core/gfx/OpenGL/<a class="el" href="_render_buffer_8cpp_source.html">RenderBuffer.cpp</a></li>
+<li>src/sog/include/sog/gfx/OpenGL/<a class="el" href="_render_buffer_8hpp_source.html">RenderBuffer.hpp</a></li>
+<li>src/sog/gfx/OpenGL/<a class="el" href="_render_buffer_8cpp_source.html">RenderBuffer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

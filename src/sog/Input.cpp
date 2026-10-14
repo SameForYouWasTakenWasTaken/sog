@@ -14,6 +14,17 @@
 
 namespace sog::input
 {
+/**
+ * @brief Named keyboard key codes, mirroring GLFW's GLFW_KEY_* constants.
+ *
+ * Each value is the raw GLFW key code for that key, so a Key converts directly
+ * to the int key codes the sog::input queries (isKeyDown, isKeyPressed, ...)
+ * expect. Grouped as letters, numbers, F-keys, modifiers, punctuation, the
+ * numpad and the two international "world" keys.
+ *
+ * @note Defined for readability; the public queries take plain int key codes,
+ * so using either form is fine.
+ */
 enum class Key
 {
     // Letters

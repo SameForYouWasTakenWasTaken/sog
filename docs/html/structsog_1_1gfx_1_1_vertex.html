@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>sog OpenGL Engine: sog::gfx::Vertex Struct Reference</title>
+<title>sog (Small OpenGL Graphics): sog::gfx::Vertex Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">sog OpenGL Engine
+   <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++20 OpenGL engine (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -119,6 +119,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structsog_1_1g
 
 <p><code>#include &lt;<a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8ea0d9079f37f52088ac030db578a3ab" id="r_a8ea0d9079f37f52088ac030db578a3ab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8ea0d9079f37f52088ac030db578a3ab">Vertex</a> (const <a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> &amp;position, const <a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a> &amp;color, const <a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a> &amp;tex_coord)</td></tr>
+<tr class="memdesc:a8ea0d9079f37f52088ac030db578a3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a vertex from its position, color and texture coordinate.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9f5c65e2683323636569e99223beacc" id="r_aa9f5c65e2683323636569e99223beacc"><td class="memItemLeft">static constexpr GLsizei&#160;</td><td class="memItemRight"><a class="el" href="#aa9f5c65e2683323636569e99223beacc">stride</a> ()</td></tr>
@@ -128,11 +133,11 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a39b52c5d76c465b624326e2336ccc94f" id="r_a39b52c5d76c465b624326e2336ccc94f"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a39b52c5d76c465b624326e2336ccc94f">position</a> = {}</td></tr>
+<tr class="memitem:a39b52c5d76c465b624326e2336ccc94f" id="r_a39b52c5d76c465b624326e2336ccc94f"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a39b52c5d76c465b624326e2336ccc94f">position</a> = {0.f, 0.f, 0.f}</td></tr>
 <tr class="memdesc:a39b52c5d76c465b624326e2336ccc94f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> position (x, y, z).  <br /></td></tr>
-<tr class="memitem:a90e6aca55ddf3ad28cfc72ff9b39e02f" id="r_a90e6aca55ddf3ad28cfc72ff9b39e02f"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a>&#160;</td><td class="memItemRight"><a class="el" href="#a90e6aca55ddf3ad28cfc72ff9b39e02f">color</a> = {}</td></tr>
+<tr class="memitem:a90e6aca55ddf3ad28cfc72ff9b39e02f" id="r_a90e6aca55ddf3ad28cfc72ff9b39e02f"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a>&#160;</td><td class="memItemRight"><a class="el" href="#a90e6aca55ddf3ad28cfc72ff9b39e02f">color</a> = {0.f, 0.f, 0.f, 1.f}</td></tr>
 <tr class="memdesc:a90e6aca55ddf3ad28cfc72ff9b39e02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-vertex RGBA color.  <br /></td></tr>
-<tr class="memitem:ab70b9869716197156a9c9ade012625a0" id="r_ab70b9869716197156a9c9ade012625a0"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab70b9869716197156a9c9ade012625a0">texCoord</a> = {}</td></tr>
+<tr class="memitem:ab70b9869716197156a9c9ade012625a0" id="r_ab70b9869716197156a9c9ade012625a0"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab70b9869716197156a9c9ade012625a0">texCoord</a> = {0.f, 0.f}</td></tr>
 <tr class="memdesc:ab70b9869716197156a9c9ade012625a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture coordinate (u, v).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -141,16 +146,67 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a7ee8a32d385f1fde7af251255127f453"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for position.  <br /></td></tr>
 <tr class="memitem:aef25aa58b5a4d1558c8335bcdd7ecb6f" id="r_aef25aa58b5a4d1558c8335bcdd7ecb6f"><td class="memItemLeft">static constexpr GLuint&#160;</td><td class="memItemRight"><a class="el" href="#aef25aa58b5a4d1558c8335bcdd7ecb6f">ColorIndex</a> = 1</td></tr>
 <tr class="memdesc:aef25aa58b5a4d1558c8335bcdd7ecb6f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for color.  <br /></td></tr>
-<tr class="memitem:aa82b770b8b6941ee49b37ade3baf3a45" id="r_aa82b770b8b6941ee49b37ade3baf3a45"><td class="memItemLeft">static constexpr GLuint&#160;</td><td class="memItemRight"><a class="el" href="#aa82b770b8b6941ee49b37ade3baf3a45">TexCoordinateIndex</a> = 2</td></tr>
+<tr class="memitem:aa82b770b8b6941ee49b37ade3baf3a45" id="r_aa82b770b8b6941ee49b37ade3baf3a45"><td class="memItemLeft">static constexpr GLuint&#160;</td><td class="memItemRight"><a class="el" href="#aa82b770b8b6941ee49b37ade3baf3a45">TexCoordinateIndex</a></td></tr>
 <tr class="memdesc:aa82b770b8b6941ee49b37ade3baf3a45"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for texture coordinate.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A single vertex: 3-float position, 4-float color, 2-float texture coordinate. </p>
 <p>Layout is fixed and interleaved in this member order, so sizeof(Vertex) is the stride for every attribute. <a class="el" href="#a58d27ec6093331e5a4b0b5abe2a14b18" title="Builds the attribute layout describing how to read a Vertex from a vertex buffer.">attributes()</a> returns the matching <a class="el" href="structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html" title="Describes the layout of a single vertex attribute within a vertex buffer.">backend::VertexArrayAttributes</a> array (positions at location 0, colors at 1, texcoords at 2) for configuring a vertex array object against a shader program that uses the same locations.</p>
-<dl class="section see"><dt>See also</dt><dd>sog::backend::VertexArrayAttributes, sog::VertexArray </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>sog::backend::VertexArrayAttributes, <a class="el" href="sog_8hpp.html#ac5c63382e43eab221e1e9b36644f6dab" title="Vertex array object wrapper; alias of gfx::VertexArray.">sog::VertexArray</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00023">23</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00024">24</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8ea0d9079f37f52088ac030db578a3ab" name="a8ea0d9079f37f52088ac030db578a3ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea0d9079f37f52088ac030db578a3ab">&#9670;&#160;</a></span>Vertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sog::gfx::Vertex::Vertex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tex_coord</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a vertex from its position, color and texture coordinate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> position (x, y, z). </td></tr>
+    <tr><td class="paramname">color</td><td>Per-vertex RGBA color. </td></tr>
+    <tr><td class="paramname">tex_coord</td><td>Texture coordinate (u, v). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00042">42</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00028">color</a>, <a class="el" href="_vertex_8hpp_source.html#l00027">position</a>, and <a class="el" href="_vertex_8hpp_source.html#l00029">texCoord</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00050">stride()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a58d27ec6093331e5a4b0b5abe2a14b18" name="a58d27ec6093331e5a4b0b5abe2a14b18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58d27ec6093331e5a4b0b5abe2a14b18">&#9670;&#160;</a></span>attributes()</h2>
 
@@ -177,11 +233,11 @@ Static Public Attributes</h2></td></tr>
 <p>Builds the attribute layout describing how to read a <a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> from a vertex buffer. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::array of three <a class="el" href="structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html" title="Describes the layout of a single vertex attribute within a vertex buffer.">backend::VertexArrayAttributes</a> (position, color, texCoord) using offsets computed from this struct's memory layout. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00045">45</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00057">57</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00027">color</a>, <a class="el" href="_vertex_8hpp_source.html#l00031">ColorIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00026">position</a>, <a class="el" href="_vertex_8hpp_source.html#l00030">PositionIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00038">stride()</a>, <a class="el" href="_vertex_8hpp_source.html#l00028">texCoord</a>, and <a class="el" href="_vertex_8hpp_source.html#l00032">TexCoordinateIndex</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00028">color</a>, <a class="el" href="_vertex_8hpp_source.html#l00032">ColorIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00027">position</a>, <a class="el" href="_vertex_8hpp_source.html#l00031">PositionIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00050">stride()</a>, <a class="el" href="_vertex_8hpp_source.html#l00029">texCoord</a>, <a class="el" href="_vertex_8hpp_source.html#l00033">TexCoordinateIndex</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -211,9 +267,11 @@ Static Public Attributes</h2></td></tr>
 <p>Returns the byte size of one vertex, used as the attribute stride. </p>
 <dl class="section return"><dt>Returns</dt><dd>sizeof(Vertex), the byte distance between consecutive vertices. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00038">38</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00050">50</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00045">attributes()</a>, and <a class="el" href="_application_8cpp_source.html#l00027">sog::Application::Run()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -225,16 +283,16 @@ Static Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a> sog::gfx::Vertex::color = {}</td>
+          <td class="memname"><a class="el" href="_math_8hpp.html#ac024fa2e07ab04285111a55214f66146">math::Vec4</a> sog::gfx::Vertex::color = {0.f, 0.f, 0.f, 1.f}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Per-vertex RGBA color. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00027">27</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00028">28</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00045">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
 
 </div>
 </div>
@@ -260,9 +318,9 @@ Static Public Attributes</h2></td></tr>
 
 <p><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for color. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00031">31</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00032">32</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00045">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>.</p>
 
 </div>
 </div>
@@ -273,16 +331,16 @@ Static Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Vertex::position = {}</td>
+          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Vertex::position = {0.f, 0.f, 0.f}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> position (x, y, z). </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00026">26</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00027">27</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00045">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
 
 </div>
 </div>
@@ -308,9 +366,9 @@ Static Public Attributes</h2></td></tr>
 
 <p><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for position. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00030">30</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00031">31</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00045">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>.</p>
 
 </div>
 </div>
@@ -321,16 +379,16 @@ Static Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a> sog::gfx::Vertex::texCoord = {}</td>
+          <td class="memname"><a class="el" href="_math_8hpp.html#a976ae1d22300651ebe0e7bfa65389f35">math::Vec2</a> sog::gfx::Vertex::texCoord = {0.f, 0.f}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Texture coordinate (u, v). </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00028">28</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00029">29</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00045">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
 
 </div>
 </div>
@@ -344,7 +402,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GLuint sog::gfx::Vertex::TexCoordinateIndex = 2</td>
+          <td class="memname">GLuint sog::gfx::Vertex::TexCoordinateIndex</td>
         </tr>
       </table>
   </td>
@@ -353,17 +411,19 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">                                       =</div>
+<div class="line">2</div>
+</div><!-- fragment -->
 <p><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for texture coordinate. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00032">32</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00033">33</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00045">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Core/gfx/<a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a></li>
+<li>src/sog/include/sog/gfx/<a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
