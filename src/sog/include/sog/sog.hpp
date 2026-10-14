@@ -4,6 +4,7 @@
 #include "Utility/Time.hpp"
 #include "Utility/Uniforms.hpp"
 #include "gfx/Camera.hpp"
+#include "gfx/OpenGL/Common.hpp"
 #include "gfx/OpenGL/Objects/Buffers/Buffers.hpp"
 #include "gfx/OpenGL/Objects/FrameBuffer.hpp"
 #include "gfx/OpenGL/Objects/Shader.hpp"
@@ -47,9 +48,13 @@ using Color = gfx::Color;
 using Camera = gfx::Camera;
 
 // namespaces
+using namespace gfx::common;
+namespace enums
+{
+using namespace gfx::enums;
+}
 namespace uniform
 {
 using namespace gfx::uniform;
 }
-
 } // namespace sog

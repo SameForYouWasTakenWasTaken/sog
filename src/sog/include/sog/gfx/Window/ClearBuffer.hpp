@@ -1,6 +1,7 @@
 /**
  * @file ClearBuffer.hpp
- * @brief Defines the ClearBuffer enum (color/depth/stencil bits) and a bitwise-or combinator for clearing multiple buffers at once.
+ * @brief Defines the ClearBuffer enum (color/depth/stencil bits) and a bitwise-or combinator for
+ * clearing multiple buffers at once.
  */
 
 #pragma once
@@ -10,15 +11,16 @@
 namespace sog::gfx
 {
 /**
- * @brief Which framebuffer buffer(s) to clear, mirroring the GL_COLOR_BUFFER_BIT / GL_DEPTH_BUFFER_BIT / GL_STENCIL_BUFFER_BIT flags.
+ * @brief Which framebuffer buffer(s) to clear, mirroring the GL_COLOR_BUFFER_BIT /
+ * GL_DEPTH_BUFFER_BIT / GL_STENCIL_BUFFER_BIT flags.
  *
  * Values are the raw GL bit masks, so a combination can be passed straight to
  * glClear. Combine members with operator| (e.g. ClearBuffer::Color | ClearBuffer::Depth).
  */
 enum class ClearBuffer : unsigned int
 {
-    Color = GL_COLOR_BUFFER_BIT,   /**< Clear the color buffer. */
-    Depth = GL_DEPTH_BUFFER_BIT,   /**< Clear the depth buffer. */
+    Color = GL_COLOR_BUFFER_BIT,    /**< Clear the color buffer. */
+    Depth = GL_DEPTH_BUFFER_BIT,    /**< Clear the depth buffer. */
     Stencil = GL_STENCIL_BUFFER_BIT /**< Clear the stencil buffer. */
 };
 

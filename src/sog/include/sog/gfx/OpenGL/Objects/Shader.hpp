@@ -64,6 +64,8 @@ template <shader_type> class Shader
   public:
     /// Constructs an empty shader with no GL object yet.
     Shader() = default;
+    explicit Shader(std::string_view source) { createFromSource(source); }
+    explicit Shader(const std::filesystem::path& path) { createFromFile(path); }
 
     /// Deletes the owned GL shader object.
     ~Shader() { glDeleteShader(m_Handle.get()); }

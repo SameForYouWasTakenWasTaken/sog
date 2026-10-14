@@ -91,17 +91,14 @@ int Application::Run()
     vertexArray.setIndexBuffer(elementBuffer);
     vertexArray.setAttributes(sog::Vertex::attributes());
 
-    sog::VertexShader vertexShader;
-    vertexShader.createFromFile("assets/shaders/vertex.glsl");
-    sog::FragmentShader fragment;
-    fragment.createFromFile("assets/shaders/fragment.glsl");
+    sog::VertexShader vertexShader{std::filesystem::path("assets/shaders/vertex.glsl")};
+    sog::FragmentShader fragmentShader{std::filesystem::path("assets/shaders/fragment.glsl")};
 
     sog::Texture2D texture;
     texture.createFromFile("assets/Textures/test.jpg", {.wrapS = sog::gfx::texture_params::REPEAT,
                                                         .wrapT = sog::gfx::texture_params::REPEAT});
 
-    sog::ShaderProgram shaderProgram;
-    shaderProgram.Initialize(vertexShader, fragment);
+    sog::ShaderProgram shaderProgram{vertexShader, fragmentShader};
 
     auto locTexture = sog::uniform::getLocation(shaderProgram, "texture2D");
     sog::uniform::setInt(shaderProgram, locTexture, 0);
@@ -125,10 +122,8 @@ int Application::Run()
     frameBuffer.attachRenderbuffer(sog::gfx::FramebufferAttachment::DepthStencil,
                                    depthStencilBuffer);
 
-    sog::VertexShader frameBufVertShader;
-    frameBufVertShader.createFromFile("assets/shaders/PPO.vert");
-    sog::FragmentShader frameBufFragShader;
-    frameBufFragShader.createFromFile("assets/shaders/PPO.frag");
+    sog::VertexShader frameBufVertShader{std::filesystem::path("assets/shaders/PPO.vert")};
+    sog::FragmentShader frameBufFragShader{std::filesystem::path("assets/shaders/PPO.frag")};
 
     sog::ShaderProgram frameBufShaderProgram;
     frameBufShaderProgram.Initialize(frameBufVertShader, frameBufFragShader);
@@ -136,6 +131,8 @@ int Application::Run()
     auto locFramebufTexture = frameBufShaderProgram.getLocation("screenTexture");
     auto locFramebufTime = frameBufShaderProgram.getLocation("time");
     auto locFramebufIntensity = frameBufShaderProgram.getLocation("intensity");
+
+    // Set frame buffer screenTexture to the frame buffer shader program
     sog::uniform::setInt(frameBufShaderProgram, locFramebufTexture.value_or(sog::Uniform{}), 0);
 
     assert(frameBuffer.isComplete());
@@ -156,8 +153,9 @@ int Application::Run()
                 // Resize your FBO resources seamlessly right here!
                 depthStencilBuffer = sog::RenderBuffer(GL_DEPTH24_STENCIL8, width, height);
                 colorTexture = sog::Texture2D{};
-                colorTexture.createFromRaw(nullptr, width, height, GL_RGBA8, GL_RGBA,
-                                           GL_UNSIGNED_BYTE, {});
+                colorTexture.createFromRaw(
+                    nullptr, width, height, sog::enums::texture_internal_format::RGB8,
+                    sog::enums::pixel_format::RGBA, sog::enums::pixel_type::UnsignedByte, {});
 
                 frameBuffer.attachTexture(sog::gfx::FramebufferAttachment::Color0,
                                           colorTexture.getHandle());
@@ -170,7 +168,7 @@ int Application::Run()
         sog::input::updateCamera(camera, window, deltaTime);
 
         frameBuffer.bind();
-        glViewport(0, 0, window.getWidth(), window.getHeight());
+        sog::ViewportToActiveTarget(0, 0, window.getWidth(), window.getHeight());
         sog::Window::clear(sog::ClearBuffer::Color | sog::ClearBuffer::Depth,
                            sog::Color{255.f, 255.f, 255.f, 255.f});
 
@@ -197,7 +195,7 @@ int Application::Run()
                           sog::Color{255, 0, 0, 0});
         frameBufShaderProgram.use();
         colorTexture.bind(0);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        sog::DrawArrays(sog::enums::draw_mode::TRIANGLES, 0, 3);
         window.endFrame();
     }
     return 0;

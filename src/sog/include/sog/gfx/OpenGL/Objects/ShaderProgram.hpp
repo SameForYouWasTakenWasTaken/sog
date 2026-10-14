@@ -1,6 +1,7 @@
 /**
  * @file ShaderProgram.hpp
- * @brief Defines ShaderProgram, a linked GL program that attaches shader stages, binds for drawing and caches uniform locations.
+ * @brief Defines ShaderProgram, a linked GL program that attaches shader stages, binds for drawing
+ * and caches uniform locations.
  */
 
 #pragma once
@@ -62,8 +63,16 @@ class ShaderProgram
 
   public:
     /// Creates the GL program object (glCreateProgram).
-    ShaderProgram() { m_Handle = glCreateProgram(); }
+    ShaderProgram() { create(); }
 
+    template <shader_type A, shader_type B>
+    explicit ShaderProgram(const Shader<A>& shaderA, const Shader<B>& shaderB)
+    {
+        create();
+        Initialize(shaderA, shaderB);
+    }
+
+    void create();
     /**
      * @brief Attaches two compiled shaders and links the program.
      * @param shaderA First shader stage (any shader_type).
@@ -76,13 +85,13 @@ class ShaderProgram
     /**
      * @brief Makes this program current for subsequent draw calls (glUseProgram).
      */
-    void use() const { glUseProgram(m_Handle); }
+    void use() const { glUseProgram(m_Handle.get()); }
 
     /**
      * @brief Returns the raw GL program name.
      * @return GLuint handle of the program object.
      */
-    [[nodiscard]] gl_handle get() const { return m_Handle; }
+    [[nodiscard]] gl_handle get() const { return m_Handle.get(); }
 
     /**
      * @brief Returns a uniform's location, caching lookups by name.
@@ -92,11 +101,12 @@ class ShaderProgram
     std::optional<Uniform> getLocation(const std::string& name);
 
   private:
-    gl_handle m_Handle{0}; /**< Raw GL program name. */
+    ShaderProgramHandle m_Handle{}; /**< Raw GL program name. */
 
     /// Convenience alias for uniform cache keys.
     using uniformName = std::string;
-    std::unordered_map<uniformName, Uniform> m_CachedUniforms; /**< name -> Uniform cache to skip repeated glGetUniformLocation calls. */
+    std::unordered_map<uniformName, Uniform>
+        m_CachedUniforms; /**< name -> Uniform cache to skip repeated glGetUniformLocation calls. */
 };
 
 /**
@@ -110,11 +120,11 @@ void ShaderProgram::Initialize(const Shader<A>& shaderA, const Shader<B>& shader
 {
     auto rawA = shaderA.get();
     auto rawB = shaderB.get();
-    glAttachShader(m_Handle, rawA);
-    glAttachShader(m_Handle, rawB);
+    glAttachShader(m_Handle.get(), rawA);
+    glAttachShader(m_Handle.get(), rawB);
 
-    glLinkProgram(m_Handle);
+    glLinkProgram(m_Handle.get());
 
-    backend::handleProgramError(m_Handle, GL_LINK_STATUS);
+    backend::handleProgramError(m_Handle.get(), GL_LINK_STATUS);
 }
 } // namespace sog::gfx

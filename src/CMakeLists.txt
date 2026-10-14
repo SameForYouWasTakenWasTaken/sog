@@ -17,6 +17,7 @@ add_library(SOG STATIC
 
         # GLAD Loader (adjust path to where your glad.c is located)
         sog/vendor/glad/gl.c
+        sog/gfx/OpenGL/Common.cpp
 )
 
 target_include_directories(SOG

@@ -43,6 +43,10 @@ struct RenderBufferTag
 {
 }; /**< Phantom tag marking a GLHandle as a renderbuffer name. */
 
+struct ShaderProgramTag
+{
+}; /**< Phantom tag marking a GLHandle as a shader program name. */
+
 // ======== CONCRETE HANDLE TYPES ======== //
 
 /// Handle to a vertex array object (tagged with VertexArrayTag).
@@ -60,6 +64,8 @@ template <typename T> using StorageBufferHandle = GLHandle<T>;
 
 /// Handle to a compiled shader program (tagged with ShaderTag).
 using ShaderHandle = GLHandle<ShaderTag>;
+/// Handle to a compiled shader program (tagged with ShaderProgramTag).
+using ShaderProgramHandle = GLHandle<ShaderProgramTag>;
 /// Handle to a texture object (tagged with TextureTag).
 using TextureHandle = GLHandle<TextureTag>;
 /// Handle to a framebuffer object (tagged with FrameBufferTag).

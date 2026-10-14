@@ -5,10 +5,9 @@
  */
 
 #include <GLFW/glfw3.h>
-#include <complex>
-#include <cstdio>
 #include <glad/gl.h>
 #include <sog/Error/Exceptions/graphics_error.hpp>
+#include <sog/gfx/OpenGL/Common.hpp>
 #include <sog/gfx/OpenGL/Objects/ShaderProgram.hpp>
 #include <sog/gfx/OpenGL/Objects/VertexArray.hpp>
 #include <sog/gfx/Window/Window.hpp>
@@ -66,7 +65,7 @@ struct Window::ImplWindow
 
         self->m_Context.width = width;
         self->m_Context.height = height;
-        glViewport(0, 0, width, height);
+        common::ViewportToActiveTarget(0, 0, width, height);
 
         if (window && width > 0 && height > 0)
         {
@@ -114,13 +113,14 @@ void Window::draw(const RenderState& state)
     // indexed
     if (state.vertexArray.indexed())
     {
-        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(state.vertexArray.indexCount()),
-                       GL_UNSIGNED_INT, nullptr);
+        common::DrawElements(draw_mode::TRIANGLES,
+                             static_cast<GLsizei>(state.vertexArray.indexCount()), index_type::UINT,
+                             nullptr);
 
         return;
     }
     // non indexed
-    glDrawArrays(GL_TRIANGLES, 0, static_cast<GLsizei>(state.vertexBuffer.size()));
+    common::DrawArrays(draw_mode::TRIANGLES, 0, static_cast<GLsizei>(state.vertexBuffer.size()));
 }
 void* Window::getNativeHandle() const { return m_Window->glfwHandle; }
 bool Window::pollEvent(Event& outEvent)

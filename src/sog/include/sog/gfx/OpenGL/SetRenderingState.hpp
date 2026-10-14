@@ -1,6 +1,7 @@
 /**
  * @file SetRenderingState.hpp
- * @brief Defines the sog::gfx rendering-state helpers: backend enable/disable/set wrappers and SetRenderingState() for applying a RenderSettings struct.
+ * @brief Defines the sog::gfx rendering-state helpers: backend enable/disable/set wrappers and
+ * SetRenderingState() for applying a RenderSettings struct.
  */
 
 #pragma once

@@ -10,6 +10,11 @@
 namespace sog::gfx
 {
 
+void ShaderProgram::create()
+{
+    if (!m_Handle.valid())
+        m_Handle.raw() = glCreateProgram();
+}
 std::optional<Uniform> ShaderProgram::getLocation(const std::string& name)
 {
     // find cached

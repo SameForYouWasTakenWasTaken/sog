@@ -39,7 +39,18 @@ class Texture2D
 {
   public:
     /// Constructs an empty Texture2D with no GL object allocated.
-    Texture2D() = default;
+    Texture2D() { create(); }
+    Texture2D(const std::filesystem::path& path, const TextureSettings& settings)
+    {
+        create();
+        createFromFile(path, settings);
+    }
+    Texture2D(const void* data, int width, int height, texture_internal_format internalFormat,
+              pixel_format format, pixel_type type, const TextureSettings& settings)
+    {
+        create();
+        createFromRaw(data, width, height, internalFormat, format, type, settings);
+    }
 
     /**
      * @brief Creates the GL texture object (no-op if already created).
@@ -63,7 +74,7 @@ class Texture2D
      * @note The image is flipped vertically on load so it matches OpenGL's
      * bottom-left texture origin, and is always converted to RGBA8.
      */
-    void createFromFile(const std::filesystem::path& path, const TextureSettings& settings);
+    void createFromFile(const std::filesystem::path& path, const TextureSettings& settings) const;
 
     /**
      * @brief Creates the texture from caller-supplied raw pixel data (or allocates storage only).
@@ -77,8 +88,9 @@ class Texture2D
      * @throws sog::graphics_error With graphics_error_code::texture_load_failed if width or height
      * is not positive.
      */
-    void createFromRaw(const void* data, int width, int height, GLenum internalFormat,
-                       GLenum format, GLenum type, const TextureSettings& settings);
+    void createFromRaw(const void* data, int width, int height,
+                       texture_internal_format internalFormat, pixel_format format, pixel_type type,
+                       const TextureSettings& settings) const;
 
     /**
      * @brief Returns a reference to the typed GL handle for this texture.
@@ -95,9 +107,13 @@ class Texture2D
      */
     static Texture2D empty(int width, int height)
     {
-        Texture2D t;
-        t.createFromRaw(nullptr, width, height, GL_RGBA8, GL_RGBA, GL_UNSIGNED_BYTE, {});
-        return std::move(t);
+        return Texture2D{nullptr,
+                         width,
+                         height,
+                         texture_internal_format::RGBA8,
+                         pixel_format::RGBA,
+                         pixel_type::UnsignedByte,
+                         {}};
     }
 
   private:
