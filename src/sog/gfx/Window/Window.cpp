@@ -7,6 +7,7 @@
 #include <GLFW/glfw3.h>
 #include <glad/gl.h>
 #include <sog/Error/Exceptions/graphics_error.hpp>
+#include <sog/Utility/TypeTraits.hpp>
 #include <sog/gfx/OpenGL/Common.hpp>
 #include <sog/gfx/OpenGL/Objects/ShaderProgram.hpp>
 #include <sog/gfx/OpenGL/Objects/VertexArray.hpp>
@@ -103,7 +104,7 @@ void Window::clear(ClearBuffer buffers, Color color)
 {
     auto normalizedColor = Color::fromRGBA(color.r, color.g, color.b, color.a);
     glClearColor(normalizedColor.r, normalizedColor.g, normalizedColor.b, normalizedColor.a);
-    glClear(std::to_underlying(buffers));
+    glClear(to_underlying(buffers));
 }
 void Window::clear(ClearBuffer buffers) { clear(buffers, Color{0, 0, 0, 0}); }
 void Window::draw(const RenderState& state)

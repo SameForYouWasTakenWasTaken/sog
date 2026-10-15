@@ -1,7 +1,7 @@
 var _buffers_8hpp =
 [
-    [ "sog::gfx::IndexBuffer", "_buffers_8hpp.html#af6eae010eb3c8a658c2e8db18e86148e", null ],
-    [ "sog::gfx::StorageBuffer", "_buffers_8hpp.html#a252c97e96452dd4942b6b1f93df18e5b", null ],
-    [ "sog::gfx::UniformBuffer", "_buffers_8hpp.html#ad45d8639734dada223679773bffe0d8b", null ],
-    [ "sog::gfx::VertexBuffer", "_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c", null ]
+    [ "sog::gfx::buffers::IndexBuffer", "_buffers_8hpp.html#a641cf2b4d81d58a4b756a072e898ff01", null ],
+    [ "sog::gfx::buffers::StorageBuffer", "_buffers_8hpp.html#a74a743dd422d159e814a79bb7f559efd", null ],
+    [ "sog::gfx::buffers::UniformBuffer", "_buffers_8hpp.html#aa45ecfd3aefc05cec62d0c7179513d69", null ],
+    [ "sog::gfx::buffers::VertexBuffer", "_buffers_8hpp.html#a2eff942178705e6382bc96aeb4c8a699", null ]
 ];

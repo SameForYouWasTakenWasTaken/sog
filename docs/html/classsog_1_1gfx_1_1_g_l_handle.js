@@ -8,6 +8,7 @@ var classsog_1_1gfx_1_1_g_l_handle =
     [ "GLHandle", "classsog_1_1gfx_1_1_g_l_handle.html#aecce6680bbeed30e344b033af51e8178", null ],
     [ "get", "classsog_1_1gfx_1_1_g_l_handle.html#af2b599accd490698a838008c0c7ad256", null ],
     [ "operator bool", "classsog_1_1gfx_1_1_g_l_handle.html#af0652fcacd1130045695fe9d69076ced", null ],
+    [ "operator gl_handle", "classsog_1_1gfx_1_1_g_l_handle.html#a286e1e8da057a4d9624a6ea0a5cf0c07", null ],
     [ "operator=", "classsog_1_1gfx_1_1_g_l_handle.html#a9e63587b5722d61290173319d20dd915", null ],
     [ "operator=", "classsog_1_1gfx_1_1_g_l_handle.html#a88cd35e3aa84fb9c6e2efa6e5b9daf08", null ],
     [ "raw", "classsog_1_1gfx_1_1_g_l_handle.html#ad19fb8dedd15d4c3a3e190f374f7cc61", null ],

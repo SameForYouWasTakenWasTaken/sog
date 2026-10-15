@@ -5,11 +5,11 @@
  */
 
 #include "include/sog/Input.hpp"
+#include "include/sog/Utility/TypeTraits.hpp"
 
 #include <GLFW/glfw3.h>
 #include <algorithm>
 #include <array>
-#include <utility>
 
 #include "glad/gl.h"
 
@@ -74,7 +74,7 @@ void update(const gfx::Window& window)
 
 bool isKeyDown(const gfx::Window& window, Key key)
 {
-    return glfwGetKey(native(window), std::to_underlying(key)) == GLFW_PRESS;
+    return glfwGetKey(native(window), to_underlying(key)) == GLFW_PRESS;
 }
 
 bool isMouseButtonDown(const gfx::Window& window, int button)
@@ -91,13 +91,13 @@ glm::vec2 getCursorPosition(const gfx::Window& window)
 
 bool isKeyPressed(Key key)
 {
-    const int code = std::to_underlying(key);
+    const int code = to_underlying(key);
     return inRange(code, g_State.keys.size()) && g_State.keys[code] && !g_State.prevKeys[code];
 }
 
 bool isKeyReleased(Key key)
 {
-    const int code = std::to_underlying(key);
+    const int code = to_underlying(key);
     return inRange(code, g_State.keys.size()) && !g_State.keys[code] && g_State.prevKeys[code];
 }
 

@@ -5,7 +5,7 @@
  */
 
 #pragma once
-#include <utility>
+#include "../../Utility/TypeTraits.hpp"
 
 #include "glad/gl.h"
 namespace sog::gfx
@@ -36,6 +36,6 @@ enum class ClearBuffer : unsigned int
  */
 constexpr ClearBuffer operator|(ClearBuffer lhs, ClearBuffer rhs) noexcept
 {
-    return static_cast<ClearBuffer>(std::to_underlying(lhs) | std::to_underlying(rhs));
+    return static_cast<ClearBuffer>(to_underlying(lhs) | to_underlying(rhs));
 }
 } // namespace sog::gfx

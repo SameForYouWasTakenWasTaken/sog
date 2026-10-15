@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -155,7 +155,7 @@ Private Attributes</h2></td></tr>
 <p>Derives from <a class="el" href="classsog_1_1exception.html" title="Base class for all exceptions thrown by the sog engine.">sog::exception</a>, so it also captures the human-readable message and the std::source_location of the throw site. Use <a class="el" href="#aa910227dfd42db78ce41270c82bc30c4" title="Returns the machine-readable code classifying this failure.">code()</a> to branch on the failure kind programmatically.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classsog_1_1exception.html" title="Base class for all exceptions thrown by the sog engine.">sog::exception</a>, <a class="el" href="graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428b" title="Machine-readable codes describing why a graphics operation failed.">sog::graphics_error_code</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00053">53</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00054">54</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a44979d529e9572e58a5b1c9c7ca92ad1" name="a44979d529e9572e58a5b1c9c7ca92ad1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44979d529e9572e58a5b1c9c7ca92ad1">&#9670;&#160;</a></span>graphics_error()</h2>
@@ -199,11 +199,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00062">62</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00063">63</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00073">code()</a>, <a class="el" href="exception_8hpp_source.html#l00037">sog::exception::exception()</a>, <a class="el" href="exception_8hpp_source.html#l00057">sog::exception::location()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00079">m_code</a>, and <a class="el" href="exception_8hpp_source.html#l00063">sog::exception::message()</a>.</p>
+<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00074">code()</a>, <a class="el" href="exception_8hpp_source.html#l00037">sog::exception::exception()</a>, <a class="el" href="exception_8hpp_source.html#l00057">sog::exception::location()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00080">m_code</a>, and <a class="el" href="exception_8hpp_source.html#l00063">sog::exception::message()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00029">sog::gfx::Texture2D::bind()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00025">sog::gfx::VertexArray::bind()</a>, <a class="el" href="_shader_8hpp_source.html#l00135">sog::gfx::Shader&lt; shader_type &gt;::createFromFile()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00035">sog::gfx::Texture2D::createFromFile()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00056">sog::gfx::Texture2D::createFromRaw()</a>, <a class="el" href="_shader_program_8hpp_source.html#l00023">sog::gfx::backend::handleProgramError()</a>, <a class="el" href="_shader_8hpp_source.html#l00024">sog::gfx::backend::handleShaderError()</a>, <a class="el" href="_window_8cpp_source.html#l00139">sog::gfx::Window::initialize()</a>, and <a class="el" href="_uniforms_8cpp_source.html#l00018">sog::gfx::uniform::backend::sanityCheck()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00030">sog::gfx::Texture2D::bind()</a>, <a class="el" href="_vertex_array_8cpp_source.html#l00026">sog::gfx::VertexArray::bind()</a>, <a class="el" href="_shader_8hpp_source.html#l00135">sog::gfx::Shader&lt; shader_type &gt;::createFromFile()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00036">sog::gfx::Texture2D::createFromFile()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00057">sog::gfx::Texture2D::createFromRaw()</a>, <a class="el" href="_shader_program_8hpp_source.html#l00023">sog::gfx::backend::handleProgramError()</a>, <a class="el" href="_shader_8hpp_source.html#l00024">sog::gfx::backend::handleShaderError()</a>, <a class="el" href="_window_8cpp_source.html#l00140">sog::gfx::Window::initialize()</a>, and <a class="el" href="_uniforms_8cpp_source.html#l00020">sog::gfx::uniform::backend::sanityCheck()</a>.</p>
 
 </div>
 </div>
@@ -234,11 +234,11 @@ Private Attributes</h2></td></tr>
 <p>Returns the machine-readable code classifying this failure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428b" title="Machine-readable codes describing why a graphics operation failed.">graphics_error_code</a> this exception was constructed with. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00073">73</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00074">74</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00079">m_code</a>.</p>
+<p class="reference">References <a class="el" href="graphics__error_8hpp_source.html#l00080">m_code</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graphics__error_8hpp_source.html#l00062">graphics_error()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graphics__error_8hpp_source.html#l00063">graphics_error()</a>.</p>
 
 </div>
 </div>
@@ -265,9 +265,9 @@ Private Attributes</h2></td></tr>
 
 <p>Classification of the graphics failure. </p>
 
-<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00079">79</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graphics__error_8hpp_source.html#l00080">80</a> of file <a class="el" href="graphics__error_8hpp_source.html">graphics_error.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graphics__error_8hpp_source.html#l00073">code()</a>, and <a class="el" href="graphics__error_8hpp_source.html#l00062">graphics_error()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graphics__error_8hpp_source.html#l00074">code()</a>, and <a class="el" href="graphics__error_8hpp_source.html#l00063">graphics_error()</a>.</p>
 
 </div>
 </div>

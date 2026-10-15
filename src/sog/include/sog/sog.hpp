@@ -6,7 +6,7 @@
  * Including <sog/sog.hpp> gives a program the whole library surface: windowing
  * (Window, Event, ClearBuffer), drawing (VertexArray, buffers, shaders,
  * Texture2D, FrameBuffer, RenderBuffer, Uniform), the Camera, input queries
- * (Input.hpp) and the Utility helpers (Math, Time, Uniforms).
+ * (Input.hpp) and the Utility helpers (Math, Time, TypeTraits, Uniforms).
  *
  * Types live in sog::gfx (and its inline namespaces); the aliases declared here
  * let typical application code use the short names (sog::Window, sog::Vertex,
@@ -18,6 +18,7 @@
 #include "Input.hpp"
 #include "Utility/Math.hpp"
 #include "Utility/Time.hpp"
+#include "Utility/TypeTraits.hpp"
 #include "Utility/Uniforms.hpp"
 #include "gfx/Camera.hpp"
 #include "gfx/OpenGL/Common.hpp"
@@ -37,18 +38,8 @@ namespace sog
 using Vertex = gfx::Vertex;
 /// Element index type of index buffers (32-bit unsigned); alias of gfx::Index.
 using Index = gfx::Index;
-
 /// Vertex array object wrapper; alias of gfx::VertexArray.
 using VertexArray = gfx::VertexArray;
-/// Vertex data buffer (GL_ARRAY_BUFFER); alias of gfx::VertexBuffer.
-using VertexBuffer = gfx::VertexBuffer;
-/// Element (index) buffer (GL_ELEMENT_ARRAY_BUFFER); alias of gfx::IndexBuffer.
-using IndexBuffer = gfx::IndexBuffer;
-/// Uniform buffer object bound to an indexed binding point; alias of gfx::UniformBuffer.
-template <typename T> using UniformBuffer = gfx::UniformBuffer<T>;
-/// Shader storage buffer object (GL 4.3+); alias of gfx::StorageBuffer.
-template <typename T> using StorageBuffer = gfx::StorageBuffer<T>;
-
 /// Compiled vertex shader stage; alias of gfx::VertexShader.
 using VertexShader = gfx::VertexShader;
 /// Compiled fragment shader stage; alias of gfx::FragmentShader.
@@ -87,6 +78,8 @@ using Camera = gfx::Camera;
 // namespaces
 /// Draw helpers (DrawArrays, DrawElements, ...) from sog::gfx::common.
 using namespace gfx::common;
+/// Buffers (VertexBuffer, UniformBuffer, ...)
+using namespace gfx::buffers;
 /// Type-safe GL enums (buffer_target, shader_type, draw_mode, ...) under the sog::enums namespace.
 namespace enums
 {
@@ -96,5 +89,12 @@ using namespace gfx::enums;
 namespace uniform
 {
 using namespace gfx::uniform;
+}
+
+/// Math utility convenience
+using namespace math::types;
+namespace math
+{
+using namespace glm;
 }
 } // namespace sog

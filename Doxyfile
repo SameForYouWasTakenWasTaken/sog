@@ -9,7 +9,7 @@
 #---------------------------------------------------------------------------
 PROJECT_NAME           = "sog (Small OpenGL Graphics)"
 PROJECT_NUMBER         =
-PROJECT_BRIEF          = "A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)"
+PROJECT_BRIEF          = "A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)"
 PROJECT_LOGO           =
 
 #---------------------------------------------------------------------------
@@ -64,7 +64,7 @@ MARKDOWN_SUPPORT       = YES
 AUTOLINK_SUPPORT       = YES
 BUILTIN_STL_SUPPORT    = YES
 
-# C++23: let Doxygen understand requires-clauses, concepts, etc.
+# C++20: let Doxygen understand requires-clauses, concepts, etc.
 CPP_CLI_SUPPORT        = NO
 SIP_SUPPORT            = NO
 

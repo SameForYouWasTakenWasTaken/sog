@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a17f63b2394c0e9654d8c5b7bc0943b83":[1,0,0,2,0,1,6],
+"structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a20c7ca5ba63af9b518b2e86eeb24d2eb":[1,0,0,2,0,1,5],
 "structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a2d050b872c6e244783efeb01b4c34593":[1,0,0,2,0,1,3],
 "structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a489482a33c9cbfa1c9a31bd7e5955d41":[1,0,0,2,0,1,1],
 "structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a572d99853223809a15bd140073d4fc39":[1,0,0,2,0,1,4],

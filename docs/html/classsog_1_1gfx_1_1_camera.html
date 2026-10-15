@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -133,11 +133,11 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a358650fee2923f4f8a39e5d1c2ae3601" id="r_a358650fee2923f4f8a39e5d1c2ae3601"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a358650fee2923f4f8a39e5d1c2ae3601">Camera</a> (<a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> worldUp={0.f, 1.f, 0.f})</td></tr>
+<tr class="memitem:a358650fee2923f4f8a39e5d1c2ae3601" id="r_a358650fee2923f4f8a39e5d1c2ae3601"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a358650fee2923f4f8a39e5d1c2ae3601">Camera</a> (math::Vec3 worldUp={0.f, 1.f, 0.f})</td></tr>
 <tr class="memdesc:a358650fee2923f4f8a39e5d1c2ae3601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a camera with an optional world-up direction.  <br /></td></tr>
-<tr class="memitem:a02dce0ee1e0ff8d07ca0bacef9b23ee3" id="r_a02dce0ee1e0ff8d07ca0bacef9b23ee3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a02dce0ee1e0ff8d07ca0bacef9b23ee3">setPosition</a> (<a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> position)</td></tr>
+<tr class="memitem:a02dce0ee1e0ff8d07ca0bacef9b23ee3" id="r_a02dce0ee1e0ff8d07ca0bacef9b23ee3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a02dce0ee1e0ff8d07ca0bacef9b23ee3">setPosition</a> (math::Vec3 position)</td></tr>
 <tr class="memdesc:a02dce0ee1e0ff8d07ca0bacef9b23ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teleports the camera to a world-space position.  <br /></td></tr>
-<tr class="memitem:a2daf54ea2b411b0cbbdcf375c438d018" id="r_a2daf54ea2b411b0cbbdcf375c438d018"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2daf54ea2b411b0cbbdcf375c438d018">move</a> (<a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> delta)</td></tr>
+<tr class="memitem:a2daf54ea2b411b0cbbdcf375c438d018" id="r_a2daf54ea2b411b0cbbdcf375c438d018"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2daf54ea2b411b0cbbdcf375c438d018">move</a> (math::Vec3 delta)</td></tr>
 <tr class="memdesc:a2daf54ea2b411b0cbbdcf375c438d018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates the camera by a world-space offset.  <br /></td></tr>
 <tr class="memitem:a9abf5664e08d1b9a1cb202cb1111d55f" id="r_a9abf5664e08d1b9a1cb202cb1111d55f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9abf5664e08d1b9a1cb202cb1111d55f">moveLocal</a> (float right, float up, float forward)</td></tr>
 <tr class="memdesc:a9abf5664e08d1b9a1cb202cb1111d55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates the camera along its own axes.  <br /></td></tr>
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af0d4219f5092d24875919ac011d6ea99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the orientation from absolute yaw/pitch/roll angles.  <br /></td></tr>
 <tr class="memitem:ae8ee44ecbc6cdf3263cf721461a56e63" id="r_ae8ee44ecbc6cdf3263cf721461a56e63"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae8ee44ecbc6cdf3263cf721461a56e63">rotateBy</a> (float yawDelta, float pitchDelta, float rollDelta=0.f)</td></tr>
 <tr class="memdesc:ae8ee44ecbc6cdf3263cf721461a56e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the camera by relative yaw/pitch/roll increments.  <br /></td></tr>
-<tr class="memitem:aa79e91390489cda4508429949df659e1" id="r_aa79e91390489cda4508429949df659e1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa79e91390489cda4508429949df659e1">lookAt</a> (<a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> eye, <a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> target)</td></tr>
+<tr class="memitem:aa79e91390489cda4508429949df659e1" id="r_aa79e91390489cda4508429949df659e1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa79e91390489cda4508429949df659e1">lookAt</a> (math::Vec3 eye, math::Vec3 target)</td></tr>
 <tr class="memdesc:aa79e91390489cda4508429949df659e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions and orients the camera to look from eye toward target.  <br /></td></tr>
 <tr class="memitem:a34f3a276b87ff745e802d12a5f5f3099" id="r_a34f3a276b87ff745e802d12a5f5f3099"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a34f3a276b87ff745e802d12a5f5f3099">setPerspective</a> (float fovDeg, float aspect, float nearPlane, float farPlane)</td></tr>
 <tr class="memdesc:a34f3a276b87ff745e802d12a5f5f3099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches to a perspective projection with the given parameters.  <br /></td></tr>
@@ -157,13 +157,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acd5c240d7920586cabfdca93a1b21e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the perspective field of view.  <br /></td></tr>
 <tr class="memitem:aa3af46d0d865ba03daec8c1080dc5a44" id="r_aa3af46d0d865ba03daec8c1080dc5a44"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa3af46d0d865ba03daec8c1080dc5a44">setClipPlanes</a> (float nearPlane, float farPlane)</td></tr>
 <tr class="memdesc:aa3af46d0d865ba03daec8c1080dc5a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates both clip-plane distances for the current projection.  <br /></td></tr>
-<tr class="memitem:af0814d0c2f98d669334d4f6c8769977b" id="r_af0814d0c2f98d669334d4f6c8769977b"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#af0814d0c2f98d669334d4f6c8769977b">getPosition</a> () const</td></tr>
+<tr class="memitem:af0814d0c2f98d669334d4f6c8769977b" id="r_af0814d0c2f98d669334d4f6c8769977b"><td class="memItemLeft">math::Vec3&#160;</td><td class="memItemRight"><a class="el" href="#af0814d0c2f98d669334d4f6c8769977b">getPosition</a> () const</td></tr>
 <tr class="memdesc:af0814d0c2f98d669334d4f6c8769977b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the camera's world-space position.  <br /></td></tr>
-<tr class="memitem:abace853217afa75148df2edffb5ad9f4" id="r_abace853217afa75148df2edffb5ad9f4"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#abace853217afa75148df2edffb5ad9f4">getForward</a> () const</td></tr>
+<tr class="memitem:abace853217afa75148df2edffb5ad9f4" id="r_abace853217afa75148df2edffb5ad9f4"><td class="memItemLeft">math::Vec3&#160;</td><td class="memItemRight"><a class="el" href="#abace853217afa75148df2edffb5ad9f4">getForward</a> () const</td></tr>
 <tr class="memdesc:abace853217afa75148df2edffb5ad9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the camera's forward direction (unit vector).  <br /></td></tr>
-<tr class="memitem:a48f536f77187569d0249df0546654556" id="r_a48f536f77187569d0249df0546654556"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a48f536f77187569d0249df0546654556">getRight</a> () const</td></tr>
+<tr class="memitem:a48f536f77187569d0249df0546654556" id="r_a48f536f77187569d0249df0546654556"><td class="memItemLeft">math::Vec3&#160;</td><td class="memItemRight"><a class="el" href="#a48f536f77187569d0249df0546654556">getRight</a> () const</td></tr>
 <tr class="memdesc:a48f536f77187569d0249df0546654556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the camera's right direction (unit vector).  <br /></td></tr>
-<tr class="memitem:a4d91c66ededd6912a238184888f20ed7" id="r_a4d91c66ededd6912a238184888f20ed7"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4d91c66ededd6912a238184888f20ed7">getUp</a> () const</td></tr>
+<tr class="memitem:a4d91c66ededd6912a238184888f20ed7" id="r_a4d91c66ededd6912a238184888f20ed7"><td class="memItemLeft">math::Vec3&#160;</td><td class="memItemRight"><a class="el" href="#a4d91c66ededd6912a238184888f20ed7">getUp</a> () const</td></tr>
 <tr class="memdesc:a4d91c66ededd6912a238184888f20ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the camera's up direction (unit vector).  <br /></td></tr>
 <tr class="memitem:aa8aa8af438a47e6d7ded4cef77b27f89" id="r_aa8aa8af438a47e6d7ded4cef77b27f89"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa8aa8af438a47e6d7ded4cef77b27f89">getYaw</a> () const</td></tr>
 <tr class="memdesc:aa8aa8af438a47e6d7ded4cef77b27f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current yaw angle in degrees.  <br /></td></tr>
@@ -173,11 +173,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a52738d0279c71cf8f3ae9099a0719fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current roll angle in degrees.  <br /></td></tr>
 <tr class="memitem:a07043d1647f074cdd803c50a9179167a" id="r_a07043d1647f074cdd803c50a9179167a"><td class="memItemLeft"><a class="el" href="#ac87386c018fa1ac9a1f1aca156e8f5f2">ProjectionType</a>&#160;</td><td class="memItemRight"><a class="el" href="#a07043d1647f074cdd803c50a9179167a">getProjectionType</a> () const</td></tr>
 <tr class="memdesc:a07043d1647f074cdd803c50a9179167a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns which projection type is currently active.  <br /></td></tr>
-<tr class="memitem:a70783c763f4e45ed2aa23a95eb33f116" id="r_a70783c763f4e45ed2aa23a95eb33f116"><td class="memItemLeft">const <a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a70783c763f4e45ed2aa23a95eb33f116">getView</a> () const</td></tr>
+<tr class="memitem:a70783c763f4e45ed2aa23a95eb33f116" id="r_a70783c763f4e45ed2aa23a95eb33f116"><td class="memItemLeft">const math::Mat4 &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a70783c763f4e45ed2aa23a95eb33f116">getView</a> () const</td></tr>
 <tr class="memdesc:a70783c763f4e45ed2aa23a95eb33f116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (cached) view matrix, rebuilding it if the pose changed.  <br /></td></tr>
-<tr class="memitem:ab0454f4fe9dfedada575f51c5c9d17f5" id="r_ab0454f4fe9dfedada575f51c5c9d17f5"><td class="memItemLeft">const <a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ab0454f4fe9dfedada575f51c5c9d17f5">getProjection</a> () const</td></tr>
+<tr class="memitem:ab0454f4fe9dfedada575f51c5c9d17f5" id="r_ab0454f4fe9dfedada575f51c5c9d17f5"><td class="memItemLeft">const math::Mat4 &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ab0454f4fe9dfedada575f51c5c9d17f5">getProjection</a> () const</td></tr>
 <tr class="memdesc:ab0454f4fe9dfedada575f51c5c9d17f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (cached) projection matrix, rebuilding it if its parameters changed.  <br /></td></tr>
-<tr class="memitem:aed8d7ce06ef460920c449f7784b0a2a7" id="r_aed8d7ce06ef460920c449f7784b0a2a7"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a>&#160;</td><td class="memItemRight"><a class="el" href="#aed8d7ce06ef460920c449f7784b0a2a7">getViewProjection</a> () const</td></tr>
+<tr class="memitem:aed8d7ce06ef460920c449f7784b0a2a7" id="r_aed8d7ce06ef460920c449f7784b0a2a7"><td class="memItemLeft">math::Mat4&#160;</td><td class="memItemRight"><a class="el" href="#aed8d7ce06ef460920c449f7784b0a2a7">getViewProjection</a> () const</td></tr>
 <tr class="memdesc:aed8d7ce06ef460920c449f7784b0a2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the combined projection-times-view matrix for shaders.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -187,11 +187,11 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a30e46681a93b13fbb216b3e6330c38c8" id="r_a30e46681a93b13fbb216b3e6330c38c8"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a30e46681a93b13fbb216b3e6330c38c8">m_WorldUp</a></td></tr>
+<tr class="memitem:a30e46681a93b13fbb216b3e6330c38c8" id="r_a30e46681a93b13fbb216b3e6330c38c8"><td class="memItemLeft">math::Vec3&#160;</td><td class="memItemRight"><a class="el" href="#a30e46681a93b13fbb216b3e6330c38c8">m_WorldUp</a></td></tr>
 <tr class="memdesc:a30e46681a93b13fbb216b3e6330c38c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference up direction supplied at construction (normalized).  <br /></td></tr>
 <tr class="memitem:af3e03fe7f5a41282b7c636461b0e0e87" id="r_af3e03fe7f5a41282b7c636461b0e0e87"><td class="memItemLeft">glm::quat&#160;</td><td class="memItemRight"><a class="el" href="#af3e03fe7f5a41282b7c636461b0e0e87">m_Frame</a></td></tr>
 <tr class="memdesc:af3e03fe7f5a41282b7c636461b0e0e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation mapping +Y onto m_WorldUp; lets yaw/pitch be defined in a Y-up space.  <br /></td></tr>
-<tr class="memitem:a9c404ff1ea85c39e780fd916d13d3f44" id="r_a9c404ff1ea85c39e780fd916d13d3f44"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9c404ff1ea85c39e780fd916d13d3f44">m_Position</a> {0.f, 0.f, 3.f}</td></tr>
+<tr class="memitem:a9c404ff1ea85c39e780fd916d13d3f44" id="r_a9c404ff1ea85c39e780fd916d13d3f44"><td class="memItemLeft">math::Vec3&#160;</td><td class="memItemRight"><a class="el" href="#a9c404ff1ea85c39e780fd916d13d3f44">m_Position</a> {0.f, 0.f, 3.f}</td></tr>
 <tr class="memdesc:a9c404ff1ea85c39e780fd916d13d3f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">World-space position (starts 3 units down +Z).  <br /></td></tr>
 <tr class="memitem:ae4f8f33dead6c56ee1a71477edddc780" id="r_ae4f8f33dead6c56ee1a71477edddc780"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ae4f8f33dead6c56ee1a71477edddc780">m_Yaw</a> {-90.f}</td></tr>
 <tr class="memdesc:ae4f8f33dead6c56ee1a71477edddc780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yaw about the up axis in degrees (-90 looks along -Z).  <br /></td></tr>
@@ -217,9 +217,9 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:ab47b22fc9e05c1452555ddec654d29fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orthographic bottom clip-plane boundary.  <br /></td></tr>
 <tr class="memitem:a6ef2371c4bc70f40a71cd35397bfe220" id="r_a6ef2371c4bc70f40a71cd35397bfe220"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6ef2371c4bc70f40a71cd35397bfe220">m_Top</a> {1.f}</td></tr>
 <tr class="memdesc:a6ef2371c4bc70f40a71cd35397bfe220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orthographic top clip-plane boundary.  <br /></td></tr>
-<tr class="memitem:af806595ddb1b6f17909891e15b2412b6" id="r_af806595ddb1b6f17909891e15b2412b6"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a>&#160;</td><td class="memItemRight"><a class="el" href="#af806595ddb1b6f17909891e15b2412b6">m_View</a> {1.f}</td></tr>
+<tr class="memitem:af806595ddb1b6f17909891e15b2412b6" id="r_af806595ddb1b6f17909891e15b2412b6"><td class="memItemLeft">math::Mat4&#160;</td><td class="memItemRight"><a class="el" href="#af806595ddb1b6f17909891e15b2412b6">m_View</a> {1.f}</td></tr>
 <tr class="memdesc:af806595ddb1b6f17909891e15b2412b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached view matrix, rebuilt while dirty.  <br /></td></tr>
-<tr class="memitem:a454d85b1b27772c3d475cdfa67312ea2" id="r_a454d85b1b27772c3d475cdfa67312ea2"><td class="memItemLeft"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a>&#160;</td><td class="memItemRight"><a class="el" href="#a454d85b1b27772c3d475cdfa67312ea2">m_Projection</a> {1.f}</td></tr>
+<tr class="memitem:a454d85b1b27772c3d475cdfa67312ea2" id="r_a454d85b1b27772c3d475cdfa67312ea2"><td class="memItemLeft">math::Mat4&#160;</td><td class="memItemRight"><a class="el" href="#a454d85b1b27772c3d475cdfa67312ea2">m_Projection</a> {1.f}</td></tr>
 <tr class="memdesc:a454d85b1b27772c3d475cdfa67312ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached projection matrix, rebuilt while dirty.  <br /></td></tr>
 <tr class="memitem:a75f008eb48188532fbffb250cb4b5874" id="r_a75f008eb48188532fbffb250cb4b5874"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a75f008eb48188532fbffb250cb4b5874">m_ViewDirty</a> {true}</td></tr>
 <tr class="memdesc:a75f008eb48188532fbffb250cb4b5874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the view matrix stale after a pose change.  <br /></td></tr>
@@ -232,7 +232,7 @@ Private Attributes</h2></td></tr>
 <p>Both <a class="el" href="#a70783c763f4e45ed2aa23a95eb33f116" title="Returns the (cached) view matrix, rebuilding it if the pose changed.">getView()</a> and <a class="el" href="#ab0454f4fe9dfedada575f51c5c9d17f5" title="Returns the (cached) projection matrix, rebuilding it if its parameters changed.">getProjection()</a> cache their result and rebuild only after a corresponding mutator marks them dirty, so querying matrices every frame is cheap.</p>
 <p>Movement comes in two flavours: <a class="el" href="#a2daf54ea2b411b0cbbdcf375c438d018" title="Translates the camera by a world-space offset.">move()</a> translates in world space, while <a class="el" href="#a9abf5664e08d1b9a1cb202cb1111d55f" title="Translates the camera along its own axes.">moveLocal()</a> translates along the camera's own right/up/forward axes. <a class="el" href="#aa79e91390489cda4508429949df659e1" title="Positions and orients the camera to look from eye toward target.">lookAt()</a> repositions and reorients the camera to gaze from eye toward target.</p>
 <dl class="section note"><dt>Note</dt><dd>Angles are in degrees. yaw == -90 and pitch == 0 (the defaults) make the camera look along -Z in the default frame.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb" title="4x4 single-precision column-major matrix, the engine&#39;s standard transform matrix (alias of glm::mat4)...">sog::math::Mat4</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>sog::math::Mat4 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00038">38</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
@@ -281,7 +281,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">sog::gfx::Camera::Camera </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a></td>          <td class="paramname"><span class="paramname"><em>worldUp</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{0.f,&#160;1.f,&#160;0.f}</span></td><td>)</td>
+          <td class="paramtype">math::Vec3</td>          <td class="paramname"><span class="paramname"><em>worldUp</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{0.f,&#160;1.f,&#160;0.f}</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -351,7 +351,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Camera::getForward </td>
+          <td class="memname">math::Vec3 sog::gfx::Camera::getForward </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -417,7 +417,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Camera::getPosition </td>
+          <td class="memname">math::Vec3 sog::gfx::Camera::getPosition </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -449,7 +449,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> &amp; sog::gfx::Camera::getProjection </td>
+          <td class="memname">const math::Mat4 &amp; sog::gfx::Camera::getProjection </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -515,7 +515,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Camera::getRight </td>
+          <td class="memname">math::Vec3 sog::gfx::Camera::getRight </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -579,7 +579,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Camera::getUp </td>
+          <td class="memname">math::Vec3 sog::gfx::Camera::getUp </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -611,7 +611,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> &amp; sog::gfx::Camera::getView </td>
+          <td class="memname">const math::Mat4 &amp; sog::gfx::Camera::getView </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -645,7 +645,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> sog::gfx::Camera::getViewProjection </td>
+          <td class="memname">math::Mat4 sog::gfx::Camera::getViewProjection </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -664,8 +664,6 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_camera_8hpp_source.html#l00209">209</a> of file <a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_camera_8cpp_source.html#l00152">getProjection()</a>, and <a class="el" href="_camera_8cpp_source.html#l00141">getView()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -712,12 +710,12 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void sog::gfx::Camera::lookAt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a></td>          <td class="paramname"><span class="paramname"><em>eye</em></span>, </td>
+          <td class="paramtype">math::Vec3</td>          <td class="paramname"><span class="paramname"><em>eye</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a></td>          <td class="paramname"><span class="paramname"><em>target</em></span>&#160;)</td>
+          <td class="paramtype">math::Vec3</td>          <td class="paramname"><span class="paramname"><em>target</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -746,7 +744,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void sog::gfx::Camera::move </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a></td>          <td class="paramname"><span class="paramname"><em>delta</em></span></td><td>)</td>
+          <td class="paramtype">math::Vec3</td>          <td class="paramname"><span class="paramname"><em>delta</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1055,7 +1053,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void sog::gfx::Camera::setPosition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a></td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td class="paramtype">math::Vec3</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1355,7 +1353,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Camera::m_Position {0.f, 0.f, 3.f}</td>
+          <td class="memname">math::Vec3 sog::gfx::Camera::m_Position {0.f, 0.f, 3.f}</td>
         </tr>
       </table>
   </td>
@@ -1411,7 +1409,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> sog::gfx::Camera::m_Projection {1.f}</td>
+          <td class="memname">math::Mat4 sog::gfx::Camera::m_Projection {1.f}</td>
         </tr>
       </table>
   </td>
@@ -1551,7 +1549,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#a8a748073e75358b2977bc6f6168befeb">math::Mat4</a> sog::gfx::Camera::m_View {1.f}</td>
+          <td class="memname">math::Mat4 sog::gfx::Camera::m_View {1.f}</td>
         </tr>
       </table>
   </td>
@@ -1607,7 +1605,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_math_8hpp.html#add08515e02f7e0b2fbf8f469dd1a67b6">math::Vec3</a> sog::gfx::Camera::m_WorldUp</td>
+          <td class="memname">math::Vec3 sog::gfx::Camera::m_WorldUp</td>
         </tr>
       </table>
   </td>

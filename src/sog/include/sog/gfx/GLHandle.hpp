@@ -46,8 +46,9 @@ template <typename Tag> class GLHandle
     /// Virtual destructor; makes GLHandle a polymorphic base if a subclass adds deletion.
     virtual ~GLHandle() = default;
 
-    GLHandle(const GLHandle&) = delete;            /**< Copy construction is deleted; handles are unique. */
-    GLHandle& operator=(const GLHandle&) = delete; /**< Copy assignment is deleted; handles are unique. */
+    GLHandle(const GLHandle&) = delete; /**< Copy construction is deleted; handles are unique. */
+    GLHandle&
+    operator=(const GLHandle&) = delete; /**< Copy assignment is deleted; handles are unique. */
 
     /**
      * @brief Move-constructs from another handle, taking over its name.
@@ -87,6 +88,9 @@ template <typename Tag> class GLHandle
 
     /// Contextually converts to bool via valid(); true when the handle names a real object.
     constexpr explicit operator bool() const noexcept { return valid(); }
+
+    /// Contextually converts to gl_handle (unsigned int) via get().
+    operator gl_handle() const noexcept { return get(); }
 
   protected:
     gl_handle m_Handle{}; /**< The raw GL object name; 0 means "no object". */

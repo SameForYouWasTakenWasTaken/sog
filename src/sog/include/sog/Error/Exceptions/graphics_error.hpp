@@ -33,6 +33,7 @@ enum class graphics_error_code
                                  linked program. */
 
     shader_file_open_failed, /**< A shader source file could not be opened for reading. */
+    invalid_shader_program,  /**< An invalid shader program or an invalid OpenGL handle */
 
     texture_load_failed, /**< Texture data could not be loaded or decoded. */
     texture_not_bound,   /**< An operation required a bound texture, but none was bound. */

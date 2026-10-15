@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -172,7 +172,7 @@ class sog::gfx::GpuBuffer&lt; T, Target, BindMode &gt;</div><p>Typed, automatica
   </dd>
 </dl>
 <dl class="section attention"><dt>Attention</dt><dd><a class="el" href="#a1c9d3ba6f3660a28963978d209a1bbe6" title="Replaces the whole contents with the given elements, growing if needed.">set()</a> with a smaller range shrinks the logical size but not the GPU allocation; use <a class="el" href="#aa3569eec96c09a385c8c61553fa09db0" title="Ensures capacity for at least n elements, without touching contents.">reserve()</a> only to grow, and note <a class="el" href="#ae1aaa981391938146c1fddb136e8022c" title="Resets the logical element count to 0; storage and contents are kept.">clear()</a> resets the element count without touching stored data.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="sog_8hpp.html#a9b3d3fc4a37afecc9e623d0a52e3eb52" title="Vertex data buffer (GL_ARRAY_BUFFER); alias of gfx::VertexBuffer.">sog::VertexBuffer</a>, <a class="el" href="sog_8hpp.html#a581d27cbee92b888175c87356db80c50" title="Element (index) buffer (GL_ELEMENT_ARRAY_BUFFER); alias of gfx::IndexBuffer.">sog::IndexBuffer</a>, <a class="el" href="sog_8hpp.html#abd1fc8a677ec8f6b7712b1192f29ad59" title="Uniform buffer object bound to an indexed binding point; alias of gfx::UniformBuffer.">sog::UniformBuffer</a> (<a class="el" href="_buffers_8hpp.html" title="Defines the engine&#39;s concrete GPU buffer aliases (VertexBuffer, IndexBuffer, UniformBuffer,...">Buffers.hpp</a>) </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_buffers_8hpp.html#a2eff942178705e6382bc96aeb4c8a699" title="Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.">sog::VertexBuffer</a>, <a class="el" href="_buffers_8hpp.html#a641cf2b4d81d58a4b756a072e898ff01" title="Index buffer for indexed drawing: bound to GL_ELEMENT_ARRAY_BUFFER with regular binding.">sog::IndexBuffer</a>, <a class="el" href="_buffers_8hpp.html#aa45ecfd3aefc05cec62d0c7179513d69" title="Uniform buffer object for shader uniform blocks, bound to an indexed binding point.">sog::UniformBuffer</a> (<a class="el" href="_buffers_8hpp.html" title="Defines the engine&#39;s concrete GPU buffer aliases (VertexBuffer, IndexBuffer, UniformBuffer,...">Buffers.hpp</a>) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_gpu_buffer_8hpp_source.html#l00049">49</a> of file <a class="el" href="_gpu_buffer_8hpp_source.html">GpuBuffer.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -417,7 +417,7 @@ template&lt;typename T, GLenum Target, <a class="el" href="_gpu_buffer_8hpp.html
 
 <p class="definition">Definition at line <a class="el" href="_gpu_buffer_8hpp_source.html#l00149">149</a> of file <a class="el" href="_gpu_buffer_8hpp_source.html">GpuBuffer.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_array_8cpp_source.html#l00036">sog::gfx::VertexArray::setIndexBuffer()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00032">sog::gfx::VertexArray::setVertexBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_array_8cpp_source.html#l00037">sog::gfx::VertexArray::setIndexBuffer()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00033">sog::gfx::VertexArray::setVertexBuffer()</a>.</p>
 
 </div>
 </div>
@@ -532,8 +532,6 @@ template&lt;typename T, GLenum Target, <a class="el" href="_gpu_buffer_8hpp.html
 
 <p class="definition">Definition at line <a class="el" href="_gpu_buffer_8hpp_source.html#l00067">67</a> of file <a class="el" href="_gpu_buffer_8hpp_source.html">GpuBuffer.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00016">Application::Run()</a>.</p>
-
 </div>
 </div>
 <a id="ad510604ae1885ef05080bb8bc52f3d81" name="ad510604ae1885ef05080bb8bc52f3d81"></a>
@@ -566,7 +564,7 @@ template&lt;typename T, GLenum Target, <a class="el" href="_gpu_buffer_8hpp.html
 
 <p class="definition">Definition at line <a class="el" href="_gpu_buffer_8hpp_source.html#l00137">137</a> of file <a class="el" href="_gpu_buffer_8hpp_source.html">GpuBuffer.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00109">sog::gfx::Window::draw()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00036">sog::gfx::VertexArray::setIndexBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00110">sog::gfx::Window::draw()</a>, and <a class="el" href="_vertex_array_8cpp_source.html#l00037">sog::gfx::VertexArray::setIndexBuffer()</a>.</p>
 
 </div>
 </div>

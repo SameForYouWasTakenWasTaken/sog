@@ -8,6 +8,7 @@
 #include <cmath>
 #include <fstream>
 #include <sog/Error/Exceptions/graphics_error.hpp>
+#include <sog/Utility/TypeTraits.hpp>
 #include <sog/gfx/OpenGL/Objects/Texture2D.hpp>
 
 #include "glad/gl.h"
@@ -69,20 +70,20 @@ void Texture2D::createFromRaw(const void* data, int width, int height,
             : 1;
 
     // Use underlying values for OpenGL calls
-    glTextureStorage2D(m_Handle.get(), levels, std::to_underlying(internalFormat), width, height);
+    glTextureStorage2D(m_Handle.get(), levels, to_underlying(internalFormat), width, height);
 
     if (data != nullptr)
     {
-        glTextureSubImage2D(m_Handle.get(), 0, 0, 0, width, height, std::to_underlying(format),
-                            std::to_underlying(type), data);
+        glTextureSubImage2D(m_Handle.get(), 0, 0, 0, width, height, to_underlying(format),
+                            to_underlying(type), data);
     }
 
-    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_S, std::to_underlying(settings.wrapS));
-    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_T, std::to_underlying(settings.wrapT));
+    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_S, to_underlying(settings.wrapS));
+    glTextureParameteri(m_Handle.get(), GL_TEXTURE_WRAP_T, to_underlying(settings.wrapT));
     glTextureParameteri(m_Handle.get(), GL_TEXTURE_MIN_FILTER,
-                        std::to_underlying(settings.minFilter));
+                        to_underlying(settings.minFilter));
     glTextureParameteri(m_Handle.get(), GL_TEXTURE_MAG_FILTER,
-                        std::to_underlying(settings.magFilter));
+                        to_underlying(settings.magFilter));
 
     if (settings.generateMipmaps && data != nullptr)
     {

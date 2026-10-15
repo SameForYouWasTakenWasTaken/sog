@@ -1,7 +1,7 @@
 var _uniforms_8cpp =
 [
     [ "sog::gfx::uniform::getLocation", "_uniforms_8hpp.html#abf4002334bc1ad0befa769b00a45e438", null ],
-    [ "sog::gfx::uniform::backend::sanityCheck", "_uniforms_8cpp.html#a8227fb19db08022b7a33e996ea215fc3", null ],
+    [ "sog::gfx::uniform::backend::sanityCheck", "_uniforms_8cpp.html#af79a289f7d075acbce52954282e9d1fd", null ],
     [ "sog::gfx::uniform::setFloat", "_uniforms_8hpp.html#a8f6d51276ac1afca40caada37608884a", null ],
     [ "sog::gfx::uniform::setInt", "_uniforms_8hpp.html#a211466e49a9169fd3f4420f83c1de741", null ],
     [ "sog::gfx::uniform::setMat3", "_uniforms_8hpp.html#ac288840ac27de02f0611a04c6cdf56b0", null ],

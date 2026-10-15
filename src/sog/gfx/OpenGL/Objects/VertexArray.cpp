@@ -5,6 +5,7 @@
  */
 
 #include <sog/Error/Exceptions/graphics_error.hpp>
+#include <sog/Utility/TypeTraits.hpp>
 #include <sog/gfx/OpenGL/Objects/VertexArray.hpp>
 #include <sog/gfx/Types/Enums.hpp>
 
@@ -43,7 +44,7 @@ bool VertexArray::isBound() const
 {
     GLint current{};
 
-    glGetIntegerv(std::to_underlying(vertex_query::BINDING), &current);
+    glGetIntegerv(to_underlying(vertex_query::BINDING), &current);
 
     return current != 0 && static_cast<GLuint>(current) == m_Handle.get();
 }
@@ -52,7 +53,7 @@ void VertexArray::setAttributes(std::span<const backend::VertexArrayAttributes> 
     for (const auto& attribute : attributes)
     {
         glVertexArrayAttribFormat(m_Handle.get(), attribute.index, attribute.size,
-                                  std::to_underlying(attribute.type), attribute.normalized,
+                                  to_underlying(attribute.type), attribute.normalized,
                                   attribute.offset);
 
         glVertexArrayAttribBinding(m_Handle.get(), attribute.index, attribute.binding);

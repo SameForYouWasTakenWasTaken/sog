@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_render_state_
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html">   29</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsog_1_1gfx_1_1_render_state.html">RenderState</a></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a679f5b9f17fce3ded5423ae5be3ac4dc">   31</a></span>    <span class="keyword">const</span> <a class="code hl_typedef" href="_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c">VertexBuffer</a>&amp; <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a679f5b9f17fce3ded5423ae5be3ac4dc">vertexBuffer</a>; </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a679f5b9f17fce3ded5423ae5be3ac4dc">   31</a></span>    <span class="keyword">const</span> <a class="code hl_typedef" href="_buffers_8hpp.html#a2eff942178705e6382bc96aeb4c8a699">VertexBuffer</a>&amp; <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a679f5b9f17fce3ded5423ae5be3ac4dc">vertexBuffer</a>; </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">   33</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_vertex_array.html">VertexArray</a>&amp; <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#aae452c16b3083472ac96c145d75d1b7f">vertexArray</a>;   </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">   35</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classsog_1_1gfx_1_1_texture2_d.html">Texture2D</a>* <a class="code hl_variable" href="structsog_1_1gfx_1_1_render_state.html#a4ec6a6a6985f14ca4b9f51113e768804">texture2D</a> =</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">nullptr</span>; </div>
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_render_state_
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
 </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <span class="comment">// namespace sog::gfx</span></div>
-<div class="ttc" id="a_buffers_8hpp_html_a9b844644811a58c72b8b3e9595b5d88c"><div class="ttname"><a href="_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c">sog::gfx::VertexBuffer</a></div><div class="ttdeci">GpuBuffer&lt; VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, BindingMode::Regular &gt; VertexBuffer</div><div class="ttdoc">Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.</div><div class="ttdef"><b>Definition</b> <a href="_buffers_8hpp_source.html#l00019">Buffers.hpp:19</a></div></div>
+<div class="ttc" id="a_buffers_8hpp_html_a2eff942178705e6382bc96aeb4c8a699"><div class="ttname"><a href="_buffers_8hpp.html#a2eff942178705e6382bc96aeb4c8a699">sog::gfx::buffers::VertexBuffer</a></div><div class="ttdeci">GpuBuffer&lt; VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, BindingMode::Regular &gt; VertexBuffer</div><div class="ttdoc">Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.</div><div class="ttdef"><b>Definition</b> <a href="_buffers_8hpp_source.html#l00020">Buffers.hpp:20</a></div></div>
 <div class="ttc" id="a_shader_program_8hpp_html"><div class="ttname"><a href="_shader_program_8hpp.html">ShaderProgram.hpp</a></div><div class="ttdoc">Defines ShaderProgram, a linked GL program that attaches shader stages, binds for drawing and caches ...</div></div>
 <div class="ttc" id="a_texture2_d_8hpp_html"><div class="ttname"><a href="_texture2_d_8hpp.html">Texture2D.hpp</a></div><div class="ttdoc">Defines Texture2D, a RAII 2D texture that loads from file (via stb_image) or raw pixel data,...</div></div>
 <div class="ttc" id="a_vertex_array_8hpp_html"><div class="ttname"><a href="_vertex_array_8hpp.html">VertexArray.hpp</a></div><div class="ttdoc">Defines VertexArray, a RAII wrapper around a GL vertex array object that binds vertex/index buffers a...</div></div>

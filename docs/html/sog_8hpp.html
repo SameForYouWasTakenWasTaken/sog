@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('sog_8hpp.html'
 <div class="textblock"><code>#include &quot;<a class="el" href="_input_8hpp_source.html">Input.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_math_8hpp_source.html">Utility/Math.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_time_8hpp_source.html">Utility/Time.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_type_traits_8hpp_source.html">Utility/TypeTraits.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_uniforms_8hpp_source.html">Utility/Uniforms.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_camera_8hpp_source.html">gfx/Camera.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_common_8hpp_source.html">gfx/OpenGL/Common.hpp</a>&quot;</code><br />
@@ -149,16 +150,6 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:abdd5dc2837fe155c116d4bfb397bbd76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element index type of index buffers (32-bit unsigned); alias of <a class="el" href="_indices_8hpp.html#a630808d9b8d0b3670b2e2672a07b5562" title="Element index type for index buffers; 32-bit so meshes may exceed 65k vertices.">gfx::Index</a>.  <br /></td></tr>
 <tr class="memitem:ac5c63382e43eab221e1e9b36644f6dab" id="r_ac5c63382e43eab221e1e9b36644f6dab"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ac5c63382e43eab221e1e9b36644f6dab">sog::VertexArray</a> = <a class="el" href="classsog_1_1gfx_1_1_vertex_array.html">gfx::VertexArray</a></td></tr>
 <tr class="memdesc:ac5c63382e43eab221e1e9b36644f6dab"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a5c085de811cae662f2a2f5e177e69849" title="A single interleaved vertex (position, color, texcoord); alias of gfx::Vertex.">Vertex</a> array object wrapper; alias of <a class="el" href="classsog_1_1gfx_1_1_vertex_array.html" title="Owns a GL vertex array object (VAO) and configures how vertex data is read.">gfx::VertexArray</a>.  <br /></td></tr>
-<tr class="memitem:a9b3d3fc4a37afecc9e623d0a52e3eb52" id="r_a9b3d3fc4a37afecc9e623d0a52e3eb52"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a9b3d3fc4a37afecc9e623d0a52e3eb52">sog::VertexBuffer</a> = <a class="el" href="_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c">gfx::VertexBuffer</a></td></tr>
-<tr class="memdesc:a9b3d3fc4a37afecc9e623d0a52e3eb52"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a5c085de811cae662f2a2f5e177e69849" title="A single interleaved vertex (position, color, texcoord); alias of gfx::Vertex.">Vertex</a> data buffer (GL_ARRAY_BUFFER); alias of <a class="el" href="_buffers_8hpp.html#a9b844644811a58c72b8b3e9595b5d88c" title="Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.">gfx::VertexBuffer</a>.  <br /></td></tr>
-<tr class="memitem:a581d27cbee92b888175c87356db80c50" id="r_a581d27cbee92b888175c87356db80c50"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a581d27cbee92b888175c87356db80c50">sog::IndexBuffer</a> = <a class="el" href="_buffers_8hpp.html#af6eae010eb3c8a658c2e8db18e86148e">gfx::IndexBuffer</a></td></tr>
-<tr class="memdesc:a581d27cbee92b888175c87356db80c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element (index) buffer (GL_ELEMENT_ARRAY_BUFFER); alias of <a class="el" href="_buffers_8hpp.html#af6eae010eb3c8a658c2e8db18e86148e" title="Index buffer for indexed drawing: bound to GL_ELEMENT_ARRAY_BUFFER with regular binding.">gfx::IndexBuffer</a>.  <br /></td></tr>
-<tr class="memitem:abd1fc8a677ec8f6b7712b1192f29ad59" id="r_abd1fc8a677ec8f6b7712b1192f29ad59"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:abd1fc8a677ec8f6b7712b1192f29ad59 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#abd1fc8a677ec8f6b7712b1192f29ad59">sog::UniformBuffer</a> = <a class="el" href="_buffers_8hpp.html#ad45d8639734dada223679773bffe0d8b">gfx::UniformBuffer</a>&lt;T&gt;</td></tr>
-<tr class="memdesc:abd1fc8a677ec8f6b7712b1192f29ad59"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a9778437b0e653b2cb9e8c76e0469e4d7" title="Location wrapper for a shader uniform; alias of gfx::Uniform.">Uniform</a> buffer object bound to an indexed binding point; alias of <a class="el" href="_buffers_8hpp.html#ad45d8639734dada223679773bffe0d8b" title="Uniform buffer object for shader uniform blocks, bound to an indexed binding point.">gfx::UniformBuffer</a>.  <br /></td></tr>
-<tr class="memitem:aea0082a3559481a2029ead63b227e287" id="r_aea0082a3559481a2029ead63b227e287"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:aea0082a3559481a2029ead63b227e287 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#aea0082a3559481a2029ead63b227e287">sog::StorageBuffer</a> = <a class="el" href="_buffers_8hpp.html#a252c97e96452dd4942b6b1f93df18e5b">gfx::StorageBuffer</a>&lt;T&gt;</td></tr>
-<tr class="memdesc:aea0082a3559481a2029ead63b227e287"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a197431248218d49952f7fe6d36982edf" title="Shader stage of a given shader_type; alias of gfx::Shader.">Shader</a> storage buffer object (GL 4.3+); alias of <a class="el" href="_buffers_8hpp.html#a252c97e96452dd4942b6b1f93df18e5b" title="Shader storage buffer object (GL 4.3+), bound to an indexed binding point.">gfx::StorageBuffer</a>.  <br /></td></tr>
 <tr class="memitem:a5defd92210e7e418f20496b2af9fa0b2" id="r_a5defd92210e7e418f20496b2af9fa0b2"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a5defd92210e7e418f20496b2af9fa0b2">sog::VertexShader</a> = <a class="el" href="_shader_8hpp.html#ad22bd8d0661d4a034ba4aeb7a59dd229">gfx::VertexShader</a></td></tr>
 <tr class="memdesc:a5defd92210e7e418f20496b2af9fa0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiled vertex shader stage; alias of <a class="el" href="_shader_8hpp.html#ad22bd8d0661d4a034ba4aeb7a59dd229" title="Shader specialized for the vertex stage (shader_type::VERTEX).">gfx::VertexShader</a>.  <br /></td></tr>
 <tr class="memitem:a5635f8e583b6d685ba4c8c936c9d94e3" id="r_a5635f8e583b6d685ba4c8c936c9d94e3"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a5635f8e583b6d685ba4c8c936c9d94e3">sog::FragmentShader</a> = <a class="el" href="_shader_8hpp.html#a7c947c6f637c602fe5c0c3e16eb76231">gfx::FragmentShader</a></td></tr>
@@ -191,7 +182,7 @@ Typedefs</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Umbrella header of the sog library: pulls in the public API and re-exports the most commonly used types into the top-level sog:: namespace. </p>
-<p>Including &lt;<a class="el" href="sog_8hpp.html" title="Umbrella header of the sog library: pulls in the public API and re-exports the most commonly used typ...">sog/sog.hpp</a>&gt; gives a program the whole library surface: windowing (Window, Event, ClearBuffer), drawing (VertexArray, buffers, shaders, Texture2D, FrameBuffer, RenderBuffer, Uniform), the Camera, input queries (<a class="el" href="_input_8hpp.html" title="Declares the sog::input keyboard/mouse query API, including per-frame edge detection,...">Input.hpp</a>) and the Utility helpers (Math, Time, Uniforms).</p>
+<p>Including &lt;<a class="el" href="sog_8hpp.html" title="Umbrella header of the sog library: pulls in the public API and re-exports the most commonly used typ...">sog/sog.hpp</a>&gt; gives a program the whole library surface: windowing (Window, Event, ClearBuffer), drawing (VertexArray, buffers, shaders, Texture2D, FrameBuffer, RenderBuffer, Uniform), the Camera, input queries (<a class="el" href="_input_8hpp.html" title="Declares the sog::input keyboard/mouse query API, including per-frame edge detection,...">Input.hpp</a>) and the Utility helpers (Math, Time, TypeTraits, Uniforms).</p>
 <p>Types live in sog::gfx (and its inline namespaces); the aliases declared here let typical application code use the short names (<a class="el" href="#a378827eb068315c5e4cf9917b1e19c35" title="GLFW-backed OS window with an OpenGL context; alias of gfx::Window.">sog::Window</a>, <a class="el" href="#a5c085de811cae662f2a2f5e177e69849" title="A single interleaved vertex (position, color, texcoord); alias of gfx::Vertex.">sog::Vertex</a>, <a class="el" href="#a8c257c37be2a2eff75eaf885e31a075f" title="Linked shader program; alias of gfx::ShaderProgram.">sog::ShaderProgram</a>, ...) without naming the gfx namespace. The enums and uniform helpers are additionally re-exported as <a class="el" href="namespacesog_1_1enums.html" title="Type-safe GL enums (buffer_target, shader_type, draw_mode, ...) under the sog::enums namespace.">sog::enums</a> and <a class="el" href="namespacesog_1_1uniform.html" title="Uniform lookup/upload helpers (getLocation, setVec4, ...) under the sog::uniform namespace.">sog::uniform</a>. </p>
 
 <p class="definition">Definition in file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
@@ -210,7 +201,7 @@ Typedefs</h2></td></tr>
 
 <p>Fly-style camera producing view/projection matrices; alias of gfx::Camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00085">85</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00076">76</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -228,7 +219,7 @@ Typedefs</h2></td></tr>
 
 <p>Bitmask of buffers to clear (color/depth/stencil); alias of gfx::ClearBuffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00075">75</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00066">66</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +237,7 @@ Typedefs</h2></td></tr>
 
 <p>Normalized float RGBA color; alias of gfx::Color. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00082">82</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00073">73</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -264,7 +255,7 @@ Typedefs</h2></td></tr>
 
 <p>Window event payload; alias of gfx::Event. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00077">77</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00068">68</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +273,7 @@ Typedefs</h2></td></tr>
 
 <p>Discriminator for the payload an Event carries; alias of gfx::EventType. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00079">79</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00070">70</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -300,7 +291,7 @@ Typedefs</h2></td></tr>
 
 <p>Compiled fragment shader stage; alias of gfx::FragmentShader. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00055">55</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00046">46</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -318,7 +309,7 @@ Typedefs</h2></td></tr>
 
 <p>Framebuffer object for offscreen rendering; alias of gfx::FrameBuffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00068">68</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00059">59</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -336,25 +327,7 @@ Typedefs</h2></td></tr>
 
 <p>Element index type of index buffers (32-bit unsigned); alias of gfx::Index. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00039">39</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a581d27cbee92b888175c87356db80c50" name="a581d27cbee92b888175c87356db80c50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a581d27cbee92b888175c87356db80c50">&#9670;&#160;</a></span>IndexBuffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a581d27cbee92b888175c87356db80c50">sog::IndexBuffer</a> = gfx::IndexBuffer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Element (index) buffer (GL_ELEMENT_ARRAY_BUFFER); alias of gfx::IndexBuffer. </p>
-
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00046">46</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00040">40</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -372,7 +345,7 @@ Typedefs</h2></td></tr>
 
 <p>Renderbuffer object (e.g. depth/stencil storage); alias of gfx::RenderBuffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00070">70</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00061">61</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -392,7 +365,7 @@ template&lt;gfx::shader_type TShader&gt; </div>
 
 <p>Shader stage of a given shader_type; alias of gfx::Shader. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00059">59</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00050">50</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -410,27 +383,7 @@ template&lt;gfx::shader_type TShader&gt; </div>
 
 <p>Linked shader program; alias of gfx::ShaderProgram. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00057">57</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aea0082a3559481a2029ead63b227e287" name="aea0082a3559481a2029ead63b227e287"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea0082a3559481a2029ead63b227e287">&#9670;&#160;</a></span>StorageBuffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#aea0082a3559481a2029ead63b227e287">sog::StorageBuffer</a> = gfx::StorageBuffer&lt;T&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Shader storage buffer object (GL 4.3+); alias of gfx::StorageBuffer. </p>
-
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00050">50</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00048">48</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +401,7 @@ template&lt;typename T&gt; </div>
 
 <p>RAII 2D texture; alias of gfx::Texture2D. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00065">65</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00056">56</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -466,27 +419,7 @@ template&lt;typename T&gt; </div>
 
 <p>Location wrapper for a shader uniform; alias of gfx::Uniform. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00062">62</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
-
-</div>
-</div>
-<a id="abd1fc8a677ec8f6b7712b1192f29ad59" name="abd1fc8a677ec8f6b7712b1192f29ad59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd1fc8a677ec8f6b7712b1192f29ad59">&#9670;&#160;</a></span>UniformBuffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#abd1fc8a677ec8f6b7712b1192f29ad59">sog::UniformBuffer</a> = gfx::UniformBuffer&lt;T&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Uniform buffer object bound to an indexed binding point; alias of gfx::UniformBuffer. </p>
-
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00048">48</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00053">53</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -504,7 +437,7 @@ template&lt;typename T&gt; </div>
 
 <p>A single interleaved vertex (position, color, texcoord); alias of gfx::Vertex. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00037">37</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00038">38</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -526,24 +459,6 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="a9b3d3fc4a37afecc9e623d0a52e3eb52" name="a9b3d3fc4a37afecc9e623d0a52e3eb52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b3d3fc4a37afecc9e623d0a52e3eb52">&#9670;&#160;</a></span>VertexBuffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a9b3d3fc4a37afecc9e623d0a52e3eb52">sog::VertexBuffer</a> = gfx::VertexBuffer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Vertex data buffer (GL_ARRAY_BUFFER); alias of gfx::VertexBuffer. </p>
-
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00044">44</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a5defd92210e7e418f20496b2af9fa0b2" name="a5defd92210e7e418f20496b2af9fa0b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5defd92210e7e418f20496b2af9fa0b2">&#9670;&#160;</a></span>VertexShader</h2>
 
@@ -558,7 +473,7 @@ template&lt;typename T&gt; </div>
 
 <p>Compiled vertex shader stage; alias of gfx::VertexShader. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00053">53</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00044">44</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>
@@ -576,7 +491,7 @@ template&lt;typename T&gt; </div>
 
 <p>GLFW-backed OS window with an OpenGL context; alias of gfx::Window. </p>
 
-<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00073">73</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sog_8hpp_source.html#l00064">64</a> of file <a class="el" href="sog_8hpp_source.html">sog.hpp</a>.</p>
 
 </div>
 </div>

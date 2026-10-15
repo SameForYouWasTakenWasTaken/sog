@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_clear_buffer_
 <a href="_clear_buffer_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_type_traits_8hpp.html">../../Utility/TypeTraits.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;glad/gl.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>sog::gfx</div>
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_clear_buffer_
 <div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_clear_buffer_8hpp.html#a23fb794c0be33621b117e6fd31e26bc7">   37</a></span><span class="keyword">constexpr</span> <a class="code hl_enumeration" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">ClearBuffer</a> <a class="code hl_function" href="_clear_buffer_8hpp.html#a23fb794c0be33621b117e6fd31e26bc7">operator|</a>(<a class="code hl_enumeration" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">ClearBuffer</a> lhs, <a class="code hl_enumeration" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">ClearBuffer</a> rhs) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">ClearBuffer</a><span class="keyword">&gt;</span>(std::to_underlying(lhs) | std::to_underlying(rhs));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">ClearBuffer</a><span class="keyword">&gt;</span>(<a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(lhs) | <a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(rhs));</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <span class="comment">// namespace sog::gfx</span></div>
@@ -141,7 +141,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_clear_buffer_
 <div class="ttc" id="a_clear_buffer_8hpp_html_a8f5b5f0b5b577c9bc23f526291e8f6f4"><div class="ttname"><a href="_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4">sog::gfx::ClearBuffer</a></div><div class="ttdeci">ClearBuffer</div><div class="ttdoc">Which framebuffer buffer(s) to clear, mirroring the GL_COLOR_BUFFER_BIT / GL_DEPTH_BUFFER_BIT / GL_ST...</div><div class="ttdef"><b>Definition</b> <a href="#l00020">ClearBuffer.hpp:21</a></div></div>
 <div class="ttc" id="a_frame_buffer_8hpp_html_a365e1801e97cbd0f1dda52308f55b1e2a675056ad1441b6375b2c5abd48c27ef1"><div class="ttname"><a href="_frame_buffer_8hpp.html#a365e1801e97cbd0f1dda52308f55b1e2a675056ad1441b6375b2c5abd48c27ef1">sog::gfx::FramebufferAttachment::Depth</a></div><div class="ttdeci">@ Depth</div><div class="ttdoc">Depth-only attachment slot.</div><div class="ttdef"><b>Definition</b> <a href="_frame_buffer_8hpp_source.html#l00030">FrameBuffer.hpp:30</a></div></div>
 <div class="ttc" id="a_frame_buffer_8hpp_html_a365e1801e97cbd0f1dda52308f55b1e2ad821e7ccd4d4c25a491ba1a9ea248895"><div class="ttname"><a href="_frame_buffer_8hpp.html#a365e1801e97cbd0f1dda52308f55b1e2ad821e7ccd4d4c25a491ba1a9ea248895">sog::gfx::FramebufferAttachment::Stencil</a></div><div class="ttdeci">@ Stencil</div><div class="ttdoc">Stencil-only attachment slot.</div><div class="ttdef"><b>Definition</b> <a href="_frame_buffer_8hpp_source.html#l00031">FrameBuffer.hpp:31</a></div></div>
-<div class="ttc" id="astructsog_1_1gfx_1_1_color_html"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html">sog::gfx::Color</a></div><div class="ttdoc">RGBA color stored as normalized floats (0.0 - 1.0 per channel).</div><div class="ttdef"><b>Definition</b> <a href="_colors_8hpp_source.html#l00023">Colors.hpp:24</a></div></div>
+<div class="ttc" id="a_type_traits_8hpp_html"><div class="ttname"><a href="_type_traits_8hpp.html">TypeTraits.hpp</a></div><div class="ttdoc">Declares sog::to_underlying, the engine&#39;s C++20 replacement for std::to_underlying (C++23),...</div></div>
+<div class="ttc" id="a_type_traits_8hpp_html_a8867d68c55e9495bf578b16ee8235894"><div class="ttname"><a href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">sog::to_underlying</a></div><div class="ttdeci">constexpr std::underlying_type_t&lt; TEnum &gt; to_underlying(TEnum value) noexcept</div><div class="ttdoc">Converts an enum value to its underlying integer type (sog&#39;s C++20 stand-in for std::to_underlying).</div><div class="ttdef"><b>Definition</b> <a href="_type_traits_8hpp_source.html#l00033">TypeTraits.hpp:33</a></div></div>
+<div class="ttc" id="astructsog_1_1gfx_1_1_color_html"><div class="ttname"><a href="structsog_1_1gfx_1_1_color.html">sog::gfx::Color</a></div><div class="ttdoc">RGBA color stored as normalized floats (0.0 - 1.0 per channel).</div><div class="ttdef"><b>Definition</b> <a href="_colors_8hpp_source.html#l00022">Colors.hpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

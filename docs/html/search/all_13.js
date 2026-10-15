@@ -2,7 +2,7 @@ var searchData=
 [
   ['s_0',['S',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a5dbc98dcc983a70728bd082d1a47546e',1,'sog::input']]],
   ['s_5fusercallback_1',['s_UserCallback',['../_open_g_l_debug_8cpp.html#abcbc6ef079e8bb8e6783bdb100896177',1,'sog::debug']]],
-  ['sanitycheck_2',['sanityCheck',['../_uniforms_8cpp.html#a8227fb19db08022b7a33e996ea215fc3',1,'sog::gfx::uniform::backend']]],
+  ['sanitycheck_2',['sanityCheck',['../_uniforms_8cpp.html#af79a289f7d075acbce52954282e9d1fd',1,'sog::gfx::uniform::backend']]],
   ['scroll_5flock_3',['SCROLL_LOCK',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a324bf1f059b99e2882bc1d567080d8ed',1,'sog::input']]],
   ['semicolon_4',['SEMICOLON',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80abaaceccc27b1d4e0968c999583f97de5',1,'sog::input']]],
   ['set_5',['set',['../classsog_1_1gfx_1_1_gpu_buffer.html#a1c9d3ba6f3660a28963978d209a1bbe6',1,'sog::gfx::GpuBuffer::set()'],['../_set_rendering_state_8hpp.html#a59ce45fa6637b1e46272b593a70e6039',1,'sog::gfx::backend::set()']]],
@@ -57,7 +57,7 @@ var searchData=
   ['static_5fdraw_54',['STATIC_DRAW',['../_enums_8hpp.html#ad912a2624f4992602775581af231d378a0c5234f5830e196c1079d1fdcf3f9aba',1,'sog::gfx::enums']]],
   ['static_5fread_55',['STATIC_READ',['../_enums_8hpp.html#ad912a2624f4992602775581af231d378a9cb802cb164e929c4c1ef02d397b9c23',1,'sog::gfx::enums']]],
   ['stencil_56',['Stencil',['../_frame_buffer_8hpp.html#a365e1801e97cbd0f1dda52308f55b1e2ad821e7ccd4d4c25a491ba1a9ea248895',1,'Stencilsog::gfx'],['../_clear_buffer_8hpp.html#a8f5b5f0b5b577c9bc23f526291e8f6f4ad821e7ccd4d4c25a491ba1a9ea248895',1,'Stencilsog::gfx']]],
-  ['storagebuffer_57',['StorageBuffer',['../_buffers_8hpp.html#a252c97e96452dd4942b6b1f93df18e5b',1,'sog::gfx::StorageBuffer'],['../sog_8hpp.html#aea0082a3559481a2029ead63b227e287',1,'sog::StorageBuffer']]],
+  ['storagebuffer_57',['StorageBuffer',['../_buffers_8hpp.html#a74a743dd422d159e814a79bb7f559efd',1,'sog::gfx::buffers']]],
   ['storagebufferhandle_58',['StorageBufferHandle',['../_handles_8hpp.html#aa4975556688277d3c225ad072766d617',1,'sog::gfx']]],
   ['stream_5fcopy_59',['STREAM_COPY',['../_enums_8hpp.html#ad912a2624f4992602775581af231d378a99a4720a5c05c55db5447d23141412eb',1,'sog::gfx::enums']]],
   ['stream_5fdraw_60',['STREAM_DRAW',['../_enums_8hpp.html#ad912a2624f4992602775581af231d378a4b631f47edaf0aaac92dfe66e19d65cf',1,'sog::gfx::enums']]],

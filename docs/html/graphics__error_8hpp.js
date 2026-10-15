@@ -12,6 +12,7 @@ var graphics__error_8hpp =
       [ "buffer_not_bound", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428badd5e47a83bd09e8ec561f1aa24a92717", null ],
       [ "uniform_location_invalid", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baba94c7d849fdc4119aff92845312a506", null ],
       [ "shader_file_open_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba626afa7f597fe6b22fefc65634295440", null ],
+      [ "invalid_shader_program", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baf4d9cc98d043c535a1682023fefb58c7", null ],
       [ "texture_load_failed", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba2209bba2e4e7ae42a53c6229eb8590f4", null ],
       [ "texture_not_bound", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba2fe23f5043ae087781aac569336e18c5", null ],
       [ "frame_buffer_invalid", "graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baed7130b249ffd466550ad1e7397acb9d", null ],

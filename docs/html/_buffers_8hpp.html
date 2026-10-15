@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -126,16 +126,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_buffers_8hpp.
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a9b844644811a58c72b8b3e9595b5d88c" id="r_a9b844644811a58c72b8b3e9595b5d88c"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a9b844644811a58c72b8b3e9595b5d88c">sog::gfx::VertexBuffer</a> = <a class="el" href="classsog_1_1gfx_1_1_gpu_buffer.html">GpuBuffer</a>&lt;<a class="el" href="classsog_1_1gfx_1_1_g_l_handle.html#a61c72b4f59fec67a8b8da9863af38e7a">VertexBufferHandle::tag_type</a>, GL_ARRAY_BUFFER, <a class="el" href="_gpu_buffer_8hpp.html#a2c17e1f81520f92470e8aad974c6ce84ad2203cb1237cb6460cbad94564e39345">BindingMode::Regular</a>&gt;</td></tr>
-<tr class="memdesc:a9b844644811a58c72b8b3e9595b5d88c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.  <br /></td></tr>
-<tr class="memitem:af6eae010eb3c8a658c2e8db18e86148e" id="r_af6eae010eb3c8a658c2e8db18e86148e"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#af6eae010eb3c8a658c2e8db18e86148e">sog::gfx::IndexBuffer</a></td></tr>
-<tr class="memdesc:af6eae010eb3c8a658c2e8db18e86148e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="_indices_8hpp.html#a630808d9b8d0b3670b2e2672a07b5562" title="Element index type for index buffers; 32-bit so meshes may exceed 65k vertices.">Index</a> buffer for indexed drawing: bound to GL_ELEMENT_ARRAY_BUFFER with regular binding.  <br /></td></tr>
-<tr class="memitem:ad45d8639734dada223679773bffe0d8b" id="r_ad45d8639734dada223679773bffe0d8b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ad45d8639734dada223679773bffe0d8b template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad45d8639734dada223679773bffe0d8b">sog::gfx::UniformBuffer</a></td></tr>
-<tr class="memdesc:ad45d8639734dada223679773bffe0d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a> buffer object for shader uniform blocks, bound to an indexed binding point.  <br /></td></tr>
-<tr class="memitem:a252c97e96452dd4942b6b1f93df18e5b" id="r_a252c97e96452dd4942b6b1f93df18e5b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a252c97e96452dd4942b6b1f93df18e5b template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a252c97e96452dd4942b6b1f93df18e5b">sog::gfx::StorageBuffer</a></td></tr>
-<tr class="memdesc:a252c97e96452dd4942b6b1f93df18e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> storage buffer object (GL 4.3+), bound to an indexed binding point.  <br /></td></tr>
+<tr class="memitem:a2eff942178705e6382bc96aeb4c8a699" id="r_a2eff942178705e6382bc96aeb4c8a699"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a2eff942178705e6382bc96aeb4c8a699">sog::gfx::VertexBuffer</a> = <a class="el" href="classsog_1_1gfx_1_1_gpu_buffer.html">GpuBuffer</a>&lt;<a class="el" href="classsog_1_1gfx_1_1_g_l_handle.html#a61c72b4f59fec67a8b8da9863af38e7a">VertexBufferHandle::tag_type</a>, GL_ARRAY_BUFFER, <a class="el" href="_gpu_buffer_8hpp.html#a2c17e1f81520f92470e8aad974c6ce84ad2203cb1237cb6460cbad94564e39345">BindingMode::Regular</a>&gt;</td></tr>
+<tr class="memdesc:a2eff942178705e6382bc96aeb4c8a699"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.  <br /></td></tr>
+<tr class="memitem:a641cf2b4d81d58a4b756a072e898ff01" id="r_a641cf2b4d81d58a4b756a072e898ff01"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a641cf2b4d81d58a4b756a072e898ff01">sog::gfx::IndexBuffer</a></td></tr>
+<tr class="memdesc:a641cf2b4d81d58a4b756a072e898ff01"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="_indices_8hpp.html#a630808d9b8d0b3670b2e2672a07b5562" title="Element index type for index buffers; 32-bit so meshes may exceed 65k vertices.">Index</a> buffer for indexed drawing: bound to GL_ELEMENT_ARRAY_BUFFER with regular binding.  <br /></td></tr>
+<tr class="memitem:aa45ecfd3aefc05cec62d0c7179513d69" id="r_aa45ecfd3aefc05cec62d0c7179513d69"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:aa45ecfd3aefc05cec62d0c7179513d69 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#aa45ecfd3aefc05cec62d0c7179513d69">sog::gfx::UniformBuffer</a></td></tr>
+<tr class="memdesc:aa45ecfd3aefc05cec62d0c7179513d69"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsog_1_1gfx_1_1_uniform.html" title="Location of a uniform within a linked shader program.">Uniform</a> buffer object for shader uniform blocks, bound to an indexed binding point.  <br /></td></tr>
+<tr class="memitem:a74a743dd422d159e814a79bb7f559efd" id="r_a74a743dd422d159e814a79bb7f559efd"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a74a743dd422d159e814a79bb7f559efd template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a74a743dd422d159e814a79bb7f559efd">sog::gfx::StorageBuffer</a></td></tr>
+<tr class="memdesc:a74a743dd422d159e814a79bb7f559efd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> storage buffer object (GL 4.3+), bound to an indexed binding point.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the engine's concrete GPU buffer aliases (VertexBuffer, IndexBuffer, UniformBuffer, StorageBuffer) as GpuBuffer specializations. </p>
@@ -143,14 +143,14 @@ Typedefs</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
-<a id="af6eae010eb3c8a658c2e8db18e86148e" name="af6eae010eb3c8a658c2e8db18e86148e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6eae010eb3c8a658c2e8db18e86148e">&#9670;&#160;</a></span>IndexBuffer</h2>
+<a id="a641cf2b4d81d58a4b756a072e898ff01" name="a641cf2b4d81d58a4b756a072e898ff01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641cf2b4d81d58a4b756a072e898ff01">&#9670;&#160;</a></span>IndexBuffer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#af6eae010eb3c8a658c2e8db18e86148e">sog::gfx::IndexBuffer</a></td>
+          <td class="memname">using <a class="el" href="#a641cf2b4d81d58a4b756a072e898ff01">sog::gfx::buffers::IndexBuffer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -160,12 +160,12 @@ Typedefs</h2></td></tr>
 </div><!-- fragment -->
 <p>Index buffer for indexed drawing: bound to GL_ELEMENT_ARRAY_BUFFER with regular binding. </p>
 
-<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00022">22</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00023">23</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a252c97e96452dd4942b6b1f93df18e5b" name="a252c97e96452dd4942b6b1f93df18e5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a252c97e96452dd4942b6b1f93df18e5b">&#9670;&#160;</a></span>StorageBuffer</h2>
+<a id="a74a743dd422d159e814a79bb7f559efd" name="a74a743dd422d159e814a79bb7f559efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74a743dd422d159e814a79bb7f559efd">&#9670;&#160;</a></span>StorageBuffer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +173,7 @@ Typedefs</h2></td></tr>
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a252c97e96452dd4942b6b1f93df18e5b">sog::gfx::StorageBuffer</a></td>
+          <td class="memname">using <a class="el" href="#a74a743dd422d159e814a79bb7f559efd">sog::gfx::buffers::StorageBuffer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -189,12 +189,12 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00038">38</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00039">39</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad45d8639734dada223679773bffe0d8b" name="ad45d8639734dada223679773bffe0d8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad45d8639734dada223679773bffe0d8b">&#9670;&#160;</a></span>UniformBuffer</h2>
+<a id="aa45ecfd3aefc05cec62d0c7179513d69" name="aa45ecfd3aefc05cec62d0c7179513d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45ecfd3aefc05cec62d0c7179513d69">&#9670;&#160;</a></span>UniformBuffer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +202,7 @@ template&lt;typename T&gt; </div>
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#ad45d8639734dada223679773bffe0d8b">sog::gfx::UniformBuffer</a></td>
+          <td class="memname">using <a class="el" href="#aa45ecfd3aefc05cec62d0c7179513d69">sog::gfx::buffers::UniformBuffer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -217,25 +217,25 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00030">30</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00031">31</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9b844644811a58c72b8b3e9595b5d88c" name="a9b844644811a58c72b8b3e9595b5d88c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b844644811a58c72b8b3e9595b5d88c">&#9670;&#160;</a></span>VertexBuffer</h2>
+<a id="a2eff942178705e6382bc96aeb4c8a699" name="a2eff942178705e6382bc96aeb4c8a699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eff942178705e6382bc96aeb4c8a699">&#9670;&#160;</a></span>VertexBuffer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a9b844644811a58c72b8b3e9595b5d88c">sog::gfx::VertexBuffer</a> = GpuBuffer&lt;VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, BindingMode::Regular&gt;</td>
+          <td class="memname">using <a class="el" href="#a2eff942178705e6382bc96aeb4c8a699">sog::gfx::buffers::VertexBuffer</a> = GpuBuffer&lt;VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, BindingMode::Regular&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding. </p>
 
-<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00019">19</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_buffers_8hpp_source.html#l00020">20</a> of file <a class="el" href="_buffers_8hpp_source.html">Buffers.hpp</a>.</p>
 
 </div>
 </div>

@@ -7,7 +7,7 @@ var searchData=
   ['uniform_4',['Uniform',['../structsog_1_1gfx_1_1_uniform.html',1,'sog::gfx::Uniform'],['../sog_8hpp.html#a9778437b0e653b2cb9e8c76e0469e4d7',1,'sog::Uniform']]],
   ['uniform_2ehpp_5',['Uniform.hpp',['../_uniform_8hpp.html',1,'']]],
   ['uniform_5flocation_5finvalid_6',['uniform_location_invalid',['../graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baba94c7d849fdc4119aff92845312a506',1,'sog']]],
-  ['uniformbuffer_7',['UniformBuffer',['../_buffers_8hpp.html#ad45d8639734dada223679773bffe0d8b',1,'sog::gfx::UniformBuffer'],['../sog_8hpp.html#abd1fc8a677ec8f6b7712b1192f29ad59',1,'sog::UniformBuffer']]],
+  ['uniformbuffer_7',['UniformBuffer',['../_buffers_8hpp.html#aa45ecfd3aefc05cec62d0c7179513d69',1,'sog::gfx::buffers']]],
   ['uniformbufferhandle_8',['UniformBufferHandle',['../_handles_8hpp.html#a05b22fbe3137c6f2854aba4018fb8eed',1,'sog::gfx']]],
   ['uniformname_9',['uniformName',['../classsog_1_1gfx_1_1_shader_program.html#a9532a59ec753cec978510c204228e503',1,'sog::gfx::ShaderProgram']]],
   ['uniforms_2ecpp_10',['Uniforms.cpp',['../_uniforms_8cpp.html',1,'']]],

@@ -13,7 +13,8 @@
 #include <sog/gfx/OpenGL/Objects/Buffers/GpuBuffer.hpp>
 #include <sog/gfx/Types/Handles.hpp>
 #include <sog/gfx/Vertex.hpp>
-namespace sog::gfx
+
+namespace sog::gfx::inline buffers
 {
 /// Vertex data buffer: bound to GL_ARRAY_BUFFER with regular (target) binding.
 using VertexBuffer = GpuBuffer<VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, BindingMode::Regular>;
@@ -37,4 +38,4 @@ using UniformBuffer =
 template <typename T>
 using StorageBuffer = GpuBuffer<typename StorageBufferHandle<T>::tag_type, GL_SHADER_STORAGE_BUFFER,
                                 BindingMode::Indexed>;
-} // namespace sog::gfx
+} // namespace sog::gfx::inline buffers

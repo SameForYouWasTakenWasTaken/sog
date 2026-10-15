@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">sog (Small OpenGL Graphics)
    </div>
-   <div id="projectbrief">A C++23 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
+   <div id="projectbrief">A C++20 OpenGL 4.6 static library (windowing, rendering, GL object wrappers)</div>
   </td>
  </tr>
  </tbody>
@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_common_8cpp_s
 <div class="contents">
 <a href="_common_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="_common_8hpp.html">sog/gfx/OpenGL/Common.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="_type_traits_8hpp.html">sog/Utility/TypeTraits.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="_common_8hpp.html">sog/gfx/OpenGL/Common.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span>sog::gfx</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
@@ -124,26 +124,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_common_8cpp_s
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_common_8hpp.html#aba5c8bec535adf0611cc9ff0132c26f1">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_common_8hpp.html#aba5c8bec535adf0611cc9ff0132c26f1">common::DrawArrays</a>(draw_mode mode, GLint first, GLsizei count)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    glDrawArrays(std::to_underlying(mode), first, count);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    glDrawArrays(<a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(mode), first, count);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_common_8hpp.html#a76b69d089806480b4f5ea4411f5f5f17">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_common_8hpp.html#a76b69d089806480b4f5ea4411f5f5f17">common::DrawElements</a>(draw_mode mode, GLsizei count, index_type type, <span class="keyword">const</span> <span class="keywordtype">void</span>* indices)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    glDrawElements(std::to_underlying(mode), count, std::to_underlying(type), indices);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    glDrawElements(<a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(mode), count, <a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(type), indices);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 </div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_common_8hpp.html#ab7adcbda4aeccb00f405c95950d70978">   21</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_common_8hpp.html#ab7adcbda4aeccb00f405c95950d70978">common::DrawArraysInstanced</a>(draw_mode mode, GLint first, GLsizei count, GLsizei instanceCount)</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    glDrawArraysInstanced(std::to_underlying(mode), first, count, instanceCount);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    glDrawArraysInstanced(<a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(mode), first, count, instanceCount);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 </div>
 <div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_common_8hpp.html#a9332f86161c43e9aacaa8682caaa57e9">   25</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_common_8hpp.html#a9332f86161c43e9aacaa8682caaa57e9">common::DrawElementsInstanced</a>(draw_mode mode, GLsizei count, index_type type,</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                                   <span class="keyword">const</span> <span class="keywordtype">void</span>* indices, GLsizei instanceCount)</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    glDrawElementsInstanced(std::to_underlying(mode), count, std::to_underlying(type), indices,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    glDrawElementsInstanced(<a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(mode), count, <a class="code hl_function" href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">to_underlying</a>(type), indices,</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                            instanceCount);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_common_8cpp_s
 <div class="ttc" id="a_common_8hpp_html_a9332f86161c43e9aacaa8682caaa57e9"><div class="ttname"><a href="_common_8hpp.html#a9332f86161c43e9aacaa8682caaa57e9">sog::gfx::common::DrawElementsInstanced</a></div><div class="ttdeci">void DrawElementsInstanced(draw_mode mode, GLsizei count, index_type type, const void *indices, GLsizei instanceCount)</div><div class="ttdoc">Draws indexed geometry repeatedly, once per instance (glDrawElementsInstanced).</div><div class="ttdef"><b>Definition</b> <a href="#l00025">Common.cpp:25</a></div></div>
 <div class="ttc" id="a_common_8hpp_html_ab7adcbda4aeccb00f405c95950d70978"><div class="ttname"><a href="_common_8hpp.html#ab7adcbda4aeccb00f405c95950d70978">sog::gfx::common::DrawArraysInstanced</a></div><div class="ttdeci">void DrawArraysInstanced(draw_mode mode, GLint first, GLsizei count, GLsizei instanceCount)</div><div class="ttdoc">Draws a range of vertices repeatedly, once per instance (glDrawArraysInstanced).</div><div class="ttdef"><b>Definition</b> <a href="#l00021">Common.cpp:21</a></div></div>
 <div class="ttc" id="a_common_8hpp_html_aba5c8bec535adf0611cc9ff0132c26f1"><div class="ttname"><a href="_common_8hpp.html#aba5c8bec535adf0611cc9ff0132c26f1">sog::gfx::common::DrawArrays</a></div><div class="ttdeci">void DrawArrays(draw_mode mode, GLint first, GLsizei count)</div><div class="ttdoc">Draws a range of consecutive vertices (glDrawArrays).</div><div class="ttdef"><b>Definition</b> <a href="#l00013">Common.cpp:13</a></div></div>
+<div class="ttc" id="a_type_traits_8hpp_html"><div class="ttname"><a href="_type_traits_8hpp.html">TypeTraits.hpp</a></div><div class="ttdoc">Declares sog::to_underlying, the engine&#39;s C++20 replacement for std::to_underlying (C++23),...</div></div>
+<div class="ttc" id="a_type_traits_8hpp_html_a8867d68c55e9495bf578b16ee8235894"><div class="ttname"><a href="_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894">sog::to_underlying</a></div><div class="ttdeci">constexpr std::underlying_type_t&lt; TEnum &gt; to_underlying(TEnum value) noexcept</div><div class="ttdoc">Converts an enum value to its underlying integer type (sog&#39;s C++20 stand-in for std::to_underlying).</div><div class="ttdef"><b>Definition</b> <a href="_type_traits_8hpp_source.html#l00033">TypeTraits.hpp:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

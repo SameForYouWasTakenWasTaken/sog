@@ -6,7 +6,6 @@
 
 #pragma once
 #include <array>
-#include <cmath>
 #include <cstdint>
 
 #include "../../Utility/Math.hpp"
@@ -60,7 +59,7 @@ struct Color
      * @brief Converts this color's normalized channels into conventional 8-bit values
      * (the inverse of fromRGBA()).
      * @return Array of four bytes {r, g, b, a}, each channel scaled by 255 and rounded to the
-     * nearest integer. Values outside [0, 1] are clamped first.
+     * nearest integer (halfway values round up). Values outside [0, 1] are clamped first.
      *
      * @code
      * auto red = Color{1.0f, 0.0f, 0.0f, 1.0f}.toRGBA(); // red == 255, alpha == 255
@@ -74,7 +73,9 @@ struct Color
                 return 0;
             if (channel >= 1.f)
                 return static_cast<std::uint8_t>(MAX_VALUE);
-            return static_cast<std::uint8_t>(std::round(channel * MAX_VALUE));
+            // Rounded via +0.5f truncation instead of std::round, which is not constexpr before
+            // C++23 and would make this constexpr function ill-formed under C++20.
+            return static_cast<std::uint8_t>(channel * MAX_VALUE + 0.5f);
         };
         return {toByte(r), toByte(g), toByte(b), toByte(a)};
     }

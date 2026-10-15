@@ -99,10 +99,10 @@ class ShaderProgram
     void use() const { glUseProgram(m_Handle.get()); }
 
     /**
-     * @brief Returns the raw GL program name.
-     * @return GLuint handle of the program object.
+     * @brief Returns a GLHandle to the program object.
+     * @return ShaderProgramHandle.
      */
-    [[nodiscard]] gl_handle get() const { return m_Handle.get(); }
+    [[nodiscard]] const ShaderProgramHandle& get() const { return m_Handle; }
 
     /**
      * @brief Returns a uniform's location, caching successful lookups by name.

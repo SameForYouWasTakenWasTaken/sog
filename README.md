@@ -1,6 +1,6 @@
 # sog — Small OpenGL Graphics
 
-A small C++23 static library for OpenGL 4.6 Core Profile rendering: windowing, input,
+A small C++20 static library for OpenGL 4.6 Core Profile rendering: windowing, input,
 cameras, type-safe GL object wrappers (buffers, shaders, textures, framebuffers, vertex arrays)
 and uniform helpers. Direct State Access style throughout (GL 4.5+ entry points), with RAII
 wrappers and exceptions (`sog::graphics_error`) instead of raw GL error checks.
@@ -11,7 +11,7 @@ Windows is the primary platform.
 
 ```
 opengl/
-├── CMakeLists.txt            # project setup: C++23, output layout, deps, modules
+├── CMakeLists.txt            # project setup: C++20, output layout, deps, modules
 ├── dependencies.cmake        # setup_dependency() + stb, glm, glfw
 ├── Doxyfile                  # Doxygen configuration (output: docs/)
 ├── README.md
@@ -21,7 +21,7 @@ opengl/
     ├── sog/
     │   ├── include/sog/      # public headers (umbrella header: sog/sog.hpp, Error/, Utility/, gfx/)
     │   ├── gfx/              # windowing, camera, OpenGL object implementations
-    │   ├── Utility/          # time, uniform upload helpers
+    │   ├── Utility/          # time, enum helpers (to_underlying), uniform upload helpers
     │   └── vendor/           # vendored glad + KHR (excluded from the docs)
     └── examples/             # demo application (static lib + "Main" executable)
 ```
@@ -76,7 +76,7 @@ configure time.
 ## Requirements
 
 - CMake **3.20+**
-- C++23 compiler: MSVC 19.30+ (VS 2022), GCC 12+, Clang 16+
+- C++20 compiler: MSVC 19.29+ (VS 2019 16.11+ / VS 2022), GCC 11+, Clang 16+
 - Git (dependencies are cloned during configure)
 - GPU/driver with OpenGL 4.6 support
 

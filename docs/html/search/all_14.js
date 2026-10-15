@@ -24,12 +24,14 @@ var searchData=
   ['time_2ecpp_21',['Time.cpp',['../_time_8cpp.html',1,'']]],
   ['time_2ehpp_22',['Time.hpp',['../_time_8hpp.html',1,'']]],
   ['title_23',['title',['../structsog_1_1context_1_1_window_context.html#abbfb5cf35870b9ecf6728d741272d7b7',1,'sog::context::WindowContext']]],
-  ['toglfwprofile_24',['toGLFWProfile',['../_window_8cpp.html#a468e0f2d7bbfd27a905fefc24b0a08e7',1,'sog::gfx::backend']]],
-  ['torgba_25',['toRGBA',['../structsog_1_1gfx_1_1_color.html#ac559653f04d2eee56f17e5a6e858710c',1,'sog::gfx::Color']]],
-  ['triangle_5ffan_26',['TRIANGLE_FAN',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cbaa9f047dff7e4cd4d8d3bdeafc4029d47',1,'sog::gfx::enums']]],
-  ['triangle_5fstrip_27',['TRIANGLE_STRIP',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cba708de017e3b83ccba21dfc9f6367d46f',1,'sog::gfx::enums']]],
-  ['triangle_5fstrip_5fadjacency_28',['TRIANGLE_STRIP_ADJACENCY',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cba3bd8519568230caf7877922c9956a456',1,'sog::gfx::enums']]],
-  ['triangles_29',['TRIANGLES',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cbadd3bfee8042d1b85c224f08b42a3fc2e',1,'sog::gfx::enums']]],
-  ['triangles_5fadjacency_30',['TRIANGLES_ADJACENCY',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cba96af0037e7ad76831afd4df272e040ca',1,'sog::gfx::enums']]],
-  ['type_31',['type',['../structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#ab0e5ca4ff75076990068b976d7156e9d',1,'sog::gfx::backend::VertexArrayAttributes::type'],['../structsog_1_1gfx_1_1_event.html#a285f30496dd8aec7b4a066dffce5cb18',1,'sog::gfx::Event::type']]]
+  ['to_5funderlying_24',['to_underlying',['../_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894',1,'sog']]],
+  ['toglfwprofile_25',['toGLFWProfile',['../_window_8cpp.html#a468e0f2d7bbfd27a905fefc24b0a08e7',1,'sog::gfx::backend']]],
+  ['torgba_26',['toRGBA',['../structsog_1_1gfx_1_1_color.html#ac559653f04d2eee56f17e5a6e858710c',1,'sog::gfx::Color']]],
+  ['triangle_5ffan_27',['TRIANGLE_FAN',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cbaa9f047dff7e4cd4d8d3bdeafc4029d47',1,'sog::gfx::enums']]],
+  ['triangle_5fstrip_28',['TRIANGLE_STRIP',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cba708de017e3b83ccba21dfc9f6367d46f',1,'sog::gfx::enums']]],
+  ['triangle_5fstrip_5fadjacency_29',['TRIANGLE_STRIP_ADJACENCY',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cba3bd8519568230caf7877922c9956a456',1,'sog::gfx::enums']]],
+  ['triangles_30',['TRIANGLES',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cbadd3bfee8042d1b85c224f08b42a3fc2e',1,'sog::gfx::enums']]],
+  ['triangles_5fadjacency_31',['TRIANGLES_ADJACENCY',['../_enums_8hpp.html#ae00bbe2a1f45a40c45c67a38026ac0cba96af0037e7ad76831afd4df272e040ca',1,'sog::gfx::enums']]],
+  ['type_32',['type',['../structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#ab0e5ca4ff75076990068b976d7156e9d',1,'sog::gfx::backend::VertexArrayAttributes::type'],['../structsog_1_1gfx_1_1_event.html#a285f30496dd8aec7b4a066dffce5cb18',1,'sog::gfx::Event::type']]],
+  ['typetraits_2ehpp_33',['TypeTraits.hpp',['../_type_traits_8hpp.html',1,'']]]
 ];

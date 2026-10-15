@@ -4,7 +4,7 @@
  * the glDebugMessageCallback installer.
  */
 
-#include "OpenGLDebug.hpp"
+#include <sog/gfx/backend/OpenGLDebug.hpp>
 
 namespace sog::debug
 {
