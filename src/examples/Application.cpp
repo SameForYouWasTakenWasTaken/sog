@@ -210,7 +210,7 @@ int Application::Run()
     const auto locFramebufTime = frameBufShaderProgram.getLocation("time");
     const auto locFramebufIntensity = frameBufShaderProgram.getLocation("intensity");
 
-    w assert(frameBuffer.isComplete());
+    assert(frameBuffer.isComplete());
 
     while (!window.shouldClose())
     {
