@@ -5,6 +5,7 @@
  */
 
 #pragma once
+#include <optional>
 #include <unordered_map>
 
 #include "../../Types/GFXTypes.hpp"

@@ -210,9 +210,7 @@ int Application::Run()
     const auto locFramebufTime = frameBufShaderProgram.getLocation("time");
     const auto locFramebufIntensity = frameBufShaderProgram.getLocation("intensity");
 
-    sog::uniform::setInt(frameBufShaderProgram, locFramebufTexture.value_or(sog::Uniform{}), 0);
-
-    assert(frameBuffer.isComplete());
+    w assert(frameBuffer.isComplete());
 
     while (!window.shouldClose())
     {

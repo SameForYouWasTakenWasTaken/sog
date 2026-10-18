@@ -43,4 +43,3 @@ target_compile_definitions(SOG PUBLIC
         # GLHandle.hpp) is the sole GL entry-point provider.
         GLFW_INCLUDE_NONE
 )
-
