@@ -5,6 +5,8 @@
  */
 
 #pragma once
+#include <array>
+
 #include "../Utility/Math.hpp"
 #include "OpenGL/Objects/VertexArrayAttributes.hpp"
 
