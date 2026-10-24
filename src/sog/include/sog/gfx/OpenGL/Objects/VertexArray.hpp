@@ -46,7 +46,10 @@ class VertexArray
      * @brief Move-constructs from another VertexArray, taking over its VAO.
      * @param o VertexArray to move from; left without a VAO.
      */
-    VertexArray(VertexArray&& o) noexcept : m_Handle(std::move(o.m_Handle)) {}
+    VertexArray(VertexArray&& o) noexcept
+        : m_Handle(std::move(o.m_Handle)), m_IndexCount(o.m_IndexCount), m_IndexType(o.m_IndexType)
+    {
+    }
 
     /**
      * @brief Move-assigns, releasing the current VAO and taking the source's.
@@ -59,6 +62,8 @@ class VertexArray
         {
             release();
             m_Handle = std::move(o.m_Handle);
+            m_IndexCount = o.m_IndexCount;
+            m_IndexType = o.m_IndexType;
         }
         return *this;
     }
