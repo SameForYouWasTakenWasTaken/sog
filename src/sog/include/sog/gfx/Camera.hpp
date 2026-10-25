@@ -30,8 +30,7 @@ namespace sog::gfx
  * moveLocal() translates along the camera's own right/up/forward axes.
  * lookAt() repositions and reorients the camera to gaze from eye toward target.
  *
- * @note Angles are in degrees. yaw == -90 and pitch == 0 (the defaults) make the
- * camera look along -Z in the default frame.
+ * @note Angles are in degrees. yaw == -90 and pitch == 0
  *
  * @see sog::math::Mat4
  */
@@ -231,26 +230,26 @@ class Camera
     glm::quat m_Frame{
         1.f, 0.f, 0.f,
         0.f}; /**< Rotation mapping +Y onto m_WorldUp; lets yaw/pitch be defined in a Y-up space. */
-    math::Vec3 m_Position{0.f, 0.f, 3.f}; /**< World-space position (starts 3 units down +Z). */
-    float m_Yaw{-90.f};  /**< Yaw about the up axis in degrees (-90 looks along -Z). */
-    float m_Pitch{0.f};  /**< Elevation above the horizontal plane in degrees. */
-    float m_Roll{0.f};   /**< Roll about the forward axis in degrees. */
+    math::Vec3 m_Position{0.f, 0.f, 0.f}; /**< World-space position (starts 3 units down +Z). */
+    float m_Yaw{-90.f}; /**< Yaw about the up axis in degrees (-90 looks along -Z). */
+    float m_Pitch{0.f}; /**< Elevation above the horizontal plane in degrees. */
+    float m_Roll{0.f};  /**< Roll about the forward axis in degrees. */
 
     // Projection
     ProjectionType m_Type{ProjectionType::Perspective}; /**< Active projection kind. */
-    float m_Fov{60.f};   /**< Perspective vertical field of view in degrees. */
+    float m_Fov{60.f};          /**< Perspective vertical field of view in degrees. */
     float m_Aspect{16.f / 9.f}; /**< Perspective width/height aspect ratio. */
-    float m_Near{0.1f};  /**< Near clip-plane distance (both projection kinds). */
-    float m_Far{100.f};  /**< Far clip-plane distance (both projection kinds). */
-    float m_Left{-1.f};  /**< Orthographic left clip-plane boundary. */
-    float m_Right{1.f};  /**< Orthographic right clip-plane boundary. */
-    float m_Bottom{-1.f}; /**< Orthographic bottom clip-plane boundary. */
-    float m_Top{1.f};    /**< Orthographic top clip-plane boundary. */
+    float m_Near{0.1f};         /**< Near clip-plane distance (both projection kinds). */
+    float m_Far{100.f};         /**< Far clip-plane distance (both projection kinds). */
+    float m_Left{-1.f};         /**< Orthographic left clip-plane boundary. */
+    float m_Right{1.f};         /**< Orthographic right clip-plane boundary. */
+    float m_Bottom{-1.f};       /**< Orthographic bottom clip-plane boundary. */
+    float m_Top{1.f};           /**< Orthographic top clip-plane boundary. */
 
     // Cached matrices
-    mutable math::Mat4 m_View{1.f};        /**< Cached view matrix, rebuilt while dirty. */
-    mutable math::Mat4 m_Projection{1.f};  /**< Cached projection matrix, rebuilt while dirty. */
-    mutable bool m_ViewDirty{true};        /**< Marks the view matrix stale after a pose change. */
-    mutable bool m_ProjDirty{true}; /**< Marks the projection matrix stale after a change. */
+    mutable math::Mat4 m_View{1.f};       /**< Cached view matrix, rebuilt while dirty. */
+    mutable math::Mat4 m_Projection{1.f}; /**< Cached projection matrix, rebuilt while dirty. */
+    mutable bool m_ViewDirty{true};       /**< Marks the view matrix stale after a pose change. */
+    mutable bool m_ProjDirty{true};       /**< Marks the projection matrix stale after a change. */
 };
 } // namespace sog::gfx
