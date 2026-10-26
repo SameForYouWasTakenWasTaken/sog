@@ -162,7 +162,9 @@ void Window::initialize(const context::WindowContext& context)
         glfwCreateWindow(context.width, context.height, context.title.c_str(), nullptr, nullptr);
     if (!m_Window->glfwHandle)
     {
-        glfwTerminate();
+        // Deliberately NOT glfwTerminate() here: GLFW teardown is process-wide and belongs to
+        // the application (the GLFW lifetime owner), not to one window's failure path —
+        // terminating would destroy every other live window/context in the process.
         throw graphics_error(graphics_error_code::window_creation_failed,
                              "Failed to create window!");
     }
@@ -173,10 +175,12 @@ void Window::initialize(const context::WindowContext& context)
     if (!gladLoadGL(glfwGetProcAddress))
     {
         // Constructor is about to throw: clean up the already-created window so it is not leaked
-        // (~Window never runs for a failed construction).
+        // (~Window never runs for a failed construction). Release the context we made current
+        // above first, then destroy only this window — no process-wide glfwTerminate(), which
+        // would tear down every other live window/context in the process.
+        glfwMakeContextCurrent(nullptr);
         glfwDestroyWindow(m_Window->glfwHandle);
         m_Window->glfwHandle = nullptr;
-        glfwTerminate();
         throw graphics_error(graphics_error_code::window_creation_failed,
                              "Failed to create window! (glad did not initialize properly)");
     }
