@@ -31,9 +31,16 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # ---------------------------------------------------------------------------
-# Third-party dependencies (stb, glm, glfw)
+# Third-party dependencies (stb, glm, glfw, googletest)
 # ---------------------------------------------------------------------------
+option(SOG_BUILD_TESTS "Build the sog test suite (src/tests)" ON)
+
 include("${CMAKE_CURRENT_SOURCE_DIR}/dependencies.cmake")
 
 add_subdirectory(src)
 add_subdirectory(src/examples)
+
+if (SOG_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(src/tests)
+endif ()

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['what_0',['what',['../classsog_1_1exception.html#a6b82525855cde60b62aad3cdd6a0119f',1,'sog::exception']]],
-  ['width_1',['width',['../classsog_1_1gfx_1_1_render_buffer.html#aeae1f08e57700efe974830df94f48149',1,'sog::gfx::RenderBuffer']]],
-  ['window_2',['Window',['../classsog_1_1gfx_1_1_window.html#a8bb0c47e6b800d8c8548d77c428c03fd',1,'sog::gfx::Window::Window()'],['../classsog_1_1gfx_1_1_window.html#a80d9e3af76748f57c102fa6ff3b48448',1,'sog::gfx::Window::Window(const context::WindowContext &amp;context)']]],
-  ['write_3',['write',['../classsog_1_1gfx_1_1backend_1_1_g_l_buffer.html#a7526f0e8e078ee815f10d16bb391f4eb',1,'sog::gfx::backend::GLBuffer']]]
+  ['valid_0',['valid',['../classsog_1_1gfx_1_1_g_l_handle.html#a12f02c7e06ebaeabcd8ba0670695abb8',1,'sog::gfx::GLHandle::valid()'],['../classsog_1_1gfx_1_1_frame_buffer.html#a21ba5851f4f99205f73d8a154481c23e',1,'sog::gfx::FrameBuffer::valid()'],['../classsog_1_1gfx_1_1_render_buffer.html#aa2f7edf3cef35ceaac13c2824be7b791',1,'sog::gfx::RenderBuffer::valid()'],['../structsog_1_1gfx_1_1_uniform.html#ab665f6561626d121ecc798ee38fe3faa',1,'sog::gfx::Uniform::valid()']]],
+  ['vertex_1',['Vertex',['../structsog_1_1gfx_1_1_vertex.html#a8ea0d9079f37f52088ac030db578a3ab',1,'sog::gfx::Vertex']]],
+  ['vertexarray_2',['VertexArray',['../classsog_1_1gfx_1_1_vertex_array.html#a2226a0a2534e3a843dc523e610dded25',1,'sog::gfx::VertexArray::VertexArray()'],['../classsog_1_1gfx_1_1_vertex_array.html#a42b52cb4b3e6317f1b56221e392bd240',1,'sog::gfx::VertexArray::VertexArray(VertexArray &amp;&amp;o) noexcept']]],
+  ['vertexarrayattributes_3',['VertexArrayAttributes',['../structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#aa6a655b81e99a467f41314d10a72c857',1,'sog::gfx::backend::VertexArrayAttributes']]],
+  ['viewport_4',['Viewport',['../structsog_1_1application_1_1_viewport.html#ac1fd4323d9ea60657c2b1b0084f279a9',1,'sog::application::Viewport']]],
+  ['viewporttoactivetarget_5',['ViewportToActiveTarget',['../_common_8hpp.html#a27a6c18cb46ae2d79bbd74cdd9b0c2f7',1,'sog::gfx::common']]]
 ];

@@ -19,14 +19,17 @@ OUTPUT_DIRECTORY       = docs
 CREATE_SUBDIRS         = NO
 
 # Only the first-party sources. src/sog/vendor (glad, KHR) is excluded so we
-# never generate docs for third-party code.
+# never generate docs for third-party code, and src/tests is excluded because
+# test suites document behavior through their assertions rather than Doxygen
+# comments.
 INPUT                  = src
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.hpp \
                          *.cpp \
                          *.h
 RECURSIVE              = YES
-EXCLUDE                = src/sog/vendor
+EXCLUDE                = src/sog/vendor \
+                         src/tests
 EXCLUDE_PATTERNS       =
 EXCLUDE_SYMBOLS        =
 

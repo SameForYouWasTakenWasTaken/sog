@@ -162,13 +162,13 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Owns a GL 2D texture and manages its creation, upload and binding. </p>
-<p><a class="el" href="#a478c4c3b6f572fe217ebd24e9cbc892f" title="Loads an image file and creates the texture from its contents.">createFromFile()</a> decodes an image with stb_image (flipping vertically to match GL's bottom-left origin), converting everything to RGBA8, then uploads it via <a class="el" href="#a08bc021de6e6f5bb9dbdcb2d5ad7bc7b" title="Creates the texture from caller-supplied raw pixel data (or allocates storage only).">createFromRaw()</a>. <a class="el" href="#a08bc021de6e6f5bb9dbdcb2d5ad7bc7b" title="Creates the texture from caller-supplied raw pixel data (or allocates storage only).">createFromRaw()</a> allocates immutable storage (DSA glTextureStorage2D), uploads the pixel data if provided, applies the wrap and filter settings from <a class="el" href="structsog_1_1gfx_1_1_texture_settings.html" title="Sampling configuration applied to a texture when its storage is created.">TextureSettings</a>, and generates mipmaps if requested.</p>
+<p><a class="el" href="#a478c4c3b6f572fe217ebd24e9cbc892f" title="Loads an image file and creates the texture from its contents.">createFromFile()</a> decodes an image with stb_image (flipping vertically to match GL's bottom-left origin), converting everything to RGBA8, then uploads it via <a class="el" href="#a08bc021de6e6f5bb9dbdcb2d5ad7bc7b" title="Creates the texture from caller-supplied raw pixel data (or allocates storage only).">createFromRaw()</a>. <a class="el" href="#a08bc021de6e6f5bb9dbdcb2d5ad7bc7b" title="Creates the texture from caller-supplied raw pixel data (or allocates storage only).">createFromRaw()</a> allocates immutable storage (DSA glTextureStorage2D) once, uploads the pixel data if provided, applies the wrap and filter settings from <a class="el" href="structsog_1_1gfx_1_1_texture_settings.html" title="Sampling configuration applied to a texture when its storage is created.">TextureSettings</a>, and generates mipmaps if requested; calling it again on a texture that already has storage throws <a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">graphics_error</a> rather than letting a raw GL_INVALID_OPERATION appear in the error queue.</p>
 <p><a class="el" href="#a2d45b7756b8f5c93f4f0a8f3884be399" title="Factory for an allocated-but-uninitialized RGBA8 texture of the given size.">empty()</a> is a convenience factory for an uninitialized texture of a given size (e.g. a render target), and <a class="el" href="#a459a6da2fb8ca821fc59b0ab94df3b0a" title="Binds this texture to a sampler unit (glBindTextureUnit).">bind()</a> binds the texture to a sampler unit using glBindTextureUnit (DSA).</p>
 <p>The class is move-only: destruction (or <a class="el" href="#a5909c60a54780daf8dbf7a1682bd9401" title="Deletes the owned GL texture (if any) and resets the handle.">release()</a>) deletes the GL texture, and moving transfers ownership.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Mipmap generation only happens when both generateMipmaps is set AND pixel data was supplied; allocating storage alone (data == nullptr) leaves the chain ungenerated and sampling may look wrong if a mip filter is selected.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd>sog::TextureSettings </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00036">36</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00038">38</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afb96960a74d81cb0bb7fd1432a199220" name="afb96960a74d81cb0bb7fd1432a199220"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb96960a74d81cb0bb7fd1432a199220">&#9670;&#160;</a></span>Texture2D() <span class="overload">[1/5]</span></h2>
@@ -195,11 +195,11 @@ Private Attributes</h2></td></tr>
 
 <p>Constructs an empty <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> with no GL object allocated. </p>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00040">40</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00042">42</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00024">create()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00153">empty()</a>, <a class="el" href="#a342253a3042b75ab3f0cc862746867e7">operator=()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00059">operator=()</a>, <a class="el" href="#aede54571376a242f597ec2261a8f7290">Texture2D()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00052">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00156">empty()</a>, <a class="el" href="#a342253a3042b75ab3f0cc862746867e7">operator=()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00061">operator=()</a>, <a class="el" href="#aede54571376a242f597ec2261a8f7290">Texture2D()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00054">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -228,9 +228,9 @@ Private Attributes</h2></td></tr>
 
 <p>Destroys the owned GL texture (if any). </p>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00043">43</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00045">45</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00093">release()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00106">release()</a>.</p>
 
 </div>
 </div>
@@ -259,7 +259,7 @@ Private Attributes</h2></td></tr>
 
 <p>Copy construction is deleted. </p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00042">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -294,9 +294,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00052">52</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00054">54</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00173">m_Handle</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00042">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -342,7 +342,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00075">75</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00077">77</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00024">create()</a>, and <a class="el" href="_texture2_d_8cpp_source.html#l00036">createFromFile()</a>.</p>
 
@@ -420,7 +420,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00093">93</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00095">95</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00024">create()</a>, and <a class="el" href="_texture2_d_8cpp_source.html#l00057">createFromRaw()</a>.</p>
 
@@ -458,9 +458,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00030">30</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00075">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00087">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_g_l_handle_8hpp_source.html#l00075">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00173">m_Handle</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00087">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00110">sog::gfx::Window::draw()</a>, and <a class="el" href="_application_8cpp_source.html#l00167">Application::Run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_window_8cpp_source.html#l00118">sog::gfx::Window::draw()</a>, and <a class="el" href="_application_8cpp_source.html#l00167">Application::Run()</a>.</p>
 
 </div>
 </div>
@@ -483,9 +483,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00024">24</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00081">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00087">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00173">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00081">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00087">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00075">Texture2D()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00093">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00042">Texture2D()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00077">Texture2D()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00095">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -528,7 +528,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="_texture2_d_8cpp_source.html#l00057">createFromRaw()</a>, and <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00167">Application::Run()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00075">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00167">Application::Run()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00077">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -591,16 +591,16 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">sog::graphics_error</a></td><td>With <a class="el" href="graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba2209bba2e4e7ae42a53c6229eb8590f4" title="Texture data could not be loaded or decoded.">graphics_error_code::texture_load_failed</a> if width or height is not positive. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classsog_1_1graphics__error.html" title="Exception type for graphics/OpenGL failures, carrying a graphics_error_code.">sog::graphics_error</a></td><td>With <a class="el" href="graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428ba2209bba2e4e7ae42a53c6229eb8590f4" title="Texture data could not be loaded or decoded.">graphics_error_code::texture_load_failed</a> if width or height is not positive, or <a class="el" href="graphics__error_8hpp.html#aae3b169b15538519f6edde18df75428baf1203e404fb6b2467cd1884faa2c71c2" title="An OpenGL operation was attempted in an invalid state.">graphics_error_code::invalid_operation</a> if this texture already has storage allocated (storage is immutable — construct a new <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> instead). </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00057">57</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture_settings_8hpp_source.html#l00027">sog::gfx::TextureSettings::generateMipmaps</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00075">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00025">sog::gfx::TextureSettings::magFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00024">sog::gfx::TextureSettings::minFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00021">sog::gfx::TextureSettings::wrapS</a>, and <a class="el" href="_texture_settings_8hpp_source.html#l00022">sog::gfx::TextureSettings::wrapT</a>.</p>
+<p class="reference">References <a class="el" href="_texture_settings_8hpp_source.html#l00027">sog::gfx::TextureSettings::generateMipmaps</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00075">sog::gfx::GLHandle&lt; Tag &gt;::get()</a>, <a class="el" href="graphics__error_8hpp_source.html#l00063">sog::graphics_error::graphics_error()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00173">m_Handle</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00025">sog::gfx::TextureSettings::magFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00024">sog::gfx::TextureSettings::minFilter</a>, <a class="el" href="_texture_settings_8hpp_source.html#l00021">sog::gfx::TextureSettings::wrapS</a>, and <a class="el" href="_texture_settings_8hpp_source.html#l00022">sog::gfx::TextureSettings::wrapT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00036">createFromFile()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00093">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00036">createFromFile()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00095">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -641,9 +641,9 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a> with storage allocated and no pixel data uploaded (suitable as a render target). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00153">153</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00156">156</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00042">Texture2D()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00167">Application::Run()</a>.</p>
 
@@ -675,9 +675,9 @@ Private Attributes</h2></td></tr>
 <p>Returns a reference to the typed GL handle for this texture. </p>
 <dl class="section return"><dt>Returns</dt><dd>Const reference to the internal <a class="el" href="_handles_8hpp.html#a3d96bf276395a08d271889223a5bd86d" title="Handle to a texture object (tagged with TextureTag).">TextureHandle</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00144">144</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00147">147</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00173">m_Handle</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_application_8cpp_source.html#l00167">Application::Run()</a>.</p>
 
@@ -708,7 +708,7 @@ Private Attributes</h2></td></tr>
 
 <p>Copy assignment is deleted. </p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00042">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -744,9 +744,9 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this <a class="el" href="classsog_1_1gfx_1_1_texture2_d.html" title="Owns a GL 2D texture and manages its creation, upload and binding.">Texture2D</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00059">59</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00061">61</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00093">release()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00040">Texture2D()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00173">m_Handle</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00106">release()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00042">Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -767,11 +767,11 @@ Private Attributes</h2></td></tr>
 
 <p>Deletes the owned GL texture (if any) and resets the handle. </p>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00093">93</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00106">106</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00170">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00081">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00087">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
+<p class="reference">References <a class="el" href="_texture2_d_8hpp_source.html#l00173">m_Handle</a>, <a class="el" href="_g_l_handle_8hpp_source.html#l00081">sog::gfx::GLHandle&lt; Tag &gt;::raw()</a>, and <a class="el" href="_g_l_handle_8hpp_source.html#l00087">sog::gfx::GLHandle&lt; Tag &gt;::valid()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00059">operator=()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00043">~Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8hpp_source.html#l00061">operator=()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00045">~Texture2D()</a>.</p>
 
 </div>
 </div>
@@ -798,9 +798,9 @@ Private Attributes</h2></td></tr>
 
 <p>Typed handle to the owned GL texture. </p>
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00170">170</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00173">173</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00030">bind()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00024">create()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00057">createFromRaw()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00144">getHandle()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00059">operator=()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00093">release()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00052">Texture2D()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_texture2_d_8cpp_source.html#l00030">bind()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00024">create()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00057">createFromRaw()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00147">getHandle()</a>, <a class="el" href="_texture2_d_8hpp_source.html#l00061">operator=()</a>, <a class="el" href="_texture2_d_8cpp_source.html#l00106">release()</a>, and <a class="el" href="_texture2_d_8hpp_source.html#l00054">Texture2D()</a>.</p>
 
 </div>
 </div>

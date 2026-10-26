@@ -64,6 +64,19 @@ void Texture2D::createFromRaw(const void* data, int width, int height,
                              "Invalid texture dimensions for createFromRaw.");
     }
 
+    // Storage is immutable (glTextureStorage2D): it may be allocated only once per texture
+    // object, and a second upload would otherwise surface as a raw GL_INVALID_OPERATION with
+    // no context. Query the driver's immutable-format flag and fail loudly instead.
+    GLint immutableFormat = GL_FALSE;
+    glGetTextureParameteriv(m_Handle.get(), GL_TEXTURE_IMMUTABLE_FORMAT, &immutableFormat);
+    if (immutableFormat == GL_TRUE)
+    {
+        throw graphics_error(
+            graphics_error_code::invalid_operation,
+            "Texture already has immutable storage allocated; "
+            "construct a new Texture2D instead of re-creating this one.");
+    }
+
     const GLsizei levels =
         settings.generateMipmaps
             ? static_cast<GLsizei>(std::floor(std::log2(std::max(width, height))) + 1)

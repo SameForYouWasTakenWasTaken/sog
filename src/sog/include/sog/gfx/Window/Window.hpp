@@ -37,9 +37,9 @@ namespace sog::gfx
  * swaps the buffers and polls native events. The engine's own Event queue is fed
  * by callbacks (e.g. resize) and drained with pollEvent().
  *
- * @attention beginFrame()'s clear color is interpreted as 8-bit-per-channel
- * (0-255) floats, matching the {0, 0, 0, 255} default — a normalized [0, 1] Color
- * would be divided by 255 again by the internal fromRGBA() conversion.
+ * Clear colors are plain sog::Color values on the 0-255 scale, exactly like every
+ * other Color in the API; beginFrame()/clear() normalize them internally before
+ * calling glClearColor.
  *
  * @see sog::context::WindowContext, sog::gfx::RenderState
  */
@@ -56,6 +56,28 @@ class Window
      * @brief Destroys the GLFW window and releases its resources.
      */
     ~Window();
+
+    Window(const Window&) = delete;            /**< Copy construction is deleted: a window owns
+                                                     exactly one GLFWwindow. */
+    Window& operator=(const Window&) = delete; /**< Copy assignment is deleted: a window owns
+                                                     exactly one GLFWwindow. */
+
+    /**
+     * @brief Move-constructs by transferring the GLFW window and event queue to the target.
+     *
+     * The source window is left without a native handle (moved-from windows may only be
+     * destroyed or assigned to).
+     */
+    Window(Window&&) noexcept = default;
+
+    /**
+     * @brief Move-assigns, destroying the current window (if any) and taking the source's.
+     *
+     * The source window is left without a native handle (moved-from windows may only be
+     * destroyed or assigned to).
+     * @return Reference to this window.
+     */
+    Window& operator=(Window&&) noexcept = default;
 
     /**
      * @brief Creates a window with an explicit context configuration.

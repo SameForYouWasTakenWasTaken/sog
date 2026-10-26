@@ -14,6 +14,7 @@ var classsog_1_1gfx_1_1_camera =
     [ "getProjectionType", "classsog_1_1gfx_1_1_camera.html#a07043d1647f074cdd803c50a9179167a", null ],
     [ "getRight", "classsog_1_1gfx_1_1_camera.html#a48f536f77187569d0249df0546654556", null ],
     [ "getRoll", "classsog_1_1gfx_1_1_camera.html#a52738d0279c71cf8f3ae9099a0719fb9", null ],
+    [ "getRotationMatrix", "classsog_1_1gfx_1_1_camera.html#afdf4ca8d68d6424bba60b83774c6aa6f", null ],
     [ "getUp", "classsog_1_1gfx_1_1_camera.html#a4d91c66ededd6912a238184888f20ed7", null ],
     [ "getView", "classsog_1_1gfx_1_1_camera.html#a70783c763f4e45ed2aa23a95eb33f116", null ],
     [ "getViewProjection", "classsog_1_1gfx_1_1_camera.html#aed8d7ce06ef460920c449f7784b0a2a7", null ],

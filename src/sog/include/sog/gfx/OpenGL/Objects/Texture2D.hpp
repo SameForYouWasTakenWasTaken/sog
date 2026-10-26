@@ -17,8 +17,10 @@ namespace sog::gfx
  * createFromFile() decodes an image with stb_image (flipping vertically to match
  * GL's bottom-left origin), converting everything to RGBA8, then uploads it via
  * createFromRaw(). createFromRaw() allocates immutable storage (DSA
- * glTextureStorage2D), uploads the pixel data if provided, applies the wrap and
- * filter settings from TextureSettings, and generates mipmaps if requested.
+ * glTextureStorage2D) once, uploads the pixel data if provided, applies the wrap and
+ * filter settings from TextureSettings, and generates mipmaps if requested; calling
+ * it again on a texture that already has storage throws graphics_error rather than
+ * letting a raw GL_INVALID_OPERATION appear in the error queue.
  *
  * empty() is a convenience factory for an uninitialized texture of a given size
  * (e.g. a render target), and bind() binds the texture to a sampler unit using
@@ -131,7 +133,8 @@ class Texture2D
      * @param type GL data type of the supplied data (e.g. GL_UNSIGNED_BYTE).
      * @param settings Sampling settings to apply.
      * @throws sog::graphics_error With graphics_error_code::texture_load_failed if width or height
-     * is not positive.
+     * is not positive, or graphics_error_code::invalid_operation if this texture already has
+     * storage allocated (storage is immutable — construct a new Texture2D instead).
      */
     void createFromRaw(const void* data, int width, int height,
                        texture_internal_format internalFormat, pixel_format format, pixel_type type,

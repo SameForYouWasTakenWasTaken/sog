@@ -52,6 +52,18 @@ struct Window::ImplWindow
     GLFWwindow* glfwHandle = nullptr; /**< Native GLFW window; null until initialize() succeeds. */
 
     /**
+     * @brief Destroys the owned GLFW window, if any.
+     *
+     * Destruction lives here (not in ~Window) so that a moved-from Window's shared_ptr
+     * releasing the last reference still destroys the GLFW window exactly once.
+     */
+    ~ImplWindow()
+    {
+        if (glfwHandle)
+            glfwDestroyWindow(glfwHandle);
+    }
+
+    /**
      * @brief GLFW framebuffer-size callback: updates size, viewport and queues a Resized event.
      * @param window GLFWwindow whose size changed.
      * @param width New framebuffer width in pixels.
@@ -81,11 +93,7 @@ Window::Window() : m_Window(std::make_unique<ImplWindow>(nullptr))
 {
     initialize(context::WindowContext{});
 }
-Window::~Window()
-{
-    if (m_Window->glfwHandle)
-        glfwDestroyWindow(m_Window->glfwHandle);
-}
+Window::~Window() = default;
 Window::Window(const context::WindowContext& context)
     : m_Window(std::make_unique<ImplWindow>(nullptr))
 {
@@ -102,8 +110,8 @@ void Window::endFrame() const
 void Window::pollEvents() { glfwPollEvents(); }
 void Window::clear(ClearBuffer buffers, Color color)
 {
-    auto normalizedColor = Color::fromRGBA(color.r, color.g, color.b, color.a);
-    glClearColor(normalizedColor.r, normalizedColor.g, normalizedColor.b, normalizedColor.a);
+    const math::Vec4 normalized = color.normalized();
+    glClearColor(normalized.r, normalized.g, normalized.b, normalized.a);
     glClear(to_underlying(buffers));
 }
 void Window::clear(ClearBuffer buffers) { clear(buffers, Color{0, 0, 0, 0}); }
@@ -127,7 +135,7 @@ void Window::draw(const RenderState& state)
     // non indexed
     common::DrawArrays(draw_mode::TRIANGLES, 0, static_cast<GLsizei>(state.vertexBuffer.size()));
 }
-void* Window::getNativeHandle() const { return m_Window->glfwHandle; }
+void* Window::getNativeHandle() const { return m_Window ? m_Window->glfwHandle : nullptr; }
 bool Window::pollEvent(Event& outEvent)
 {
     if (m_EventQueue.empty())
@@ -139,6 +147,9 @@ bool Window::pollEvent(Event& outEvent)
 }
 void Window::initialize(const context::WindowContext& context)
 {
+    // Record what we were asked to create: getWidth()/getHeight() report it, and the resize
+    // callback keeps the stored values in sync from here on.
+    m_Context = context;
     if (!glfwInit())
         throw graphics_error(graphics_error_code::window_creation_failed,
                              "Failed to create window! (glfw did not initialize properly)");
@@ -151,7 +162,9 @@ void Window::initialize(const context::WindowContext& context)
         glfwCreateWindow(context.width, context.height, context.title.c_str(), nullptr, nullptr);
     if (!m_Window->glfwHandle)
     {
-        glfwTerminate();
+        // Deliberately NOT glfwTerminate() here: GLFW teardown is process-wide and belongs to
+        // the application (the GLFW lifetime owner), not to one window's failure path —
+        // terminating would destroy every other live window/context in the process.
         throw graphics_error(graphics_error_code::window_creation_failed,
                              "Failed to create window!");
     }
@@ -162,10 +175,12 @@ void Window::initialize(const context::WindowContext& context)
     if (!gladLoadGL(glfwGetProcAddress))
     {
         // Constructor is about to throw: clean up the already-created window so it is not leaked
-        // (~Window never runs for a failed construction).
+        // (~Window never runs for a failed construction). Release the context we made current
+        // above first, then destroy only this window — no process-wide glfwTerminate(), which
+        // would tear down every other live window/context in the process.
+        glfwMakeContextCurrent(nullptr);
         glfwDestroyWindow(m_Window->glfwHandle);
         m_Window->glfwHandle = nullptr;
-        glfwTerminate();
         throw graphics_error(graphics_error_code::window_creation_failed,
                              "Failed to create window! (glad did not initialize properly)");
     }

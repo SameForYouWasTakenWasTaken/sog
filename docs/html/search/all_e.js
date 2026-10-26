@@ -6,7 +6,7 @@ var searchData=
   ['nearest_5fmipmap_5flinear_3',['NEAREST_MIPMAP_LINEAR',['../_enums_8hpp.html#ac80ba303a114317dd6d86a7eecc24d79a65706de8e74692e0dcd9cd776d668bab',1,'sog::gfx::enums']]],
   ['nearest_5fmipmap_5fnearest_4',['NEAREST_MIPMAP_NEAREST',['../_enums_8hpp.html#ac80ba303a114317dd6d86a7eecc24d79a1fbb2c20778f4e3e3ea0ec17ebd5dce3',1,'sog::gfx::enums']]],
   ['none_5',['NONE',['../_enums_8hpp.html#acbf551e779956773438401982e9786ebab50339a10e1de285ac99d4c3990b8693',1,'sog::gfx::enums']]],
-  ['normalized_6',['normalized',['../structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a2d050b872c6e244783efeb01b4c34593',1,'sog::gfx::backend::VertexArrayAttributes']]],
+  ['normalized_6',['normalized',['../structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a2d050b872c6e244783efeb01b4c34593',1,'sog::gfx::backend::VertexArrayAttributes::normalized'],['../structsog_1_1gfx_1_1_color.html#ad549d450ce974ed9771f19e5940ef02d',1,'sog::gfx::Color::normalized()']]],
   ['num_5f0_7',['NUM_0',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a0337623d4049d913b2cc509174a59ba1',1,'sog::input']]],
   ['num_5f1_8',['NUM_1',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80a1eeacfec5e7988f11671c829698fc8b4',1,'sog::input']]],
   ['num_5f2_9',['NUM_2',['../_input_8hpp.html#abb4ead18ebd49d06b3ee11cc47b0ef80aaa0af80237c5fd531521116e14de59c6',1,'sog::input']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['unbind_0',['unbind',['../classsog_1_1gfx_1_1_frame_buffer.html#a37f1136d62ae9c1fc37469b80f1d0f95',1,'sog::gfx::FrameBuffer::unbind()'],['../classsog_1_1gfx_1_1_vertex_array.html#a0eb3001b2396cc7b3019807e3530deee',1,'sog::gfx::VertexArray::unbind()'],['../classsog_1_1gfx_1_1_render_buffer.html#a448ce74e62fb85dbca797b6b13856e18',1,'sog::gfx::RenderBuffer::unbind()']]],
-  ['update_1',['update',['../classsog_1_1gfx_1_1_gpu_buffer.html#a0aaf46301576ab0ed701a79b9166b502',1,'sog::gfx::GpuBuffer::update()'],['../_input_8hpp.html#a3ca4ab37fe349f3a8a685082a5911a33',1,'sog::input::update(const gfx::Window &amp;window)']]],
-  ['updatecamera_2',['updateCamera',['../_input_8hpp.html#aa435aa10d2699c8fe7b1eb6d393028e0',1,'sog::input']]],
-  ['use_3',['use',['../classsog_1_1gfx_1_1_shader_program.html#aedf5800aa66f91e6c0b56a4d4f8d6f3b',1,'sog::gfx::ShaderProgram']]]
+  ['texture2d_0',['Texture2D',['../classsog_1_1gfx_1_1_texture2_d.html#afb96960a74d81cb0bb7fd1432a199220',1,'sog::gfx::Texture2D::Texture2D()'],['../classsog_1_1gfx_1_1_texture2_d.html#aede54571376a242f597ec2261a8f7290',1,'sog::gfx::Texture2D::Texture2D(const Texture2D &amp;)=delete'],['../classsog_1_1gfx_1_1_texture2_d.html#a01925946dbd779adc735cd6ffe65bedb',1,'sog::gfx::Texture2D::Texture2D(Texture2D &amp;&amp;o) noexcept'],['../classsog_1_1gfx_1_1_texture2_d.html#a855bc1e657a00b7d5397458f4d35c57a',1,'sog::gfx::Texture2D::Texture2D(const std::filesystem::path &amp;path, const TextureSettings &amp;settings)'],['../classsog_1_1gfx_1_1_texture2_d.html#a9eccbd91106137263e6f1b7151341f51',1,'sog::gfx::Texture2D::Texture2D(const void *data, int width, int height, texture_internal_format internalFormat, pixel_format format, pixel_type type, const TextureSettings &amp;settings)']]],
+  ['to_5funderlying_1',['to_underlying',['../_type_traits_8hpp.html#a8867d68c55e9495bf578b16ee8235894',1,'sog']]],
+  ['toglfwprofile_2',['toGLFWProfile',['../_window_8cpp.html#a468e0f2d7bbfd27a905fefc24b0a08e7',1,'sog::gfx::backend']]],
+  ['torgba_3',['toRGBA',['../structsog_1_1gfx_1_1_color.html#ac559653f04d2eee56f17e5a6e858710c',1,'sog::gfx::Color']]]
 ];

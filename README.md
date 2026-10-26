@@ -23,7 +23,8 @@ opengl/
     │   ├── gfx/              # windowing, camera, OpenGL object implementations
     │   ├── Utility/          # time, enum helpers (to_underlying), uniform upload helpers
     │   └── vendor/           # vendored glad + KHR (excluded from the docs)
-    └── examples/             # demo application (static lib + "Main" executable)
+    ├── examples/             # demo application (static lib + "Main" executable)
+    └── tests/                # GoogleTest suite ("SOGTests" executable; excluded from the docs)
 ```
 
 ## Targets
@@ -33,6 +34,7 @@ opengl/
 | SOG       | static (the library)  | glm::glm, glfw (public), stb       |
 | Examples  | static (demo objects) | SOG                                |
 | Main      | executable (demo)     | Examples (+ copies assets/)        |
+| SOGTests  | executable (tests)    | SOG, GTest::gtest                  |
 
 The public include root is `src/sog/include`, so consumers write `#include <sog/sog.hpp>`
 and link against `SOG`.
@@ -69,6 +71,7 @@ configure time.
 | [stb](https://github.com/nothings/stb) | master  | image loading (stb_image)      |
 | [glm](https://github.com/g-truc/glm)   | master  | math                           |
 | [glfw](https://github.com/glfw/glfw)   | 3.5.1   | window, input, GL context      |
+| [googletest](https://github.com/google/googletest) | 1.15.2 | unit tests (`SOG_BUILD_TESTS`) |
 
 [glad](https://gen.glad.sh/) (OpenGL 4.6, Core Profile) is vendored under
 `src/sog/vendor/` — no generation step needed.
@@ -91,6 +94,23 @@ cmake --build build --config Debug
 
 Static libraries land in `build/lib`, executables in `build/bin` (`build/bin/<Config>` with
 Visual Studio or Xcode). The first configure downloads glfw, glm and stb into `build/_deps/`.
+
+## Testing
+
+The `SOGTests` target (built by default; disable with `-DSOG_BUILD_TESTS=OFF`) is a GoogleTest
+suite covering the whole library — the gfx/ wrappers, the Camera math, the exception types and
+the draw helpers:
+
+```sh
+ctest --test-dir build --output-on-failure   # one process per test
+build/bin/SOGTests                           # or everything in a single process
+build/bin/SOGTests --gtest_filter=Window.*   # a single suite
+```
+
+The suite's custom `main` initializes GLFW once and creates every window/context with
+`GLFW_VISIBLE=FALSE`, so it runs headless (CI-friendly). OpenGL results are verified for real:
+draws are rasterized into an offscreen framebuffer and read back with `glReadPixels`, and GL
+error state is asserted around every wrapped call.
 
 ## Documentation
 

@@ -69,7 +69,7 @@ using Event = gfx::Event;
 /// Discriminator for the payload an Event carries; alias of gfx::EventType.
 using EventType = gfx::EventType;
 
-/// Normalized float RGBA color; alias of gfx::Color.
+/// RGBA color on the 8-bit scale (channels 0 - 255); alias of gfx::Color.
 using Color = gfx::Color;
 
 /// Fly-style camera producing view/projection matrices; alias of gfx::Camera.
