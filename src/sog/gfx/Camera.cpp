@@ -138,6 +138,17 @@ void Camera::setClipPlanes(float n, float f)
 }
 
 // ---- Matrices ----
+math::Mat4 Camera::getRotationMatrix() const
+{
+    const Basis b = basis();
+    math::Mat4 rotation{1.f};
+    // GLM matrices are indexed by column.
+    rotation[0] = math::Vec4{b.right, 0.f};
+    rotation[1] = math::Vec4{b.up, 0.f};
+    rotation[2] = math::Vec4{-b.forward, 0.f};
+    return rotation;
+}
+
 const math::Mat4& Camera::getView() const
 {
     if (m_ViewDirty)

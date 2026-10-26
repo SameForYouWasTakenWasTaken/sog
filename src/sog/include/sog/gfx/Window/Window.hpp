@@ -57,6 +57,25 @@ class Window
      */
     ~Window();
 
+    Window(const Window&) = delete;            /**< Copy construction is deleted: a window owns
+                                                     exactly one GLFWwindow. */
+    Window& operator=(const Window&) = delete; /**< Copy assignment is deleted: a window owns
+                                                     exactly one GLFWwindow. */
+
+    /**
+     * @brief Move-constructs by transferring the GLFW window and event queue to the target.
+     * @param o Window to take ownership from; left without a native handle (moved-from windows
+     * may only be destroyed or assigned to).
+     */
+    Window(Window&&) noexcept = default;
+
+    /**
+     * @brief Move-assigns, destroying the current window (if any) and taking the source's.
+     * @param o Window to take ownership from; left without a native handle.
+     * @return Reference to this window.
+     */
+    Window& operator=(Window&&) noexcept = default;
+
     /**
      * @brief Creates a window with an explicit context configuration.
      * @param context Requested OpenGL version/profile, size and title.

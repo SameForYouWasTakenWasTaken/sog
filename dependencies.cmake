@@ -201,3 +201,21 @@ setup_dependency(
         GLFW_BUILD_DOCS OFF
         GLFW_INSTALL OFF
 )
+
+# googletest - unit test framework for the SOG test suite (src/tests).
+# Only resolved when the test suite is enabled (SOG_BUILD_TESTS).
+# Both resolution paths provide GTest::gtest: an installed GTest exports it from
+# its config package, and googletest's own CMake creates it as an ALIAS of gtest.
+if (SOG_BUILD_TESTS)
+    setup_dependency(
+            NAME googletest
+            FIND_PACKAGE GTest
+            TARGET GTest::gtest
+            GIT_REPOSITORY https://github.com/google/googletest.git
+            GIT_TAG v1.15.2
+            OPTIONS
+            INSTALL_GTEST OFF
+            BUILD_GMOCK OFF
+            gtest_force_shared_crt ON
+    )
+endif ()

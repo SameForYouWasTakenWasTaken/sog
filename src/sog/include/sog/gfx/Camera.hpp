@@ -207,6 +207,30 @@ class Camera
      */
     [[nodiscard]] math::Mat4 getViewProjection() const { return getProjection() * getView(); }
 
+    /**
+     * @brief Returns the camera's orientation as a pure 4x4 rotation matrix (world orientation).
+     *
+     * The columns are the camera's axes in world space:
+     * - Column 0: right
+     * - Column 1: up
+     * - Column 2: -forward (the camera looks down its local -Z, so its world-space Z axis is
+     *   the backward direction)
+     *
+     * This is the rotation R such that for any camera-local vector v,
+     * `getRotationMatrix() * v` gives the equivalent world-space vector. Multiply a model
+     * matrix as `translate(position) * getRotationMatrix()` to attach a model to the camera's
+     * pose (matching the view matrix: `getView() == transpose(getRotationMatrix()) *
+     * translate(-position)`).
+     *
+     * Unlike naively composing glm::rotate() calls in a fixed Euler order, this uses the
+     * camera's own basis (forward/right/up derived from yaw/pitch/roll and the world-up
+     * frame), so it is always consistent with getForward(), getRight() and getUp().
+     *
+     * @return The camera's orientation as a rotation matrix (no translation).
+     * @see getView, getForward, getRight, getUp
+     */
+    [[nodiscard]] math::Mat4 getRotationMatrix() const;
+
   private:
     /**
      * @brief Bundle of the three orthonormal camera axes.
