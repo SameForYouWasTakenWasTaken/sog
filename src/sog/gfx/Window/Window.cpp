@@ -110,8 +110,8 @@ void Window::endFrame() const
 void Window::pollEvents() { glfwPollEvents(); }
 void Window::clear(ClearBuffer buffers, Color color)
 {
-    auto normalizedColor = Color::fromRGBA(color.r, color.g, color.b, color.a);
-    glClearColor(normalizedColor.r, normalizedColor.g, normalizedColor.b, normalizedColor.a);
+    const math::Vec4 normalized = color.normalized();
+    glClearColor(normalized.r, normalized.g, normalized.b, normalized.a);
     glClear(to_underlying(buffers));
 }
 void Window::clear(ClearBuffer buffers) { clear(buffers, Color{0, 0, 0, 0}); }

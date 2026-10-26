@@ -1,5 +1,14 @@
 var NAVTREEINDEX3 =
 {
+"structsog_1_1gfx_1_1_vertex.html#ab70b9869716197156a9c9ade012625a0":[1,0,0,2,22,7],
+"structsog_1_1gfx_1_1_vertex.html#aef25aa58b5a4d1558c8335bcdd7ecb6f":[1,0,0,2,22,4],
+"structsog_1_1gfx_1_1_vertex_array_tag.html":[1,0,0,2,24],
+"structsog_1_1gfx_1_1_vertex_buffer_tag.html":[1,0,0,2,25],
+"structsog_1_1gfx_1_1_window_1_1_impl_window.html":[1,0,0,2,26,0],
+"structsog_1_1gfx_1_1_window_1_1_impl_window.html#a6b88faf06415f1c8737bfb7875c66d83":[1,0,0,2,26,0,1],
+"structsog_1_1gfx_1_1_window_1_1_impl_window.html#ae1d0628788ef88c161d38b09f880a656":[1,0,0,2,26,0,0],
+"structsog_1_1gfx_1_1_window_1_1_impl_window.html#aed298467f63c171dcc82feba9931ad4c":[1,0,0,2,26,0,2],
+"structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html":[1,0,0,2,0,1],
 "structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a17f63b2394c0e9654d8c5b7bc0943b83":[1,0,0,2,0,1,6],
 "structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a20c7ca5ba63af9b518b2e86eeb24d2eb":[1,0,0,2,0,1,5],
 "structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html#a2d050b872c6e244783efeb01b4c34593":[1,0,0,2,0,1,3],

@@ -127,19 +127,25 @@ TEST(Texture2D, CreateFromRawAppliesSamplerSettings)
     expectNoGLError();
 }
 
-TEST(Texture2D, CreateFromRawTwiceOnOneTextureIsRejected)
+TEST(Texture2D, CreateFromRawTwiceOnOneTextureThrowsGraphicsError)
 {
-    // Documented quirk: storage is immutable (glTextureStorage2D), so a second createFromRaw on
-    // the same object surfaces GL_INVALID_OPERATION instead of reallocating.
+    // Storage is immutable (glTextureStorage2D): a second createFromRaw on the same object
+    // must fail loudly with a graphics_error instead of leaking a raw GL_INVALID_OPERATION
+    // into the error queue.
     Texture2D texture = makeQuadTexture();
     drainGLErrors();
 
-    texture.createFromRaw(QUAD_PIXELS.data(), 2, 2, texture_internal_format::RGBA8,
-                          pixel_format::RGBA, pixel_type::UnsignedByte, TextureSettings{});
-
-    EXPECT_NE(glGetError(), static_cast<GLenum>(GL_NO_ERROR))
-        << "re-allocating immutable texture storage must fail";
-    drainGLErrors();
+    try
+    {
+        texture.createFromRaw(QUAD_PIXELS.data(), 2, 2, texture_internal_format::RGBA8,
+                              pixel_format::RGBA, pixel_type::UnsignedByte, TextureSettings{});
+        FAIL() << "re-allocating immutable texture storage must throw";
+    }
+    catch (const graphics_error& error)
+    {
+        EXPECT_EQ(error.code(), graphics_error_code::invalid_operation);
+    }
+    expectNoGLError("the guard must throw before touching GL");
 }
 
 // ======== createFromFile() ======== //

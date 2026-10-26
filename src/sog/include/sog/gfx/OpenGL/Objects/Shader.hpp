@@ -12,6 +12,7 @@
 #include <sog/gfx/Types/GFXTypes.hpp>
 #include <sog/gfx/Types/Handles.hpp>
 #include <string>
+#include <utility>
 
 namespace sog::gfx::backend
 {
@@ -52,6 +53,10 @@ namespace sog::gfx
  * The stage is fixed at compile time by the template parameter, so a VertexShader
  * can only hold vertex code, a FragmentShader only fragment code, and so on.
  *
+ * The class is move-only: a move transfers the compiled GL object to the target
+ * (the source becomes empty, and its destructor is then a no-op), while copying is
+ * deleted — a GL shader name has exactly one owner.
+ *
  * @tparam Stage Which shader stage this object represents (from sog::shader_type).
  *
  * @note Compile status is checked after each create* call, so a Shader is always
@@ -79,8 +84,32 @@ template <shader_type> class Shader
      */
     explicit Shader(const std::filesystem::path& path) { createFromFile(path); }
 
-    /// Deletes the owned GL shader object.
+    /// Deletes the owned GL shader object (a no-op when empty, e.g. after a move).
     ~Shader() { glDeleteShader(m_Handle.get()); }
+
+    Shader(const Shader&) = delete;
+    Shader& operator=(const Shader&) = delete;
+
+    /**
+     * @brief Move-constructs by taking over the source's compiled GL shader object.
+     * @param other Shader to steal from; it becomes empty (its handle reads 0).
+     */
+    Shader(Shader&& other) noexcept : m_Handle(std::move(other.m_Handle)) {}
+
+    /**
+     * @brief Move-assigns: deletes this shader's current GL object, then takes over the source's.
+     * @param other Shader to steal from; it becomes empty (its handle reads 0).
+     * @return A reference to this shader.
+     */
+    Shader& operator=(Shader&& other) noexcept
+    {
+        if (this != &other)
+        {
+            glDeleteShader(m_Handle.get());
+            m_Handle = std::move(other.m_Handle);
+        }
+        return *this;
+    }
 
     /**
      * @brief Compiles the shader from an in-memory source string.

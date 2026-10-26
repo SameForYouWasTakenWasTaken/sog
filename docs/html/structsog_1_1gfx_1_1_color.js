@@ -1,6 +1,7 @@
 var structsog_1_1gfx_1_1_color =
 [
     [ "fromRGBA", "structsog_1_1gfx_1_1_color.html#a0a7d0894c85999802260c782a5d0e370", null ],
+    [ "normalized", "structsog_1_1gfx_1_1_color.html#ad549d450ce974ed9771f19e5940ef02d", null ],
     [ "operator math::Vec4", "structsog_1_1gfx_1_1_color.html#a7d1182872be1655f8baf63972cbb6d9b", null ],
     [ "toRGBA", "structsog_1_1gfx_1_1_color.html#ac559653f04d2eee56f17e5a6e858710c", null ],
     [ "a", "structsog_1_1gfx_1_1_color.html#a6665818db07d1a8d4befb241a863e278", null ],

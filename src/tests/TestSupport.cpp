@@ -35,11 +35,12 @@ void makeSharedContextCurrent()
 
 void destroySharedContext() { g_SharedContext.reset(); }
 
-void expectNoGLError()
+void expectNoGLError(const char* context)
 {
     const GLenum error = glGetError();
     EXPECT_EQ(error, static_cast<GLenum>(GL_NO_ERROR))
-        << "OpenGL reported error 0x" << std::hex << error << std::dec;
+        << "OpenGL reported error 0x" << std::hex << error << std::dec
+        << (context != nullptr ? ". " : "") << (context != nullptr ? context : "");
 }
 
 void drainGLErrors()
@@ -90,13 +91,14 @@ std::vector<sog::Vertex> fullScreenQuad(const sog::math::Vec4& color)
 void expectPixelNear(const sog::Color& actual, std::uint8_t r, std::uint8_t g, std::uint8_t b,
                      std::uint8_t a, const char* context)
 {
-    // One byte of slack absorbs 8-bit rasterization rounding.
-    constexpr float kTolerance = 1.5f / 255.f;
+    // One byte of slack absorbs 8-bit rasterization rounding; channels are on Color's
+    // native 0-255 scale, exactly as readPixel() reports them.
+    constexpr float kTolerance = 1.5f;
     const char* why = context != nullptr ? context : "";
-    EXPECT_NEAR(actual.r, static_cast<float>(r) / 255.f, kTolerance) << "red channel. " << why;
-    EXPECT_NEAR(actual.g, static_cast<float>(g) / 255.f, kTolerance) << "green channel. " << why;
-    EXPECT_NEAR(actual.b, static_cast<float>(b) / 255.f, kTolerance) << "blue channel. " << why;
-    EXPECT_NEAR(actual.a, static_cast<float>(a) / 255.f, kTolerance) << "alpha channel. " << why;
+    EXPECT_NEAR(actual.r, static_cast<float>(r), kTolerance) << "red channel. " << why;
+    EXPECT_NEAR(actual.g, static_cast<float>(g), kTolerance) << "green channel. " << why;
+    EXPECT_NEAR(actual.b, static_cast<float>(b), kTolerance) << "blue channel. " << why;
+    EXPECT_NEAR(actual.a, static_cast<float>(a), kTolerance) << "alpha channel. " << why;
 }
 
 OffscreenTarget OffscreenTarget::create(int width, int height)
@@ -132,8 +134,8 @@ sog::Color OffscreenTarget::readPixel(int x, int y) const
     glReadPixels(x, y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, rgba);
     glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
 
-    return {static_cast<float>(rgba[0]) / 255.f, static_cast<float>(rgba[1]) / 255.f,
-            static_cast<float>(rgba[2]) / 255.f, static_cast<float>(rgba[3]) / 255.f};
+    return {static_cast<float>(rgba[0]), static_cast<float>(rgba[1]), static_cast<float>(rgba[2]),
+            static_cast<float>(rgba[3])};
 }
 
 std::vector<sog::Color> OffscreenTarget::readRow(int y) const
@@ -149,10 +151,8 @@ std::vector<sog::Color> OffscreenTarget::readRow(int y) const
     for (int x = 0; x < width; ++x)
     {
         const auto offset = static_cast<std::size_t>(x) * 4u;
-        row.push_back({static_cast<float>(rgba[offset]) / 255.f,
-                       static_cast<float>(rgba[offset + 1]) / 255.f,
-                       static_cast<float>(rgba[offset + 2]) / 255.f,
-                       static_cast<float>(rgba[offset + 3]) / 255.f});
+        row.push_back({static_cast<float>(rgba[offset]), static_cast<float>(rgba[offset + 1]),
+                       static_cast<float>(rgba[offset + 2]), static_cast<float>(rgba[offset + 3])});
     }
     return row;
 }

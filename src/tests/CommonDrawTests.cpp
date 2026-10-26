@@ -274,17 +274,19 @@ TEST(CommonDraw, InterpolatedVertexColorsReachTheFragmentStage)
     sog::gfx::common::DrawArrays(sog::gfx::draw_mode::TRIANGLES, 0, 6);
 
     // Bottom rows are red-dominant, top rows green-dominant; the middle blends smoothly.
+    // Readback pixels are on Color's 0-255 scale, so compare through normalized() to keep
+    // the intent readable as ordinary color weights.
     const sog::Color bottom = scene.target.readPixel(SCENE_SIZE / 2, 2);
-    EXPECT_GT(bottom.r, 0.8f) << "the bottom of the quad must still be red";
-    EXPECT_LT(bottom.g, 0.2f);
+    EXPECT_GT(bottom.normalized().r, 0.8f) << "the bottom of the quad must still be red";
+    EXPECT_LT(bottom.normalized().g, 0.2f);
 
     const sog::Color top = scene.target.readPixel(SCENE_SIZE / 2, SCENE_SIZE - 2);
-    EXPECT_GT(top.g, 0.8f) << "the top of the quad must be green";
-    EXPECT_LT(top.r, 0.2f);
+    EXPECT_GT(top.normalized().g, 0.8f) << "the top of the quad must be green";
+    EXPECT_LT(top.normalized().r, 0.2f);
 
     const sog::Color middle = scene.target.readPixel(SCENE_SIZE / 2, SCENE_SIZE / 2);
-    EXPECT_GT(middle.r, 0.3f) << "the middle must blend both vertex colors";
-    EXPECT_GT(middle.g, 0.3f);
+    EXPECT_GT(middle.normalized().r, 0.3f) << "the middle must blend both vertex colors";
+    EXPECT_GT(middle.normalized().g, 0.3f);
 
     sog::FrameBuffer::unbind();
     expectNoGLError();

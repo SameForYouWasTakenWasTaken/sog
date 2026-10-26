@@ -154,7 +154,7 @@ Static Public Attributes</h2></td></tr>
 <p>Layout is fixed and interleaved in this member order, so sizeof(Vertex) is the stride for every attribute. <a class="el" href="#a58d27ec6093331e5a4b0b5abe2a14b18" title="Builds the attribute layout describing how to read a Vertex from a vertex buffer.">attributes()</a> returns the matching <a class="el" href="structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html" title="Describes the layout of a single vertex attribute within a vertex buffer.">backend::VertexArrayAttributes</a> array (positions at location 0, colors at 1, texcoords at 2) for configuring a vertex array object against a shader program that uses the same locations.</p>
 <dl class="section see"><dt>See also</dt><dd>sog::backend::VertexArrayAttributes, <a class="el" href="sog_8hpp.html#ac5c63382e43eab221e1e9b36644f6dab" title="Vertex array object wrapper; alias of gfx::VertexArray.">sog::VertexArray</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00024">24</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00026">26</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ea0d9079f37f52088ac030db578a3ab" name="a8ea0d9079f37f52088ac030db578a3ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ea0d9079f37f52088ac030db578a3ab">&#9670;&#160;</a></span>Vertex()</h2>
@@ -198,11 +198,11 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00042">42</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00044">44</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00028">color</a>, <a class="el" href="_vertex_8hpp_source.html#l00027">position</a>, and <a class="el" href="_vertex_8hpp_source.html#l00029">texCoord</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00030">color</a>, <a class="el" href="_vertex_8hpp_source.html#l00029">position</a>, and <a class="el" href="_vertex_8hpp_source.html#l00031">texCoord</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00050">stride()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00052">stride()</a>.</p>
 
 </div>
 </div>
@@ -233,9 +233,9 @@ Static Public Attributes</h2></td></tr>
 <p>Builds the attribute layout describing how to read a <a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> from a vertex buffer. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::array of three <a class="el" href="structsog_1_1gfx_1_1backend_1_1_vertex_array_attributes.html" title="Describes the layout of a single vertex attribute within a vertex buffer.">backend::VertexArrayAttributes</a> (position, color, texCoord) using offsets computed from this struct's memory layout. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00057">57</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00059">59</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00028">color</a>, <a class="el" href="_vertex_8hpp_source.html#l00032">ColorIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00027">position</a>, <a class="el" href="_vertex_8hpp_source.html#l00031">PositionIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00050">stride()</a>, <a class="el" href="_vertex_8hpp_source.html#l00029">texCoord</a>, <a class="el" href="_vertex_8hpp_source.html#l00033">TexCoordinateIndex</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00030">color</a>, <a class="el" href="_vertex_8hpp_source.html#l00034">ColorIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00029">position</a>, <a class="el" href="_vertex_8hpp_source.html#l00033">PositionIndex</a>, <a class="el" href="_vertex_8hpp_source.html#l00052">stride()</a>, <a class="el" href="_vertex_8hpp_source.html#l00031">texCoord</a>, <a class="el" href="_vertex_8hpp_source.html#l00035">TexCoordinateIndex</a>, and <a class="el" href="_vertex_8hpp_source.html#l00044">Vertex()</a>.</p>
 
 </div>
 </div>
@@ -265,11 +265,11 @@ Static Public Attributes</h2></td></tr>
 <p>Returns the byte size of one vertex, used as the attribute stride. </p>
 <dl class="section return"><dt>Returns</dt><dd>sizeof(Vertex), the byte distance between consecutive vertices. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00050">50</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00052">52</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
+<p class="reference">References <a class="el" href="_vertex_8hpp_source.html#l00044">Vertex()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>.</p>
 
 </div>
 </div>
@@ -288,9 +288,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>Per-vertex RGBA color. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00028">28</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00030">30</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00044">Vertex()</a>.</p>
 
 </div>
 </div>
@@ -316,9 +316,9 @@ Static Public Attributes</h2></td></tr>
 
 <p><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for color. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00032">32</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00034">34</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>.</p>
 
 </div>
 </div>
@@ -336,9 +336,9 @@ Static Public Attributes</h2></td></tr>
 
 <p><a class="el" href="structsog_1_1gfx_1_1_vertex.html" title="A single vertex: 3-float position, 4-float color, 2-float texture coordinate.">Vertex</a> position (x, y, z). </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00027">27</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00029">29</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00044">Vertex()</a>.</p>
 
 </div>
 </div>
@@ -364,9 +364,9 @@ Static Public Attributes</h2></td></tr>
 
 <p><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for position. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00031">31</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00033">33</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>.</p>
 
 </div>
 </div>
@@ -384,9 +384,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>Texture coordinate (u, v). </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00029">29</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00031">31</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00042">Vertex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>, and <a class="el" href="_vertex_8hpp_source.html#l00044">Vertex()</a>.</p>
 
 </div>
 </div>
@@ -414,9 +414,9 @@ Static Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p><a class="el" href="classsog_1_1gfx_1_1_shader.html" title="A single compiled GL shader stage, templated on its shader_type.">Shader</a> attribute location for texture coordinate. </p>
 
-<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00033">33</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vertex_8hpp_source.html#l00035">35</a> of file <a class="el" href="_vertex_8hpp_source.html">Vertex.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00057">attributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_vertex_8hpp_source.html#l00059">attributes()</a>.</p>
 
 </div>
 </div>

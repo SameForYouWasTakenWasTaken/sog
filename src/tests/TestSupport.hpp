@@ -41,8 +41,11 @@ void destroySharedContext();
  *
  * Tests call this at the end of any sequence of GL calls to prove the engine issued no erroneous
  * GL command. Pending errors from a test's own deliberate triggering must be drained beforehand.
+ *
+ * @param context Optional narrative describing what must not have produced GL errors; appended
+ * to the failure message only (same convention as expectPixelNear()).
  */
-void expectNoGLError();
+void expectNoGLError(const char* context = nullptr);
 
 /// Drains and discards every pending GL error (used by tests that provoke one on purpose).
 void drainGLErrors();
@@ -185,7 +188,7 @@ struct OffscreenTarget
      * @brief Reads one pixel out of the color attachment as 8-bit channels.
      * @param x Column, in pixels, with (0, 0) at the framebuffer's bottom-left corner.
      * @param y Row, in pixels, with (0, 0) at the framebuffer's bottom-left corner.
-     * @return The pixel's RGBA channels as normalized floats (0.0 - 1.0).
+     * @return The pixel's RGBA channels as floats on Color's native 0-255 scale.
      */
     [[nodiscard]] sog::Color readPixel(int x, int y) const;
 

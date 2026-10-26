@@ -3,8 +3,9 @@
  * @brief Exercises gfx::Shader: compiling a single GL shader stage from source or file.
  *
  * Covers successful compilation (valid GL object, GL_COMPILE_STATUS set), the graphics_error
- * thrown on a compile failure (code + driver info log) and on a missing file, and that the same
- * object can be recompiled from new source.
+ * thrown on a compile failure (code + driver info log) and on a missing file, that the same
+ * object can be recompiled from new source, and the move-only ownership model (compile once,
+ * transfer the handle, never copy).
  *
  * @note Shader has two converting constructors (source string_view and file path), so these tests
  * always pass an explicitly-typed argument to select the intended overload.
@@ -16,6 +17,7 @@
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <utility>
 
 using sog::FragmentShader;
 using sog::VertexShader;
@@ -210,4 +212,46 @@ TEST(Shader, ShaderStageAliasesAreDistinct)
     static_assert(!std::is_same_v<VertexShader, FragmentShader>,
                   "vertex and fragment shaders must be distinct types");
     SUCCEED();
+}
+
+TEST(Shader, IsMoveOnly)
+{
+    static_assert(!std::is_copy_constructible_v<VertexShader>,
+                  "a GL shader name has one owner; copying must be deleted");
+    static_assert(!std::is_copy_assignable_v<VertexShader>,
+                  "a GL shader name has one owner; copying must be deleted");
+    static_assert(std::is_move_constructible_v<VertexShader>,
+                  "shaders must be movable so they can be stored in containers");
+    static_assert(std::is_move_assignable_v<VertexShader>,
+                  "shaders must be move-assignable");
+    SUCCEED();
+}
+
+// ======== Move semantics ======== //
+
+TEST(Shader, MoveTransfersTheCompiledObject)
+{
+    VertexShader source{VALID_VERT};
+    const GLuint id = source.get();
+    ASSERT_NE(id, 0u);
+
+    VertexShader target{std::move(source)};
+
+    EXPECT_EQ(target.get(), id) << "the compiled GL object must transfer to the target";
+    EXPECT_EQ(source.get(), 0u) << "the moved-from shader must be empty";
+    expectNoGLError("moving must not touch GL state beyond the handle swap");
+}
+
+TEST(Shader, MoveAssignmentDeletesTheReplacedObject)
+{
+    VertexShader target{VALID_VERT};
+    VertexShader source{VALID_VERT};
+    const GLuint sourceId = source.get();
+    ASSERT_NE(sourceId, 0u);
+
+    target = std::move(source);
+
+    EXPECT_EQ(target.get(), sourceId) << "the target must take over the source's object";
+    EXPECT_EQ(source.get(), 0u) << "the moved-from shader must be empty";
+    expectNoGLError("replacing target's previous object must delete it without a raw GL error");
 }
