@@ -148,6 +148,12 @@ template <typename T, GLenum Target, BindingMode BindMode> class GpuBuffer
      */
     [[nodiscard]] GLuint id() const { return buf_.id(); }
 
+    /**
+     * @brief Returns true if buffer is valid
+     * @return bool true if valid buffer
+     */
+    [[nodiscard]] bool valid() const { return buf_.valid(); }
+
   private:
     /**
      * @brief Grows (or creates) the underlying byte buffer to newCap elements.
@@ -161,7 +167,7 @@ template <typename T, GLenum Target, BindingMode BindMode> class GpuBuffer
     }
 
     backend::GLBuffer<T> buf_; /**< Byte-level GL storage backing this buffer. */
-    size_t count_ = 0;     /**< Number of live elements in the buffer. */
-    size_t capacity_ = 0;  /**< Number of elements that fit before the next growth. */
+    size_t count_ = 0;         /**< Number of live elements in the buffer. */
+    size_t capacity_ = 0;      /**< Number of elements that fit before the next growth. */
 };
 } // namespace sog::gfx

@@ -9,17 +9,16 @@
  */
 
 #include <TestSupport.hpp>
-
 #include <array>
 #include <span>
 #include <type_traits>
 
+using sog::graphics_error;
+using sog::graphics_error_code;
 using sog::Index;
 using sog::IndexBuffer;
 using sog::VertexArray;
 using sog::VertexBuffer;
-using sog::graphics_error;
-using sog::graphics_error_code;
 
 namespace
 {
@@ -176,4 +175,19 @@ TEST(VertexArray, SetIndexBufferWithEmptyBufferStaysNonIndexed)
 
     EXPECT_EQ(array.indexCount(), 0u);
     EXPECT_FALSE(array.indexed());
+}
+
+TEST(VertexArray, UpdateIndexBuffer)
+{
+    VertexArray array;
+    array.create();
+
+    // must set valid index buffer to update index type
+    IndexBuffer indexBuffer;
+    indexBuffer.set(QUAD_INDICES);
+
+    array.setIndexBuffer(indexBuffer);
+
+    array.updateIndexType(sog::enums::index_type::UBYTE);
+    EXPECT_EQ(array.indexType(), sog::enums::index_type::UBYTE);
 }

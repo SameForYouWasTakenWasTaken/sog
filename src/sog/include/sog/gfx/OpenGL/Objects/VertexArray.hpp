@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "glad/gl.h"
+#include "sog/gfx/Types/Enums.hpp"
 
 namespace sog::gfx
 {
@@ -80,24 +81,55 @@ class VertexArray
     void bind() const;
 
     /**
-     * @brief Attaches a vertex buffer to a binding point of this VAO.
-     * @param buffer Vertex buffer supplying the data.
+     * @brief Attaches a buffer to a binding point of this VAO.
+     * @param buffer Buffer supplying the data.
      * @param binding Binding point index to attach to.
      * @param stride Byte distance between consecutive vertices.
      */
-    void setVertexBuffer(const VertexBuffer& buffer, GLuint binding, GLsizei stride);
+    template <typename Tag>
+    void setVertexBuffer(const GpuBuffer<Tag, GL_ARRAY_BUFFER, BindingMode::Regular>& buffer,
+                         GLuint binding, GLsizei stride)
+    {
+        glVertexArrayVertexBuffer(m_Handle.get(), binding, buffer.id(), 0, stride);
+    }
 
     /**
-     * @brief Attaches an index buffer to this VAO and records its element count.
+     * @brief Attaches an index buffer to this VAO and records its element count. Won't attach if
+     * index buffer contains no indices
+     * @param buffer Index buffer holding the element indices (must not be empty).
+     * @param indexType The index type.
+     */
+    void setIndexBuffer(const IndexBuffer& buffer, index_type indexType = index_type::UINT);
+
+    /**
+     * @brief Updates index count from buffer.
      * @param buffer Index buffer holding the element indices (must not be empty).
      */
-    void setIndexBuffer(const IndexBuffer& buffer);
+    void updateIndexBuffer(const IndexBuffer& buffer);
+
+    /**
+     * @brief Updates index type from index buffer. Requires an index buffer to be bounded.
+     * @param indexType The index type.
+     */
+    void updateIndexType(index_type indexType);
 
     /**
      * @brief Applies a set of attribute formats and enables them on this VAO.
      * @param attributes Attribute descriptions (index, size, type, offset, binding).
      */
     void setAttributes(std::span<const backend::VertexArrayAttributes> attributes) const;
+
+    /**
+     * @brief Sets the instance divisor for a buffer binding.
+     *
+     * Controls how frequently vertex attributes advance when drawing instanced
+     * geometry. A divisor of 0 advances the attributes per vertex, while a
+     * divisor of 1 advances them once per instance.
+     *
+     * @param binding The index of the buffer binding.
+     * @param divisor The number of instances between attribute advances.
+     */
+    void setBindingDivisor(GLuint binding, GLuint divisor) const;
 
     /**
      * @brief Unbinds any VAO (binds 0) on the current context.
@@ -119,16 +151,23 @@ class VertexArray
      * @brief Reports whether an index buffer has been attached.
      * @return true if indexCount() is greater than zero.
      */
-    [[nodiscard]] bool indexed() const { return m_IndexCount > 0; }
+    [[nodiscard]] bool indexed() const { return indexCount() > 0; }
 
     /**
      * @brief Returns the number of indices recorded from the attached index buffer.
      * @return Element count (0 when not indexed).
      */
-    [[nodiscard]] std::size_t indexCount() const { return m_IndexCount; }
+    [[nodiscard]] std::size_t indexCount() const;
+
+    /**
+     * @brief Returns the index type from the assigned IndexBuffer
+     * @return index_type index enum type
+     */
+    [[nodiscard]] index_type indexType() const { return static_cast<index_type>(m_IndexType); }
 
   private:
     VertexArrayHandle m_Handle; /**< Typed handle to the owned VAO. */
+
     std::size_t m_IndexCount{
         0}; /**< Number of indices recorded by setIndexBuffer (0 = non-indexed). */
     GLenum m_IndexType{GL_UNSIGNED_INT}; /**< Element type of the attached index buffer. */

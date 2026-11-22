@@ -1,6 +1,7 @@
 /**
  * @file GLBuffer.hpp
- * @brief Defines backend::GLBuffer<T>, a move-only RAII wrapper around a GL 4.5 immutable-storage buffer object (glCreateBuffers/glNamedBufferStorage).
+ * @brief Defines backend::GLBuffer<T>, a move-only RAII wrapper around a GL 4.5 immutable-storage
+ * buffer object (glCreateBuffers/glNamedBufferStorage).
  */
 
 #pragma once
@@ -40,7 +41,8 @@ template <typename T> class GLBuffer
     /**
      * @brief Creates a buffer with immutable storage of the requested byte size.
      * @param bytes Storage size in bytes.
-     * @param flags Immutable-storage flags (default GL_DYNAMIC_STORAGE_BIT allows glNamedBufferSubData writes).
+     * @param flags Immutable-storage flags (default GL_DYNAMIC_STORAGE_BIT allows
+     * glNamedBufferSubData writes).
      */
     GLBuffer(size_t bytes, GLbitfield flags = GL_DYNAMIC_STORAGE_BIT) { create(bytes, flags); }
 
@@ -141,6 +143,12 @@ template <typename T> class GLBuffer
      */
     [[nodiscard]] size_t size() const { return size_; }
 
+    /**
+     * @brief Returns true if GL handle is valid
+     * @return bool valid handle
+     */
+    [[nodiscard]] bool valid() const { return id_.valid(); }
+
   private:
     /**
      * @brief Creates the GL buffer and allocates its immutable storage.
@@ -175,8 +183,8 @@ template <typename T> class GLBuffer
         std::swap(flags_, o.flags_);
     }
 
-    GLHandle<T> id_{};                 /**< Typed GL object name for this buffer. */
-    size_t size_ = 0;                  /**< Current storage size in bytes. */
+    GLHandle<T> id_{};                          /**< Typed GL object name for this buffer. */
+    size_t size_ = 0;                           /**< Current storage size in bytes. */
     GLbitfield flags_ = GL_DYNAMIC_STORAGE_BIT; /**< Creation flags, remembered for resize(). */
 };
 } // namespace sog::gfx::backend

@@ -59,11 +59,11 @@ struct Vertex
     static constexpr auto attributes()
     {
         return std::array{
-            backend::VertexArrayAttributes{PositionIndex, 3, attribute_type::FLOAT32, false,
+            backend::VertexArrayAttributes{PositionIndex, 3, attribute_type::FLOAT32, GL_FALSE,
                                            stride(), offsetof(Vertex, position), 0},
-            backend::VertexArrayAttributes{ColorIndex, 4, attribute_type::FLOAT32, false, stride(),
-                                           offsetof(Vertex, color), 0},
-            backend::VertexArrayAttributes{TexCoordinateIndex, 2, attribute_type::FLOAT32, false,
+            backend::VertexArrayAttributes{ColorIndex, 4, attribute_type::FLOAT32, GL_FALSE,
+                                           stride(), offsetof(Vertex, color), 0},
+            backend::VertexArrayAttributes{TexCoordinateIndex, 2, attribute_type::FLOAT32, GL_FALSE,
                                            stride(), offsetof(Vertex, texCoord), 0}};
     }
 };
