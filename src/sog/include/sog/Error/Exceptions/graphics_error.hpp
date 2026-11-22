@@ -20,14 +20,18 @@ namespace sog
  */
 enum class graphics_error_code
 {
-    window_creation_failed,       /**< The window (and its OpenGL context) could not be created. */
-    invalid_operation,            /**< An OpenGL operation was attempted in an invalid state. */
-    shader_compilation_failed,    /**< A shader stage failed to compile. */
-    shader_link_failed,           /**< A shader program failed to link. */
-    buffer_creation_failed,       /**< An OpenGL buffer object could not be created. */
+    window_creation_failed,    /**< The window (and its OpenGL context) could not be created. */
+    invalid_operation,         /**< An OpenGL operation was attempted in an invalid state. */
+    shader_compilation_failed, /**< A shader stage failed to compile. */
+    shader_link_failed,        /**< A shader program failed to link. */
+    buffer_creation_failed,    /**< An OpenGL buffer object could not be created. */
+
     vertex_array_creation_failed, /**< A vertex array object could not be created. */
-    vertex_array_not_bound,   /**< An operation required a bound vertex array object, but none was
-                                 bound. */
+    vertex_array_not_bound, /**< An operation required a bound vertex array object, but none was
+                               bound. */
+    index_buffer_not_bound, /**< An invalid or no index buffer was bound */
+    invalid_index_buffer,   /**< An invalid or no index buffer was present */
+
     buffer_not_bound,         /**< An operation required a bound buffer, but none was bound. */
     uniform_location_invalid, /**< A uniform was looked up by a name that does not exist in the
                                  linked program. */

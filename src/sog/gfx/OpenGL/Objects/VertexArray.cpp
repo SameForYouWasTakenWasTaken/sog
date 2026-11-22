@@ -30,16 +30,32 @@ void VertexArray::bind() const
                              "GL Handle is invalid and could not bind VertexArray!");
     glBindVertexArray(m_Handle.get());
 }
-void VertexArray::setVertexBuffer(const VertexBuffer& buffer, GLuint binding, GLsizei stride)
+
+void VertexArray::setIndexBuffer(const IndexBuffer& buffer, index_type indexType)
 {
-    glVertexArrayVertexBuffer(m_Handle.get(), binding, buffer.id(), 0, stride);
-}
-void VertexArray::setIndexBuffer(const IndexBuffer& buffer)
-{
+    if (!m_Handle.valid() || !buffer.valid())
+        throw graphics_error(graphics_error_code::invalid_index_buffer,
+                             "A GLHandle is invalid and could not bind to IndexBuffer!");
+
+    // ReSharper disable once CppDFAConstantConditions
+    if (buffer.size() <= 0)
+        return; // Don't bind invalid indices.
+
     glVertexArrayElementBuffer(m_Handle.get(), buffer.id());
     m_IndexCount = buffer.size();
-    m_IndexType = GL_UNSIGNED_INT;
+    m_IndexType = to_underlying(indexType);
 }
+
+void VertexArray::updateIndexBuffer(const IndexBuffer& buffer) { m_IndexCount = buffer.size(); }
+void VertexArray::updateIndexType(index_type indexType)
+{
+    if (!indexed())
+        throw graphics_error(
+            graphics_error_code::invalid_index_buffer,
+            "Could not update index type, as no index buffer is bound to the vertex array!");
+    m_IndexType = to_underlying(indexType);
+}
+
 bool VertexArray::isBound() const
 {
     GLint current{};
@@ -48,6 +64,7 @@ bool VertexArray::isBound() const
 
     return current != 0 && static_cast<GLuint>(current) == m_Handle.get();
 }
+std::size_t VertexArray::indexCount() const { return m_IndexCount; }
 void VertexArray::setAttributes(std::span<const backend::VertexArrayAttributes> attributes) const
 {
     for (const auto& attribute : attributes)
@@ -60,6 +77,10 @@ void VertexArray::setAttributes(std::span<const backend::VertexArrayAttributes> 
 
         glEnableVertexArrayAttrib(m_Handle.get(), attribute.index);
     }
+}
+void VertexArray::setBindingDivisor(GLuint binding, GLuint divisor) const
+{
+    glVertexArrayBindingDivisor(m_Handle.get(), binding, divisor);
 }
 
 void VertexArray::unbind() { glBindVertexArray(0); }

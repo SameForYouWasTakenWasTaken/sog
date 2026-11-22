@@ -12,7 +12,6 @@
  */
 
 #include <TestSupport.hpp>
-
 #include <filesystem>
 #include <string>
 #include <string_view>
@@ -20,9 +19,9 @@
 #include <utility>
 
 using sog::FragmentShader;
-using sog::VertexShader;
 using sog::graphics_error;
 using sog::graphics_error_code;
+using sog::VertexShader;
 
 namespace
 {
@@ -222,8 +221,7 @@ TEST(Shader, IsMoveOnly)
                   "a GL shader name has one owner; copying must be deleted");
     static_assert(std::is_move_constructible_v<VertexShader>,
                   "shaders must be movable so they can be stored in containers");
-    static_assert(std::is_move_assignable_v<VertexShader>,
-                  "shaders must be move-assignable");
+    static_assert(std::is_move_assignable_v<VertexShader>, "shaders must be move-assignable");
     SUCCEED();
 }
 
@@ -254,4 +252,112 @@ TEST(Shader, MoveAssignmentDeletesTheReplacedObject)
     EXPECT_EQ(target.get(), sourceId) << "the target must take over the source's object";
     EXPECT_EQ(source.get(), 0u) << "the moved-from shader must be empty";
     expectNoGLError("replacing target's previous object must delete it without a raw GL error");
+}
+
+// ======== Common shaders ======== //
+using sog::ShaderProgram;
+using namespace sog::shaders;
+
+void expectUniformExists(ShaderProgram& program, const char* name)
+{
+    EXPECT_TRUE(program.getLocation(name).has_value())
+        << "Expected active uniform '" << name << "' was not found";
+}
+
+TEST(CommonShaderTest, CommonShaderCompilesAndLinks)
+{
+    auto program = getCommonShader();
+
+    expectNoGLError();
+}
+
+TEST(CommonShaderTest, CommonShaderHasNoRequiredUniforms)
+{
+    auto program = getCommonShader();
+
+    EXPECT_FALSE(program.getLocation("uMVP").has_value());
+    EXPECT_FALSE(program.getLocation("uColor").has_value());
+    EXPECT_FALSE(program.getLocation("uTexture").has_value());
+
+    expectNoGLError();
+}
+
+// ======== MVP shader ======== //
+
+TEST(CommonShaderTest, MVPShaderCompilesAndLinks)
+{
+    auto program = sog::shaders::getMVPShader();
+
+    expectUniformExists(program, "uMVP");
+
+    expectNoGLError();
+}
+
+// ======== Solid color shader ======== //
+
+TEST(CommonShaderTest, SolidColorShaderCompilesAndLinks)
+{
+    auto program = getSolidColorShader();
+
+    expectUniformExists(program, "uMVP");
+    expectUniformExists(program, "uColor");
+
+    expectNoGLError();
+}
+
+// ======== Texture shader ======== //
+
+TEST(CommonShaderTest, TextureShaderCompilesAndLinks)
+{
+    auto program = getTextureShader();
+
+    expectUniformExists(program, "uMVP");
+    expectUniformExists(program, "uTexture");
+
+    expectNoGLError();
+}
+
+// ======== Instanced shader ======== //
+
+TEST(CommonShaderTest, InstancedShaderCompilesAndLinks)
+{
+    auto program = getInstancedShader();
+
+    expectUniformExists(program, "uViewProjection");
+
+    expectNoGLError();
+}
+
+// ======== Normal visualization shader ======== //
+
+TEST(CommonShaderTest, NormalVisualizationShaderCompilesAndLinks)
+{
+    auto program = getNormalVisualizationShader();
+
+    expectUniformExists(program, "uMVP");
+    expectUniformExists(program, "uNormalMatrix");
+
+    expectNoGLError();
+}
+
+// ======== Depth shader ======== //
+
+TEST(CommonShaderTest, DepthShaderCompilesAndLinks)
+{
+    auto program = getDepthShader();
+
+    expectUniformExists(program, "uMVP");
+
+    expectNoGLError();
+}
+
+// ======== Screen-space shader ======== //
+
+TEST(CommonShaderTest, ScreenSpaceShaderCompilesAndLinks)
+{
+    auto program = getScreenSpaceShader();
+
+    expectUniformExists(program, "uTexture");
+
+    expectNoGLError();
 }

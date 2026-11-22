@@ -15,6 +15,12 @@ void ShaderProgram::create()
     if (!m_Handle.valid())
         m_Handle.raw() = glCreateProgram();
 }
+void ShaderProgram::Link() const
+{
+    glLinkProgram(m_Handle.get());
+
+    backend::handleProgramError(m_Handle.get(), GL_LINK_STATUS);
+}
 std::optional<Uniform> ShaderProgram::getLocation(const std::string& name)
 {
     // find cached

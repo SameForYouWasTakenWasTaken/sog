@@ -75,9 +75,8 @@ class ShaderProgram
      * @throws sog::graphics_error With graphics_error_code::shader_link_failed if linking fails.
      */
     template <shader_type A, shader_type B>
-    explicit ShaderProgram(const Shader<A>& shaderA, const Shader<B>& shaderB)
+    explicit ShaderProgram(const Shader<A>& shaderA, const Shader<B>& shaderB) : ShaderProgram()
     {
-        create();
         Initialize(shaderA, shaderB);
     }
 
@@ -86,13 +85,24 @@ class ShaderProgram
      */
     void create();
     /**
-     * @brief Attaches two compiled shaders and links the program.
-     * @param shaderA First shader stage (any shader_type).
-     * @param shaderB Second shader stage (any shader_type).
+     * @tparam T shader type
+     * @brief Attaches shaders and links the program.
+     * @param shaders The shaders
      * @throws sog::graphics_error With graphics_error_code::shader_link_failed if linking fails.
      */
-    template <shader_type A, shader_type B>
-    void Initialize(const Shader<A>& shaderA, const Shader<B>& shaderB);
+    template <shader_type... T> void Initialize(const Shader<T>&... shaders);
+
+    /**
+     * @brief Attaches a shader to the program. Doesn't link.
+     * @tparam A Shader type (Fragment, vertex, ...)
+     * @param shader The shader that will be attached to the program
+     */
+    template <shader_type A> void attach(const Shader<A>& shader);
+
+    /**
+     * @brief Links the program
+     */
+    void Link() const;
 
     /**
      * @brief Makes this program current for subsequent draw calls (glUseProgram).
@@ -124,19 +134,17 @@ class ShaderProgram
 };
 
 /**
- * @brief Attaches both shader handles to the program, links it, and validates the result.
+ * @brief Attaches shader handles to the program, links it, and validates the result.
  * @throws sog::graphics_error If linking fails, carrying the driver info log.
  */
-template <shader_type A, shader_type B>
-void ShaderProgram::Initialize(const Shader<A>& shaderA, const Shader<B>& shaderB)
+template <shader_type... T> void ShaderProgram::Initialize(const Shader<T>&... shaders)
 {
-    auto rawA = shaderA.get();
-    auto rawB = shaderB.get();
-    glAttachShader(m_Handle.get(), rawA);
-    glAttachShader(m_Handle.get(), rawB);
-
-    glLinkProgram(m_Handle.get());
-
-    backend::handleProgramError(m_Handle.get(), GL_LINK_STATUS);
+    (attach(shaders), ...);
+    Link();
+}
+template <shader_type A> void ShaderProgram::attach(const Shader<A>& shader)
+{
+    auto raw = shader.get();
+    glAttachShader(m_Handle.get(), raw);
 }
 } // namespace sog::gfx
