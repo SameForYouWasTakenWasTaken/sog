@@ -165,14 +165,14 @@ TEST(VertexArray, SetIndexBufferRecordsElementCount)
     expectNoGLError();
 }
 
-TEST(VertexArray, SetIndexBufferWithEmptyBufferStaysNonIndexed)
+TEST(VertexArray, SetIndexBufferWithInvalidBufferThrows)
 {
     VertexArray array;
     array.create();
 
     IndexBuffer emptyIndices;
-    array.setIndexBuffer(emptyIndices);
 
+    EXPECT_THROW(array.setIndexBuffer(emptyIndices), sog::graphics_error);
     EXPECT_EQ(array.indexCount(), 0u);
     EXPECT_FALSE(array.indexed());
 }

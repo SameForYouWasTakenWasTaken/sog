@@ -29,6 +29,7 @@
 #include "gfx/OpenGL/Objects/Texture2D.hpp"
 #include "gfx/OpenGL/Objects/VertexArray.hpp"
 #include "gfx/OpenGL/RenderBuffer.hpp"
+#include "gfx/Shaders/Shaders.hpp"
 #include "gfx/Types/Enums.hpp"
 #include "gfx/Window/Window.hpp"
 
@@ -80,6 +81,13 @@ using Camera = gfx::Camera;
 using namespace gfx::common;
 /// Buffers (VertexBuffer, UniformBuffer, ...)
 using namespace gfx::buffers;
+
+/// Common shaders that can be used
+namespace shaders
+{
+using namespace gfx::shaders;
+}
+
 /// Type-safe GL enums (buffer_target, shader_type, draw_mode, ...) under the sog::enums namespace.
 namespace enums
 {

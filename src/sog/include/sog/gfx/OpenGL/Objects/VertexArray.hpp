@@ -98,6 +98,7 @@ class VertexArray
      * index buffer contains no indices
      * @param buffer Index buffer holding the element indices (must not be empty).
      * @param indexType The index type.
+     * @throws graphics_error If GL handle of buffer or this VAO is invalid
      */
     void setIndexBuffer(const IndexBuffer& buffer, index_type indexType = index_type::UINT);
 
@@ -108,8 +109,9 @@ class VertexArray
     void updateIndexBuffer(const IndexBuffer& buffer);
 
     /**
-     * @brief Updates index type from index buffer. Requires an index buffer to be bounded.
+     * @brief Updates index type from index buffer.
      * @param indexType The index type.
+     * @throws graphics_error If no index buffer is bounded
      */
     void updateIndexType(index_type indexType);
 
