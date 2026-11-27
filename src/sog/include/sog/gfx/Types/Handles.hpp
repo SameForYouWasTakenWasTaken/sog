@@ -55,7 +55,7 @@ using VertexArrayHandle = GLHandle<VertexArrayTag>;
 using VertexBufferHandle = GLHandle<Vertex>;
 /// Handle to an element (index) buffer, tagged with the Index element type it holds
 /// (GLHandle<Index>).
-using ElementBufferHandle = GLHandle<Index>;
+using IndexBufferHandle = GLHandle<Index>;
 
 /// Handle to a uniform buffer object, tagged by the element type T it stores.
 template <typename T> using UniformBufferHandle = GLHandle<T>;

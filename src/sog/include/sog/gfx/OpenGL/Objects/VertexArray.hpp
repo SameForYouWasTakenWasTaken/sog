@@ -96,17 +96,24 @@ class VertexArray
     /**
      * @brief Attaches an index buffer to this VAO and records its element count. Won't attach if
      * index buffer contains no indices
-     * @param buffer Index buffer holding the element indices (must not be empty).
+     * @tparam Tag The tag for the index buffer (i.e what data it holds)
+     * @param indexBuffer Index buffer holding the element indices (must not be empty).
      * @param indexType The index type.
      * @throws graphics_error If GL handle of buffer or this VAO is invalid
      */
-    void setIndexBuffer(const IndexBuffer& buffer, index_type indexType = index_type::UINT);
+    template <typename Tag>
+    void
+    setIndexBuffer(const GpuBuffer<Tag, GL_ELEMENT_ARRAY_BUFFER, BindingMode::Regular>& indexBuffer,
+                   index_type indexType = index_type::UINT);
 
     /**
      * @brief Updates index count from buffer.
-     * @param buffer Index buffer holding the element indices (must not be empty).
+     * @tparam Tag The tag for the index buffer (i.e what data it holds)
+     * @param indexBuffer Index buffer holding the element indices (must not be empty).
      */
-    void updateIndexBuffer(const IndexBuffer& buffer);
+    template <typename Tag>
+    void updateIndexBuffer(
+        const GpuBuffer<Tag, GL_ELEMENT_ARRAY_BUFFER, BindingMode::Regular>& indexBuffer);
 
     /**
      * @brief Updates index type from index buffer.
@@ -174,4 +181,26 @@ class VertexArray
         0}; /**< Number of indices recorded by setIndexBuffer (0 = non-indexed). */
     GLenum m_IndexType{GL_UNSIGNED_INT}; /**< Element type of the attached index buffer. */
 };
+
+template <typename Tag>
+void VertexArray::setIndexBuffer(const GpuBuffer<Tag, 34963, BindingMode::Regular>& indexBuffer,
+                                 index_type indexType)
+{
+    if (!m_Handle.valid() || !indexBuffer.valid())
+        throw graphics_error(graphics_error_code::invalid_index_buffer,
+                             "A GLHandle is invalid and could not bind to IndexBuffer!");
+
+    // ReSharper disable once CppDFAConstantConditions
+    if (indexBuffer.size() <= 0)
+        return; // Don't bind invalid indices.
+
+    glVertexArrayElementBuffer(m_Handle.get(), indexBuffer.id());
+    m_IndexCount = indexBuffer.size();
+    m_IndexType = to_underlying(indexType);
+}
+template <typename Tag>
+void VertexArray::updateIndexBuffer(const GpuBuffer<Tag, 34963, BindingMode::Regular>& indexBuffer)
+{
+    m_IndexCount = indexBuffer.size();
+}
 } // namespace sog::gfx

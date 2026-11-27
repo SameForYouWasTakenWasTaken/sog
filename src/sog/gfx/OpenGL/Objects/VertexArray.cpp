@@ -30,23 +30,6 @@ void VertexArray::bind() const
                              "GL Handle is invalid and could not bind VertexArray!");
     glBindVertexArray(m_Handle.get());
 }
-
-void VertexArray::setIndexBuffer(const IndexBuffer& buffer, index_type indexType)
-{
-    if (!m_Handle.valid() || !buffer.valid())
-        throw graphics_error(graphics_error_code::invalid_index_buffer,
-                             "A GLHandle is invalid and could not bind to IndexBuffer!");
-
-    // ReSharper disable once CppDFAConstantConditions
-    if (buffer.size() <= 0)
-        return; // Don't bind invalid indices.
-
-    glVertexArrayElementBuffer(m_Handle.get(), buffer.id());
-    m_IndexCount = buffer.size();
-    m_IndexType = to_underlying(indexType);
-}
-
-void VertexArray::updateIndexBuffer(const IndexBuffer& buffer) { m_IndexCount = buffer.size(); }
 void VertexArray::updateIndexType(index_type indexType)
 {
     if (!indexed())

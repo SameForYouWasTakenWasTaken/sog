@@ -1,4 +1,8 @@
-# sog — Small OpenGL Graphics
+# sog — **s**mall **o**penGL **g**raphics
+
+## Write OpenGL. Don't speak OpenGL.
+
+___
 
 A small C++20 static library for OpenGL 4.6 Core Profile rendering: windowing, input,
 cameras, type-safe GL object wrappers (buffers, shaders, textures, framebuffers, vertex arrays)
@@ -29,12 +33,12 @@ opengl/
 
 ## Targets
 
-| Target    | Kind                  | Links                              |
-|-----------|-----------------------|------------------------------------|
-| SOG       | static (the library)  | glm::glm, glfw (public), stb       |
-| Examples  | static (demo objects) | SOG                                |
-| Main      | executable (demo)     | Examples (+ copies assets/)        |
-| SOGTests  | executable (tests)    | SOG, GTest::gtest                  |
+| Target   | Kind                  | Links                        |
+|----------|-----------------------|------------------------------|
+| SOG      | static (the library)  | glm::glm, glfw (public), stb |
+| Examples | static (demo objects) | SOG                          |
+| Main     | executable (demo)     | Examples (+ copies assets/)  |
+| SOGTests | executable (tests)    | SOG, GTest::gtest            |
 
 The public include root is `src/sog/include`, so consumers write `#include <sog/sog.hpp>`
 and link against `SOG`.
@@ -66,12 +70,12 @@ All resolved by `setup_dependency()` in `dependencies.cmake`: a system-installed
 tried first (`find_package`), otherwise the sources are downloaded with `FetchContent` at
 configure time.
 
-| Library                              | Version | Purpose                        |
-|--------------------------------------|---------|--------------------------------|
-| [stb](https://github.com/nothings/stb) | master  | image loading (stb_image)      |
-| [glm](https://github.com/g-truc/glm)   | master  | math                           |
-| [glfw](https://github.com/glfw/glfw)   | 3.5.1   | window, input, GL context      |
-| [googletest](https://github.com/google/googletest) | 1.15.2 | unit tests (`SOG_BUILD_TESTS`) |
+| Library                                            | Version | Purpose                        |
+|----------------------------------------------------|---------|--------------------------------|
+| [stb](https://github.com/nothings/stb)             | master  | image loading (stb_image)      |
+| [glm](https://github.com/g-truc/glm)               | master  | math                           |
+| [glfw](https://github.com/glfw/glfw)               | 3.5.1   | window, input, GL context      |
+| [googletest](https://github.com/google/googletest) | 1.15.2  | unit tests (`SOG_BUILD_TESTS`) |
 
 [glad](https://gen.glad.sh/) (OpenGL 4.6, Core Profile) is vendored under
 `src/sog/vendor/` — no generation step needed.
@@ -128,3 +132,50 @@ Output goes to `docs/html/index.html`; undocumented or malformed comments are re
 `CMAKE_EXPORT_COMPILE_COMMANDS` is enabled, producing `build/compile_commands.json` for
 clangd-based tooling. CLion: open the project root and it will pick up `CMakeLists.txt`
 automatically.
+
+# The motivation
+
+I've seen countless games being developed using libraries like SFML, Raylib, or perhaps just raw GLFW + GLAD. "They're
+too simple," I thought. "They lack flexibility." Those were the kinds of things I kept telling myself whenever I started
+a new project.
+
+But that wasn't really the problem. I wanted *OpenGL*. I wanted to work directly with the *GPU*. OpenGL + GLAD gives me
+exactly
+that. However, who actually enjoys writing those unpleasant GLAD function calls? Nobody!
+
+Of course, there are alternatives. Libraries like `bgfx` and `globjects` are amazing projects in their own right, but
+they never quite felt right for what I wanted. I didn't want an overly complex API, nor did I want to sacrifice the
+flexibility that comes with working directly with OpenGL. I simply wanted to use modern C++ alongside the latest OpenGL
+features, without having to constantly speak the *OpenGL language*.
+
+I wanted to create my own types of GPU buffers, work with OpenGL handles safely, manage resources without worrying about
+their lifetime, and still have the freedom to write raw OpenGL whenever I felt like it.
+
+*That* is the problem I wanted to solve.
+
+# Has AI been used?
+
+Yes, absolutely. And I want to be transparent about that.
+
+I've used AI primarily for:
+
+- **Code snippets:** Especially when dealing with functionality or concepts I don't fully understand yet.
+- **Documentation:** Quite heavily, actually.
+- **Tests:** Pretty much all of them. I could never be bothered to write tests myself!
+- **CMake:** Certain configurations, functionality, and troubleshooting.
+- **Boilerplate:** Saving time on repetitive code.
+- **Debugging:** Identifying bugs and figuring out potential solutions.
+
+I do want to put this into perspective, though. I'm *15 years old* as of writing this. I'm not a professional
+programmer, nor do I have a team to work with. I understand that some people aren't particularly fond of AI-generated
+code, and honestly, neither am I a fan of blindly relying on it.
+
+However, I follow a certain philosophy: I want to use AI as a tool, not as a replacement for my own understanding. I
+don't want to blindly copy code that I couldn't explain myself. I want to understand what goes into my projects and why
+it works.
+
+I try to write code that is readable, understandable, and doesn't require someone to spend more than five minutes
+figuring out what's going on. I prioritize code flow, architecture, and readability over simply getting things to work.
+
+At the end of the day, I want my projects to be something I'm proud of, and something that other people can actually
+understand and work with.
