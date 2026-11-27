@@ -21,7 +21,7 @@ using VertexBuffer = GpuBuffer<VertexBufferHandle::tag_type, GL_ARRAY_BUFFER, Bi
 
 /// Index buffer for indexed drawing: bound to GL_ELEMENT_ARRAY_BUFFER with regular binding.
 using IndexBuffer =
-    GpuBuffer<ElementBufferHandle::tag_type, GL_ELEMENT_ARRAY_BUFFER, BindingMode::Regular>;
+    GpuBuffer<IndexBufferHandle::tag_type, GL_ELEMENT_ARRAY_BUFFER, BindingMode::Regular>;
 
 /**
  * @brief Uniform buffer object for shader uniform blocks, bound to an indexed binding point.

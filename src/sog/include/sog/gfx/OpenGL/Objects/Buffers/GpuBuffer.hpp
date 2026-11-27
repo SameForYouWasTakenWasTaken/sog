@@ -99,6 +99,22 @@ template <typename T, GLenum Target, BindingMode BindMode> class GpuBuffer
     }
 
     /**
+     * @brief Appends multiple elements, growing capacity geometrically when full.
+     * @param data Elements to append
+     *
+     * On overflow the buffer grows to max(16, capacity * 2), keeping existing contents.
+     */
+    void push(std::span<const T> data)
+    {
+        if (count_ + data.size() > capacity_)
+            grow(std::max(count_ + data.size(), std::max<size_t>(16, capacity_ * 2)),
+                 /*keep=*/true);
+
+        buf_.write(count_ * sizeof(T), data.data(), data.size_bytes());
+        count_ += data.size();
+    }
+
+    /**
      * @brief Ensures capacity for at least n elements, without touching contents.
      * @param n Minimum capacity in elements.
      */
