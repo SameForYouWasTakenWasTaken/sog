@@ -183,8 +183,9 @@ class VertexArray
 };
 
 template <typename Tag>
-void VertexArray::setIndexBuffer(const GpuBuffer<Tag, 34963, BindingMode::Regular>& indexBuffer,
-                                 index_type indexType)
+void VertexArray::setIndexBuffer(
+    const GpuBuffer<Tag, GL_ELEMENT_ARRAY_BUFFER, BindingMode::Regular>& indexBuffer,
+    index_type indexType)
 {
     if (!m_Handle.valid() || !indexBuffer.valid())
         throw graphics_error(graphics_error_code::invalid_index_buffer,
@@ -199,7 +200,8 @@ void VertexArray::setIndexBuffer(const GpuBuffer<Tag, 34963, BindingMode::Regula
     m_IndexType = to_underlying(indexType);
 }
 template <typename Tag>
-void VertexArray::updateIndexBuffer(const GpuBuffer<Tag, 34963, BindingMode::Regular>& indexBuffer)
+void VertexArray::updateIndexBuffer(
+    const GpuBuffer<Tag, GL_ELEMENT_ARRAY_BUFFER, BindingMode::Regular>& indexBuffer)
 {
     m_IndexCount = indexBuffer.size();
 }

@@ -61,4 +61,23 @@ void DrawElementsInstanced(draw_mode mode, GLsizei count, index_type type, const
  * Called with the framebuffer's size on resize; see the Window resize callback.
  */
 void ViewportToActiveTarget(int x, int y, int width, int height);
+
+/**
+ * @brief Renders primitives using indexed vertex data with an additional base vertex offset.
+ *
+ * Draws primitives using indices stored in the currently bound element array buffer.
+ * Each index is offset by @p baseVertex before accessing the vertex attributes.
+ *
+ * @param mode       The type of primitives to render.
+ * @param count      The number of indices to render.
+ * @param type       The data type of the indices.
+ * @param indices    Byte offset into the element array buffer where the indices begin.
+ * @param baseVertex Offset added to each index before accessing vertex attributes.
+ *
+ * @note Requires an element array buffer to be bound.
+ * @note The base vertex offset is applied to every index, allowing multiple meshes
+ *       to share a single vertex buffer while using different vertex ranges.
+ */
+void DrawElementsBaseVertex(draw_mode mode, GLsizei count, index_type type, const void* indices,
+                            GLint baseVertex);
 } // namespace sog::gfx::common

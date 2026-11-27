@@ -28,6 +28,11 @@ void common::DrawElementsInstanced(draw_mode mode, GLsizei count, index_type typ
     glDrawElementsInstanced(to_underlying(mode), count, to_underlying(type), indices,
                             instanceCount);
 }
+void common::DrawElementsBaseVertex(draw_mode mode, GLsizei count, index_type type,
+                                    const void* indices, GLint baseVertex)
+{
+    glDrawElementsBaseVertex(to_underlying(mode), count, to_underlying(type), indices, baseVertex);
+}
 void common::ViewportToActiveTarget(int x, int y, int width, int height)
 {
     glViewport(x, y, width, height);
